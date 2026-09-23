@@ -313,23 +313,6 @@ export function Viewer() {
             <PenSquare className="w-4 h-4" />
             <span>Notes</span>
           </button>
-          <label className="flex items-center gap-1.5 text-slate-600 hover:text-primary cursor-pointer px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg hover:bg-slate-50 transition-colors text-xs sm:text-sm font-medium select-none">
-            <input 
-              type="checkbox" 
-              checked={isRead}
-              onChange={() => {
-                if (isRead) {
-                  unmarkAsRead(item.id);
-                  updateProgress({ documentId: item.id, isFinished: false });
-                } else {
-                  markAsRead(item.id);
-                  updateProgress({ documentId: item.id, isFinished: true, progressPercent: 100 });
-                }
-              }}
-              className="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer"
-            />
-            <span className="hidden xs:inline">Finished?</span>
-          </label>
           <button 
             onClick={() => toggleBookmark(item.id)}
             className="p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 transition-colors touch-manipulation cursor-pointer"
@@ -1068,11 +1051,11 @@ export function Viewer() {
                 <div className="animate-in fade-in zoom-in-95 duration-500 ease-out flex flex-col space-y-6">
                   {/* Manuscript / Artifact Scan Preview */}
                   {item.imageUrl && (
-                    <div className="rounded-xl overflow-hidden shadow-sm border border-slate-200/60 dark:border-slate-800 bg-black/5 dark:bg-black/30">
+                    <div className="w-full flex justify-center py-2">
                       <img 
                         src={item.imageUrl} 
                         alt={item.title} 
-                        className="w-full max-h-[460px] object-contain mx-auto"
+                        className="max-h-[500px] w-auto max-w-full rounded-lg object-contain mx-auto"
                         referrerPolicy="no-referrer"
                       />
                     </div>
