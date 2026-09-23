@@ -1,0 +1,8 @@
+{
+  "name": "Dār al-Waḥī",
+  "description": "Translations and Athār from Abū Mundhir ar-Ruwāndī and Abū Ṭalḥah al-ʾAfġhānī.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

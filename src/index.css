@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B465E;
+  --color-accent: #C39F61;
+  --color-background: #FDFBF7;
+  
+  --font-arabic: "Amiri", serif;
+  --font-arabic-block: "Noto Kufi Arabic", "Kufam", "Almarai", sans-serif;
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Lora", serif;
+  --font-merriweather: "Merriweather", serif;
+  --font-system-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  /* Robust styling for notes and rich text editor lists */
+  .rich-text-editor ul,
+  .note-rich-text ul,
+  .pdf-rich-text ul,
+  [contenteditable] ul {
+    list-style-type: disc !important;
+    padding-left: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .rich-text-editor ol,
+  .note-rich-text ol,
+  .pdf-rich-text ol,
+  [contenteditable] ol {
+    list-style-type: decimal !important;
+    padding-left: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .rich-text-editor li,
+  .note-rich-text li,
+  .pdf-rich-text li,
+  [contenteditable] li {
+    display: list-item !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  @media print {
+    body {
+      background-color: white !important;
+      color: black !important;
+    }
+    
+    .print-break-inside-avoid {
+      break-inside: avoid;
+    }
+
+    .prose {
+      color: black !important;
+    }
+  }
+}
+
+/* 3D Book Page Flip Styles */
+.book-perspective {
+  perspective: 2400px;
+  perspective-origin: 50% 50%;
+}
+
+.book-spread {
+  transform-style: preserve-3d;
+}
+
+.book-page-leaf {
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+.book-page-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@keyframes flipForwardAnim {
+  0% {
+    transform: rotateY(0deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  30% {
+    box-shadow: -16px 12px 28px rgba(0, 0, 0, 0.28);
+  }
+  70% {
+    box-shadow: -28px 18px 40px rgba(0, 0, 0, 0.35);
+  }
+  100% {
+    transform: rotateY(-180deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@keyframes flipBackwardAnim {
+  0% {
+    transform: rotateY(0deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  30% {
+    box-shadow: 16px 12px 28px rgba(0, 0, 0, 0.28);
+  }
+  70% {
+    box-shadow: 28px 18px 40px rgba(0, 0, 0, 0.35);
+  }
+  100% {
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@keyframes pageCurlShadow {
+  0% { opacity: 0; }
+  45% { opacity: 0.38; }
+  100% { opacity: 0; }
+}
+
+.animate-page-flip-forward {
+  animation: flipForwardAnim 0.52s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+  transform-origin: left center;
+}
+
+.animate-page-flip-backward {
+  animation: flipBackwardAnim 0.52s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+  transform-origin: right center;
+}
+
+.animate-page-shadow {
+  animation: pageCurlShadow 0.52s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+

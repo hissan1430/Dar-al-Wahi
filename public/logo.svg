@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" width="460" height="220" fill="none">
+  <defs>
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D8B878" />
+      <stop offset="50%" stop-color="#C19B53" />
+      <stop offset="100%" stop-color="#9E7A32" />
+    </linearGradient>
+    <linearGradient id="rihalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0E4924" />
+      <stop offset="100%" stop-color="#083218" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left: Arabic Typography & English Subtitle -->
+  <g id="typography" transform="translate(45, 0)">
+    <!-- Arabic text: دار الوحي in bold geometric blocky Kufic -->
+    <text x="75" y="94" text-anchor="middle" font-family="'Noto Kufi Arabic', 'Kufam', 'Almarai', Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="0.5" fill="#C19B53">دار الوحي</text>
+    
+    <!-- English brand name: Dār al-Waḥī -->
+    <text x="75" y="136" text-anchor="middle" font-family="'Cinzel', 'Trajan Pro', 'Georgia', serif" font-size="12" font-weight="600" letter-spacing="3.5" fill="#FFFFFF">DĀR AL-WAḤĪ</text>
+  </g>
+
+  <!-- Middle: Hairline Divider -->
+  <line x1="205" y1="36" x2="205" y2="184" stroke="#C19B53" stroke-width="1.6" stroke-linecap="round" opacity="0.45" />
+
+  <!-- Right: Sacred Quran on Riḥāl with Radiating Light Rays -->
+  <g id="emblem" transform="translate(200, 0)">
+    <!-- Radiating Light Beams -->
+    <g stroke="#C19B53" stroke-linecap="round">
+      <line x1="130" y1="95" x2="35" y2="40" stroke-width="2.8" opacity="0.55" />
+      <line x1="130" y1="95" x2="55" y2="24" stroke-width="3.0" opacity="0.70" />
+      <line x1="130" y1="95" x2="80" y2="12" stroke-width="3.2" opacity="0.82" />
+      <line x1="130" y1="95" x2="105" y2="5" stroke-width="3.4" opacity="0.92" />
+      <line x1="130" y1="95" x2="130" y2="2" stroke-width="3.5" opacity="1.00" />
+      <line x1="130" y1="95" x2="155" y2="5" stroke-width="3.4" opacity="0.92" />
+      <line x1="130" y1="95" x2="180" y2="12" stroke-width="3.2" opacity="0.82" />
+      <line x1="130" y1="95" x2="205" y2="24" stroke-width="3.0" opacity="0.70" />
+      <line x1="130" y1="95" x2="225" y2="40" stroke-width="2.8" opacity="0.55" />
+    </g>
+
+    <!-- Riḥāl Stand -->
+    <path d="M 68 185 C 75 145 105 130 130 138 C 122 152 110 162 90 168 C 82 171 74 177 68 185 Z" fill="url(#rihalGrad)" />
+    <path d="M 62 186 C 68 165 92 142 130 134 C 112 148 95 168 85 190 C 76 186 68 186 62 186 Z" fill="url(#rihalGrad)" />
+    <path d="M 192 185 C 185 145 155 130 130 138 C 138 152 150 162 170 168 C 178 171 186 177 192 185 Z" fill="url(#rihalGrad)" />
+    <path d="M 198 186 C 192 165 168 142 130 134 C 148 148 165 168 175 190 C 184 186 192 186 198 186 Z" fill="url(#rihalGrad)" />
+
+    <!-- Open Sacred Book -->
+    <path d="M 130 128 L 244 80 C 248 84 246 92 240 96 L 130 144 L 20 96 C 14 92 12 84 16 80 Z" fill="#9E7A32" />
+    <path d="M 130 122 C 95 106 50 82 22 72 C 16 70 14 74 18 78 C 45 92 90 114 130 134 Z" fill="url(#bookGrad)" />
+    <path d="M 130 122 C 165 106 210 82 238 72 C 244 70 246 74 242 78 C 215 92 170 114 130 134 Z" fill="url(#bookGrad)" />
+    <line x1="130" y1="120" x2="130" y2="138" stroke="#684A1A" stroke-width="2.5" />
+  </g>
+</svg>

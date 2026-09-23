@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background subtle gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#144658" />
+      <stop offset="100%" stop-color="#123B4A" />
+    </linearGradient>
+
+    <!-- Golden Book Gradients -->
+    <linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2BE78" />
+      <stop offset="50%" stop-color="#C59B4E" />
+      <stop offset="100%" stop-color="#9C752B" />
+    </linearGradient>
+
+    <linearGradient id="pageEdgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B88A34" />
+      <stop offset="100%" stop-color="#D9AB55" />
+    </linearGradient>
+
+    <!-- Deep Emerald Forest Riḥāl -->
+    <linearGradient id="rihalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#185635" />
+      <stop offset="100%" stop-color="#0E3821" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Petrol Blue / Dark Teal Square Background matching user image -->
+  <rect width="512" height="512" rx="64" fill="url(#bgGrad)" />
+
+  <!-- Radiating Rays of Light behind the Quran -->
+  <g stroke="#C59B4E" stroke-linecap="round" opacity="0.95">
+    <line x1="256" y1="170" x2="142" y2="92" stroke-width="4.5" opacity="0.75" />
+    <line x1="256" y1="170" x2="168" y2="72" stroke-width="4.8" opacity="0.85" />
+    <line x1="256" y1="170" x2="198" y2="60" stroke-width="5.0" opacity="0.92" />
+    <line x1="256" y1="170" x2="228" y2="54" stroke-width="5.2" opacity="0.96" />
+    <line x1="256" y1="170" x2="256" y2="52" stroke-width="5.5" opacity="1.0" />
+    <line x1="256" y1="170" x2="284" y2="54" stroke-width="5.2" opacity="0.96" />
+    <line x1="256" y1="170" x2="314" y2="60" stroke-width="5.0" opacity="0.92" />
+    <line x1="256" y1="170" x2="344" y2="72" stroke-width="4.8" opacity="0.85" />
+    <line x1="256" y1="170" x2="370" y2="92" stroke-width="4.5" opacity="0.75" />
+  </g>
+
+  <!-- Riḥāl Wooden Stand (Deep Emerald Green) -->
+  <g fill="url(#rihalGrad)">
+    <!-- Left Leg -->
+    <path d="M 180 274 C 188 238 222 222 256 228 C 244 246 226 258 202 268 C 192 272 184 278 180 286 Z" />
+    <path d="M 174 276 C 182 254 212 230 256 224 C 234 240 216 262 204 286 C 194 280 182 280 174 276 Z" />
+    <!-- Right Leg -->
+    <path d="M 332 274 C 324 238 290 222 256 228 C 268 246 286 258 310 268 C 320 272 328 278 332 286 Z" />
+    <path d="M 338 276 C 330 254 300 230 256 224 C 278 240 296 262 308 286 C 318 280 330 280 338 276 Z" />
+  </g>
+
+  <!-- Open Sacred Mushaf (Quran) with thick pages -->
+  <!-- Pages under-shadow / base thickness -->
+  <path d="M 256 220 L 386 160 C 392 165 390 175 382 181 L 256 238 L 130 181 C 122 175 120 165 126 160 Z" fill="#7E581B" />
+  <path d="M 256 215 L 388 152 C 392 156 391 162 384 167 L 256 226 L 128 167 C 121 162 120 156 124 152 Z" fill="url(#pageEdgeGrad)" />
+  
+  <!-- Top surface of pages -->
+  <path d="M 256 214 C 216 195 162 165 128 152 C 121 149 120 155 124 160 C 158 177 210 203 256 225 Z" fill="url(#bookGrad)" />
+  <path d="M 256 214 C 296 195 350 165 384 152 C 391 149 392 155 388 160 C 354 177 302 203 256 225 Z" fill="url(#bookGrad)" />
+  <line x1="256" y1="211" x2="256" y2="231" stroke="#5C3F10" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Arabic Typography: دار الوحي in bold blocky Kufic as in user graphic -->
+  <text 
+    x="256" 
+    y="360" 
+    text-anchor="middle" 
+    font-family="'Noto Kufi Arabic', 'Kufam', 'Almarai', sans-serif" 
+    font-size="62" 
+    font-weight="800" 
+    letter-spacing="0.02em" 
+    fill="#C59B4E"
+  >دار الوحي</text>
+
+  <!-- English Subtitle: DĀR AL-WAḤĪ in clean tracked serif uppercase -->
+  <text 
+    x="256" 
+    y="422" 
+    text-anchor="middle" 
+    font-family="'Playfair Display', 'Cinzel', 'Trajan Pro', serif" 
+    font-size="25" 
+    font-weight="600" 
+    letter-spacing="0.34em" 
+    fill="#FFFFFF"
+  >DĀR AL-WAḤĪ</text>
+</svg>
