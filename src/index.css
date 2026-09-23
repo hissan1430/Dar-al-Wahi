@@ -52,19 +52,36 @@
     margin-bottom: 0.25rem !important;
   }
 
-  @media print {
-    body {
-      background-color: white !important;
-      color: black !important;
-    }
-    
-    .print-break-inside-avoid {
-      break-inside: avoid;
+  /* Mobile quote optimization */
+  .mobile-quote-container {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Responsive nested quote borders so they don't crush text on phone */
+  @media (max-width: 640px) {
+    .mobile-quote-container div[class*="border-l"],
+    .mobile-quote-container blockquote[class*="border-l"] {
+      border-left-width: 2px !important;
+      padding-left: 0.65rem !important;
+      margin-left: 0 !important;
+      margin-top: 0.75rem !important;
+      margin-bottom: 0.75rem !important;
     }
 
-    .prose {
-      color: black !important;
+    .mobile-quote-container span[class*="border-l"] {
+      border-left-width: 2px !important;
+      padding-left: 0.5rem !important;
+      font-size: 1.05rem !important;
+      line-height: 1.6 !important;
     }
+  }
+
+  /* Arabic text readability on mobile */
+  .arabic-quote-text {
+    line-height: 2.1;
+    letter-spacing: 0;
+    text-align: right;
   }
 }
 

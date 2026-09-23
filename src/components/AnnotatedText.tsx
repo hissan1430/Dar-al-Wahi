@@ -138,16 +138,16 @@ export function AnnotatedText({ text, className = '', theme = 'light' }: Annotat
       {/* Floating Definition Card */}
       {activePopover && (
         <div
-          className="glossary-popover fixed z-50 w-80 sm:w-96 p-4 rounded-xl shadow-2xl border text-left animate-in fade-in zoom-in-95 duration-150"
+          className="glossary-popover fixed z-50 w-[calc(100vw-32px)] max-w-sm sm:w-96 p-4 rounded-xl shadow-2xl border text-left animate-in fade-in zoom-in-95 duration-150"
           style={{
             top: Math.min(
               window.innerHeight - 300,
               Math.max(16, activePopover.rect.bottom + 8)
             ),
-            left: Math.min(
-              window.innerWidth - 380,
-              Math.max(16, activePopover.rect.left - 40)
-            ),
+            left: Math.max(16, Math.min(
+              window.innerWidth - 340,
+              activePopover.rect.left - 20
+            )),
             backgroundColor:
               theme === 'dark' ? '#1e2024' : theme === 'sepia' ? '#fdf6e3' : '#ffffff',
             borderColor:

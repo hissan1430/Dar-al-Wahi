@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { MOCK_DATA } from '../data';
-import { ArrowLeft, Bookmark, FileText, Download, Sun, Moon, Coffee, CheckCircle, Circle, PenSquare, X, RotateCcw, ArrowUpRight, BookOpen, Image as ImageIcon, Play, Headphones, Newspaper, Quote, ListVideo, ChevronLeft, ChevronRight, ExternalLink, Columns2 } from 'lucide-react';
+import { ArrowLeft, Bookmark, FileText, Download, Sun, Moon, Coffee, CheckCircle, Circle, PenSquare, X, RotateCcw, ArrowUpRight, BookOpen, Image as ImageIcon, Play, Headphones, Newspaper, Quote, ListVideo, ChevronLeft, ChevronRight, ExternalLink, Columns2, Type } from 'lucide-react';
 import { useBookmarks } from '../hooks/useBookmarks';
 import { useReadingStats } from '../hooks/useReadingStats';
 import { useNotes } from '../hooks/useNotes';
@@ -25,6 +25,24 @@ export function Viewer() {
   const { getProgress, updateProgress } = useReadingProgress();
 
   const [theme, setTheme] = useState<ReaderTheme>('light');
+  const [fontSize, setFontSize] = useState<'normal' | 'large' | 'compact'>(() => {
+    try {
+      const saved = localStorage.getItem('dar_alwahi_quote_font_size');
+      return (saved === 'large' || saved === 'compact') ? saved : 'normal';
+    } catch {
+      return 'normal';
+    }
+  });
+
+  const handleFontSizeChange = (size: 'normal' | 'large' | 'compact') => {
+    setFontSize(size);
+    try {
+      localStorage.setItem('dar_alwahi_quote_font_size', size);
+    } catch {
+      // ignore
+    }
+  };
+
   const [currentPage, setCurrentPage] = useState(1);
   const [textPageInputValue, setTextPageInputValue] = useState<string>('1');
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
@@ -468,6 +486,37 @@ export function Viewer() {
               </div>
             )}
 
+            {/* Font Size Selector (especially helpful on mobile phones for readability) */}
+            <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-semibold">
+              <button
+                onClick={() => handleFontSizeChange('compact')}
+                className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
+                  fontSize === 'compact' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                }`}
+                title="Compact Text Size"
+              >
+                A-
+              </button>
+              <button
+                onClick={() => handleFontSizeChange('normal')}
+                className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
+                  fontSize === 'normal' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                }`}
+                title="Standard Text Size"
+              >
+                A
+              </button>
+              <button
+                onClick={() => handleFontSizeChange('large')}
+                className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
+                  fontSize === 'large' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                }`}
+                title="Large Text Size (Easier Reading on Mobile)"
+              >
+                A+
+              </button>
+            </div>
+
             <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
               <button 
                 onClick={() => setTheme('light')}
@@ -555,7 +604,7 @@ export function Viewer() {
         )}
 
         {/* Document Content Rendering */}
-        <div className={`p-4 sm:p-8 flex flex-col items-center transition-colors duration-300 ${
+        <div className={`p-2.5 sm:p-8 flex flex-col items-center transition-colors duration-300 ${
           theme === 'dark' ? 'bg-[#0f1115]' : 
           theme === 'sepia' ? 'bg-[#e4dcc8]' : 
           'bg-slate-100'
@@ -959,7 +1008,7 @@ export function Viewer() {
                 </div>
               ) : (
                 /* SINGLE PAGE TEXT VIEW */
-                <div className={`w-full shadow-md border p-8 sm:p-12 min-h-[700px] leading-relaxed whitespace-pre-wrap flex flex-col justify-between rounded-lg transition-colors ${
+                <div className={`w-full shadow-md border px-4 py-6 sm:p-12 min-h-[600px] leading-relaxed whitespace-pre-wrap flex flex-col justify-between rounded-xl transition-colors ${
                   theme === 'dark' ? 'bg-[#1a1a1a] border-[#333] text-slate-200' :
                   theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' :
                   'bg-white border-slate-200 text-slate-800'
@@ -1026,46 +1075,84 @@ export function Viewer() {
               </p>
             </div>
           ) : item.type === 'quote' || item.englishText ? (
-            /* Quote and Image rendering */
+            /* Quote and Image rendering with mobile accessibility, responsive typography & font scaling */
             <div className="w-full max-w-4xl space-y-6 relative flex flex-col items-center">
-              <div className={`w-full shadow-md border p-8 sm:p-12 flex flex-col rounded-xl transition-colors ${
-                theme === 'dark' ? 'bg-[#1a1a1a] border-[#333] text-slate-200' :
-                theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' :
-                'bg-white border-slate-200 text-slate-800'
+              <div className={`w-full shadow-md border px-4 py-6 sm:px-10 sm:py-12 flex flex-col rounded-2xl transition-colors ${
+                theme === 'dark' ? 'bg-[#181a1f] border-[#2c323f] text-slate-100' :
+                theme === 'sepia' ? 'bg-[#fcf7ee] border-[#e7ddc7] text-[#3d2f1d]' :
+                'bg-white border-slate-200/90 text-slate-800'
               }`}>
                 <div className="animate-in fade-in zoom-in-95 duration-500 ease-out flex flex-col space-y-6">
+                  {/* Manuscript / Artifact Scan Preview */}
                   {item.imageUrl && (
-                    <img 
-                      src={item.imageUrl} 
-                      alt={item.title} 
-                      className="w-full rounded-lg shadow-sm border border-slate-200/50"
-                      referrerPolicy="no-referrer"
-                    />
+                    <div className="rounded-xl overflow-hidden shadow-sm border border-slate-200/60 dark:border-slate-800 bg-black/5 dark:bg-black/30">
+                      <img 
+                        src={item.imageUrl} 
+                        alt={item.title} 
+                        className="w-full max-h-[460px] object-contain mx-auto"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
                   )}
+
+                  {/* Arabic Matn with mobile-tuned line height and clear separation */}
                   {item.arabicText && (
-                    <div className="text-2xl sm:text-3xl text-right font-arabic leading-[2.2]" dir="rtl">
+                    <div 
+                      className={`text-right font-arabic rounded-xl p-4 sm:p-6 transition-all ${
+                        theme === 'dark' ? 'bg-slate-900/60 border border-slate-800/80 text-amber-300/95' :
+                        theme === 'sepia' ? 'bg-[#f4ecd8]/60 border border-[#e4dcc8] text-amber-950' :
+                        'bg-amber-50/50 border border-amber-100 text-slate-900'
+                      } ${
+                        fontSize === 'compact' ? 'text-xl sm:text-2xl leading-[2]' :
+                        fontSize === 'large' ? 'text-2xl sm:text-4xl leading-[2.4]' :
+                        'text-2xl sm:text-3xl leading-[2.2]'
+                      }`} 
+                      dir="rtl"
+                    >
                       {item.arabicText}
                     </div>
                   )}
-                  {item.htmlText ? (
-                    <div 
-                      className="text-lg sm:text-xl font-serif leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: item.htmlText }}
-                    />
-                  ) : item.englishText && (
-                    <AnnotatedText 
-                      text={item.englishText} 
-                      theme={theme} 
-                      className="text-lg sm:text-xl font-serif whitespace-pre-wrap leading-relaxed" 
-                    />
-                  )}
+
+                  {/* English Translation & Quote body */}
+                  <div className="mobile-quote-container">
+                    {item.htmlText ? (
+                      <div 
+                        className={`font-serif tracking-normal transition-all ${
+                          fontSize === 'compact' ? 'text-base sm:text-lg leading-relaxed' :
+                          fontSize === 'large' ? 'text-lg sm:text-2xl leading-relaxed sm:leading-loose' :
+                          'text-base sm:text-xl leading-relaxed'
+                        }`}
+                        dangerouslySetInnerHTML={{ __html: item.htmlText }}
+                      />
+                    ) : item.englishText && (
+                      <AnnotatedText 
+                        text={item.englishText} 
+                        theme={theme} 
+                        className={`font-serif whitespace-pre-wrap tracking-normal transition-all ${
+                          fontSize === 'compact' ? 'text-base sm:text-lg leading-relaxed' :
+                          fontSize === 'large' ? 'text-lg sm:text-2xl leading-relaxed sm:leading-loose' :
+                          'text-base sm:text-xl leading-relaxed'
+                        }`} 
+                      />
+                    )}
+                  </div>
+
+                  {/* Classical Citation & Source Badge */}
                   {item.citation && (
-                    <div className={`mt-8 pt-6 border-t text-sm sm:text-base font-medium ${
-                      theme === 'dark' ? 'border-[#333] text-slate-500' :
-                      theme === 'sepia' ? 'border-[#e4dcc8]/60 text-amber-700/70' :
-                      'border-slate-100 text-slate-400'
+                    <div className={`mt-6 pt-4 sm:pt-6 border-t flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-medium ${
+                      theme === 'dark' ? 'border-slate-800 text-slate-400' :
+                      theme === 'sepia' ? 'border-[#e4dcc8] text-amber-900/80' :
+                      'border-slate-100 text-slate-500'
                     }`}>
-                      {item.citation}
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold uppercase tracking-wider text-[11px] opacity-70">Source:</span>
+                        <span className="italic font-serif">{item.citation}</span>
+                      </div>
+                      {item.translator && item.translator !== 'None' && (
+                        <div className="text-[11px] opacity-80">
+                          {item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

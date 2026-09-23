@@ -55,17 +55,30 @@ export const MOCK_DATA: ContentItem[] = [
     title: "Jahm ibn al-Ṣafwān's Hatred For The Qurʾān",
     summary: "A narration about a man from Marw who shunned Jahm due to his mockery and hatred of the verses of the Qur'an.",
     englishText: "And Abū Jaʿfar narrated to me, [he said]: Yaḥyā ibn ʾAyyūb narrated to me, he said: I heard Abā Nuʿaym al-Balkẖī, he said: “A man from the people of Marw was a friend to Jahm, then he cut him off and shunned him, so it was said to him: ‘Why did you shun him?’ So, he said: ‘What cannot be tolerated came from him. I read such-and-such verse one day - Yaḥyā forgot it - so he said: “How clever Muḥammad was!” So, I bore it. Then he recited Sūrah Ṭā-Hā, so when he said: “The Most Beneficent (Allāh) ʾIstawā (rose over) the (Mighty) Throne (in a manner that suits His Majesty).” [Ṭā-Hā:5], he said: “Truly, by Allāh, if I found a way to its erasure, I would have erased it from the Muṣḥaf.” So, I bore it. Then he recited Sūrah al-Qaṣaṣ. So, when he reached to the mention of Mūsā, he said: “What is this? He mentioned a story in a place, so He did not complete it, then He mentioned it here, so He did not complete it.” Then he threw the Muṣḥaf from his lap with his two feet, so I pounced upon him.’",
-    htmlText: `And <em class="italic opacity-80 font-medium">Abū Jaʿfar</em> narrated to me, [he said]: <em class="italic opacity-80 font-medium">Yaḥyā ibn ʾAyyūb</em> narrated to me, he said: I heard <em class="italic opacity-80 font-medium">Abā Nuʿaym al-Balkẖī</em>, he said:
-<div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 mt-4">“A man from the people of <em class="italic opacity-80 font-medium">Marw</em> was a friend to <em class="italic opacity-80 font-medium">Jahm</em>, then he cut him off and shunned him, so it was said to him:
-<div class="border-l-2 border-current opacity-80 pl-4 mt-3">‘Why did you shun him?’</div>
-So, he said:
-<div class="border-l-2 border-current opacity-80 pl-4 mt-3">‘What cannot be tolerated came from him. I read such-and-such verse one day - <em class="italic opacity-80 font-medium">Yaḥyā</em> forgot it - so he said:
-<span class="block border-l-4 border-current pl-4 mt-3 mb-1 font-semibold text-lg opacity-90">“How clever <em class="italic opacity-80 font-medium">Muḥammad</em> was!”</span>
-So, I bore it. Then he recited <em class="italic opacity-80 font-medium">Sūrah Ṭā-Hā</em>, so when he said: “The Most Beneficent (Allāh) ʾIstawā (rose over) the (Mighty) Throne (in a manner that suits His Majesty).” [Ṭā-Hā:5], he said:
-<span class="block border-l-4 border-current pl-4 mt-3 mb-1 font-semibold text-lg opacity-90">“Truly, by <strong class="font-bold">Allāh</strong>, if I found a way to its erasure, I would have erased it from the <strong class="font-bold">Muṣḥaf</strong>.”</span>
-So, I bore it. Then he recited <em class="italic opacity-80 font-medium">Sūrah al-Qaṣaṣ</em>. So, when he reached to the mention of <em class="italic opacity-80 font-medium">Mūsā</em>, he said:
-<span class="block border-l-4 border-current pl-4 mt-3 mb-1 font-semibold text-lg opacity-90">“What is this? He mentioned a story in a place, so He did not complete it, then He mentioned it here, so He did not complete it.”</span>
-Then he threw the <em class="italic opacity-80 font-medium">Muṣḥaf</em> from his lap with his two feet, so I pounced upon him.’</div></div>`,
+    htmlText: `<p class="mb-3">And <em class="italic opacity-80 font-medium">Abū Jaʿfar</em> narrated to me, [he said]: <em class="italic opacity-80 font-medium">Yaḥyā ibn ʾAyyūb</em> narrated to me, he said: I heard <em class="italic opacity-80 font-medium">Abā Nuʿaym al-Balkẖī</em>, he said:</p>
+
+<blockquote class="border-l-2 sm:border-l-[3px] border-amber-600/70 pl-3 sm:pl-5 py-1 my-3 bg-amber-50/20 dark:bg-amber-950/10 rounded-r-lg space-y-3">
+  <p>“A man from the people of <em class="italic opacity-80 font-medium">Marw</em> was a friend to <em class="italic opacity-80 font-medium">Jahm</em>, then he cut him off and shunned him, so it was said to him: ‘<em class="italic">Why did you shun him?</em>’</p>
+  <p>So, he said: ‘What cannot be tolerated came from him. I read such-and-such verse one day — <em class="italic opacity-80 font-medium">Yaḥyā</em> forgot it — so he said:</p>
+  
+  <p class="font-semibold text-base sm:text-lg pl-2 border-l-2 border-red-500/50 my-1 text-slate-800 dark:text-slate-200">
+    “How clever <em class="italic opacity-80 font-medium">Muḥammad</em> was!”
+  </p>
+  
+  <p>So, I bore it. Then he recited <em class="italic opacity-80 font-medium">Sūrah Ṭā-Hā</em>, so when he said: “The Most Beneficent (Allāh) ʾIstawā (rose over) the (Mighty) Throne (in a manner that suits His Majesty).” [Ṭā-Hā:5], he said:</p>
+  
+  <p class="font-semibold text-base sm:text-lg pl-2 border-l-2 border-red-500/50 my-1 text-slate-800 dark:text-slate-200">
+    “Truly, by <strong class="font-bold">Allāh</strong>, if I found a way to its erasure, I would have erased it from the <strong class="font-bold">Muṣḥaf</strong>.”
+  </p>
+  
+  <p>So, I bore it. Then he recited <em class="italic opacity-80 font-medium">Sūrah al-Qaṣaṣ</em>. So, when he reached to the mention of <em class="italic opacity-80 font-medium">Mūsā</em>, he said:</p>
+  
+  <p class="font-semibold text-base sm:text-lg pl-2 border-l-2 border-red-500/50 my-1 text-slate-800 dark:text-slate-200">
+    “What is this? He mentioned a story in a place, so He did not complete it, then He mentioned it here, so He did not complete it.”
+  </p>
+  
+  <p>Then he threw the <em class="italic opacity-80 font-medium">Muṣḥaf</em> from his lap with his two feet, so I pounced upon him.’ ”</p>
+</blockquote>`,
     citation: "Kẖalq ʾAfʿāl al-ʿIbād - pg.38",
     imageUrl: "/jahmi_scan.png",
     dateAdded: "2026-09-12",
@@ -78,8 +91,10 @@ Then he threw the <em class="italic opacity-80 font-medium">Muṣḥaf</em> from
     title: "An Arrow on the Day of Jumuʿah",
     summary: "A narration from Ḥudhayfa regarding the spread of hypocrisy and disbelief in the latter times.",
     englishText: "Abu Sāliḥ told me, saying: Abu al-Aḥwāṣ told us, saying: Abu Ḥudhayfa told us, saying: Sufyān (ath-Thawrī) told us, from al-Aʿmash, from Qays ibn al-Sakan, from Ḥudhayfa (ibn Yamān), who said: ‘There will come a time upon the people when, if you were to shoot an arrow on the Day of Jumuʿah (Friday), it would strike nothing but a disbeliever or a hypocrite.’",
-    htmlText: `<em class="italic opacity-80 font-medium">Abu Sāliḥ</em> told me, saying: <em class="italic opacity-80 font-medium">Abu al-Aḥwāṣ</em> told us, saying: <em class="italic opacity-80 font-medium">Abu Ḥudhayfa</em> told us, saying: <em class="italic opacity-80 font-medium">Sufyān (ath-Thawrī)</em> told us, from <em class="italic opacity-80 font-medium">al-Aʿmash</em>, from <em class="italic opacity-80 font-medium">Qays ibn al-Sakan</em>, from <em class="italic opacity-80 font-medium">Ḥudhayfa (ibn Yamān)</em>, who said:
-<div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 mt-4 font-semibold text-lg">‘There will come a time upon the people when, if you were to shoot an arrow on the Day of <em class="italic opacity-80 font-medium">Jumuʿah</em> (Friday), it would strike nothing but a disbeliever or a hypocrite.’</div>`,
+    htmlText: `<p class="mb-3 leading-relaxed"><em class="italic opacity-80 font-medium">Abu Sāliḥ</em> told me, saying: <em class="italic opacity-80 font-medium">Abu al-Aḥwāṣ</em> told us, saying: <em class="italic opacity-80 font-medium">Abu Ḥudhayfa</em> told us, saying: <em class="italic opacity-80 font-medium">Sufyān (ath-Thawrī)</em> told us, from <em class="italic opacity-80 font-medium">al-Aʿmash</em>, from <em class="italic opacity-80 font-medium">Qays ibn al-Sakan</em>, from <em class="italic opacity-80 font-medium">Ḥudhayfa (ibn Yamān)</em>, who said:</p>
+<blockquote class="border-l-2 sm:border-l-[3px] border-amber-600/70 pl-3 sm:pl-5 py-2 my-3 bg-amber-50/20 dark:bg-amber-950/10 rounded-r-lg font-semibold text-base sm:text-xl leading-relaxed">
+‘There will come a time upon the people when, if you were to shoot an arrow on the Day of <em class="italic opacity-80 font-medium">Jumuʿah</em> (Friday), it would strike nothing but a disbeliever or a hypocrite.’
+</blockquote>`,
     citation: "al-ʾIbānah al-Kubrā no.9",
     imageUrl: "/arrow_hudhayfah.jpeg",
     dateAdded: "2026-09-13",
@@ -124,10 +139,12 @@ Then he threw the <em class="italic opacity-80 font-medium">Muṣḥaf</em> from
     title: "Al-Bukẖārī on the Uncreated Qurʾān",
     summary: "Imām al-Bukẖārī affirms that the Qurʾān is the Speech of Allāh and uncreated, distinguishing between the Creator's Command and His creation.",
     englishText: "And Abū ʿAbd Allāh [al-Bukẖārī] said: \"And the Qurʾān is the Speech of Allāh, uncreated, due to the statement of Allāh, Mighty and Majestic: \"Indeed your Lord is Allāh who created the Heavens and Earth in six days and then ascended above the Throne. He covers the (light of) day with the (darkness) of night (which) pursues it swiftly and (He created) the sun, the moon, the stars (all being) subjected to His command.\" [al-ʾAʿrāf:54] So, He made it clear that the created beings, and the pursuing, and the rapidity, and the subjected beings are by His command. Then He explained: \"His is the creation and the command. Blessed be Allāh, the Lord of the worlds.\" [al-ʾAʿrāf:54] Ibn ʿUyaynah said: 'Allāh distinguished the [act of] creation from the command with His statement: \"His is the creation and the command.\" [al-ʾAʿrāf:54] — so, the creation is by His command like His statement: \"The decision of the matter, before and after (these events) is only with Allāh...\" [al-Rūm:4], and like His statement: \"Verily, His Command, when He intends a thing, is only that He says to it, \"Be!\" and it is!\" [Yā-Sīn:82], and like His statement: \"And among His Signs is that the heaven and the earth stand by His Command\"[al-Rūm:25], and He did not say 'by His Creation.''\"",
-    htmlText: `And <em class="italic opacity-80 font-medium">Abū ʿAbd Allāh [al-Bukẖārī]</em> said:
-<div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 mt-4 font-semibold text-lg">“And the Qurʾān is the Speech of Allāh, uncreated, due to the statement of Allāh, Mighty and Majestic: “Indeed your Lord is Allāh who created the Heavens and Earth in six days and then ascended above the Throne. He covers the (light of) day with the (darkness) of night (which) pursues it swiftly and (He created) the sun, the moon, the stars (all being) subjected to His command.” [al-ʾAʿrāf:54] So, He made it clear that the created beings, and the pursuing, and the rapidity, and the subjected beings are by His command. Then He explained: “His is the creation and the command. Blessed be Allāh, the Lord of the worlds.” [al-ʾAʿrāf:54]
-
-<em class="italic opacity-80 font-medium">Ibn ʿUyaynah</em> said: ‘Allāh distinguished the [act of] creation from the command with His statement: “His is the creation and the command.” [al-ʾAʿrāf:54] — so, the creation is by His command like His statement: “The decision of the matter, before and after (these events) is only with Allāh...” [al-Rūm:4], and like His statement: “Verily, His Command, when He intends a thing, is only that He says to it, "Be!" and it is!” [Yā-Sīn:82], and like His statement: “And among His Signs is that the heaven and the earth stand by His Command” [al-Rūm:25], and He did not say ‘by His Creation.’ ’”</div>`,
+    htmlText: `<p class="mb-3 leading-relaxed">And <em class="italic opacity-80 font-medium">Abū ʿAbd Allāh [al-Bukẖārī]</em> said:</p>
+<blockquote class="border-l-2 sm:border-l-[3px] border-amber-600/70 pl-3 sm:pl-5 py-2 my-3 bg-amber-50/20 dark:bg-amber-950/10 rounded-r-lg space-y-3 leading-relaxed">
+<p class="font-semibold text-base sm:text-xl">“And the Qurʾān is the Speech of Allāh, uncreated, due to the statement of Allāh, Mighty and Majestic: “Indeed your Lord is Allāh who created the Heavens and Earth in six days and then ascended above the Throne. He covers the (light of) day with the (darkness) of night (which) pursues it swiftly and (He created) the sun, the moon, the stars (all being) subjected to His command.” [al-ʾAʿrāf:54]</p>
+<p>So, He made it clear that the created beings, and the pursuing, and the rapidity, and the subjected beings are by His command. Then He explained: “His is the creation and the command. Blessed be Allāh, the Lord of the worlds.” [al-ʾAʿrāf:54]</p>
+<p><em class="italic opacity-80 font-medium">Ibn ʿUyaynah</em> said: ‘Allāh distinguished the [act of] creation from the command with His statement: “His is the creation and the command.” [al-ʾAʿrāf:54] — so, the creation is by His command like His statement: “The decision of the matter, before and after (these events) is only with Allāh...” [al-Rūm:4], and like His statement: “Verily, His Command, when He intends a thing, is only that He says to it, "Be!" and it is!” [Yā-Sīn:82], and like His statement: “And among His Signs is that the heaven and the earth stand by His Command” [al-Rūm:25], and He did not say ‘by His Creation.’ ’”</p>
+</blockquote>`,
     citation: "Kẖalq ʾAfʿāl al-ʿIbād - pg.45",
     imageUrl: "/bukhari_scan.png",
     dateAdded: "2026-09-13",
