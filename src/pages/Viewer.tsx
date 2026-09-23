@@ -299,44 +299,21 @@ export function Viewer() {
     <div className={`mx-auto space-y-6 sm:space-y-8 animate-in fade-in duration-500 transition-all ${
       isReadingMode ? 'w-full max-w-none px-1 sm:px-4' : (isTwoPageView ? 'max-w-[92rem] px-2 sm:px-4' : (showNotes ? 'max-w-[90rem]' : 'max-w-5xl'))
     }`}>
-      <div className="flex justify-between items-center">
-        <Link to="/" className="inline-flex items-center text-primary/70 hover:text-primary transition-colors font-medium text-sm">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to collections
+      <div className="flex flex-wrap sm:flex-nowrap justify-between items-center gap-2">
+        <Link to="/" className="inline-flex items-center text-primary/70 hover:text-primary transition-colors font-medium text-xs sm:text-sm">
+          <ArrowLeft className="w-4 h-4 mr-1.5" />
+          <span>Back to library</span>
         </Link>
-        <div className="flex items-center gap-2">
-          {/* Reading Mode Button */}
-          <button
-            onClick={toggleReadingMode}
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-all text-sm font-medium cursor-pointer border ${
-              isReadingMode
-                ? 'bg-accent text-slate-900 border-accent font-semibold shadow-xs'
-                : 'text-slate-600 border-slate-200/80 hover:text-primary hover:bg-slate-50'
-            }`}
-            title={isReadingMode ? "Exit Reading Mode (Esc)" : "Enter Immersive Reading Mode (Hides header, footer, & sidebars)"}
-          >
-            <BookOpen className="w-4 h-4 text-accent" />
-            <span className="hidden sm:inline">Reading Mode</span>
-          </button>
-          <Link
-            to="/glossary"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition-colors text-sm font-medium"
-            title="Open Classical Glossary in new tab"
-          >
-            <BookOpen className="w-4 h-4" />
-            <span className="hidden sm:inline">Glossary</span>
-          </Link>
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={() => setShowNotes(!showNotes)}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors text-sm font-medium ${showNotes ? 'bg-primary/10 text-primary' : 'text-slate-600 hover:text-primary hover:bg-slate-50'}`}
-            title="Toggle Notes"
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg transition-colors text-xs sm:text-sm font-medium ${showNotes ? 'bg-primary/10 text-primary' : 'text-slate-600 hover:text-primary hover:bg-slate-50'}`}
+            title="Toggle Personal Notes"
           >
             <PenSquare className="w-4 h-4" />
-            <span className="hidden sm:inline">Notes</span>
+            <span>Notes</span>
           </button>
-          <label className="flex items-center gap-2 text-slate-600 hover:text-primary cursor-pointer px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors text-sm font-medium select-none">
+          <label className="flex items-center gap-1.5 text-slate-600 hover:text-primary cursor-pointer px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg hover:bg-slate-50 transition-colors text-xs sm:text-sm font-medium select-none">
             <input 
               type="checkbox" 
               checked={isRead}
@@ -351,15 +328,16 @@ export function Viewer() {
               }}
               className="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer"
             />
-            <span className="inline">finished reading?</span>
+            <span className="hidden xs:inline">Finished?</span>
           </label>
           <button 
             onClick={() => toggleBookmark(item.id)}
-            className="p-2 rounded-full hover:bg-slate-50 transition-colors"
+            className="p-1.5 sm:p-2 rounded-lg hover:bg-slate-100 transition-colors touch-manipulation cursor-pointer"
             title={bookmarked ? "Remove Bookmark" : "Bookmark this document"}
+            aria-label="Toggle Bookmark"
           >
             <Bookmark 
-              className={`w-6 h-6 transition-all ${bookmarked ? 'text-accent fill-accent' : 'text-slate-400 hover:text-accent'}`} 
+              className={`w-5 h-5 sm:w-6 sm:h-6 transition-all ${bookmarked ? 'text-accent fill-accent' : 'text-slate-400 hover:text-accent'}`} 
             />
           </button>
         </div>
@@ -460,8 +438,8 @@ export function Viewer() {
           </div>
           
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 pt-3 sm:pt-0 border-slate-200/60">
-            {/* 1-Page vs 2-Page Spread for Paginated Documents (hidden on very small mobile for screen fit) */}
-            {(item.pdfUrl || pages.length > 1) && (
+            {/* 1-Page vs 2-Page Spread for Paginated Text Documents (PDFs manage their own spread in canvas) */}
+            {pages.length > 1 && !item.pdfUrl && (
               <div className="hidden sm:flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
                 <button
                   onClick={() => handleToggleTwoPage(false)}
@@ -486,60 +464,65 @@ export function Viewer() {
               </div>
             )}
 
-            {/* Font Size Selector (especially helpful on mobile phones for readability) */}
-            <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-semibold">
-              <button
-                onClick={() => handleFontSizeChange('compact')}
-                className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
-                  fontSize === 'compact' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
-                }`}
-                title="Compact Text Size"
-              >
-                A-
-              </button>
-              <button
-                onClick={() => handleFontSizeChange('normal')}
-                className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
-                  fontSize === 'normal' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
-                }`}
-                title="Standard Text Size"
-              >
-                A
-              </button>
-              <button
-                onClick={() => handleFontSizeChange('large')}
-                className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
-                  fontSize === 'large' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
-                }`}
-                title="Large Text Size (Easier Reading on Mobile)"
-              >
-                A+
-              </button>
-            </div>
+            {/* Font Size Selector (Only for readable text documents, articles, and quotes — NOT for PDFs or Videos) */}
+            {item.type !== 'pdf' && item.type !== 'video' && item.type !== 'audio' && (
+              <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-semibold">
+                <button
+                  onClick={() => handleFontSizeChange('compact')}
+                  className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
+                    fontSize === 'compact' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                  }`}
+                  title="Compact Text Size"
+                >
+                  A-
+                </button>
+                <button
+                  onClick={() => handleFontSizeChange('normal')}
+                  className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
+                    fontSize === 'normal' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                  }`}
+                  title="Standard Text Size"
+                >
+                  A
+                </button>
+                <button
+                  onClick={() => handleFontSizeChange('large')}
+                  className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
+                    fontSize === 'large' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                  }`}
+                  title="Large Text Size"
+                >
+                  A+
+                </button>
+              </div>
+            )}
 
-            <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
-              <button 
-                onClick={() => setTheme('light')}
-                className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'light' ? 'bg-white shadow-xs text-slate-800' : 'text-slate-500 hover:text-slate-700'}`}
-                title="Light Theme"
-              >
-                <Sun className="w-4 h-4" />
-              </button>
-              <button 
-                onClick={() => setTheme('sepia')}
-                className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'sepia' ? 'bg-[#f4ecd8] shadow-xs text-amber-900' : 'text-slate-500 hover:text-amber-700'}`}
-                title="Sepia Theme"
-              >
-                <Coffee className="w-4 h-4" />
-              </button>
-              <button 
-                onClick={() => setTheme('dark')}
-                className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'dark' ? 'bg-slate-800 shadow-xs text-slate-100' : 'text-slate-500 hover:text-slate-800'}`}
-                title="Dark Theme"
-              >
-                <Moon className="w-4 h-4" />
-              </button>
-            </div>
+            {/* Reader Theme (Light/Sepia/Dark) - for PDFs and text */}
+            {item.type !== 'video' && (
+              <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
+                <button 
+                  onClick={() => setTheme('light')}
+                  className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'light' ? 'bg-white shadow-xs text-slate-800' : 'text-slate-500 hover:text-slate-700'}`}
+                  title="Light Theme"
+                >
+                  <Sun className="w-4 h-4" />
+                </button>
+                <button 
+                  onClick={() => setTheme('sepia')}
+                  className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'sepia' ? 'bg-[#f4ecd8] shadow-xs text-amber-900' : 'text-slate-500 hover:text-amber-700'}`}
+                  title="Sepia Theme"
+                >
+                  <Coffee className="w-4 h-4" />
+                </button>
+                <button 
+                  onClick={() => setTheme('dark')}
+                  className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'dark' ? 'bg-slate-800 shadow-xs text-slate-100' : 'text-slate-500 hover:text-slate-800'}`}
+                  title="Dark Theme"
+                >
+                  <Moon className="w-4 h-4" />
+                </button>
+              </div>
+            )}
             
             {/* Card & Download Action Buttons */}
             <div className="flex items-center gap-2">

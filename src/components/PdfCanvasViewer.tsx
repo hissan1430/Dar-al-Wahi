@@ -431,8 +431,8 @@ export function PdfCanvasViewer({
           </button>
         </div>
 
-        {/* Center Section: 1-Page / 2-Page View Switcher & Reading Mode */}
-        <div className="flex items-center space-x-1.5 sm:space-x-2">
+        {/* Center Section: 1-Page / 2-Page View Switcher (Desktop/Tablet) */}
+        <div className="hidden sm:flex items-center space-x-1.5 sm:space-x-2">
           {/* 1-Page vs 2-Page Spread Toggle */}
           <div className={`flex items-center rounded-lg p-0.5 border ${secondaryBg}`}>
             <button
@@ -445,7 +445,7 @@ export function PdfCanvasViewer({
               title="Single Page View"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">1-Page</span>
+              <span>1-Page</span>
             </button>
             <button
               onClick={() => handleToggleTwoPage(true)}
@@ -454,29 +454,15 @@ export function PdfCanvasViewer({
                   ? 'bg-primary text-white shadow-2xs' 
                   : `${textClass} opacity-70 hover:opacity-100`
               }`}
-              title="2-Page Book Spread with 3D Flip"
+              title="2-Page Book Spread"
             >
               <Columns2 className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">2-Pages</span>
+              <span>2-Pages</span>
             </button>
           </div>
-
-          {/* Reading Mode Button */}
-          <button
-            onClick={toggleReadingMode}
-            className={`flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer border ${
-              isReadingMode
-                ? 'bg-accent text-slate-900 border-accent font-bold shadow-2xs'
-                : `${iconBtnClass} ${secondaryBg}`
-            }`}
-            title={isReadingMode ? "Exit Reading Mode (Esc)" : "Immersive Distraction-Free Reading Mode"}
-          >
-            <BookOpen className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">Reading Mode</span>
-          </button>
         </div>
 
-        {/* Right Section: Zoom Controls & Actions */}
+        {/* Right Section: Fullscreen & Zoom Controls */}
         <div className="flex items-center space-x-1.5 sm:space-x-2">
           <button
             onClick={() => setIsImmersive(!isImmersive)}
@@ -486,11 +472,12 @@ export function PdfCanvasViewer({
                 : iconBtnClass
             }`}
             title={isImmersive ? "Exit Fullscreen" : "Fullscreen Reader"}
+            aria-label="Toggle Fullscreen"
           >
             {isImmersive ? <Minimize className="w-4 h-4" /> : <Maximize className="w-4 h-4" />}
           </button>
 
-          <div className={`hidden sm:flex items-center rounded-lg p-0.5 space-x-1 border ${secondaryBg}`}>
+          <div className={`hidden md:flex items-center rounded-lg p-0.5 space-x-1 border ${secondaryBg}`}>
             <button
               onClick={handleZoomOut}
               disabled={zoomMultiplier <= 0.7}
@@ -521,11 +508,11 @@ export function PdfCanvasViewer({
           <a
             href={pdfUrl}
             download={fileName}
-            className="inline-flex items-center space-x-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary/90 px-3 py-1.5 rounded-lg transition-all shadow-xs active:scale-95"
+            className="inline-flex items-center space-x-1.5 text-xs font-semibold text-white bg-primary hover:bg-primary/90 px-2.5 py-1.5 rounded-lg transition-all shadow-xs active:scale-95"
             title="Download PDF file"
           >
             <Download className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">PDF</span>
+            <span className="hidden xs:inline">PDF</span>
           </a>
         </div>
       </div>
