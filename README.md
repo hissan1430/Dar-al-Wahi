@@ -25,10 +25,9 @@ Each work is paired with high-fidelity manuscript scans, scholarly footnotes, te
 ## ✨ Features
 
 - **📜 Classical Library & Treatises**: 
-  - *Kitāb aṣ-Ṣarīḥ fī as-Sunnah* by Imām Ibn Jarīr aṭ-Ṭabarī (d. 310H)
+  - *Kitāb Ṣarīḥ al-Sunnah* by Imām Ibn Jarīr aṭ-Ṭabarī (d. 310H)
   - *Kitāb al-Jannah* from *Muṣannaf Ibn Abī Shaybah* (d. 235H)
   - *Man ʿĀsha Baʿda al-Mawt* by Ibn Abī ad-Dunyā (d. 281H)
-  - *Faḍl al-Madīnah* and related foundational treatises.
 
 - **🌅 Athār of the Day (أثر اليوم)**:
   - Rotates daily at midnight with authentic narrations from the Companions (*Ṣaḥābah*) and early Imāms of the Tābiʿīn (*Mujāhid, Ibn Masʿūd, Al-Ḥasan al-Baṣrī, Imām Mālik, Sufyān ath-Thawrī, Al-Awzāʿī, Imām Aḥmad*).
@@ -48,7 +47,7 @@ Each work is paired with high-fidelity manuscript scans, scholarly footnotes, te
   - Searchable glossary of foundational Islamic theological and creedal terms (*Sunnah, Bidʿah, Athar, Tawḥīd, Salaf, etc.*).
 
 - **📱 Progressive Web App (PWA) & Offline Access**:
-  - Fully responsive on mobile, tablet, and desktop viewports.
+  - Fully responsive on mobile, and desktop viewports.
   - Offline-ready with cached reading materials.
 
 ---
