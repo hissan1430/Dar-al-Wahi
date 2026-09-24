@@ -567,6 +567,48 @@ Abū ʿAbd Allāh [al-Bukẖārī] said: 'And everyone who does not recognise Al
     youtubeId: "Dj8ES4A-yk8",
     imageUrl: "https://i.ytimg.com/vi/Dj8ES4A-yk8/maxresdefault.jpg",
     dateAdded: "2026-09-21"
+  },
+  {
+    id: "24",
+    translator: "Abu_Talhah",
+    category: "Heart-Softeners",
+    type: "quote",
+    title: "Four Matters of Happiness & Four of Misery",
+    summary: "An authentic ḥadīth narrated by Saʿd ibn Abī Waqqāṣ, transmitted by Imām Ibn Ḥibbān in al-Mawārid and authenticated in al-Jāmiʿ aṣ-Ṣaḥīḥ, enumerating four causes of happiness and four causes of misery in this life.",
+    arabicText: `قَالَ الإِمَامُ ابْنُ حِبَّانَ رَحِمَهُ اللَّهُ كَمَا فِي "المَوَارِدِ" (ص ٣٠٢):
+أَخْبَرَنَا مُحَمَّدُ بْنُ إِسْحَاقَ مَوْلَى ثَقِيفٍ حَدَّثَنَا مُحَمَّدُ بْنُ عَبْدِ العَزِيزِ بْنِ أَبِي رِزْمَةَ حَدَّثَنَا الفَضْلُ بْنُ مُوسَى عَنْ عَبْدِ اللَّهِ بْنِ سَعِيدِ بْنِ أَبِي هِنْدٍ عَنْ إِسْمَاعِيلَ بْنِ مُحَمَّدِ بْنِ سَعْدِ بْنِ أَبِي وَقَّاصٍ عَنْ أَبِيهِ عَنْ جَدِّهِ قَالَ: قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَعَلَى آلِهِ وَسَلَّمَ:
+«أَرْبَعٌ مِنَ السَّعَادَةِ: المَرْأَةُ الصَّالِحَةُ، وَالمَسْكَنُ الوَاسِعُ، وَالجَارُ الصَّالِحُ، وَالمَرْكَبُ الهَنِيُّ، وَأَرْبَعٌ مِنَ الشَّقَاءِ: الجَارُ السُّوءُ، وَالمَرْأَةُ السُّوءُ، وَالمَرْكَبُ السُّوءُ، وَالمَسْكَنُ الضَّيِّقُ».
+
+هَذَا حَدِيثٌ صَحِيحٌ.`,
+    englishText: `Al-Imām Ibn Ḥibbān, may Allāh have mercy upon him, said, just as it is in 'al-Mawārid' (pg. 302):
+
+Muḥammad ibn Isḥāq, the freed slave of Thaqīf, narrated to us: Muḥammad ibn ʿAbd Al-ʿAzīz ibn Abī Razmah narrated to us: al-Faḍl ibn Mūsā narrated to us from ʿAbd Allāh ibn Saʿīd ibn Abī Hind from Ismāʿīl ibn Muḥammad ibn Saʿd ibn Abī Waqqāṣ, from his father, from his grandfather, he said:
+
+The Messenger of Allāh, may Allāh extol him and send peace and blessings upon him and his family, said:
+“Four are from happiness: The righteous woman (i.e. wife), and the spacious dwelling, and the righteous neighbour, and the pleasant [and comfortable] mount. And four are from misery: The evil neighbour, and the evil woman, and the evil mount and the constricted dwelling.”
+
+This is an authentic (ṣaḥīḥ) ḥadīth.`,
+    htmlText: `<div class="space-y-4 leading-relaxed">
+  <p class="leading-relaxed">
+    <strong class="font-semibold">Al-Imām Ibn Ḥibbān</strong>, may Allāh have mercy upon him, said, just as it is in <em>'al-Mawārid'</em> (pg. 302):
+  </p>
+  <p class="leading-relaxed text-sm opacity-90">
+    <em class="italic opacity-80 font-medium">Muḥammad ibn Isḥāq</em>, the freed slave of Thaqīf, narrated to us: <em class="italic opacity-80 font-medium">Muḥammad ibn ʿAbd Al-ʿAzīz ibn Abī Razmah</em> narrated to us: <em class="italic opacity-80 font-medium">al-Faḍl ibn Mūsā</em> narrated to us from <em class="italic opacity-80 font-medium">ʿAbd Allāh ibn Saʿīd ibn Abī Hind</em> from <em class="italic opacity-80 font-medium">Ismāʿīl ibn Muḥammad ibn Saʿd ibn Abī Waqqāṣ</em>, from <em class="italic opacity-80 font-medium">his father</em>, from <em class="italic opacity-80 font-medium">his grandfather</em> [Saʿd ibn Abī Waqqāṣ, may Allāh be pleased with him], he said:
+  </p>
+  <p class="leading-relaxed">
+    The Messenger of Allāh, may Allāh extol him and send peace and blessings upon him and his family, said:
+  </p>
+  <blockquote class="border-l-2 sm:border-l-[3px] border-amber-600/70 pl-3 sm:pl-5 py-2 my-4 bg-amber-50/20 dark:bg-amber-950/10 rounded-r-lg space-y-2 font-serif text-base sm:text-lg leading-relaxed">
+    <p>“Four are from happiness: <strong>The righteous woman</strong> (i.e. wife), and <strong>the spacious dwelling</strong>, and <strong>the righteous neighbour</strong>, and <strong>the pleasant [and comfortable] mount</strong>.</p>
+    <p>And four are from misery: <strong>The evil neighbour</strong>, and <strong>the evil woman</strong>, and <strong>the evil mount</strong>, and <strong>the constricted dwelling</strong>.”</p>
+  </blockquote>
+  <p class="font-medium text-sm pt-2 border-t border-slate-200/60 dark:border-slate-800/80 opacity-90 italic">
+    This is an authentic (ṣaḥīḥ) ḥadīth.
+  </p>
+</div>`,
+    citation: "Al-Jāmiʿ aṣ-Ṣaḥīḥ mimmā laysa fī aṣ-Ṣaḥīḥayn 3/51 — Maktabah Ibn Taymiyyah al-Qāhirah",
+    imageUrl: "/New_Project_3_A7EB186.png",
+    dateAdded: "2026-09-23"
   }
 ];
 
