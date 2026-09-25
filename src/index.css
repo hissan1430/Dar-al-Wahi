@@ -2,25 +2,45 @@
 
 @theme {
   --color-primary: #0B465E;
-  --color-accent: #C39F61;
-  --color-background: #FDFBF7;
+  --color-accent: #C19B53;
+  --color-accent-gold: #9A7536;
+  --color-background: #FAF6EE;
+  --color-card: #FFFDF9;
+  --color-card-border: #E7DFC9;
+  --color-ink: #231C16;
+  --color-ink-muted: #6D5C4F;
   
-  --font-arabic: "Amiri", serif;
-  --font-arabic-block: "Noto Kufi Arabic", "Kufam", "Almarai", sans-serif;
-  --font-heading: "Playfair Display", serif;
-  --font-body: "Lora", serif;
+  --font-arabic: "Amiri", "Scheherazade New", serif;
+  --font-naskh: "Noto Naskh Arabic", "Amiri", serif;
+  --font-arabic-block: "Noto Kufi Arabic", "Almarai", sans-serif;
+  --font-heading: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-body: "DM Sans", sans-serif;
   --font-merriweather: "Merriweather", serif;
   --font-system-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 @layer base {
+  :root {
+    --bg-cream: #FAF6EE;
+    --card-cream: #FFFDF9;
+    --border-cream: #E7DFC9;
+    --ink-dark: #231C16;
+    --ink-muted: #6D5C4F;
+    --accent-gold: #C19B53;
+  }
+
   body {
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
     background-color: var(--color-background);
+    color: var(--color-ink);
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+    letter-spacing: -0.015em;
   }
 
   /* Robust styling for notes and rich text editor lists */

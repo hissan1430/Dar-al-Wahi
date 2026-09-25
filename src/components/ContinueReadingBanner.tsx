@@ -25,7 +25,7 @@ export function ContinueReadingBanner() {
   const pageInfo = `Page ${latestRead.currentPage}`;
 
   return (
-    <div className="bg-white/80 backdrop-blur-xs border border-slate-200/90 rounded-xl px-4 py-3 shadow-2xs mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 transition-all">
+    <div className="bg-[#FFFDF9] border border-[#E7DFC9] rounded-xl px-4 py-3 shadow-2xs mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 transition-all">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
           <BookOpen className="w-4 h-4" />

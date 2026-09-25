@@ -65,7 +65,7 @@ export function ItemCard({ item }: ItemCardProps) {
 
   return (
     <>
-      <div className="bg-white border border-slate-200 rounded-xl shadow-xs hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group h-full">
+      <div className="bg-[#FFFDF9] border border-[#E7DFC9] hover:border-[#C19B53]/80 rounded-2xl shadow-[0_2px_12px_rgba(40,30,20,0.04)] hover:shadow-[0_8px_24px_rgba(40,30,20,0.08)] transition-all flex flex-col justify-between overflow-hidden group h-full">
         {/* Top Media / Scan Thumbnail Banner */}
         {hasPreviewBanner ? (
           <div 
@@ -194,13 +194,13 @@ export function ItemCard({ item }: ItemCardProps) {
           )}
 
           {/* Title with standardized 2-line height */}
-          <h3 className="font-heading text-base sm:text-lg font-medium text-slate-900 mb-1.5 line-clamp-2 leading-snug min-h-[2.85rem]" title={item.title}>
+          <h3 className="font-heading text-base sm:text-lg font-bold text-[#231C16] group-hover:text-primary mb-1.5 line-clamp-2 leading-snug min-h-[2.85rem] transition-colors" title={item.title}>
             {item.title}
           </h3>
 
           {/* Author or speaker with single line truncation and fixed height */}
           {(item.author || item.speaker) ? (
-            <p className="text-slate-500 font-medium text-xs mb-2 line-clamp-1 truncate h-4" title={item.author || item.speaker}>
+            <p className="text-[#746253] font-medium text-xs mb-2 line-clamp-1 truncate h-4" title={item.author || item.speaker}>
               {item.author || item.speaker}
             </p>
           ) : (
@@ -209,11 +209,11 @@ export function ItemCard({ item }: ItemCardProps) {
 
           {/* Summary with standardized 2-line height */}
           {item.summary ? (
-            <p className="text-slate-600 leading-relaxed mb-3 text-xs sm:text-sm line-clamp-2 min-h-[2.5rem]">
+            <p className="text-[#483B30] font-serif leading-relaxed mb-3 text-xs sm:text-sm line-clamp-2 min-h-[2.5rem]">
               {item.summary}
             </p>
           ) : item.englishText ? (
-            <p className="text-slate-600 leading-relaxed mb-3 text-xs sm:text-sm line-clamp-2 min-h-[2.5rem]">
+            <p className="text-[#483B30] font-serif leading-relaxed mb-3 text-xs sm:text-sm line-clamp-2 min-h-[2.5rem]">
               {item.englishText}
             </p>
           ) : (
@@ -221,11 +221,11 @@ export function ItemCard({ item }: ItemCardProps) {
           )}
 
           {/* Footer Area - Pinned to bottom */}
-          <div className="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between gap-2 shrink-0">
+          <div className="mt-auto pt-3 border-t border-[#E7DFC9]/80 flex items-center justify-between gap-2 shrink-0">
             <div className="flex items-center gap-2">
-              <span className="text-[11px] text-slate-400">{new Date(item.dateAdded).toLocaleDateString()}</span>
+              <span className="text-[11px] text-[#867566] font-mono">{new Date(item.dateAdded).toLocaleDateString()}</span>
               {hasProgress && progress?.currentPage && item.pages && (
-                <span className="text-[10px] font-semibold text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded">
+                <span className="text-[10px] font-semibold text-[#231C16] bg-[#F5EFE3] px-1.5 py-0.5 rounded font-mono">
                   p. {progress.currentPage}
                 </span>
               )}

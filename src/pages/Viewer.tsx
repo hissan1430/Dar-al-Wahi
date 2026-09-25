@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { MOCK_DATA } from '../data';
-import { ArrowLeft, Bookmark, FileText, Download, Sun, Moon, Coffee, CheckCircle, Circle, PenSquare, X, RotateCcw, ArrowUpRight, BookOpen, Image as ImageIcon, Play, Headphones, Newspaper, Quote, ListVideo, ChevronLeft, ChevronRight, ExternalLink, Columns2, Type } from 'lucide-react';
+import { ArrowLeft, Bookmark, FileText, Download, Sun, Moon, CheckCircle, Circle, PenSquare, X, RotateCcw, ArrowUpRight, BookOpen, Image as ImageIcon, Play, Headphones, Newspaper, Quote, ListVideo, ChevronLeft, ChevronRight, ChevronDown, ExternalLink, Columns2, Type, Copy, Check, Share2, Sparkles, Split } from 'lucide-react';
 import { useBookmarks } from '../hooks/useBookmarks';
 import { useReadingStats } from '../hooks/useReadingStats';
 import { useNotes } from '../hooks/useNotes';
@@ -12,7 +12,7 @@ import { RichTextEditor } from '../components/RichTextEditor';
 import { AnnotatedText } from '../components/AnnotatedText';
 import { CollectionCardModal } from '../components/CollectionCardModal';
 
-export type ReaderTheme = 'light' | 'dark' | 'sepia';
+export type ReaderTheme = 'cream' | 'light' | 'dark';
 
 export function Viewer() {
   const { id } = useParams<{ id: string }>();
@@ -24,7 +24,38 @@ export function Viewer() {
   const { stats, markAsRead, unmarkAsRead, addTime, recordCategoryView } = useReadingStats();
   const { getProgress, updateProgress } = useReadingProgress();
 
-  const [theme, setTheme] = useState<ReaderTheme>('light');
+  // Cream is the default manuscript theme (inspired by Alfanus)
+  const [theme, setTheme] = useState<ReaderTheme>(() => {
+    try {
+      const saved = localStorage.getItem('dar_alwahi_reader_theme');
+      if (saved === 'cream' || saved === 'light' || saved === 'dark') {
+        return saved as ReaderTheme;
+      }
+    } catch {}
+    return 'cream';
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('dar_alwahi_reader_theme', theme);
+    } catch {}
+  }, [theme]);
+
+  // Copy status feedback for Alfanus 3-way copy actions
+  const [copyFeedback, setCopyFeedback] = useState<'idle' | 'arabic' | 'clean' | 'citation'>('idle');
+  const [showCopyMenu, setShowCopyMenu] = useState(false);
+  const copyMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (copyMenuRef.current && !copyMenuRef.current.contains(e.target as Node)) {
+        setShowCopyMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const [fontSize, setFontSize] = useState<'normal' | 'large' | 'compact'>(() => {
     try {
       const saved = localStorage.getItem('dar_alwahi_quote_font_size');
@@ -41,6 +72,41 @@ export function Viewer() {
     } catch {
       // ignore
     }
+  };
+
+  // Alfanus-inspired 3-Way Copy Handlers
+  const handleCopyArabic = () => {
+    if (!item?.arabicText) return;
+    navigator.clipboard.writeText(item.arabicText);
+    setCopyFeedback('arabic');
+    setTimeout(() => setCopyFeedback('idle'), 2200);
+  };
+
+  const handleCopyCleanArabic = () => {
+    if (!item?.arabicText) return;
+    const clean = item.arabicText
+      .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '')
+      .replace(/[إأآا]/g, 'ا')
+      .replace(/ـ/g, '');
+    navigator.clipboard.writeText(clean);
+    setCopyFeedback('clean');
+    setTimeout(() => setCopyFeedback('idle'), 2200);
+  };
+
+  const handleCopyCitation = () => {
+    if (!item) return;
+    const arabic = item.arabicText ? `${item.arabicText}\n\n` : '';
+    const cleanEnglish = item.englishText || (item.htmlText ? item.htmlText.replace(/<[^>]*>?/gm, ' ').replace(/\s+/g, ' ').trim() : '');
+    const english = cleanEnglish ? `"${cleanEnglish}"\n\n` : '';
+    const authorOrSpeaker = item.speaker || item.author ? `— ${item.speaker || item.author}\n` : '';
+    const source = item.citation ? `Reference: ${item.citation}\n` : '';
+    const translator = item.translator && item.translator !== 'None' 
+      ? `Translator: ${item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}\n` 
+      : '';
+    const formatted = `${arabic}${english}${authorOrSpeaker}${source}${translator}[Dār al-Waḥī]`;
+    navigator.clipboard.writeText(formatted);
+    setCopyFeedback('citation');
+    setTimeout(() => setCopyFeedback('idle'), 2200);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -410,7 +476,7 @@ export function Viewer() {
                 {item.author || item.speaker}
               </p>
             )}
-            {item.translator && item.translator !== 'None' && (
+            {item.translator && item.translator !== 'None' && (!item.speaker || !item.speaker.toLowerCase().includes(item.translator === 'Abu_Mundhir' ? 'mundhir' : 'talhah')) && (
               <p className="text-slate-500 text-xs sm:text-sm">
                 {item.type === 'video' ? 'Curated by: ' : 'Translated by: '}
                 <span className="text-slate-700 font-medium">
@@ -423,11 +489,11 @@ export function Viewer() {
           <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 pt-3 sm:pt-0 border-slate-200/60">
             {/* 1-Page vs 2-Page Spread for Paginated Text Documents (PDFs manage their own spread in canvas) */}
             {pages.length > 1 && !item.pdfUrl && (
-              <div className="hidden sm:flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
+              <div className="hidden sm:flex items-center bg-[#F5EFE3] p-0.5 rounded-lg border border-[#DDD2B8] text-xs font-semibold">
                 <button
                   onClick={() => handleToggleTwoPage(false)}
                   className={`flex items-center space-x-1 px-2.5 py-1.5 rounded-md transition-all cursor-pointer ${
-                    !isTwoPageView ? 'bg-white shadow-2xs text-primary font-bold' : 'text-slate-600 hover:text-slate-900'
+                    !isTwoPageView ? 'bg-[#FFFDF9] shadow-2xs text-[#231C16] font-bold border border-[#E7DFC9]' : 'text-[#6D5C4F] hover:text-[#231C16]'
                   }`}
                   title="Single Page View"
                 >
@@ -437,7 +503,7 @@ export function Viewer() {
                 <button
                   onClick={() => handleToggleTwoPage(true)}
                   className={`flex items-center space-x-1 px-2.5 py-1.5 rounded-md transition-all cursor-pointer ${
-                    isTwoPageView ? 'bg-white shadow-2xs text-primary font-bold' : 'text-slate-600 hover:text-slate-900'
+                    isTwoPageView ? 'bg-[#FFFDF9] shadow-2xs text-[#231C16] font-bold border border-[#E7DFC9]' : 'text-[#6D5C4F] hover:text-[#231C16]'
                   }`}
                   title="2-Page Book Spread"
                 >
@@ -449,11 +515,11 @@ export function Viewer() {
 
             {/* Font Size Selector (Only for readable text documents, articles, and quotes — NOT for PDFs or Videos) */}
             {item.type !== 'pdf' && item.type !== 'video' && item.type !== 'audio' && (
-              <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs font-semibold">
+              <div className="flex items-center space-x-1 bg-[#F5EFE3] p-1 rounded-lg border border-[#DDD2B8] text-xs font-semibold">
                 <button
                   onClick={() => handleFontSizeChange('compact')}
                   className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
-                    fontSize === 'compact' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                    fontSize === 'compact' ? 'bg-[#FFFDF9] shadow-xs text-[#231C16] font-bold border border-[#E7DFC9]' : 'text-[#6D5C4F] hover:text-[#231C16]'
                   }`}
                   title="Compact Text Size"
                 >
@@ -462,7 +528,7 @@ export function Viewer() {
                 <button
                   onClick={() => handleFontSizeChange('normal')}
                   className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
-                    fontSize === 'normal' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                    fontSize === 'normal' ? 'bg-[#FFFDF9] shadow-xs text-[#231C16] font-bold border border-[#E7DFC9]' : 'text-[#6D5C4F] hover:text-[#231C16]'
                   }`}
                   title="Standard Text Size"
                 >
@@ -471,7 +537,7 @@ export function Viewer() {
                 <button
                   onClick={() => handleFontSizeChange('large')}
                   className={`px-2 py-1 rounded-md transition-colors cursor-pointer touch-manipulation ${
-                    fontSize === 'large' ? 'bg-white shadow-xs text-primary font-bold' : 'text-slate-500 hover:text-slate-800'
+                    fontSize === 'large' ? 'bg-[#FFFDF9] shadow-xs text-[#231C16] font-bold border border-[#E7DFC9]' : 'text-[#6D5C4F] hover:text-[#231C16]'
                   }`}
                   title="Large Text Size"
                 >
@@ -480,26 +546,29 @@ export function Viewer() {
               </div>
             )}
 
-            {/* Reader Theme (Light/Sepia/Dark) - for PDFs and text */}
+            {/* Reader Theme (Cream [Default] / Light / Dark) */}
             {item.type !== 'video' && (
-              <div className="flex items-center space-x-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
+              <div className="flex items-center space-x-1 bg-[#F5EFE3] p-1 rounded-lg border border-[#DDD2B8]">
+                <button 
+                  onClick={() => setTheme('cream')}
+                  className={`px-2.5 py-1 rounded-md transition-colors cursor-pointer touch-manipulation text-xs font-medium flex items-center gap-1.5 ${
+                    theme === 'cream' ? 'bg-[#FFFDF9] shadow-xs text-[#231C16] border border-[#E7DFC9] font-bold' : 'text-[#6D5C4F] hover:text-[#231C16]'
+                  }`}
+                  title="Cream Theme (Classical Parchment & Alfanus aesthetic - Default)"
+                >
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FAF6EE] border border-[#C19B53]" />
+                  <span>Cream</span>
+                </button>
                 <button 
                   onClick={() => setTheme('light')}
-                  className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'light' ? 'bg-white shadow-xs text-slate-800' : 'text-slate-500 hover:text-slate-700'}`}
-                  title="Light Theme"
+                  className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'light' ? 'bg-white shadow-xs text-slate-800' : 'text-[#6D5C4F] hover:text-[#231C16]'}`}
+                  title="Pure White Theme"
                 >
                   <Sun className="w-4 h-4" />
                 </button>
                 <button 
-                  onClick={() => setTheme('sepia')}
-                  className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'sepia' ? 'bg-[#f4ecd8] shadow-xs text-amber-900' : 'text-slate-500 hover:text-amber-700'}`}
-                  title="Sepia Theme"
-                >
-                  <Coffee className="w-4 h-4" />
-                </button>
-                <button 
                   onClick={() => setTheme('dark')}
-                  className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'dark' ? 'bg-slate-800 shadow-xs text-slate-100' : 'text-slate-500 hover:text-slate-800'}`}
+                  className={`p-1.5 rounded-md transition-colors cursor-pointer touch-manipulation ${theme === 'dark' ? 'bg-slate-800 shadow-xs text-slate-100' : 'text-[#6D5C4F] hover:text-[#231C16]'}`}
                   title="Dark Theme"
                 >
                   <Moon className="w-4 h-4" />
@@ -518,6 +587,19 @@ export function Viewer() {
                   <ImageIcon className="w-4 h-4 text-primary" />
                   <span className="hidden sm:inline">Save Card</span>
                 </button>
+              )}
+
+              {item.type === 'video' && item.youtubeId && (
+                <a
+                  href={`https://www.youtube.com/watch?v=${item.youtubeId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1.5 text-slate-700 bg-slate-100 hover:bg-slate-200 active:scale-95 transition-all px-3.5 py-2 rounded-lg font-medium shadow-2xs flex-shrink-0 text-sm border border-slate-200/80 cursor-pointer"
+                  title="Watch on YouTube"
+                >
+                  <ExternalLink className="w-4 h-4 text-primary" />
+                  <span className="hidden sm:inline">YouTube</span>
+                </a>
               )}
 
               {item.pdfUrl ? (
@@ -555,13 +637,13 @@ export function Viewer() {
         {item.summary && (
           <div className={`px-6 py-4 sm:px-8 border-b flex items-start space-x-3 transition-colors ${
             theme === 'dark' ? 'bg-slate-900/50 border-slate-800 text-slate-300' :
-            theme === 'sepia' ? 'bg-[#f4ecd8] border-[#e4dcc8] text-stone-800' :
+            theme === 'cream' ? 'bg-[#F5EFE3] border-[#E7DFC9] text-[#3D2E22]' :
             'bg-slate-50 border-slate-200 text-slate-700'
           }`}>
             <div className="text-xs sm:text-sm leading-relaxed">
               <span className={`font-semibold ${
                 theme === 'dark' ? 'text-slate-100' :
-                theme === 'sepia' ? 'text-stone-900' :
+                theme === 'cream' ? 'text-[#231C16]' :
                 'text-slate-900'
               }`}>Overview: </span>
               {item.summary}
@@ -573,6 +655,7 @@ export function Viewer() {
         <div className={`p-2.5 sm:p-8 flex flex-col items-center transition-colors duration-300 ${
           theme === 'dark' ? 'bg-[#0f1115]' : 
           theme === 'sepia' ? 'bg-[#e4dcc8]' : 
+          theme === 'cream' ? 'bg-[#FAF6EE]' :
           'bg-slate-100'
         }`}>
           {item.type === 'video' && (item.youtubeId || (item.videos && item.videos.length > 0)) ? (
@@ -704,23 +787,22 @@ export function Viewer() {
                 </>
               ) : (
                 /* Single Video Player */
-                <div className="w-full aspect-video rounded-xl shadow-lg overflow-hidden bg-black">
+                <div className="w-full aspect-video rounded-xl shadow-lg overflow-hidden bg-black ring-1 ring-black/10">
                   <iframe
-                    width="100%"
-                    height="100%"
+                    className="w-full h-full border-0"
                     src={`https://www.youtube.com/embed/${item.youtubeId}`}
                     title={item.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
                 </div>
               )}
 
               {(item.htmlText || item.englishText) && (
-                <div className={`w-full shadow-md border p-8 flex flex-col rounded-xl transition-colors ${
+                <div className={`w-full shadow-md border p-6 sm:p-8 flex flex-col rounded-xl transition-colors ${
                   theme === 'dark' ? 'bg-[#1a1a1a] border-[#333] text-slate-200' :
                   theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' :
+                  theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]' :
                   'bg-white border-slate-200 text-slate-800'
                 }`}>
                   {item.htmlText ? (
@@ -752,6 +834,7 @@ export function Viewer() {
                 <div className={`w-full shadow-md border p-8 flex flex-col rounded-xl transition-colors ${
                   theme === 'dark' ? 'bg-[#1a1a1a] border-[#333] text-slate-200' :
                   theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' :
+                  theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]' :
                   'bg-white border-slate-200 text-slate-800'
                 }`}>
                   {item.htmlText ? (
@@ -789,8 +872,8 @@ export function Viewer() {
                     key={`text-spread-${textLeftPage}`}
                     className="book-spread relative flex justify-center items-stretch rounded-xl shadow-2xl p-2 sm:p-5 transition-all duration-300 border w-full"
                     style={{
-                      backgroundColor: theme === 'dark' ? '#141414' : theme === 'sepia' ? '#ebdcc1' : '#e2e8f0',
-                      borderColor: theme === 'dark' ? '#262626' : theme === 'sepia' ? '#d8c8a8' : '#cbd5e1',
+                      backgroundColor: theme === 'dark' ? '#141414' : theme === 'cream' ? '#F5EFE3' : '#e2e8f0',
+                      borderColor: theme === 'dark' ? '#262626' : theme === 'cream' ? '#DDD2B8' : '#cbd5e1',
                     }}
                   >
                     {/* Left Folio (Base) */}
@@ -799,8 +882,8 @@ export function Viewer() {
                       className={`relative flex-1 flex flex-col justify-between p-4 sm:p-8 rounded-l-lg overflow-hidden cursor-pointer transition-all hover:brightness-[0.99] border-r ${
                         theme === 'dark' 
                           ? 'bg-[#1e1e1e] border-[#333] text-slate-200' 
-                          : theme === 'sepia' 
-                          ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' 
+                          : theme === 'cream'
+                          ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]'
                           : 'bg-white border-slate-200 text-slate-800'
                       } shadow-md min-h-[520px]`}
                       title="Click left page to go back"
@@ -831,8 +914,8 @@ export function Viewer() {
                       } ${
                         theme === 'dark' 
                           ? 'bg-[#1e1e1e] border-[#333] text-slate-200' 
-                          : theme === 'sepia' 
-                          ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' 
+                          : theme === 'cream'
+                          ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]'
                           : 'bg-white border-slate-200 text-slate-800'
                       } shadow-md min-h-[520px]`}
                       title={textRightPage ? "Click right page to advance" : undefined}
@@ -880,6 +963,8 @@ export function Viewer() {
                               ? 'bg-[#1e1e1e] border-[#333] text-slate-200' 
                               : theme === 'sepia' 
                               ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' 
+                              : theme === 'cream'
+                              ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]'
                               : 'bg-white border-slate-200 text-slate-800'
                           }`}
                         >
@@ -899,6 +984,8 @@ export function Viewer() {
                               ? 'bg-[#1e1e1e] border-[#333] text-slate-200' 
                               : theme === 'sepia' 
                               ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' 
+                              : theme === 'cream'
+                              ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]'
                               : 'bg-white border-slate-200 text-slate-800'
                           }`}
                         >
@@ -930,6 +1017,8 @@ export function Viewer() {
                               ? 'bg-[#1e1e1e] border-[#333] text-slate-200' 
                               : theme === 'sepia' 
                               ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' 
+                              : theme === 'cream'
+                              ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]'
                               : 'bg-white border-slate-200 text-slate-800'
                           }`}
                         >
@@ -949,6 +1038,8 @@ export function Viewer() {
                               ? 'bg-[#1e1e1e] border-[#333] text-slate-200' 
                               : theme === 'sepia' 
                               ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' 
+                              : theme === 'cream'
+                              ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]'
                               : 'bg-white border-slate-200 text-slate-800'
                           }`}
                         >
@@ -976,10 +1067,17 @@ export function Viewer() {
                 /* SINGLE PAGE TEXT VIEW */
                 <div className={`w-full shadow-md border px-4 py-6 sm:p-12 min-h-[600px] leading-relaxed whitespace-pre-wrap flex flex-col justify-between rounded-xl transition-colors ${
                   theme === 'dark' ? 'bg-[#1a1a1a] border-[#333] text-slate-200' :
-                  theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8] text-amber-900' :
+                  theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16]' :
                   'bg-white border-slate-200 text-slate-800'
                 }`}>
-                  <div key={currentPage} className={`prose max-w-none text-sm sm:text-base leading-relaxed animate-in fade-in zoom-in-95 duration-500 ease-out ${theme === 'dark' ? 'prose-invert' : ''}`}>
+                  <div 
+                    key={currentPage} 
+                    className={`prose max-w-none leading-relaxed animate-in fade-in zoom-in-95 duration-500 ease-out transition-all ${theme === 'dark' ? 'prose-invert' : ''}`}
+                    style={{
+                      fontSize: fontSize === 'compact' ? '0.925rem' : fontSize === 'large' ? '1.25rem' : '1.05rem',
+                      lineHeight: fontSize === 'compact' ? '1.6' : fontSize === 'large' ? '2.05' : '1.8'
+                    }}
+                  >
                     <AnnotatedText text={pages[currentPage - 1]} theme={theme} />
                   </div>
                 </div>
@@ -988,7 +1086,7 @@ export function Viewer() {
               {/* Bottom Pagination for Text */}
               <div className={`w-full flex justify-between items-center text-xs pt-4 border-t font-medium ${
                 theme === 'dark' ? 'border-[#333] text-slate-500' :
-                theme === 'sepia' ? 'border-[#e4dcc8] text-amber-700' :
+                theme === 'cream' ? 'border-[#E7DFC9] text-[#6D5C4F]' :
                 'border-slate-200 text-slate-400'
               }`}>
                 <button 
@@ -1018,8 +1116,8 @@ export function Viewer() {
                     className={`w-11 sm:w-13 text-center py-1 px-1 rounded-md border font-semibold text-xs transition-all focus:outline-hidden focus:ring-1 focus:ring-accent ${
                       theme === 'dark'
                         ? 'bg-[#222] border-[#444] text-white focus:border-accent'
-                        : theme === 'sepia'
-                        ? 'bg-[#f4ecd8] border-[#d8cfb9] text-amber-950 focus:border-accent'
+                        : theme === 'cream'
+                        ? 'bg-[#F5EFE3] border-[#DDD2B8] text-[#231C16] focus:border-accent'
                         : 'bg-white border-slate-300 text-slate-900 focus:border-accent shadow-2xs'
                     }`}
                   />
@@ -1041,38 +1139,123 @@ export function Viewer() {
               </p>
             </div>
           ) : item.type === 'quote' || item.englishText ? (
-            /* Quote and Image rendering with mobile accessibility, responsive typography & font scaling */
+            /* Alfanus-inspired Manuscript Quote & Athār Reader */
             <div className="w-full max-w-4xl space-y-6 relative flex flex-col items-center">
-              <div className={`w-full shadow-md border px-4 py-6 sm:px-10 sm:py-12 flex flex-col rounded-2xl transition-colors ${
+              <div className={`w-full shadow-md border px-4 py-6 sm:px-10 sm:py-10 flex flex-col rounded-2xl transition-colors relative overflow-hidden ${
                 theme === 'dark' ? 'bg-[#181a1f] border-[#2c323f] text-slate-100' :
-                theme === 'sepia' ? 'bg-[#fcf7ee] border-[#e7ddc7] text-[#3d2f1d]' :
+                theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16] shadow-[0_12px_36px_rgba(40,30,20,0.06)]' :
                 'bg-white border-slate-200/90 text-slate-800'
               }`}>
+                {/* Classical Golden Manuscript Hairline at top of card */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#C19B53]/80 to-transparent" />
+
                 <div className="animate-in fade-in zoom-in-95 duration-500 ease-out flex flex-col space-y-6">
+                  
+                  {/* Top Card Meta & Quiet Action Cluster */}
+                  <div className="flex items-center justify-between gap-3 pb-3 border-b border-[#E7DFC9]/80 text-xs">
+                    {/* Left: Category Pill */}
+                    <div className="flex items-center gap-2">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#F5EFE3] text-[#6D5C4F] border border-[#DDD2B8] font-medium text-[11px] uppercase tracking-wider">
+                        {item.category}
+                      </span>
+                    </div>
+
+                    {/* Right: Quiet, Minimalist Actions */}
+                    <div className="flex items-center gap-1.5 flex-shrink-0">
+                      {/* Unified Copy Menu */}
+                      <div className="relative" ref={copyMenuRef}>
+                        <button
+                          onClick={() => setShowCopyMenu(prev => !prev)}
+                          className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer border ${
+                            copyFeedback !== 'idle'
+                              ? 'bg-[#155e4e] text-white border-[#155e4e] shadow-2xs'
+                              : 'bg-[#F5EFE3] hover:bg-[#EAE1D0] text-[#231C16] border-[#DDD2B8]'
+                          }`}
+                          title="Copy text or citation"
+                        >
+                          {copyFeedback !== 'idle' ? (
+                            <>
+                              <Check className="w-3.5 h-3.5 text-white" />
+                              <span>Copied!</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-3.5 h-3.5 opacity-70" />
+                              <span>Copy</span>
+                              <ChevronDown className="w-3 h-3 opacity-60" />
+                            </>
+                          )}
+                        </button>
+
+                        {showCopyMenu && (
+                          <div className="absolute right-0 mt-1.5 w-60 bg-[#FFFDF9] border border-[#E7DFC9] rounded-xl shadow-xl z-50 py-1.5 text-xs animate-in fade-in zoom-in-95 duration-150">
+                            {item.arabicText && (
+                              <>
+                                <button
+                                  onClick={() => { handleCopyArabic(); setShowCopyMenu(false); }}
+                                  className="w-full px-3.5 py-2 text-left hover:bg-[#F5EFE3] flex items-center justify-between text-[#231C16] cursor-pointer"
+                                >
+                                  <span>Arabic with Tashkeel</span>
+                                  <span className="font-arabic text-sm text-[#C19B53]">مع التشكيل</span>
+                                </button>
+                                <button
+                                  onClick={() => { handleCopyCleanArabic(); setShowCopyMenu(false); }}
+                                  className="w-full px-3.5 py-2 text-left hover:bg-[#F5EFE3] flex items-center justify-between text-[#231C16] cursor-pointer"
+                                >
+                                  <span>Plain Arabic (Clean)</span>
+                                  <span className="font-arabic text-sm text-[#8C7A6B]">مجرد</span>
+                                </button>
+                                <div className="my-1 border-t border-[#E7DFC9]" />
+                              </>
+                            )}
+                            <button
+                              onClick={() => { handleCopyCitation(); setShowCopyMenu(false); }}
+                              className="w-full px-3.5 py-2 text-left hover:bg-[#F5EFE3] flex items-center justify-between text-[#231C16] cursor-pointer"
+                            >
+                              <span>Complete Citation</span>
+                              <span className="text-[10px] text-[#8C7A6B] uppercase font-sans">Full Reference</span>
+                            </button>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Save Card Modal */}
+                      <button
+                        onClick={() => setShowCardModal(true)}
+                        className="px-2.5 py-1.5 rounded-lg bg-[#F5EFE3] hover:bg-[#EAE1D0] text-[#231C16] border border-[#DDD2B8] transition-all flex items-center gap-1.5 cursor-pointer text-xs font-medium"
+                        title="Save high-resolution presentation card"
+                      >
+                        <ImageIcon className="w-3.5 h-3.5 text-primary" />
+                        <span className="hidden sm:inline">Card</span>
+                      </button>
+                    </div>
+                  </div>
+
                   {/* Manuscript / Artifact Scan Preview */}
                   {item.imageUrl && (
                     <div className="w-full flex justify-center py-2">
                       <img 
                         src={item.imageUrl} 
                         alt={item.title} 
-                        className="max-h-[500px] w-auto max-w-full rounded-lg object-contain mx-auto"
+                        className="max-h-[500px] w-auto max-w-full rounded-lg object-contain mx-auto shadow-sm"
                         referrerPolicy="no-referrer"
                       />
                     </div>
                   )}
 
-                  {/* Arabic Matn with mobile-tuned line height and clear separation */}
+                  {/* Arabic Matn */}
                   {item.arabicText && (
                     <div 
-                      className={`text-right font-arabic rounded-xl p-4 sm:p-6 transition-all ${
+                      className={`text-right rounded-xl p-5 sm:p-7 transition-all font-arabic ${
                         theme === 'dark' ? 'bg-slate-900/60 border border-slate-800/80 text-amber-300/95' :
-                        theme === 'sepia' ? 'bg-[#f4ecd8]/60 border border-[#e4dcc8] text-amber-950' :
+                        theme === 'cream' ? 'bg-[#FBF8F1] border border-[#DDD2B8] text-[#1E1710] shadow-[inset_0_1px_3px_rgba(40,30,20,0.02)]' :
                         'bg-amber-50/50 border border-amber-100 text-slate-900'
-                      } ${
-                        fontSize === 'compact' ? 'text-xl sm:text-2xl leading-[2]' :
-                        fontSize === 'large' ? 'text-2xl sm:text-4xl leading-[2.4]' :
-                        'text-2xl sm:text-3xl leading-[2.2]'
-                      }`} 
+                      }`}
+                      style={{
+                        fontSize: fontSize === 'compact' ? '1.35rem' : fontSize === 'large' ? '2.25rem' : '1.75rem',
+                        lineHeight: fontSize === 'compact' ? '2.1' : fontSize === 'large' ? '2.7' : '2.4',
+                        wordSpacing: '0.04em'
+                      }}
                       dir="rtl"
                     >
                       {item.arabicText}
@@ -1080,45 +1263,58 @@ export function Viewer() {
                   )}
 
                   {/* English Translation & Quote body */}
-                  <div className="mobile-quote-container">
+                  <div 
+                    className="mobile-quote-container transition-all"
+                    style={{
+                      fontSize: fontSize === 'compact' ? '0.925rem' : fontSize === 'large' ? '1.35rem' : '1.125rem',
+                      lineHeight: fontSize === 'compact' ? '1.65' : fontSize === 'large' ? '2.1' : '1.8'
+                    }}
+                  >
                     {item.htmlText ? (
                       <div 
-                        className={`font-serif tracking-normal transition-all ${
-                          fontSize === 'compact' ? 'text-base sm:text-lg leading-relaxed' :
-                          fontSize === 'large' ? 'text-lg sm:text-2xl leading-relaxed sm:leading-loose' :
-                          'text-base sm:text-xl leading-relaxed'
-                        }`}
+                        className="font-serif tracking-normal leading-relaxed [&_*]:!text-[1em] [&_blockquote]:!text-[1.05em] [&_.text-xs]:!text-[0.8em] [&_.text-sm]:!text-[0.9em]"
+                        style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
                         dangerouslySetInnerHTML={{ __html: item.htmlText }}
                       />
                     ) : item.englishText && (
                       <AnnotatedText 
                         text={item.englishText} 
                         theme={theme} 
-                        className={`font-serif whitespace-pre-wrap tracking-normal transition-all ${
-                          fontSize === 'compact' ? 'text-base sm:text-lg leading-relaxed' :
-                          fontSize === 'large' ? 'text-lg sm:text-2xl leading-relaxed sm:leading-loose' :
-                          'text-base sm:text-xl leading-relaxed'
-                        }`} 
+                        className="font-serif whitespace-pre-wrap tracking-normal transition-all" 
                       />
                     )}
                   </div>
 
-                  {/* Classical Citation & Source Badge */}
-                  {item.citation && (
-                    <div className={`mt-6 pt-4 sm:pt-6 border-t flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-medium ${
-                      theme === 'dark' ? 'border-slate-800 text-slate-400' :
-                      theme === 'sepia' ? 'border-[#e4dcc8] text-amber-900/80' :
-                      'border-slate-100 text-slate-500'
+                  {/* Scholarly Source & Reference at the Bottom */}
+                  {(item.citation || item.author || (item.translator && item.translator !== 'None')) && (
+                    <div className={`mt-8 pt-5 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm font-medium ${
+                      theme === 'dark' ? 'border-slate-800/80 text-slate-400' :
+                      theme === 'cream' ? 'border-[#E7DFC9] text-[#6D5C4F]' :
+                      'border-slate-200 text-slate-500'
                     }`}>
-                      <div className="flex items-center gap-2">
-                        <span className="font-semibold uppercase tracking-wider text-[11px] opacity-70">Source:</span>
-                        <span className="italic font-serif">{item.citation}</span>
-                      </div>
-                      {item.translator && item.translator !== 'None' && (
-                        <div className="text-[11px] opacity-80">
-                          {item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}
+                      {item.citation && (
+                        <div className="flex items-baseline gap-2">
+                          <span className="font-semibold uppercase tracking-wider text-[11px] opacity-75">
+                            Source:
+                          </span>
+                          <span className="italic font-serif font-semibold text-slate-800 dark:text-slate-200">
+                            {item.citation}
+                          </span>
                         </div>
                       )}
+                      
+                      <div className="flex items-center gap-3 text-xs opacity-85 flex-wrap">
+                        {item.author && (
+                          <span>
+                            <span className="opacity-70">Author:</span> <strong className="font-semibold">{item.author}</strong>
+                          </span>
+                        )}
+                        {item.translator && item.translator !== 'None' && (
+                          <span>
+                            <span className="opacity-70">Translated by:</span> <strong className="font-semibold">{item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}</strong>
+                          </span>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>

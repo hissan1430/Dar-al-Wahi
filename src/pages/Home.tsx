@@ -65,7 +65,12 @@ export function Home() {
       
       {/* Refined Minimalist Header & Search Area */}
       <section className="text-center pt-1 sm:pt-4">
-        {/* Subtle, unpretentious title */}
+        {/* Subtle, unpretentious title with classical manuscript flourish */}
+        <div className="flex items-center justify-center gap-2.5 mb-1.5 opacity-70">
+          <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#C19B53]" />
+          <span className="text-[#C19B53] text-[11px] font-serif">۞</span>
+          <span className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-[#C19B53]" />
+        </div>
         <h1 className="font-heading text-xl sm:text-3xl text-primary font-medium tracking-tight mb-4 sm:mb-5">
           Translations & Athār
         </h1>
@@ -104,7 +109,7 @@ export function Home() {
               className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
                 activeType === tab.id
                   ? 'bg-accent text-white shadow-2xs font-semibold'
-                  : 'bg-slate-100/90 text-slate-600 hover:bg-slate-200/80 active:bg-slate-200'
+                  : 'bg-[#EFE7D8]/80 text-[#5A493B] hover:bg-[#E6DCB8] hover:text-[#231C16] border border-[#E7DFC9]/60'
               }`}
             >
               {tab.label}
@@ -120,32 +125,32 @@ export function Home() {
               onClick={() => setActiveTranslator('all')}
               className={`px-3 py-1.5 sm:py-1 rounded-lg text-xs sm:text-[11px] font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
                 activeTranslator === 'all'
-                  ? 'bg-primary text-white shadow-2xs'
-                  : 'bg-slate-100/60 sm:bg-transparent text-slate-600 sm:text-slate-500 hover:text-slate-800 hover:bg-slate-100'
+                  ? 'bg-primary text-white shadow-2xs font-semibold'
+                  : 'bg-[#EFE7D8]/50 sm:bg-transparent text-[#6D5C4F] hover:text-[#231C16] hover:bg-[#EFE7D8]/80'
               }`}
             >
               All Works
             </button>
-            <span className="text-slate-300 text-xs hidden sm:inline">•</span>
+            <span className="text-[#C5BAA9] text-xs hidden sm:inline">•</span>
             <button
               id="home-translator-abu-talhah"
               onClick={() => setActiveTranslator('Abu_Talhah')}
               className={`px-3 py-1.5 sm:py-1 rounded-lg text-xs sm:text-[11px] font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
                 activeTranslator === 'Abu_Talhah'
-                  ? 'bg-primary text-white shadow-2xs'
-                  : 'bg-slate-100/60 sm:bg-transparent text-slate-600 sm:text-slate-500 hover:text-slate-800 hover:bg-slate-100'
+                  ? 'bg-primary text-white shadow-2xs font-semibold'
+                  : 'bg-[#EFE7D8]/50 sm:bg-transparent text-[#6D5C4F] hover:text-[#231C16] hover:bg-[#EFE7D8]/80'
               }`}
             >
               Abū Ṭalḥah
             </button>
-            <span className="text-slate-300 text-xs hidden sm:inline">•</span>
+            <span className="text-[#C5BAA9] text-xs hidden sm:inline">•</span>
             <button
               id="home-translator-abu-mundhir"
               onClick={() => setActiveTranslator('Abu_Mundhir')}
               className={`px-3 py-1.5 sm:py-1 rounded-lg text-xs sm:text-[11px] font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
                 activeTranslator === 'Abu_Mundhir'
-                  ? 'bg-primary text-white shadow-2xs'
-                  : 'bg-slate-100/60 sm:bg-transparent text-slate-600 sm:text-slate-500 hover:text-slate-800 hover:bg-slate-100'
+                  ? 'bg-primary text-white shadow-2xs font-semibold'
+                  : 'bg-[#EFE7D8]/50 sm:bg-transparent text-[#6D5C4F] hover:text-[#231C16] hover:bg-[#EFE7D8]/80'
               }`}
             >
               Abū Mundhir

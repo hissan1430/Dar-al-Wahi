@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 interface AnnotatedTextProps {
   text: string;
   className?: string;
-  theme?: 'light' | 'sepia' | 'dark';
+  theme?: 'cream' | 'light' | 'dark' | 'sepia';
 }
 
 interface TermPopoverState {
@@ -15,7 +15,7 @@ interface TermPopoverState {
   rect: DOMRect;
 }
 
-export function AnnotatedText({ text, className = '', theme = 'light' }: AnnotatedTextProps) {
+export function AnnotatedText({ text, className = '', theme = 'cream' }: AnnotatedTextProps) {
   const { terms } = useGlossary();
   const [activePopover, setActivePopover] = useState<TermPopoverState | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -149,10 +149,10 @@ export function AnnotatedText({ text, className = '', theme = 'light' }: Annotat
               activePopover.rect.left - 20
             )),
             backgroundColor:
-              theme === 'dark' ? '#1e2024' : theme === 'sepia' ? '#fdf6e3' : '#ffffff',
+              theme === 'dark' ? '#1e2024' : theme === 'sepia' ? '#fdf6e3' : theme === 'cream' ? '#FFFDF9' : '#ffffff',
             borderColor:
-              theme === 'dark' ? '#333b4d' : theme === 'sepia' ? '#d8cbb5' : '#e2e8f0',
-            color: theme === 'dark' ? '#f1f5f9' : theme === 'sepia' ? '#433422' : '#0f172a',
+              theme === 'dark' ? '#333b4d' : theme === 'sepia' ? '#d8cbb5' : theme === 'cream' ? '#E7DFC9' : '#e2e8f0',
+            color: theme === 'dark' ? '#f1f5f9' : theme === 'sepia' ? '#433422' : theme === 'cream' ? '#231C16' : '#0f172a',
           }}
         >
           {/* Header */}

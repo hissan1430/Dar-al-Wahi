@@ -40,6 +40,13 @@ export function Search() {
       const noteContentStr = note ? note.content.replace(/<[^>]*>?/gm, ' ') : '';
       const htmlTextStr = item.htmlText ? item.htmlText.replace(/<[^>]*>?/gm, ' ') : '';
 
+      const rawArabic = item.arabicText || '';
+      const cleanArabic = rawArabic
+        .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '')
+        .replace(/[إأآا]/g, 'ا')
+        .replace(/ى/g, 'ي')
+        .replace(/ـ/g, '');
+
       return {
         id: item.id,
         title: item.title,
@@ -48,6 +55,8 @@ export function Search() {
         author: item.author || '',
         speaker: item.speaker || '',
         englishText: item.englishText || '',
+        arabicText: rawArabic,
+        cleanArabic,
         htmlTextStr,
         noteContent: noteContentStr,
       };
@@ -56,13 +65,15 @@ export function Search() {
 
   const fuse = useMemo(() => new Fuse(searchableData, {
     keys: [
+      { name: 'cleanArabic', weight: 3.5 },
+      { name: 'arabicText', weight: 3 },
       { name: 'title', weight: 3 },
-      { name: 'author', weight: 2 },
-      { name: 'speaker', weight: 2 },
+      { name: 'author', weight: 2.5 },
+      { name: 'speaker', weight: 2.5 },
       { name: 'category', weight: 1.5 },
       { name: 'noteContent', weight: 2 },
-      { name: 'summary', weight: 1 },
-      { name: 'englishText', weight: 0.8 },
+      { name: 'summary', weight: 1.2 },
+      { name: 'englishText', weight: 1 },
       { name: 'htmlTextStr', weight: 0.8 }
     ],
     threshold: 0.3,
@@ -80,18 +91,29 @@ export function Search() {
     setIsSearching(true);
     
     const timeoutId = setTimeout(() => {
-      // Allow for multiple term matching (e.g. "prayer note")
       // Extended search pattern: replace spaces with ' to allow matching both words anywhere
       const queryPattern = query.trim().split(/\s+/).map(t => `'${t}`).join(' ');
-      const results = fuse.search(queryPattern);
+      let results = fuse.search(queryPattern);
       
       // If extended search fails or yields too few results, try normal search as fallback
       if (results.length === 0) {
-        const fallbackResults = fuse.search(query);
-        setSemanticResultIds(fallbackResults.map(r => r.item.id));
-      } else {
-        setSemanticResultIds(results.map(r => r.item.id));
+        results = fuse.search(query);
       }
+
+      // If still no results and query contains Arabic, try normalized diacritic-stripped Arabic search
+      if (results.length === 0) {
+        const cleanQuery = query
+          .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '')
+          .replace(/[إأآا]/g, 'ا')
+          .replace(/ى/g, 'ي')
+          .replace(/ـ/g, '')
+          .trim();
+        if (cleanQuery && cleanQuery !== query) {
+          results = fuse.search(cleanQuery);
+        }
+      }
+
+      setSemanticResultIds(results.map(r => r.item.id));
       setIsSearching(false);
     }, 50);
 
@@ -131,10 +153,10 @@ export function Search() {
     <div className="space-y-8 animate-in fade-in duration-500 max-w-5xl mx-auto">
       <button 
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-primary hover:text-accent transition-colors py-2 px-4 rounded-lg bg-white shadow-sm border border-slate-100 hover:border-accent/30 w-max"
+        className="flex items-center gap-2 text-[#231C16] hover:text-accent transition-colors py-2 px-4 rounded-xl bg-[#FFFDF9] shadow-2xs border border-[#E7DFC9] hover:border-[#C19B53]/80 w-max cursor-pointer"
       >
         <ArrowLeft className="w-5 h-5" />
-        <span className="font-medium">Go Back</span>
+        <span className="font-medium text-sm">Go Back</span>
       </button>
 
       <section className="text-center space-y-8">
@@ -143,13 +165,13 @@ export function Search() {
         </div>
 
         {semanticResultIds !== null && !isSearching && (
-          <p className="text-lg font-medium text-slate-600">
+          <p className="text-lg font-heading font-medium text-[#231C16]">
             {filteredData.length} result{filteredData.length !== 1 ? 's' : ''} found for "{query}"
           </p>
         )}
 
         {/* Filters */}
-        <div className="space-y-4 pt-4 border-t border-slate-100">
+        <div className="space-y-4 pt-4 border-t border-[#E7DFC9]/80">
           {/* Primary Content Type Toggles */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
             {(['all', 'article', 'video', 'audio', 'pdf', 'quote', 'short treatise'] as Tag[]).map(tag => (
@@ -159,8 +181,8 @@ export function Search() {
                 onClick={() => updateFilter('tag', tag)}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer ${
                   activeTag === tag
-                    ? 'bg-accent text-white shadow-xs'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    ? 'bg-accent text-white shadow-2xs font-semibold'
+                    : 'bg-[#F5EFE3] text-[#5A493B] hover:bg-[#EAE1D0] hover:text-[#231C16] border border-[#DDD2B8]'
                 }`}
               >
                 {tag === 'all' ? 'All' : tag === 'article' ? 'Articles' : tag === 'video' ? 'Videos' : tag === 'audio' ? 'Audios' : tag === 'pdf' ? 'PDFs' : tag === 'quote' ? 'Quotes' : 'Short Treatises'}
@@ -170,11 +192,11 @@ export function Search() {
             {activeCategory !== 'all' && (
               <button
                 onClick={() => updateFilter('category', 'all')}
-                className="px-4 py-1.5 rounded-full text-sm font-medium transition-colors bg-red-100 text-red-700 hover:bg-red-200 flex items-center gap-1 border border-red-200 cursor-pointer"
+                className="px-4 py-1.5 rounded-full text-sm font-medium transition-colors bg-amber-100 text-amber-900 hover:bg-amber-200 flex items-center gap-1 border border-amber-300 cursor-pointer"
                 title="Clear category filter"
               >
                 Category: {activeCategory} 
-                <span className="ml-1 text-red-500 font-bold">&times;</span>
+                <span className="ml-1 text-amber-700 font-bold">&times;</span>
               </button>
             )}
           </div>
@@ -185,8 +207,8 @@ export function Search() {
               onClick={() => updateFilter('translator', 'all')}
               className={`px-4 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                 activeTranslator === 'all' 
-                  ? 'bg-primary text-white shadow-xs' 
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                  ? 'bg-primary text-white shadow-2xs' 
+                  : 'bg-[#FFFDF9] border border-[#E7DFC9] text-[#6D5C4F] hover:bg-[#F5EFE3] hover:text-[#231C16]'
               }`}
             >
               All Works
@@ -195,8 +217,8 @@ export function Search() {
               onClick={() => updateFilter('translator', 'Abu_Talhah')}
               className={`px-4 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                 activeTranslator === 'Abu_Talhah' 
-                  ? 'bg-primary text-white shadow-xs' 
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                  ? 'bg-primary text-white shadow-2xs' 
+                  : 'bg-[#FFFDF9] border border-[#E7DFC9] text-[#6D5C4F] hover:bg-[#F5EFE3] hover:text-[#231C16]'
               }`}
             >
               Abū Ṭalḥah al-ʾAfġhānī
@@ -205,8 +227,8 @@ export function Search() {
               onClick={() => updateFilter('translator', 'Abu_Mundhir')}
               className={`px-4 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                 activeTranslator === 'Abu_Mundhir' 
-                  ? 'bg-primary text-white shadow-xs' 
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                  ? 'bg-primary text-white shadow-2xs' 
+                  : 'bg-[#FFFDF9] border border-[#E7DFC9] text-[#6D5C4F] hover:bg-[#F5EFE3] hover:text-[#231C16]'
               }`}
             >
               Abū Mundhir ar-Ruwāndī

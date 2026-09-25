@@ -55,30 +55,40 @@ export const MOCK_DATA: ContentItem[] = [
     title: "Jahm ibn al-Ṣafwān's Hatred For The Qurʾān",
     summary: "A narration about a man from Marw who shunned Jahm due to his mockery and hatred of the verses of the Qur'an.",
     englishText: "And Abū Jaʿfar narrated to me, [he said]: Yaḥyā ibn ʾAyyūb narrated to me, he said: I heard Abā Nuʿaym al-Balkẖī, he said: “A man from the people of Marw was a friend to Jahm, then he cut him off and shunned him, so it was said to him: ‘Why did you shun him?’ So, he said: ‘What cannot be tolerated came from him. I read such-and-such verse one day - Yaḥyā forgot it - so he said: “How clever Muḥammad was!” So, I bore it. Then he recited Sūrah Ṭā-Hā, so when he said: “The Most Beneficent (Allāh) ʾIstawā (rose over) the (Mighty) Throne (in a manner that suits His Majesty).” [Ṭā-Hā:5], he said: “Truly, by Allāh, if I found a way to its erasure, I would have erased it from the Muṣḥaf.” So, I bore it. Then he recited Sūrah al-Qaṣaṣ. So, when he reached to the mention of Mūsā, he said: “What is this? He mentioned a story in a place, so He did not complete it, then He mentioned it here, so He did not complete it.” Then he threw the Muṣḥaf from his lap with his two feet, so I pounced upon him.’",
-    htmlText: `<p class="mb-3">And <em class="italic opacity-80 font-medium">Abū Jaʿfar</em> narrated to me, [he said]: <em class="italic opacity-80 font-medium">Yaḥyā ibn ʾAyyūb</em> narrated to me, he said: I heard <em class="italic opacity-80 font-medium">Abā Nuʿaym al-Balkẖī</em>, he said:</p>
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      And <em class="italic opacity-80 font-medium">Abū Jaʿfar</em> narrated to me, [he said]: <em class="italic opacity-80 font-medium">Yaḥyā ibn ʾAyyūb</em> narrated to me, he said: I heard <em class="italic opacity-80 font-medium">Abā Nuʿaym al-Balkẖī</em>, he said:
+    </p>
 
-<blockquote class="border-l-2 sm:border-l-[3px] border-amber-600/70 pl-3 sm:pl-5 py-1 my-3 bg-amber-50/20 dark:bg-amber-950/10 rounded-r-lg space-y-3">
-  <p>“A man from the people of <em class="italic opacity-80 font-medium">Marw</em> was a friend to <em class="italic opacity-80 font-medium">Jahm</em>, then he cut him off and shunned him, so it was said to him: ‘<em class="italic">Why did you shun him?</em>’</p>
-  <p>So, he said: ‘What cannot be tolerated came from him. I read such-and-such verse one day — <em class="italic opacity-80 font-medium">Yaḥyā</em> forgot it — so he said:</p>
-  
-  <p class="font-semibold text-base sm:text-lg pl-2 border-l-2 border-red-500/50 my-1 text-slate-800 dark:text-slate-200">
-    “How clever <em class="italic opacity-80 font-medium">Muḥammad</em> was!”
-  </p>
-  
-  <p>So, I bore it. Then he recited <em class="italic opacity-80 font-medium">Sūrah Ṭā-Hā</em>, so when he said: “The Most Beneficent (Allāh) ʾIstawā (rose over) the (Mighty) Throne (in a manner that suits His Majesty).” [Ṭā-Hā:5], he said:</p>
-  
-  <p class="font-semibold text-base sm:text-lg pl-2 border-l-2 border-red-500/50 my-1 text-slate-800 dark:text-slate-200">
-    “Truly, by <strong class="font-bold">Allāh</strong>, if I found a way to its erasure, I would have erased it from the <strong class="font-bold">Muṣḥaf</strong>.”
-  </p>
-  
-  <p>So, I bore it. Then he recited <em class="italic opacity-80 font-medium">Sūrah al-Qaṣaṣ</em>. So, when he reached to the mention of <em class="italic opacity-80 font-medium">Mūsā</em>, he said:</p>
-  
-  <p class="font-semibold text-base sm:text-lg pl-2 border-l-2 border-red-500/50 my-1 text-slate-800 dark:text-slate-200">
-    “What is this? He mentioned a story in a place, so He did not complete it, then He mentioned it here, so He did not complete it.”
-  </p>
-  
-  <p>Then he threw the <em class="italic opacity-80 font-medium">Muṣḥaf</em> from his lap with his two feet, so I pounced upon him.’ ”</p>
-</blockquote>`,
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        “A man from the people of <em class="italic opacity-80 font-medium">Marw</em> was a friend to <em class="italic opacity-80 font-medium">Jahm</em>, then he cut him off and shunned him, so it was said to him: ‘<em class="italic">Why did you shun him?</em>’
+      </p>
+      <p>
+        So, he said: ‘What cannot be tolerated came from him. I read such-and-such verse one day — <em class="italic opacity-80 font-medium">Yaḥyā</em> forgot it — so he said:
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E]">“How clever Muḥammad was!”</strong>
+      </p>
+      <p>
+        So, I bore it. Then he recited <em class="italic opacity-80 font-medium">Sūrah Ṭā-Hā</em>, so when he said: “The Most Beneficent (Allāh) ʾIstawā (rose over) the (Mighty) Throne (in a manner that suits His Majesty).” [Ṭā-Hā:5], he said:
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E]">“Truly, by Allāh, if I found a way to its erasure, I would have erased it from the Muṣḥaf.”</strong>
+      </p>
+      <p>
+        So, I bore it. Then he recited <em class="italic opacity-80 font-medium">Sūrah al-Qaṣaṣ</em>. So, when he reached to the mention of <em class="italic opacity-80 font-medium">Mūsā</em>, he said:
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E]">“What is this? He mentioned a story in a place, so He did not complete it, then He mentioned it here, so He did not complete it.”</strong>
+      </p>
+      <p>
+        Then he threw the <em class="italic opacity-80 font-medium">Muṣḥaf</em> from his lap with his two feet, so I pounced upon him.’ ”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
     citation: "Kẖalq ʾAfʿāl al-ʿIbād - pg.38",
     imageUrl: "/jahmi_scan.png",
     dateAdded: "2026-09-12",
@@ -91,10 +101,19 @@ export const MOCK_DATA: ContentItem[] = [
     title: "An Arrow on the Day of Jumuʿah",
     summary: "A narration from Ḥudhayfa regarding the spread of hypocrisy and disbelief in the latter times.",
     englishText: "Abu Sāliḥ told me, saying: Abu al-Aḥwāṣ told us, saying: Abu Ḥudhayfa told us, saying: Sufyān (ath-Thawrī) told us, from al-Aʿmash, from Qays ibn al-Sakan, from Ḥudhayfa (ibn Yamān), who said: ‘There will come a time upon the people when, if you were to shoot an arrow on the Day of Jumuʿah (Friday), it would strike nothing but a disbeliever or a hypocrite.’",
-    htmlText: `<p class="mb-3 leading-relaxed"><em class="italic opacity-80 font-medium">Abu Sāliḥ</em> told me, saying: <em class="italic opacity-80 font-medium">Abu al-Aḥwāṣ</em> told us, saying: <em class="italic opacity-80 font-medium">Abu Ḥudhayfa</em> told us, saying: <em class="italic opacity-80 font-medium">Sufyān (ath-Thawrī)</em> told us, from <em class="italic opacity-80 font-medium">al-Aʿmash</em>, from <em class="italic opacity-80 font-medium">Qays ibn al-Sakan</em>, from <em class="italic opacity-80 font-medium">Ḥudhayfa (ibn Yamān)</em>, who said:</p>
-<blockquote class="border-l-2 sm:border-l-[3px] border-amber-600/70 pl-3 sm:pl-5 py-2 my-3 bg-amber-50/20 dark:bg-amber-950/10 rounded-r-lg font-semibold text-base sm:text-xl leading-relaxed">
-‘There will come a time upon the people when, if you were to shoot an arrow on the Day of <em class="italic opacity-80 font-medium">Jumuʿah</em> (Friday), it would strike nothing but a disbeliever or a hypocrite.’
-</blockquote>`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <em class="italic opacity-80 font-medium">Abu Sāliḥ</em> told me, saying: <em class="italic opacity-80 font-medium">Abu al-Aḥwāṣ</em> told us, saying: <em class="italic opacity-80 font-medium">Abu Ḥudhayfa</em> told us, saying: <em class="italic opacity-80 font-medium">Sufyān (ath-Thawrī)</em> told us, from <em class="italic opacity-80 font-medium">al-Aʿmash</em>, from <em class="italic opacity-80 font-medium">Qays ibn al-Sakan</em>, from <strong class="font-semibold text-primary">Ḥudhayfa (ibn Yamān)</strong>, who said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        <strong class="font-semibold text-[#0B465E]">‘There will come a time upon the people when, if you were to shoot an arrow on the Day of Jumuʿah (Friday), it would strike nothing but a disbeliever or a hypocrite.’</strong>
+      </p>
+    </blockquote>
+  </div>
+</div>`,
     citation: "al-ʾIbānah al-Kubrā no.9",
     imageUrl: "/arrow_hudhayfah.jpeg",
     dateAdded: "2026-09-13",
@@ -139,12 +158,25 @@ export const MOCK_DATA: ContentItem[] = [
     title: "Al-Bukẖārī on the Uncreated Qurʾān",
     summary: "Imām al-Bukẖārī affirms that the Qurʾān is the Speech of Allāh and uncreated, distinguishing between the Creator's Command and His creation.",
     englishText: "And Abū ʿAbd Allāh [al-Bukẖārī] said: \"And the Qurʾān is the Speech of Allāh, uncreated, due to the statement of Allāh, Mighty and Majestic: \"Indeed your Lord is Allāh who created the Heavens and Earth in six days and then ascended above the Throne. He covers the (light of) day with the (darkness) of night (which) pursues it swiftly and (He created) the sun, the moon, the stars (all being) subjected to His command.\" [al-ʾAʿrāf:54] So, He made it clear that the created beings, and the pursuing, and the rapidity, and the subjected beings are by His command. Then He explained: \"His is the creation and the command. Blessed be Allāh, the Lord of the worlds.\" [al-ʾAʿrāf:54] Ibn ʿUyaynah said: 'Allāh distinguished the [act of] creation from the command with His statement: \"His is the creation and the command.\" [al-ʾAʿrāf:54] — so, the creation is by His command like His statement: \"The decision of the matter, before and after (these events) is only with Allāh...\" [al-Rūm:4], and like His statement: \"Verily, His Command, when He intends a thing, is only that He says to it, \"Be!\" and it is!\" [Yā-Sīn:82], and like His statement: \"And among His Signs is that the heaven and the earth stand by His Command\"[al-Rūm:25], and He did not say 'by His Creation.''\"",
-    htmlText: `<p class="mb-3 leading-relaxed">And <em class="italic opacity-80 font-medium">Abū ʿAbd Allāh [al-Bukẖārī]</em> said:</p>
-<blockquote class="border-l-2 sm:border-l-[3px] border-amber-600/70 pl-3 sm:pl-5 py-2 my-3 bg-amber-50/20 dark:bg-amber-950/10 rounded-r-lg space-y-3 leading-relaxed">
-<p class="font-semibold text-base sm:text-xl">“And the Qurʾān is the Speech of Allāh, uncreated, due to the statement of Allāh, Mighty and Majestic: “Indeed your Lord is Allāh who created the Heavens and Earth in six days and then ascended above the Throne. He covers the (light of) day with the (darkness) of night (which) pursues it swiftly and (He created) the sun, the moon, the stars (all being) subjected to His command.” [al-ʾAʿrāf:54]</p>
-<p>So, He made it clear that the created beings, and the pursuing, and the rapidity, and the subjected beings are by His command. Then He explained: “His is the creation and the command. Blessed be Allāh, the Lord of the worlds.” [al-ʾAʿrāf:54]</p>
-<p><em class="italic opacity-80 font-medium">Ibn ʿUyaynah</em> said: ‘Allāh distinguished the [act of] creation from the command with His statement: “His is the creation and the command.” [al-ʾAʿrāf:54] — so, the creation is by His command like His statement: “The decision of the matter, before and after (these events) is only with Allāh...” [al-Rūm:4], and like His statement: “Verily, His Command, when He intends a thing, is only that He says to it, "Be!" and it is!” [Yā-Sīn:82], and like His statement: “And among His Signs is that the heaven and the earth stand by His Command” [al-Rūm:25], and He did not say ‘by His Creation.’ ’”</p>
-</blockquote>`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      And <strong class="font-semibold text-primary">Abū ʿAbd Allāh [al-Bukẖārī]</strong> said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        <strong class="font-semibold text-[#0B465E]">“And the Qurʾān is the Speech of Allāh, uncreated, due to the statement of Allāh, Mighty and Majestic: “Indeed your Lord is Allāh who created the Heavens and Earth in six days and then ascended above the Throne. He covers the (light of) day with the (darkness) of night (which) pursues it swiftly and (He created) the sun, the moon, the stars (all being) subjected to His command.” [al-ʾAʿrāf:54]”</strong>
+      </p>
+      <p>
+        So, He made it clear that the created beings, and the pursuing, and the rapidity, and the subjected beings are by His command. Then He explained: <strong class="font-semibold text-[#0B465E]">“His is the creation and the command. Blessed be Allāh, the Lord of the worlds.”</strong> <span class="text-xs opacity-75 font-sans">[al-ʾAʿrāf:54]</span>
+      </p>
+      <p>
+        <em class="italic opacity-80 font-medium">Ibn ʿUyaynah</em> said: ‘Allāh distinguished the [act of] creation from the command with His statement: <strong class="font-semibold text-[#0B465E]">“His is the creation and the command.”</strong> [al-ʾAʿrāf:54] — so, the creation is by His command like His statement: “The decision of the matter, before and after (these events) is only with Allāh...” [al-Rūm:4], and like His statement: “Verily, His Command, when He intends a thing, is only that He says to it, "Be!" and it is!” [Yā-Sīn:82], and like His statement: “And among His Signs is that the heaven and the earth stand by His Command” [al-Rūm:25], and He did not say ‘by His Creation.’ ’
+      </p>
+    </blockquote>
+  </div>
+</div>`,
     citation: "Kẖalq ʾAfʿāl al-ʿIbād - pg.45",
     imageUrl: "/bukhari_scan.png",
     dateAdded: "2026-09-13",
@@ -198,8 +230,19 @@ export const MOCK_DATA: ContentItem[] = [
     title: "Glad Tidings to the One Who Controls His Tongue",
     summary: "A narration from Thawbān, the freed slave of the Messenger of Allāh ﷺ, on the virtues of guarding the tongue, being content with one's home, and weeping over sins.",
     englishText: "‘Abdullāh narrated to us, who said: My father narrated to us, who said: Haytham bin Khārijah narrated to us, who said: Ismā‘īl narrated to us, from Sharḥabīl bin Muslim, from Thawbān, the freed slave of the Messenger of Allāh ﷺ, that he said: “Glad tidings to the one who controls his tongue, whose home suffices him, and who weeps over his sins.”",
-    htmlText: `<em class="italic opacity-80 font-medium">‘Abdullāh</em> narrated to us, who said: <em class="italic opacity-80 font-medium">My father</em> narrated to us, who said: <em class="italic opacity-80 font-medium">Haytham bin Khārijah</em> narrated to us, who said: <em class="italic opacity-80 font-medium">Ismā‘īl</em> narrated to us, from <em class="italic opacity-80 font-medium">Sharḥabīl bin Muslim</em>, from <em class="italic opacity-80 font-medium">Thawbān</em>, the freed slave of the Messenger of Allāh ﷺ, that he said:
-<div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 mt-4 font-semibold text-lg">“Glad tidings to the one who controls his tongue, whose home suffices him, and who weeps over his sins.”</div>`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <em class="italic opacity-80 font-medium">‘Abdullāh</em> narrated to us, who said: <em class="italic opacity-80 font-medium">My father</em> narrated to us, who said: <em class="italic opacity-80 font-medium">Haytham bin Khārijah</em> narrated to us, who said: <em class="italic opacity-80 font-medium">Ismā‘īl</em> narrated to us, from <em class="italic opacity-80 font-medium">Sharḥabīl bin Muslim</em>, from <strong class="font-semibold text-primary">Thawbān</strong>, the freed slave of the Messenger of Allāh ﷺ, that he said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        <strong class="font-semibold text-[#0B465E]">“Glad tidings to the one who controls his tongue, whose home suffices him, and who weeps over his sins.”</strong>
+      </p>
+    </blockquote>
+  </div>
+</div>`,
     citation: "Kitāb az-Zuhd — al-Imām Aḥmad ibn Ḥanbal 20/171",
     arabicText: "حَدَّثَنَا عَبْدُ اللَّهِ، قَالَ: ثَنَا أَبِي، قَالَ: ثَنَا هَيْثَمُ بْنُ خَارِجَةَ، قَالَ: ثَنَا إِسْمَاعِيلُ، عَنْ شُرَحْبِيلَ بْنِ مُسْلِمٍ، عَنْ ثَوْبَانَ - مَوْلَى رَسُولِ اللَّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ -؛ أَنَّهُ قَالَ: «طُوبَى لِمَنْ مَلَكَ لِسَانَهُ، وَوَسِعَهُ بَيْتُهُ، وَبَكَى عَلَى خَطِيئَتِهِ».",
     imageUrl: "/New_Project_10_DCF865C.png",
@@ -236,63 +279,75 @@ And ʿUmar, may Allāh be pleased with him, ordered that the ignorant be referre
 Abū ʿAbd Allāh [al-Bukẖārī] said: 'And everyone who does not recognise Allāh with His Speech, that it is not created, then he is to be taught, and his ignorance is to be returned to the Book and the Sunnah, then whoever rejects after knowledge of it, he is obstinate. Allāh, Exalted be He, said: "**And Allāh will never lead a people astray after He has guided them until He makes clear to them as to what they should avoid.**" [al-Tawbah:115]. And because of His saying: "**And whoever contradicts and opposes the Messenger (Muḥammad ﷺ) after the right path has been shown clearly to him, and follows other than the believers' way. We shall keep him in the path he has chosen, and burn him in Hell - what an evil destination.**" [al-Nisāʾ:115]. So, as for what the two parties used as an argument for the *madẖab* of ʾAḥmad [ibn Ḥanbal], and each claiming it for himself, then much of their reports are not established, and perhaps they have not understood the accuracy of his madẖab. Rather, what is known about ʾAḥmad and the People of Knowledge is that [they hold that] the Speech of Allāh is not created, and whatever is other than it is created, and that they hate examination and investigation about ambiguous things, and they shun the People of Speculative Theology, and delving [into disputes] and disputation, except concerning what knowledge has came in, and the Messenger of Allāh ﷺ had made it clear.'`,
     htmlText: `<div class="space-y-6 leading-relaxed">
   <div class="space-y-3">
-    <p>
+    <p class="leading-relaxed">
       <em class="italic opacity-80 font-medium">Isḥāq</em> narrated to us, [he said]: <em class="italic opacity-80 font-medium">Abū ʾUsāmah</em> narrated to us, [he said]: <em class="italic opacity-80 font-medium">al-ʾAʿmasẖ</em> said: <em class="italic opacity-80 font-medium">Abū Ṣāliḥ</em> narrated to us, from <em class="italic opacity-80 font-medium">Abī Saʿīd al-Kẖudrī</em>, he said: The Messenger of Allāh ﷺ said:
     </p>
-    <div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 my-3 space-y-3 font-serif">
-      <p><strong>“Nūḥ will be brought [on] the Day of Resurrection, so it will be said to him: 'Have you conveyed [the Message]?' So, he says: 'Yes, O Lord.' So, his nation is asked: 'Did he convey [to] you [the Message]?' So, they will be saying: 'There has never come to us a warner.' So, it is said: 'Who are your witnesses?' So, he says: 'Muḥammad and his nation.' So, you will be brought, so you will be witnessing.”</strong></p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p><strong class="font-semibold text-[#0B465E]">“Nūḥ will be brought [on] the Day of Resurrection, so it will be said to him: 'Have you conveyed [the Message]?' So, he says: 'Yes, O Lord.' So, his nation is asked: 'Did he convey [to] you [the Message]?' So, they will be saying: 'There has never come to us a warner.' So, it is said: 'Who are your witnesses?' So, he says: 'Muḥammad and his nation.' So, you will be brought, so you will be witnessing.”</strong></p>
       <p>Then the Prophet ﷺ recited:</p>
-      <p><strong>“Thus We have made you [true Muslims - real believers of Islamic Monotheism, true followers of Prophet Muḥammad ﷺ and his Sunnah (legal ways)], a <em>waṣat</em> (just) (and the best) nation, that you be witnesses over mankind and the Messenger (Muḥammad ﷺ) be a witness over you.”</strong> <span class="text-xs opacity-75 font-sans">[al-Baqarah:143]</span></p>
-    </div>
-    <p class="mt-4">
-      <em class="italic opacity-80 font-medium">Abū ʿAbd Allāh [al-Bukẖārī]</em> said:
+      <p><strong class="font-semibold text-[#0B465E]">“Thus We have made you [true Muslims - real believers of Islamic Monotheism, true followers of Prophet Muḥammad ﷺ and his Sunnah (legal ways)], a <em>waṣat</em> (just) (and the best) nation, that you be witnesses over mankind and the Messenger (Muḥammad ﷺ) be a witness over you.”</strong> <span class="text-xs opacity-75 font-sans">[al-Baqarah:143]</span></p>
+    </blockquote>
+
+    <p class="mt-4 leading-relaxed">
+      <strong class="font-semibold text-primary">Abū ʿAbd Allāh [al-Bukẖārī]</strong> said:
     </p>
-    <div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 my-3 font-serif">
-      ‘They are the group [of] whom the Prophet ﷺ said: <strong>“A group from my nation do not cease to be uppermost upon the truth, [those] who forsake them do not harm them.”</strong>’
-    </div>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>‘They are the group [of] whom the Prophet ﷺ said: <strong class="font-semibold text-[#0B465E]">“A group from my nation do not cease to be uppermost upon the truth, [those] who forsake them do not harm them.”</strong>’</p>
+    </blockquote>
   </div>
 
   <hr class="border-current opacity-20 my-6" />
 
   <div class="space-y-3">
-    <p>
+    <p class="leading-relaxed">
       <em class="italic opacity-80 font-medium">ʿUbayd Allāh ibn Mūsā</em> narrated to us, from <em class="italic opacity-80 font-medium">ʾIsrāʾīl</em>, from <em class="italic opacity-80 font-medium">Qays</em>, from <em class="italic opacity-80 font-medium">al-Muġẖīrah ibn Sẖuʿbah</em>, may Allāh be pleased with him, from the Prophet ﷺ, he said:
     </p>
-    <div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 my-3 font-serif">
-      <strong>“A group from my nation do not cease to be uppermost until the command of Allāh comes and they are uppermost.”</strong>
-    </div>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p><strong class="font-semibold text-[#0B465E]">“A group from my nation do not cease to be uppermost until the command of Allāh comes and they are uppermost.”</strong></p>
+    </blockquote>
+
     <p class="text-xs sm:text-sm opacity-80 italic">
-      And its like is narrated from Abī Hurayrah, and Muʿāwiyah, and Jābir, and Salamah ibn Nufayl, and Qurrah ibn ʾIyās, may Allāh be pleased with them. from the Prophet ﷺ.
+      And its like is narrated from Abī Hurayrah, and Muʿāwiyah, and Jābir, and Salamah ibn Nufayl, and Qurrah ibn ʾIyās, may Allāh be pleased with them, from the Prophet ﷺ.
     </p>
-    <p class="mt-4">
-      <em class="italic opacity-80 font-medium">Abū ʿAbd Allāh [al-Bukẖārī]</em> said:
+
+    <p class="mt-4 leading-relaxed">
+      <strong class="font-semibold text-primary">Abū ʿAbd Allāh [al-Bukẖārī]</strong> said:
     </p>
-    <div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 my-3 space-y-3 leading-relaxed">
-      <p>‘And there was not differing regarding that between anyone from the People of Knowledge to the time of <strong class="font-semibold">Mālik</strong>, and <strong class="font-semibold">al-Ṯhawrī</strong>, and <strong class="font-semibold">Ḥammād ibn Zayd</strong>, and the scholars of the [various] regions - then after them <strong class="font-semibold">Ibn ʿUyaynah</strong> among the People of the Ḥijāz, and <strong class="font-semibold">ʿAbd al-Raḥmān ibn Mahdī</strong> among the ḥadīṯh-scholars of the People of al-Baṣrah, and <strong class="font-semibold">ʿAbd Allāh ibn Idrīs</strong> , and <strong class="font-semibold">Ḥafṣ ibn Ġẖiyāṯh</strong>, and <strong class="font-semibold">Abū Bakr ibn ʿAyyāsẖ</strong>, and <strong class="font-semibold">Wakīʿ</strong> and their likes; <strong class="font-semibold">Ibn al-Mubārak</strong> among his followers, and <strong class="font-semibold">Yazīd ibn Hārūn</strong> among the Wāsiṭiyyīn (the People of Wāsiṭ) - to the era [of those] who we met from the People of the Two Sanctuaries, Makkah and al-Madīnah, and the ʿIrāqiyyīn (the People of ʿIrāq), and the People of al-Sẖām, and Egypt, and the ḥadīṯh-scholars of the People of Kẖurāsān, from them: <strong class="font-semibold">Muḥammad ibn Yūsuf</strong> among those who frequented him and <strong class="font-semibold">Abū al-Walīd Hisẖām ibn ʿAbd al-Malik</strong> among his <em>mujtabiyyah</em> (in another print it is: muḥibbīh - those who loved him), and <strong class="font-semibold">ʾIsmāʾīl ibn Abī ʾUways</strong> with the People of al-Madīnah, and <strong class="font-semibold">Abū Mushir</strong> among the Sẖāmiyyīn (the People of al-Sẖām), and <strong class="font-semibold">Nuʿaym ibn Ḥammād</strong> with the Egyptians, and <strong class="font-semibold">ʾAḥmad ibn Ḥanbal</strong> with the People of al-Baṣrah, and <strong class="font-semibold">al-Ḥumaydī</strong> from Quraysẖ and whoever followed the Messenger from the Makkiyyīn (the People of al-Makkah), and <strong class="font-semibold">Isḥāq ibn Ibrāhīm</strong> and <strong class="font-semibold">Abū ʿUbayd</strong> among the People of al-Luġẖah (Arabic philology, lexicography, and linguistics). And these are the known ones by knowledge in their eras, without differing from them, that the Qurʾān is the Speech of Allāh, except for who deviated [from] it, or was oblivious to the clear path, so it became obscure upon him. So, indeed his place of return is to the Book and the Sunnah. Allāh, Exalted is He, said: <strong>“And if you disagree among yourselves over anything then refer it back to Allāh and the Messenger”</strong> <span class="text-xs opacity-75 font-sans">[al-Nisāʾ:59]</span>.’</p>
-    </div>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>‘And there was not differing regarding that between anyone from the People of Knowledge to the time of <strong class="font-semibold">Mālik</strong>, and <strong class="font-semibold">al-Ṯhawrī</strong>, and <strong class="font-semibold">Ḥammād ibn Zayd</strong>, and the scholars of the [various] regions — then after them <strong class="font-semibold">Ibn ʿUyaynah</strong> among the People of the Ḥijāz, and <strong class="font-semibold">ʿAbd al-Raḥmān ibn Mahdī</strong> among the ḥadīṯh-scholars of the People of al-Baṣrah, and <strong class="font-semibold">ʿAbd Allāh ibn Idrīs</strong>, and <strong class="font-semibold">Ḥafṣ ibn Ġẖiyāṯh</strong>, and <strong class="font-semibold">Abū Bakr ibn ʿAyyāsẖ</strong>, and <strong class="font-semibold">Wakīʿ</strong> and their likes; <strong class="font-semibold">Ibn al-Mubārak</strong> among his followers, and <strong class="font-semibold">Yazīd ibn Hārūn</strong> among the Wāsiṭiyyīn (the People of Wāsiṭ) — to the era [of those] who we met from the People of the Two Sanctuaries, Makkah and al-Madīnah, and the ʿIrāqiyyīn (the People of ʿIrāq), and the People of al-Sẖām, and Egypt, and the ḥadīṯh-scholars of the People of Kẖurāsān, from them: <strong class="font-semibold">Muḥammad ibn Yūsuf</strong> among those who frequented him and <strong class="font-semibold">Abū al-Walīd Hisẖām ibn ʿAbd al-Malik</strong> among his <em>mujtabiyyah</em> (in another print it is: muḥibbīh - those who loved him), and <strong class="font-semibold">ʾIsmāʾīl ibn Abī ʾUways</strong> with the People of al-Madīnah, and <strong class="font-semibold">Abū Mushir</strong> among the Sẖāmiyyīn (the People of al-Sẖām), and <strong class="font-semibold">Nuʿaym ibn Ḥammād</strong> with the Egyptians, and <strong class="font-semibold">ʾAḥmad ibn Ḥanbal</strong> with the People of al-Baṣrah, and <strong class="font-semibold">al-Ḥumaydī</strong> from Quraysẖ and whoever followed the Messenger from the Makkiyyīn (the People of al-Makkah), and <strong class="font-semibold">Isḥāq ibn Ibrāhīm</strong> and <strong class="font-semibold">Abū ʿUbayd</strong> among the People of al-Luġẖah (Arabic philology, lexicography, and linguistics). And these are the known ones by knowledge in their eras, without differing from them, that <strong class="font-semibold text-[#0B465E]">the Qurʾān is the Speech of Allāh</strong>, except for who deviated [from] it, or was oblivious to the clear path, so it became obscure upon him. So, indeed his place of return is to the Book and the Sunnah. Allāh, Exalted is He, said: <strong class="font-semibold text-[#0B465E]">“And if you disagree among yourselves over anything then refer it back to Allāh and the Messenger”</strong> <span class="text-xs opacity-75 font-sans">[al-Nisāʾ:59]</span>.’</p>
+    </blockquote>
   </div>
 
   <hr class="border-current opacity-20 my-6" />
 
   <div class="space-y-3">
-    <p>
+    <p class="leading-relaxed">
       <em class="italic opacity-80 font-medium">Ibrāhīm ibn al-Mundẖir</em> narrated to us, [he said]: <em class="italic opacity-80 font-medium">Isḥāq ibn Jaʿfar ibn Muḥammad</em> narrated to us, [he said]: <em class="italic opacity-80 font-medium">Kaṯhīr ibn ʿAbd Allāh ibn ʿAmr ibn ʿAwf</em> narrated to me, from his father, from his grandfather, that the Prophet ﷺ wrote:
     </p>
-    <div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 my-3 font-serif">
-      <strong>“And indeed you, what you have differed in a thing, then indeed its place of return is to Allāh and to Muḥammad.”</strong>
-    </div>
-    <p class="mt-4">
-      And the Prophet ﷺ said: <strong>“Whoever does an action that is not from our affair will have it rejected.”</strong> <em class="italic opacity-80 font-medium">al-ʿAlāʾ ibn ʿAbd al-Jabbār</em> narrated to us with that, [he said]: <em class="italic opacity-80 font-medium">ʿAbd Allāh ibn Jaʿfar al-Mukẖarrimī</em> narrated to us, from <em class="italic opacity-80 font-medium">Saʿd ibn Ibrāhīm</em>, from <em class="italic opacity-80 font-medium">al-Qāsim</em>, from <em class="italic opacity-80 font-medium">ʿĀʾisẖah</em>, may Allāh be pleased with her, from the Prophet ﷺ [narrating] with that.
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p><strong class="font-semibold text-[#0B465E]">“And indeed you, what you have differed in a thing, then indeed its place of return is to Allāh and to Muḥammad.”</strong></p>
+    </blockquote>
+
+    <p class="mt-4 leading-relaxed">
+      And the Prophet ﷺ said: <strong class="font-semibold text-[#0B465E]">“Whoever does an action that is not from our affair will have it rejected.”</strong> <em class="italic opacity-80 font-medium">al-ʿAlāʾ ibn ʿAbd al-Jabbār</em> narrated to us with that, [he said]: <em class="italic opacity-80 font-medium">ʿAbd Allāh ibn Jaʿfar al-Mukẖarrimī</em> narrated to us, from <em class="italic opacity-80 font-medium">Saʿd ibn Ibrāhīm</em>, from <em class="italic opacity-80 font-medium">al-Qāsim</em>, from <em class="italic opacity-80 font-medium">ʿĀʾisẖah</em>, may Allāh be pleased with her, from the Prophet ﷺ [narrating] with that.
     </p>
-    <p class="mt-3">
-      And <strong class="font-semibold">ʿUmar</strong>, may Allāh be pleased with him, ordered that the ignorant be referred to the Book and the Sunnah.
+
+    <p class="mt-3 leading-relaxed">
+      And <strong class="font-semibold text-primary">ʿUmar</strong>, may Allāh be pleased with him, ordered that the ignorant be referred to the Book and the Sunnah.
     </p>
-    <p class="mt-4">
-      <em class="italic opacity-80 font-medium">Abū ʿAbd Allāh [al-Bukẖārī]</em> said:
+
+    <p class="mt-4 leading-relaxed">
+      <strong class="font-semibold text-primary">Abū ʿAbd Allāh [al-Bukẖārī]</strong> said:
     </p>
-    <div class="border-l-[3px] border-current opacity-90 pl-4 sm:pl-6 my-3 space-y-3 leading-relaxed">
-      <p>‘And everyone who does not recognise Allāh with His Speech, that it is not created, then he is to be taught, and his ignorance is to be returned to the Book and the Sunnah, then whoever rejects after knowledge of it, he is obstinate. Allāh, Exalted be He, said: <strong>“And Allāh will never lead a people astray after He has guided them until He makes clear to them as to what they should avoid.”</strong> <span class="text-xs opacity-75 font-sans">[al-Tawbah:115]</span>. And because of His saying: <strong>“And whoever contradicts and opposes the Messenger (Muḥammad ﷺ) after the right path has been shown clearly to him, and follows other than the believers' way. We shall keep him in the path he has chosen, and burn him in Hell - what an evil destination.”</strong> <span class="text-xs opacity-75 font-sans">[al-Nisāʾ:115]</span>. So, as for what the two parties used as an argument for the <em>madẖab</em> of ʾAḥmad [ibn Ḥanbal], and each claiming it for himself, then much of their reports are not established, and perhaps they have not understood the accuracy of his madẖab. Rather, what is known about ʾAḥmad and the People of Knowledge is that [they hold that] <strong class="font-semibold">the Speech of Allāh is not created, and whatever is other than it is created</strong>, and that they hate examination and investigation about ambiguous things, and they shun the People of Speculative Theology, and delving [into disputes] and disputation, except concerning what knowledge has came in, and the Messenger of Allāh ﷺ had made it clear.’</p>
-    </div>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>‘And everyone who does not recognise Allāh with His Speech, that it is not created, then he is to be taught, and his ignorance is to be returned to the Book and the Sunnah, then whoever rejects after knowledge of it, he is obstinate. Allāh, Exalted be He, said: <strong class="font-semibold text-[#0B465E]">“And Allāh will never lead a people astray after He has guided them until He makes clear to them as to what they should avoid.”</strong> <span class="text-xs opacity-75 font-sans">[al-Tawbah:115]</span>. And because of His saying: <strong class="font-semibold text-[#0B465E]">“And whoever contradicts and opposes the Messenger (Muḥammad ﷺ) after the right path has been shown clearly to him, and follows other than the believers' way. We shall keep him in the path he has chosen, and burn him in Hell — what an evil destination.”</strong> <span class="text-xs opacity-75 font-sans">[al-Nisāʾ:115]</span>. So, as for what the two parties used as an argument for the <em>madẖab</em> of ʾAḥmad [ibn Ḥanbal], and each claiming it for himself, then much of their reports are not established, and perhaps they have not understood the accuracy of his madẖab. Rather, what is known about ʾAḥmad and the People of Knowledge is that [they hold that] <strong class="font-semibold text-[#0B465E]">the Speech of Allāh is not created, and whatever is other than it is created</strong>, and that they hate examination and investigation about ambiguous things, and they shun the People of Speculative Theology, and delving [into disputes] and disputation, except concerning what knowledge has came in, and the Messenger of Allāh ﷺ had made it clear.’</p>
+    </blockquote>
   </div>
 </div>`,
     citation: "Kẖalq ʾAfʿāl al-ʿIbād — pp. 60–62",
@@ -588,27 +643,197 @@ The Messenger of Allāh, may Allāh extol him and send peace and blessings upon 
 “Four are from happiness: The righteous woman (i.e. wife), and the spacious dwelling, and the righteous neighbour, and the pleasant [and comfortable] mount. And four are from misery: The evil neighbour, and the evil woman, and the evil mount and the constricted dwelling.”
 
 This is an authentic (ṣaḥīḥ) ḥadīth.`,
-    htmlText: `<div class="space-y-4 leading-relaxed">
-  <p class="leading-relaxed">
-    <strong class="font-semibold">Al-Imām Ibn Ḥibbān</strong>, may Allāh have mercy upon him, said, just as it is in <em>'al-Mawārid'</em> (pg. 302):
-  </p>
-  <p class="leading-relaxed text-sm opacity-90">
-    <em class="italic opacity-80 font-medium">Muḥammad ibn Isḥāq</em>, the freed slave of Thaqīf, narrated to us: <em class="italic opacity-80 font-medium">Muḥammad ibn ʿAbd Al-ʿAzīz ibn Abī Razmah</em> narrated to us: <em class="italic opacity-80 font-medium">al-Faḍl ibn Mūsā</em> narrated to us from <em class="italic opacity-80 font-medium">ʿAbd Allāh ibn Saʿīd ibn Abī Hind</em> from <em class="italic opacity-80 font-medium">Ismāʿīl ibn Muḥammad ibn Saʿd ibn Abī Waqqāṣ</em>, from <em class="italic opacity-80 font-medium">his father</em>, from <em class="italic opacity-80 font-medium">his grandfather</em> [Saʿd ibn Abī Waqqāṣ, may Allāh be pleased with him], he said:
-  </p>
-  <p class="leading-relaxed">
-    The Messenger of Allāh, may Allāh extol him and send peace and blessings upon him and his family, said:
-  </p>
-  <blockquote class="border-l-2 sm:border-l-[3px] border-amber-600/70 pl-3 sm:pl-5 py-2 my-4 bg-amber-50/20 dark:bg-amber-950/10 rounded-r-lg space-y-2 font-serif text-base sm:text-lg leading-relaxed">
-    <p>“Four are from happiness: <strong>The righteous woman</strong> (i.e. wife), and <strong>the spacious dwelling</strong>, and <strong>the righteous neighbour</strong>, and <strong>the pleasant [and comfortable] mount</strong>.</p>
-    <p>And four are from misery: <strong>The evil neighbour</strong>, and <strong>the evil woman</strong>, and <strong>the evil mount</strong>, and <strong>the constricted dwelling</strong>.”</p>
-  </blockquote>
-  <p class="font-medium text-sm pt-2 border-t border-slate-200/60 dark:border-slate-800/80 opacity-90 italic">
-    This is an authentic (ṣaḥīḥ) ḥadīth.
-  </p>
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Al-Imām Ibn Ḥibbān</strong>, may Allāh have mercy upon him, said, just as it is in <em>'al-Mawārid'</em> (pg. 302):
+    </p>
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">Muḥammad ibn Isḥāq</em>, the freed slave of Thaqīf, narrated to us: <em class="italic opacity-80 font-medium">Muḥammad ibn ʿAbd Al-ʿAzīz ibn Abī Razmah</em> narrated to us: <em class="italic opacity-80 font-medium">al-Faḍl ibn Mūsā</em> narrated to us from <em class="italic opacity-80 font-medium">ʿAbd Allāh ibn Saʿīd ibn Abī Hind</em> from <em class="italic opacity-80 font-medium">Ismāʿīl ibn Muḥammad ibn Saʿd ibn Abī Waqqāṣ</em>, from <em class="italic opacity-80 font-medium">his father</em>, from <em class="italic opacity-80 font-medium">his grandfather</em> [Saʿd ibn Abī Waqqāṣ, may Allāh be pleased with him], he said:
+    </p>
+    <p class="leading-relaxed">
+      The Messenger of Allāh, may Allāh extol him and send peace and blessings upon him and his family, said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        “Four are from happiness: <strong class="font-semibold text-[#0B465E]">The righteous woman</strong> (i.e. wife), and <strong class="font-semibold text-[#0B465E]">the spacious dwelling</strong>, and <strong class="font-semibold text-[#0B465E]">the righteous neighbour</strong>, and <strong class="font-semibold text-[#0B465E]">the pleasant [and comfortable] mount</strong>.”
+      </p>
+      <p>
+        “And four are from misery: <strong class="font-semibold text-[#0B465E]">The evil neighbour</strong>, and <strong class="font-semibold text-[#0B465E]">the evil woman</strong>, and <strong class="font-semibold text-[#0B465E]">the evil mount</strong>, and <strong class="font-semibold text-[#0B465E]">the constricted dwelling</strong>.”
+      </p>
+    </blockquote>
+
+    <p class="font-medium pt-2 border-t border-slate-200/60 dark:border-slate-800/80 opacity-90 italic">
+      This is an authentic (ṣaḥīḥ) ḥadīth.
+    </p>
+  </div>
 </div>`,
     citation: "Al-Jāmiʿ aṣ-Ṣaḥīḥ mimmā laysa fī aṣ-Ṣaḥīḥayn 3/51 — Maktabah Ibn Taymiyyah al-Qāhirah",
     imageUrl: "/New_Project_3_A7EB186.png",
     dateAdded: "2026-09-23"
+  },
+  {
+    id: "25",
+    translator: "Abu_Mundhir",
+    category: "Ḥadīth",
+    type: "video",
+    title: "Yaḥyā ibn Maʿīn: The Crucible of Jarḥ wa-Taʿdīl",
+    speaker: "Abū Mundhir ar-Ruwāndī",
+    summary: "A profound discourse on Imām Yaḥyā ibn Maʿīn (d. 233H) — the formidable imām of Jarḥ wa-Taʿdīl (narrator criticism and validation) whose unmatched rigor and insight safeguarded the prophetic Sunnah.",
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="p-4 sm:p-5 rounded-xl border-l-4 border-amber-600 bg-amber-500/10 dark:bg-amber-400/10 border-t border-r border-b border-amber-600/20">
+    <div class="text-right font-arabic text-xl sm:text-2xl leading-loose mb-3 opacity-95" dir="rtl">
+      «إِنَّا لَنَطْعَنُ عَلَى أَقْوَامٍ، لَعَلَّهُمْ قَدْ حَطُّوا رِحَالَهُمْ فِي الجَنَّةِ، مِنْ أَكْثَرَ مِنْ مِائَتَيْ سَنَةٍ!»
+    </div>
+    <p class="font-serif text-base sm:text-lg italic leading-relaxed opacity-95">
+      “Indeed, we criticize people who perhaps have already settled their mounts in Paradise more than two hundred years ago!”
+    </p>
+    <div class="mt-3 pt-2.5 border-t border-amber-600/20 flex items-center justify-between flex-wrap gap-2 text-xs sm:text-sm font-sans opacity-80">
+      <span class="font-semibold">— Imām Yaḥyā ibn Maʿīn (رحمه الله)</span>
+      <span class="italic">Siyar Aʿlām an-Nubalāʾ (13/268) • Tahdhīb al-Kamāl (31/553)</span>
+    </div>
+  </div>
+
+  <p class="leading-relaxed">
+    A scholarly discourse delivered by <strong>Abū Mundhir ar-Ruwāndī</strong> on the life, rigorous methodology, and contributions of <strong>Imām Yaḥyā ibn Maʿīn</strong> (158H – 233H) — the formidable imām of <em>Jarḥ wa-Taʿdīl</em> (narrator criticism and validation) and lifelong companion of Imām Aḥmad ibn Ḥanbal.
+  </p>
+
+  <p class="leading-relaxed">
+    The lecture elucidates how the early scholars of ḥadīth established an uncompromising crucible of scrutiny to examine chains of narration (<em>asānīd</em>), inspect narrator precision (<em>ḍabṭ</em>), uncover hidden defects (<em>ʿilal</em>), and preserve the authentic Sunnah of the Prophet ﷺ.
+  </p>
+
+  <div class="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
+    <div class="p-4 sm:p-5 rounded-xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.03] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <div class="w-10 h-10 rounded-lg bg-red-600/10 dark:bg-red-500/15 flex items-center justify-center shrink-0 text-red-600 dark:text-red-400">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div>
+          <h4 class="text-sm font-semibold tracking-tight">Original Video Discourse</h4>
+          <p class="text-xs opacity-75 mt-0.5">Presented by Abū Mundhir ar-Ruwāndī (@AbooMundhir)</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2.5 self-stretch sm:self-auto justify-end">
+        <a 
+          href="https://www.youtube.com/watch?v=w8nkW9KHQqc" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg bg-amber-600 hover:bg-amber-700 text-white shadow-xs transition-colors"
+        >
+          <span>Watch on YouTube</span>
+          <span>&rarr;</span>
+        </a>
+        <a 
+          href="https://www.youtube.com/@AbooMundhir" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 opacity-85 hover:opacity-100 transition-colors"
+        >
+          Channel Profile
+        </a>
+      </div>
+    </div>
+  </div>
+</div>`,
+    youtubeId: "w8nkW9KHQqc",
+    imageUrl: "https://i.ytimg.com/vi/w8nkW9KHQqc/maxresdefault.jpg",
+    citation: "YouTube — Abū Mundhir ar-Ruwāndī (@AbooMundhir)",
+    dateAdded: "2026-09-25"
+  },
+  {
+    id: "26",
+    translator: "Abu_Talhah",
+    category: "ʿAqīdah",
+    type: "quote",
+    title: "ʾUbayy ibn Kaʿb on Jealous Animosity & Adhering to the Rope of Allāh",
+    author: "Imām Muḥammad ibn Ismāʿīl al-Bukẖārī (d. 256H)",
+    summary: "ʾUbayy ibn Kaʿb explains that mutual enmity arose from jealousy over worldly power and prestige, whereas true believers held fast to what the Messengers brought, avoided division, and adhered to the Rope of Allāh.",
+    arabicText: `وَقَالَ أُبَيُّ بْنُ كَعْبٍ: {بَغْيًا بَيْنَهُمْ} [البقرة: ٢١٣] «بَغْيًا عَلَى الدُّنْيَا، وَطَلَبِ مُلْكِهَا وَزُخْرُفِهَا وَزِينَتِهَا، أَيُّهُمْ يَكُونُ لَهُ الْمُلْكُ وَالْمَهَابَةُ فِي النَّاسِ فَبَغَى بَعْضُهُمْ عَلَى بَعْضٍ، وَضَرَبَ بَعْضُهُمْ رِقَابَ بَعْضٍ» {فَهَدَى اللَّهُ الَّذِينَ آمَنُوا لِمَا اخْتَلفُوا فِيهِ مِنَ الْحَقِّ بِإِذْنِهِ} [البقرة: ٢١٣] ، «قَامُوا عَلَى مَا جَاءَتْ بِهِ الرُّسُلُ، وَأَقَامُوا الصَّلَاةَ، وَآتَوُا الزَّكَاةَ وَاعْتَزَلُوا الِاخْتِلَافَ، وَكَانُوا شُهَدَاءَ عَلَى النَّاسِ يَوْمَ الْقِيَامَةِ، إِنَّ رُسُلَهُمْ قَدْ بَلَّغَتْهُمْ وَأَنَّهُمْ كَذَّبُوا رُسُلَهُمْ» حَدَّثَنَا إِسْمَاعِيلُ بْنُ أَبِي أُوَيْسٍ، حَدَّثَنِي كَثِيرُ بْنُ عَبْدِ اللَّهِ بْنِ عَمْرِو بْنِ عَوْفٍ، عَنْ أَبِيهِ، عَنْ جَدِّهِ، أَنَّ رَسُولَ اللَّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ قَالَ: " اعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا، {وَلَا تَكُونُوا كَالَّذِينَ تَفَرَّقُوا وَاخْتَلَفُوا مِنْ بَعْدِ مَا جَاءَهُمُ الْبَيِّنَاتُ} [آل عمران: ١٠٥] "`,
+    englishText: `And ʾUbayy ibn Kaʿb said: "...jealous animosity, one to another." [al-Baqarah:213] - 'Jealous animosity over the Dunyā, and seeking its dominion, and its adornable materials, and its [outward] beautification, [each disputing] which of them will the dominion and the reverence be for him among the people, so some of them jealously coveted upon others, and some of them struck the neck of others, "Then Allāh by His Leave guided those who believed to the truth of that wherein they differed." [al-Baqarah:213]. They stood [firm] upon what the Messengers came with, and they established the prayer, and they gave the zakāh, and they detached from differing, and they will be witnesses over mankind [on] the Day of Resurrection [that]: 'Indeed their Messengers had conveyed [to] them, and that they (i.e. the disbelieving nations) disbelieved [in and rejected] their Messengers.''
+
+ʾIsmāʾīl ibn Abī ʾUways narrated to us, [he said]: Kaṯhīr ibn ʿAbd Allāh ibn ʿAmr ibn ʿAwf narrated to us, from his father, from his grandfather, that the Messenger of Allāh ﷺ said: "Hold fast, all of you together, to the Rope of Allāh (i.e. this Qurʾān), and be not divided among yourselves "And be not as those who divided and differed among themselves after the clear proofs had come to them." [ʾĀl ʿImrān:105]."`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      And <strong class="font-semibold text-primary">ʾUbayy ibn Kaʿb</strong> said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        “...jealous animosity, one to another.” <span class="text-xs sm:text-sm opacity-70 font-sans">[al-Baqarah:213]</span> — ‘Jealous animosity over the Dunyā, and seeking its dominion, and its adornable materials, and its [outward] beautification, [each disputing] which of them will the dominion and the reverence be for him among the people, so some of them jealously coveted upon others, and some of them struck the neck of others, <strong class="font-semibold text-[#0B465E]">“Then Allāh by His Leave guided those who believed to the truth of that wherein they differed.”</strong> <span class="text-xs sm:text-sm opacity-70 font-sans">[al-Baqarah:213]</span>.
+      </p>
+      <p>
+        They stood [firm] upon what the Messengers came with, and they established the prayer, and they gave the zakāh, and they detached from differing, and they will be witnesses over mankind [on] the Day of Resurrection [that]: ‘Indeed their Messengers had conveyed [to] them, and that they (i.e. the disbelieving nations) disbelieved [in and rejected] their Messengers.’ ’
+      </p>
+    </blockquote>
+  </div>
+
+  <hr class="border-current opacity-15 my-6" />
+
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <em class="italic opacity-80 font-medium">ʾIsmāʿīl ibn Abī ʾUways</em> narrated to us, [he said]: <em class="italic opacity-80 font-medium">Kaṯhīr ibn ʿAbd Allāh ibn ʿAmr ibn ʿAwf</em> narrated to us, from <em class="italic opacity-80 font-medium">his father</em>, from <em class="italic opacity-80 font-medium">his grandfather</em>, that the Messenger of Allāh ﷺ said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-2.5 font-serif leading-relaxed">
+      <p class="font-semibold">
+        “Hold fast, all of you together, to the Rope of Allāh (i.e. this Qurʾān), and be not divided among yourselves. <span class="text-[#0B465E]">“And be not as those who divided and differed among themselves after the clear proofs had come to them.”</span> <span class="text-xs sm:text-sm opacity-70 font-sans font-normal">[ʾĀl ʿImrān:105]</span>.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "Kẖalq ʾAfʿāl al-ʿIbād — pp. 77–78",
+    imageUrl: "/kitab_and_sunnah.png",
+    dateAdded: "2026-09-25"
+  },
+  {
+    id: "27",
+    translator: "Abu_Mundhir",
+    category: "Heart-Softeners",
+    type: "quote",
+    title: "ʿĪsā ibn Maryam on Guarding the Tongue from Ill Speech",
+    author: "Imām Mālik ibn Anas (d. 179H)",
+    summary: "ʿĪsā ibn Maryam encountered a pig on his path and addressed it peacefully; when questioned why he spoke this way to a pig, he explained his fear of accustoming his tongue to foul speech.",
+    arabicText: `وَحَدَّثَنِي عَنْ مَالِكٍ، عَنْ يَحْيَى بْنِ سَعِيدٍ: أَنَّ عِيسَى ابْنَ مَرْيَمَ عَلَيْهِ السَّلَامُ لَقِيَ خِنْزِيرًا فِي طَرِيقٍ فَقَالَ لَهُ: «انْفُذْ بِسَلَامٍ»، فَقِيلَ لَهُ: أَتَقُولُ هَذَا لِخِنْزِيرٍ؟! فَقَالَ: «إِنِّي أَخَافُ أَنْ أُعَوِّدَ لِسَانِي النُّطْقَ بِالسُّوءِ».`,
+    englishText: `And Mālik narrated to me, from Yaḥyā ibn Saʿīd that ʿĪsā ibn Maryam came across a pig on his path so he said to it,
+
+"Go on in peace."
+and it was said to him, 
+
+"You said this to a pig?" 
+ʿĪsā عليه السلام replied, 
+
+"Indeed I fear that I accustom my tongue to ill speech."`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      And Mālik narrated to me, from Yaḥyā ibn Saʿīd that ʿĪsā ibn Maryam came across a pig on his path so he said to it,
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        “Go on in peace.”
+      </p>
+      <p>
+        and it was said to him,
+      </p>
+      <p>
+        “You said this to a pig?”
+      </p>
+      <p>
+        ʿĪsā عليه السلام replied,
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E]">“Indeed I fear that I accustom my tongue to ill speech.”</strong>
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "Al-Muwaṭṭa 2/985",
+    imageUrl: "/pig_athar.png",
+    dateAdded: "2026-09-25"
   }
 ];
 

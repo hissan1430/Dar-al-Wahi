@@ -24,7 +24,7 @@ interface PdfCanvasViewerProps {
   pdfUrl: string;
   title: string;
   downloadFilename?: string;
-  theme?: 'light' | 'dark' | 'sepia';
+  theme?: 'cream' | 'light' | 'dark';
   initialPage?: number;
   onPageChange?: (page: number, totalPages: number) => void;
   isTwoPageView?: boolean;
@@ -35,7 +35,7 @@ export function PdfCanvasViewer({
   pdfUrl,
   title,
   downloadFilename,
-  theme = 'light',
+  theme = 'cream',
   initialPage,
   onPageChange,
   isTwoPageView: externalTwoPageView,
@@ -304,20 +304,20 @@ export function PdfCanvasViewer({
     iconBtnClass = "hover:bg-[#2a2a2a] text-slate-400";
     secondaryBg = "bg-[#222] border-[#333]";
     progressBg = "bg-white/10";
-  } else if (theme === 'sepia') {
-    toolbarClass = "bg-[#fdf6e3] border-[#e4dcc8]";
-    textClass = "text-amber-900";
-    iconBtnClass = "hover:bg-[#f4ecd8] text-amber-800";
-    secondaryBg = "bg-[#f4ecd8] border-[#e4dcc8]";
-    progressBg = "bg-amber-900/10";
+  } else if (theme === 'cream') {
+    toolbarClass = "bg-[#FFFDF9] border-[#E7DFC9]";
+    textClass = "text-[#231C16]";
+    iconBtnClass = "hover:bg-[#F5EFE3] text-[#6D5C4F]";
+    secondaryBg = "bg-[#F5EFE3] border-[#DDD2B8]";
+    progressBg = "bg-[#C19B53]/20";
   }
 
   let wrapperClass = "w-full flex flex-col items-center";
   if (isImmersive) {
     if (theme === 'dark') {
       wrapperClass = "fixed inset-0 z-50 overflow-y-auto overflow-x-hidden flex flex-col items-center p-3 sm:p-6 bg-[#0f1115]";
-    } else if (theme === 'sepia') {
-      wrapperClass = "fixed inset-0 z-50 overflow-y-auto overflow-x-hidden flex flex-col items-center p-3 sm:p-6 bg-[#e4dcc8]";
+    } else if (theme === 'cream') {
+      wrapperClass = "fixed inset-0 z-50 overflow-y-auto overflow-x-hidden flex flex-col items-center p-3 sm:p-6 bg-[#FAF6EE]";
     } else {
       wrapperClass = "fixed inset-0 z-50 overflow-y-auto overflow-x-hidden flex flex-col items-center p-3 sm:p-6 bg-slate-100";
     }
@@ -409,8 +409,8 @@ export function PdfCanvasViewer({
                 className={`w-11 sm:w-13 text-center py-1 px-1 rounded-md border font-bold text-xs sm:text-sm transition-all focus:outline-hidden focus:ring-2 focus:ring-accent ${
                   theme === 'dark'
                     ? 'bg-[#222] border-[#444] text-white focus:border-accent'
-                    : theme === 'sepia'
-                    ? 'bg-[#f4ecd8] border-[#d8cfb9] text-amber-950 focus:border-accent'
+                    : theme === 'cream'
+                    ? 'bg-[#F5EFE3] border-[#DDD2B8] text-[#231C16] focus:border-accent'
                     : 'bg-white border-slate-300 text-slate-900 focus:border-accent shadow-2xs'
                 }`}
               />
@@ -550,8 +550,8 @@ export function PdfCanvasViewer({
                 key={`spread-${leftPage}`}
                 className="book-spread relative flex justify-center items-stretch rounded-xl shadow-2xl p-1.5 sm:p-3 transition-all duration-300 border"
                 style={{
-                  backgroundColor: theme === 'dark' ? '#141414' : theme === 'sepia' ? '#ebdcc1' : '#e2e8f0',
-                  borderColor: theme === 'dark' ? '#262626' : theme === 'sepia' ? '#d8c8a8' : '#cbd5e1',
+                  backgroundColor: theme === 'dark' ? '#141414' : theme === 'cream' ? '#F5EFE3' : '#e2e8f0',
+                  borderColor: theme === 'dark' ? '#262626' : theme === 'cream' ? '#DDD2B8' : '#cbd5e1',
                   width: `${actualSpreadWidth}px`,
                   maxWidth: '100%'
                 }}
@@ -562,8 +562,8 @@ export function PdfCanvasViewer({
                   className={`relative flex flex-col items-center rounded-l-lg overflow-hidden cursor-pointer transition-all hover:brightness-[0.99] border-r ${
                     theme === 'dark' 
                       ? 'bg-[#1e1e1e] border-[#333]' 
-                      : theme === 'sepia' 
-                      ? 'bg-[#fdf6e3] border-[#e4dcc8]' 
+                      : theme === 'cream' 
+                      ? 'bg-[#FFFDF9] border-[#E7DFC9]' 
                       : 'bg-white border-slate-200'
                   } shadow-md`}
                   style={{ width: `${twoPageSingleWidth}px`, flexShrink: 0 }}
@@ -597,8 +597,8 @@ export function PdfCanvasViewer({
                   } ${
                     theme === 'dark' 
                       ? 'bg-[#1e1e1e] border-[#333]' 
-                      : theme === 'sepia' 
-                      ? 'bg-[#fdf6e3] border-[#e4dcc8]' 
+                      : theme === 'cream' 
+                      ? 'bg-[#FFFDF9] border-[#E7DFC9]' 
                       : 'bg-white border-slate-200'
                   } shadow-md`}
                   style={{ width: `${twoPageSingleWidth}px`, flexShrink: 0 }}
@@ -647,7 +647,7 @@ export function PdfCanvasViewer({
                     {/* Front Face of Turning Leaf: displays fromRight */}
                     <div 
                       className={`book-page-face absolute inset-0 flex flex-col items-center rounded-r-lg overflow-hidden border-l shadow-2xl ${
-                        theme === 'dark' ? 'bg-[#1e1e1e] border-[#333]' : theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8]' : 'bg-white border-slate-200'
+                        theme === 'dark' ? 'bg-[#1e1e1e] border-[#333]' : theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9]' : 'bg-white border-slate-200'
                       }`}
                     >
                       {pageSnapshots.get(flipState.fromRight) ? (
@@ -671,7 +671,7 @@ export function PdfCanvasViewer({
                     {/* Back Face of Turning Leaf: displays toLeft */}
                     <div 
                       className={`book-page-face absolute inset-0 [transform:rotateY(180deg)] flex flex-col items-center rounded-l-lg overflow-hidden border-r shadow-2xl ${
-                        theme === 'dark' ? 'bg-[#1e1e1e] border-[#333]' : theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8]' : 'bg-white border-slate-200'
+                        theme === 'dark' ? 'bg-[#1e1e1e] border-[#333]' : theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9]' : 'bg-white border-slate-200'
                       }`}
                     >
                       {pageSnapshots.get(flipState.toLeft) ? (
@@ -709,7 +709,7 @@ export function PdfCanvasViewer({
                     {/* Front Face of Turning Leaf: displays fromLeft */}
                     <div 
                       className={`book-page-face absolute inset-0 flex flex-col items-center rounded-l-lg overflow-hidden border-r shadow-2xl ${
-                        theme === 'dark' ? 'bg-[#1e1e1e] border-[#333]' : theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8]' : 'bg-white border-slate-200'
+                        theme === 'dark' ? 'bg-[#1e1e1e] border-[#333]' : theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9]' : 'bg-white border-slate-200'
                       }`}
                     >
                       {pageSnapshots.get(flipState.fromLeft) ? (
@@ -733,7 +733,7 @@ export function PdfCanvasViewer({
                     {/* Back Face of Turning Leaf: displays toRight */}
                     <div 
                       className={`book-page-face absolute inset-0 [transform:rotateY(180deg)] flex flex-col items-center rounded-r-lg overflow-hidden border-l shadow-2xl ${
-                        theme === 'dark' ? 'bg-[#1e1e1e] border-[#333]' : theme === 'sepia' ? 'bg-[#fdf6e3] border-[#e4dcc8]' : 'bg-white border-slate-200'
+                        theme === 'dark' ? 'bg-[#1e1e1e] border-[#333]' : theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9]' : 'bg-white border-slate-200'
                       }`}
                     >
                       {flipState.toRight && pageSnapshots.get(flipState.toRight) ? (
@@ -802,8 +802,8 @@ export function PdfCanvasViewer({
                 className={`w-12 sm:w-14 text-center py-1 sm:py-1.5 px-1.5 rounded-lg border font-bold text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-accent transition-all ${
                   theme === 'dark' 
                     ? 'bg-[#222] border-[#444] text-white focus:border-accent' 
-                    : theme === 'sepia'
-                    ? 'bg-[#f4ecd8] border-[#d8cfb9] text-amber-950 focus:border-accent'
+                    : theme === 'cream'
+                    ? 'bg-[#F5EFE3] border-[#DDD2B8] text-[#231C16] focus:border-accent'
                     : 'bg-white border-slate-300 text-slate-900 shadow-2xs focus:border-accent'
                 }`}
               />
@@ -832,7 +832,7 @@ interface PdfPageCanvasProps {
   pdfDoc: any;
   pageNum: number;
   containerWidth: number;
-  theme?: 'light' | 'dark' | 'sepia';
+  theme?: 'cream' | 'light' | 'dark';
   onRendered?: (pageNum: number, dataUrl: string) => void;
 }
 
@@ -841,7 +841,7 @@ function PdfPageCanvas({
   pdfDoc,
   pageNum,
   containerWidth,
-  theme = 'light',
+  theme = 'cream',
   onRendered
 }: PdfPageCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -923,9 +923,9 @@ function PdfPageCanvas({
   if (theme === 'dark') {
     // Invert colors with slight contrast adjustment for comfortable reading
     filterStyle = 'invert(0.9) hue-rotate(180deg) brightness(0.95) contrast(1.1)';
-  } else if (theme === 'sepia') {
-    // Warm sepia parchment tone
-    filterStyle = 'sepia(0.35) contrast(1.02) brightness(0.97)';
+  } else if (theme === 'cream') {
+    // Warm manuscript cream parchment tone (subtle warm lift inspired by Alfanus)
+    filterStyle = 'sepia(0.18) contrast(1.02) brightness(0.98)';
   }
 
   return (
