@@ -65,6 +65,7 @@ export function Home() {
       
       {/* Refined Minimalist Header & Search Area */}
       <section className="text-center pt-1 sm:pt-4">
+        {/* Subtle classical flourish */}
         <div className="flex items-center justify-center gap-2.5 mb-1.5 opacity-70">
           <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#C19B53]" />
           <span className="text-[#C19B53] text-[11px] font-serif">۞</span>
@@ -89,124 +90,184 @@ export function Home() {
           <DailyAtharCard />
         </div>
         
-        {/* Content Type Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 max-w-3xl mx-auto mb-3 px-1">
+        {/* Content Type Pills in warm cream style */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-3xl mx-auto mb-3.5 px-1">
           {[
             { id: 'all', label: 'All' },
             { id: 'pdf', label: 'PDFs' },
             { id: 'short treatise', label: 'Treatises' },
             { id: 'quote', label: 'Quotes' },
             { id: 'article', label: 'Articles' },
-            { id: 'audio', label: 'Audios' },
             { id: 'video', label: 'Videos' },
-          ].map(type => (
+            { id: 'audio', label: 'Audios' },
+            { id: 'overview', label: 'Stats' },
+          ].map(tab => (
             <button
-              key={type.id}
-              onClick={() => setActiveType(type.id as ActiveType)}
-              className={`px-3 py-1 rounded-full text-xs font-serif transition-all duration-200 cursor-pointer ${
-                activeType === type.id
-                  ? 'bg-primary text-white shadow-xs font-semibold'
-                  : 'bg-card text-foreground/75 hover:bg-card-hover border border-border/40'
+              key={tab.id}
+              id={`home-type-${tab.id.replace(/\s+/g, '-')}`}
+              onClick={() => setActiveType(tab.id as ActiveType)}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-serif font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
+                activeType === tab.id
+                  ? 'bg-[#B88E3E] text-white shadow-2xs font-semibold'
+                  : 'bg-[#EFE7D8] text-[#5A493B] hover:bg-[#E5DCC9] hover:text-[#231C16]'
               }`}
             >
-              {type.label}
+              {tab.label}
             </button>
           ))}
         </div>
 
-        {/* Translator Filters */}
-        <div className="flex items-center justify-center gap-1.5 max-w-xl mx-auto mb-4 text-[11px] font-serif">
-          <span className="text-foreground/50 mr-1">Translator:</span>
-          {[
-            { id: 'all', label: 'All' },
-            { id: 'Abu_Talhah', label: 'Abū Ṭalḥah' },
-            { id: 'Abu_Mundhir', label: 'Abū Mundhir' },
-          ].map(t => (
+        {/* Translator Sub-Toggles with rounded capsule */}
+        {activeType !== 'overview' && (
+          <div className="flex flex-wrap items-center justify-center gap-2 max-w-xl mx-auto mb-6 sm:mb-8 animate-in fade-in duration-200 px-2 text-xs font-serif">
             <button
-              key={t.id}
-              onClick={() => setActiveTranslator(t.id as TranslatorFilter)}
-              className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
-                activeTranslator === t.id
-                  ? 'bg-accent/20 text-accent-foreground font-semibold border border-accent/40'
-                  : 'text-foreground/60 hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5'
+              id="home-translator-all"
+              onClick={() => setActiveTranslator('all')}
+              className={`px-3 py-1 rounded-full font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
+                activeTranslator === 'all'
+                  ? 'bg-[#0B465E] text-white shadow-2xs font-semibold'
+                  : 'text-[#6D5C4F] hover:text-[#231C16] hover:bg-[#EFE7D8]'
               }`}
             >
-              {t.label}
+              All Works
             </button>
-          ))}
-        </div>
-      </section>
-
-      {/* Main Content Feed */}
-      <div className="space-y-4">
-        <div className="flex items-center justify-between border-b border-border/50 pb-2 px-1">
-          <p className="text-xs text-foreground/60 font-serif">
-            Showing <span className="font-semibold text-foreground">{filteredData.length}</span> items
-          </p>
-          <div className="flex items-center gap-3 text-xs text-foreground/60">
-            <Link to="/library" className="hover:text-primary transition-colors flex items-center gap-1 font-serif">
-              Full Library <ArrowRight className="w-3 h-3" />
-            </Link>
-          </div>
-        </div>
-
-        {filteredData.length === 0 ? (
-          <div className="text-center py-12 bg-card rounded-xl border border-border/50 p-6">
-            <p className="text-foreground/70 font-serif text-sm">No items found matching your filters.</p>
+            <span className="text-[#C5BAA9] text-xs hidden sm:inline">•</span>
             <button
-              onClick={() => {
-                setActiveType('all');
-                setActiveTranslator('all');
-              }}
-              className="mt-3 text-xs text-primary font-semibold hover:underline"
+              id="home-translator-abu-talhah"
+              onClick={() => setActiveTranslator('Abu_Talhah')}
+              className={`px-3 py-1 rounded-full font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
+                activeTranslator === 'Abu_Talhah'
+                  ? 'bg-[#0B465E] text-white shadow-2xs font-semibold'
+                  : 'text-[#6D5C4F] hover:text-[#231C16] hover:bg-[#EFE7D8]'
+              }`}
             >
-              Reset filters
+              Abū Ṭalḥah
             </button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredData.map(item => (
-              <FadeInScroll key={item.id}>
-                <ItemCard item={item} />
-              </FadeInScroll>
-            ))}
+            <span className="text-[#C5BAA9] text-xs hidden sm:inline">•</span>
+            <button
+              id="home-translator-abu-mundhir"
+              onClick={() => setActiveTranslator('Abu_Mundhir')}
+              className={`px-3 py-1 rounded-full font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
+                activeTranslator === 'Abu_Mundhir'
+                  ? 'bg-[#0B465E] text-white shadow-2xs font-semibold'
+                  : 'text-[#6D5C4F] hover:text-[#231C16] hover:bg-[#EFE7D8]'
+              }`}
+            >
+              Abū Mundhir
+            </button>
           </div>
         )}
-      </div>
+      </section>
 
-      {/* Reading Progress / Stats Widget */}
-      {stats.timeSpentSeconds > 30 && (
-        <section className="bg-card/60 backdrop-blur-xs border border-border/50 rounded-xl p-4 sm:p-5 mt-8">
-          <div className="flex items-center gap-2 mb-3">
-            <TrendingUp className="w-4 h-4 text-accent" />
-            <h3 className="font-heading text-sm font-semibold text-foreground">Your Reading Journey</h3>
+      {/* Main Content Area based on Active Type */}
+      {activeType === 'overview' ? (
+        <FadeInScroll className="max-w-2xl mx-auto space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200/90 shadow-2xs flex items-center space-x-3">
+              <div className="bg-blue-50 p-2 rounded-lg text-blue-600">
+                <BookOpen className="w-4 h-4" />
+              </div>
+              <div className="text-left">
+                <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Finished</p>
+                <p className="text-lg font-bold text-slate-900">{stats.readBooks.length}</p>
+              </div>
+            </div>
+            
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200/90 shadow-2xs flex items-center space-x-3">
+              <div className="bg-emerald-50 p-2 rounded-lg text-emerald-600">
+                <Clock className="w-4 h-4" />
+              </div>
+              <div className="text-left">
+                <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Reading Time</p>
+                <p className="text-lg font-bold text-slate-900">{formattedTime}</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-3.5 rounded-xl border border-slate-200/90 shadow-2xs flex items-center space-x-3">
+              <div className="bg-amber-50 p-2 rounded-lg text-amber-600">
+                <TrendingUp className="w-4 h-4" />
+              </div>
+              <div className="text-left overflow-hidden w-full">
+                <p className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">Top Field</p>
+                <p className="text-sm font-bold text-slate-900 truncate" title={topCategory}>{topCategory}</p>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
-            <div className="p-2 sm:p-3 bg-background/50 rounded-lg border border-border/30">
-              <div className="flex items-center justify-center gap-1 text-[11px] text-foreground/60 mb-0.5">
-                <BookOpen className="w-3 h-3" />
-                <span>Read</span>
+
+          {/* Quick link to Glossary */}
+          <div className="bg-white border border-slate-200/90 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
+            <div className="flex items-center gap-3 text-left">
+              <div className="p-2.5 bg-amber-50 rounded-lg text-amber-800">
+                <BookOpen className="w-4 h-4" />
               </div>
-              <p className="text-base sm:text-lg font-bold text-foreground font-mono">{stats.itemsRead.length}</p>
-            </div>
-            <div className="p-2 sm:p-3 bg-background/50 rounded-lg border border-border/30">
-              <div className="flex items-center justify-center gap-1 text-[11px] text-foreground/60 mb-0.5">
-                <Clock className="w-3 h-3" />
-                <span>Time</span>
+              <div>
+                <h4 className="font-heading font-semibold text-sm text-slate-900">Classical Glossary & Terminology</h4>
+                <p className="text-xs text-slate-500">Definitions and theological context according to the Salaf</p>
               </div>
-              <p className="text-base sm:text-lg font-bold text-foreground font-mono">{formattedTime}</p>
             </div>
-            <div className="p-2 sm:p-3 bg-background/50 rounded-lg border border-border/30">
-              <div className="flex items-center justify-center gap-1 text-[11px] text-foreground/60 mb-0.5">
-                <TrendingUp className="w-3 h-3" />
-                <span>Focus</span>
-              </div>
-              <p className="text-xs sm:text-sm font-semibold text-primary truncate mt-1">{topCategory}</p>
-            </div>
+            <Link
+              to="/glossary"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap"
+            >
+              <span>Explore</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
           </div>
-        </section>
+        </FadeInScroll>
+      ) : (
+        <div className="space-y-12">
+          {filteredData.length === 0 ? (
+            <div className="text-center py-12 bg-[#FAF6EE] rounded-xl border border-[#E7DFC9] p-6">
+              <p className="text-[#5A493B] font-serif text-sm">
+                No items found matching your filters.
+              </p>
+              <div className="mt-2.5 flex items-center justify-center gap-3">
+                {activeType !== 'all' && (
+                  <button 
+                    onClick={() => setActiveType('all')}
+                    className="text-xs text-primary hover:underline font-semibold cursor-pointer"
+                  >
+                    View all types
+                  </button>
+                )}
+                {activeTranslator !== 'all' && (
+                  <button 
+                    onClick={() => setActiveTranslator('all')}
+                    className="text-xs text-primary hover:underline font-semibold cursor-pointer"
+                  >
+                    View all translators
+                  </button>
+                )}
+              </div>
+            </div>
+          ) : (
+            CATEGORIES.map(category => {
+              const itemsInCategory = filteredData.filter(item => item.category === category);
+              if (itemsInCategory.length === 0) return null;
+
+              return (
+                <FadeInScroll key={category} className="border-t border-[#E7DFC9] pt-6">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <h2 className="font-heading text-xl sm:text-2xl text-primary font-medium">{category}</h2>
+                    <div className="flex-1 h-px bg-[#E7DFC9]"></div>
+                    <span className="text-xs font-serif text-[#8C7A6B]">
+                      {itemsInCategory.length} {itemsInCategory.length === 1 ? 'item' : 'items'}
+                    </span>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {itemsInCategory.map((item, idx) => (
+                      <FadeInScroll key={item.id} delay={idx * 60} className="h-full flex flex-col">
+                        <ItemCard item={item} />
+                      </FadeInScroll>
+                    ))}
+                  </div>
+                </FadeInScroll>
+              );
+            })
+          )}
+        </div>
       )}
-
     </div>
   );
 }
