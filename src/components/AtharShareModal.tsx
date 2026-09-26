@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { DailyAthar } from '../data/dailyAthar';
+import { toCurlyQuotes } from '../utils/typography';
 import {
   X,
   Download,
@@ -487,7 +488,7 @@ export function AtharShareModal({ athar, isOpen, onClose }: AtharShareModalProps
               } ${
                 selectedTheme === 'emerald' ? 'text-[#e9f2ec]' : selectedTheme === 'parchment' ? 'text-[#241b12]' : selectedTheme === 'midnight' ? 'text-[#edf2f7]' : 'text-[#f7ecee]'
               }`}>
-                “{athar.englishText.replace(/^[“"]|[”"]$/g, '')}”
+                “{toCurlyQuotes(athar.englishText.replace(/^[“"]|[”"]$/g, ''))}”
               </p>
             </div>
 
@@ -497,15 +498,15 @@ export function AtharShareModal({ athar, isOpen, onClose }: AtharShareModalProps
                 <span className={`font-heading text-xs sm:text-sm font-bold truncate ${
                   selectedTheme === 'emerald' ? 'text-[#f3ce72]' : selectedTheme === 'parchment' ? 'text-[#632c0c]' : selectedTheme === 'midnight' ? 'text-[#f5cc6b]' : 'text-[#f3ce72]'
                 }`}>
-                  {athar.speaker}
+                  {toCurlyQuotes(athar.speaker)}
                 </span>
                 <span className="text-[10px] opacity-85 italic truncate">
-                  {athar.source}
+                  {toCurlyQuotes(athar.source)}
                 </span>
               </div>
               {athar.speakerTitle && (
                 <span className="text-[9px] opacity-70 italic truncate">
-                  {athar.speakerTitle}
+                  {toCurlyQuotes(athar.speakerTitle)}
                 </span>
               )}
             </div>

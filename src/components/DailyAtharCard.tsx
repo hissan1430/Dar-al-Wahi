@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { getDailyAthar, formatAtharDate } from '../data/dailyAthar';
 import { AtharShareModal } from './AtharShareModal';
 import { Sparkles, Share2, Copy, Check, BookOpen, ChevronDown, ChevronUp, Eye, EyeOff } from 'lucide-react';
+import { toCurlyQuotes } from '../utils/typography';
 
 export function DailyAtharCard() {
   // Always select the exact single Athār for today - changes automatically every day
@@ -56,9 +57,9 @@ export function DailyAtharCard() {
           <div className="flex items-center gap-2 truncate text-xs">
             <span className="font-bold uppercase tracking-wider text-[#3D2E22] shrink-0">Athār of the Day</span>
             <span className="text-[#C5BAA9] hidden sm:inline">•</span>
-            <span className="text-[#5A493B] font-medium truncate hidden sm:inline">{athar.speaker}</span>
+            <span className="text-[#5A493B] font-medium truncate hidden sm:inline">{toCurlyQuotes(athar.speaker)}</span>
             <span className="text-[#C5BAA9] hidden md:inline">•</span>
-            <span className="text-[#7A695C] italic truncate hidden md:inline font-serif">"{athar.englishText.slice(0, 50)}..."</span>
+            <span className="text-[#7A695C] italic truncate hidden md:inline font-serif">“{toCurlyQuotes(athar.englishText.slice(0, 50))}...”</span>
           </div>
         </button>
 
@@ -160,7 +161,7 @@ export function DailyAtharCard() {
           {/* English Translation */}
           <div>
             <p className="font-serif text-sm sm:text-base text-[#3E3125] leading-relaxed">
-              {athar.englishText}
+              {toCurlyQuotes(athar.englishText)}
             </p>
           </div>
 
@@ -168,11 +169,11 @@ export function DailyAtharCard() {
           <div className="pt-3 border-t border-[#E7DFC9]/80 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 text-xs">
             <div>
               <span className="font-heading text-xs font-bold text-primary">
-                {athar.speaker}
+                {toCurlyQuotes(athar.speaker)}
               </span>
               {athar.speakerTitle && (
                 <span className="text-[#7A695C] ml-1 text-[11px] italic">
-                  — {athar.speakerTitle}
+                  — {toCurlyQuotes(athar.speakerTitle)}
                 </span>
               )}
             </div>
@@ -180,7 +181,7 @@ export function DailyAtharCard() {
             <div className="flex items-center gap-1.5 text-[#5A493B] bg-[#F5EFE3] px-2.5 py-1 rounded-md border border-[#E7DFC9] text-[11px]">
               <BookOpen className="w-3 h-3 text-amber-800 shrink-0" />
               <span className="font-medium text-slate-700">
-                Source: <span className="text-amber-950 font-semibold">{athar.source}</span>
+                Source: <span className="text-amber-950 font-semibold">{toCurlyQuotes(athar.source)}</span>
               </span>
             </div>
           </div>

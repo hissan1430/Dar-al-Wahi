@@ -5,6 +5,7 @@ import { useBookmarks } from '../hooks/useBookmarks';
 import { useReadingProgress } from '../hooks/useReadingProgress';
 import { CollectionCardModal } from './CollectionCardModal';
 import { PdfCoverPreview } from './PdfCoverPreview';
+import { toCurlyQuotes } from '../utils/typography';
 import React, { useState } from 'react';
 
 interface ItemCardProps {
@@ -194,14 +195,14 @@ export function ItemCard({ item }: ItemCardProps) {
           )}
 
           {/* Title with standardized 2-line height */}
-          <h3 className="font-heading text-base sm:text-lg font-bold text-[#231C16] group-hover:text-primary mb-1.5 line-clamp-2 leading-snug min-h-[2.85rem] transition-colors" title={item.title}>
-            {item.title}
+          <h3 className="font-heading text-base sm:text-lg font-bold text-[#231C16] group-hover:text-primary mb-1.5 line-clamp-2 leading-snug min-h-[2.85rem] transition-colors" title={toCurlyQuotes(item.title)}>
+            {toCurlyQuotes(item.title)}
           </h3>
 
           {/* Author or speaker with single line truncation and fixed height */}
           {(item.author || item.speaker) ? (
-            <p className="text-[#746253] font-medium text-xs mb-2 line-clamp-1 truncate h-4" title={item.author || item.speaker}>
-              {item.author || item.speaker}
+            <p className="text-[#746253] font-medium text-xs mb-2 line-clamp-1 truncate h-4" title={toCurlyQuotes(item.author || item.speaker)}>
+              {toCurlyQuotes(item.author || item.speaker)}
             </p>
           ) : (
             <div className="h-4 mb-2" />
@@ -210,11 +211,11 @@ export function ItemCard({ item }: ItemCardProps) {
           {/* Summary with standardized 2-line height */}
           {item.summary ? (
             <p className="text-[#483B30] font-serif leading-relaxed mb-3 text-xs sm:text-sm line-clamp-2 min-h-[2.5rem]">
-              {item.summary}
+              {toCurlyQuotes(item.summary)}
             </p>
           ) : item.englishText ? (
             <p className="text-[#483B30] font-serif leading-relaxed mb-3 text-xs sm:text-sm line-clamp-2 min-h-[2.5rem]">
-              {item.englishText}
+              {toCurlyQuotes(item.englishText)}
             </p>
           ) : (
             <div className="min-h-[2.5rem] mb-3" />

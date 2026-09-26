@@ -8,6 +8,7 @@ import {
   wrapText,
   THEMES
 } from './atharCanvasGenerator';
+import { toCurlyQuotes } from './typography';
 
 export interface CollectionCardThemePalette {
   bgGradient: [string, string, string];
@@ -123,7 +124,7 @@ function loadImage(src: string): Promise<HTMLImageElement | null> {
  * Clean HTML formatting tags from text while preserving clean punctuation & whitespace
  */
 function sanitizeText(raw: string): string {
-  return raw
+  const cleaned = raw
     .replace(/<br\s*\/?>/gi, '\n')
     .replace(/<\/p>/gi, '\n\n')
     .replace(/<\/div>/gi, '\n')
@@ -135,6 +136,7 @@ function sanitizeText(raw: string): string {
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .trim();
+  return toCurlyQuotes(cleaned);
 }
 
 /**

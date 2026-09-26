@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
 import { FileText, Loader2 } from 'lucide-react';
+import { toCurlyQuotes } from '../utils/typography';
 
 interface PdfCoverPreviewProps {
   pdfUrl: string;
@@ -130,7 +131,7 @@ export function PdfCoverPreview({
           )}
         </div>
         <p className="text-xs font-serif font-semibold text-amber-100 line-clamp-2 leading-tight">
-          {title}
+          {toCurlyQuotes(title)}
         </p>
         <span className="text-[10px] text-emerald-300/80 uppercase tracking-widest font-semibold mt-1">
           {category} • Classical Treatise

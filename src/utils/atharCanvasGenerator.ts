@@ -1,4 +1,5 @@
 import { DailyAthar } from '../data/dailyAthar';
+import { toCurlyQuotes } from './typography';
 
 export type PosterTheme = 'emerald' | 'parchment' | 'midnight' | 'burgundy';
 export type CardAspect = 'square' | 'portrait' | 'story' | 'landscape';
@@ -382,7 +383,7 @@ export async function generateAtharCanvas(
   ctx.font = `italic ${engFontSize}px "Lora", "Playfair Display", Georgia, serif`;
   ctx.direction = 'ltr';
   const cleanEnglish = athar.englishText.replace(/^[“"]|[”"]$/g, '');
-  const englishLines = wrapText(ctx, `“${cleanEnglish}”`, maxContentWidth - 30);
+  const englishLines = wrapText(ctx, `“${toCurlyQuotes(cleanEnglish)}”`, maxContentWidth - 30);
 
   // Measure total required height
   const dividerGap = isStory ? 60 : 36;
@@ -452,13 +453,13 @@ export async function generateAtharCanvas(
   ctx.textAlign = 'left';
   ctx.font = 'bold 28px "Playfair Display", "Times New Roman", serif';
   ctx.fillStyle = palette.speakerColor;
-  ctx.fillText(athar.speaker, contentLeft, footerLine1Y);
+  ctx.fillText(toCurlyQuotes(athar.speaker), contentLeft, footerLine1Y);
 
   // Speaker Title / Era (Left)
   if (athar.speakerTitle) {
     ctx.font = 'italic 19px "Lora", Georgia, serif';
     ctx.fillStyle = palette.speakerTitleColor;
-    ctx.fillText(athar.speakerTitle, contentLeft, footerLine2Y);
+    ctx.fillText(toCurlyQuotes(athar.speakerTitle), contentLeft, footerLine2Y);
   }
 
   // Classical Reference Source (Right)
@@ -466,7 +467,7 @@ export async function generateAtharCanvas(
   const sourceFontSize = athar.source.length > 55 ? 17 : athar.source.length > 38 ? 19 : 21;
   ctx.font = `italic ${sourceFontSize}px "Lora", Georgia, serif`;
   ctx.fillStyle = palette.sourceColor;
-  ctx.fillText(athar.source, contentRight, footerLine1Y);
+  ctx.fillText(toCurlyQuotes(athar.source), contentRight, footerLine1Y);
 
   // Brand Watermark (Right)
   ctx.textAlign = 'right';

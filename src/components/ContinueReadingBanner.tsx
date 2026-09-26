@@ -3,6 +3,7 @@ import { useReadingProgress } from '../hooks/useReadingProgress';
 import { MOCK_DATA } from '../data';
 import { Bookmark, ArrowRight, BookOpen, Clock, X } from 'lucide-react';
 import { useState } from 'react';
+import { toCurlyQuotes } from '../utils/typography';
 
 export function ContinueReadingBanner() {
   const { latestRead, clearProgress } = useReadingProgress();
@@ -40,7 +41,7 @@ export function ContinueReadingBanner() {
             </span>
           </div>
           <h4 className="font-heading font-semibold text-slate-900 text-sm mt-0.5 line-clamp-1">
-            {item.title}
+            {toCurlyQuotes(item.title)}
           </h4>
         </div>
       </div>

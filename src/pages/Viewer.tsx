@@ -11,6 +11,7 @@ import { PdfCanvasViewer } from '../components/PdfCanvasViewer';
 import { RichTextEditor } from '../components/RichTextEditor';
 import { AnnotatedText } from '../components/AnnotatedText';
 import { CollectionCardModal } from '../components/CollectionCardModal';
+import { toCurlyQuotes, toCurlyHtml } from '../utils/typography';
 
 export type ReaderTheme = 'cream' | 'light' | 'dark';
 
@@ -470,10 +471,10 @@ export function Viewer() {
                 {item.videos && item.videos.length > 0 ? `${item.category} • Series (${item.videos.length} Lessons)` : item.category}
               </span>
             </div>
-            <h1 className="font-heading text-xl sm:text-3xl font-bold text-slate-900 leading-snug">{item.title}</h1>
+            <h1 className="font-heading text-xl sm:text-3xl font-bold text-slate-900 leading-snug">{toCurlyQuotes(item.title)}</h1>
             {(item.author || item.speaker) && (
               <p className="text-primary font-medium text-sm sm:text-base mb-1">
-                {item.author || item.speaker}
+                {toCurlyQuotes(item.author || item.speaker)}
               </p>
             )}
             {item.translator && item.translator !== 'None' && (!item.speaker || !item.speaker.toLowerCase().includes(item.translator === 'Abu_Mundhir' ? 'mundhir' : 'talhah')) && (
@@ -646,7 +647,7 @@ export function Viewer() {
                 theme === 'cream' ? 'text-[#231C16]' :
                 'text-slate-900'
               }`}>Overview: </span>
-              {item.summary}
+              {toCurlyQuotes(item.summary)}
             </div>
           </div>
         )}
@@ -1274,7 +1275,7 @@ export function Viewer() {
                       <div 
                         className="font-serif tracking-normal leading-relaxed [&_*]:!text-[1em] [&_blockquote]:!text-[1.05em] [&_.text-xs]:!text-[0.8em] [&_.text-sm]:!text-[0.9em]"
                         style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
-                        dangerouslySetInnerHTML={{ __html: item.htmlText }}
+                        dangerouslySetInnerHTML={{ __html: toCurlyHtml(item.htmlText) }}
                       />
                     ) : item.englishText && (
                       <AnnotatedText 
@@ -1288,30 +1289,40 @@ export function Viewer() {
                   {/* Scholarly Source & Reference at the Bottom */}
                   {(item.citation || item.author || (item.translator && item.translator !== 'None')) && (
                     <div className={`mt-8 pt-5 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm font-medium ${
-                      theme === 'dark' ? 'border-slate-800/80 text-slate-400' :
-                      theme === 'cream' ? 'border-[#E7DFC9] text-[#6D5C4F]' :
-                      'border-slate-200 text-slate-500'
+                      theme === 'dark' ? 'border-slate-800 text-slate-300' :
+                      theme === 'cream' ? 'border-[#E7DFC9] text-[#4A3B2C]' :
+                      'border-slate-200 text-slate-700'
                     }`}>
                       {item.citation && (
                         <div className="flex items-baseline gap-2">
-                          <span className="font-semibold uppercase tracking-wider text-[11px] opacity-75">
+                          <span className={`font-bold uppercase tracking-wider text-[11px] ${
+                            theme === 'dark' ? 'text-amber-400' :
+                            theme === 'cream' ? 'text-[#8C6D3B]' :
+                            'text-amber-800'
+                          }`}>
                             Source:
                           </span>
-                          <span className="italic font-serif font-semibold text-slate-800 dark:text-slate-200">
-                            {item.citation}
+                          <span className={`italic font-serif font-bold text-sm ${
+                            theme === 'dark' ? 'text-amber-100' :
+                            theme === 'cream' ? 'text-[#1E1710]' :
+                            'text-slate-900'
+                          }`}>
+                            {toCurlyQuotes(item.citation)}
                           </span>
                         </div>
                       )}
                       
-                      <div className="flex items-center gap-3 text-xs opacity-85 flex-wrap">
+                      <div className="flex items-center gap-3 text-xs flex-wrap">
                         {item.author && (
-                          <span>
-                            <span className="opacity-70">Author:</span> <strong className="font-semibold">{item.author}</strong>
+                          <span className={theme === 'dark' ? 'text-slate-200' : theme === 'cream' ? 'text-[#2D2319]' : 'text-slate-800'}>
+                            <span className="opacity-70 mr-1">Author:</span>
+                            <strong className="font-bold">{toCurlyQuotes(item.author)}</strong>
                           </span>
                         )}
                         {item.translator && item.translator !== 'None' && (
-                          <span>
-                            <span className="opacity-70">Translated by:</span> <strong className="font-semibold">{item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}</strong>
+                          <span className={theme === 'dark' ? 'text-slate-200' : theme === 'cream' ? 'text-[#2D2319]' : 'text-slate-800'}>
+                            <span className="opacity-70 mr-1">Translated by:</span>
+                            <strong className="font-bold">{item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}</strong>
                           </span>
                         )}
                       </div>

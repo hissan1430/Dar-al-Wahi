@@ -3,6 +3,7 @@ import { useGlossary } from '../hooks/useGlossary';
 import { GlossaryTerm } from '../types/glossary';
 import { BookOpen, ExternalLink, X, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { toCurlyQuotes } from '../utils/typography';
 
 interface AnnotatedTextProps {
   text: string;
@@ -15,7 +16,8 @@ interface TermPopoverState {
   rect: DOMRect;
 }
 
-export function AnnotatedText({ text, className = '', theme = 'cream' }: AnnotatedTextProps) {
+export function AnnotatedText({ text: rawText, className = '', theme = 'cream' }: AnnotatedTextProps) {
+  const text = useMemo(() => toCurlyQuotes(rawText), [rawText]);
   const { terms } = useGlossary();
   const [activePopover, setActivePopover] = useState<TermPopoverState | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);

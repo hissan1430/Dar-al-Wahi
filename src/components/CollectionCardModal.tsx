@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ContentItem } from '../data';
+import { toCurlyQuotes } from '../utils/typography';
 import {
   X,
   Download,
@@ -478,7 +479,7 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
                     <h4 className={`font-heading font-bold text-sm sm:text-base leading-snug ${
                       selectedTheme === 'emerald' ? 'text-[#f3ce72]' : selectedTheme === 'parchment' ? 'text-[#632c0c]' : selectedTheme === 'midnight' ? 'text-[#f5cc6b]' : 'text-[#f3ce72]'
                     }`}>
-                      {item.title}
+                      {toCurlyQuotes(item.title)}
                     </h4>
                     {item.arabicText && (
                       <p dir="rtl" className="font-arabic text-sm sm:text-base leading-relaxed font-bold opacity-95 line-clamp-3">
@@ -486,7 +487,7 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
                       </p>
                     )}
                     <p className="font-serif italic text-xs sm:text-sm leading-relaxed opacity-90 line-clamp-4">
-                      {item.englishText || item.summary}
+                      {toCurlyQuotes(item.englishText || item.summary)}
                     </p>
                   </div>
                 </div>
@@ -499,7 +500,7 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
                     }`}>
                       <img
                         src={item.imageUrl}
-                        alt={item.title}
+                        alt={toCurlyQuotes(item.title)}
                         className="w-full h-full object-contain"
                       />
                     </div>
@@ -510,7 +511,7 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
                   } ${
                     selectedTheme === 'emerald' ? 'text-[#f3ce72]' : selectedTheme === 'parchment' ? 'text-[#632c0c]' : selectedTheme === 'midnight' ? 'text-[#f5cc6b]' : 'text-[#f3ce72]'
                   }`}>
-                    {item.title}
+                    {toCurlyQuotes(item.title)}
                   </h4>
 
                   {item.arabicText && (
@@ -520,7 +521,7 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
                   )}
 
                   <p className="font-serif italic text-xs sm:text-sm leading-relaxed opacity-90 line-clamp-3">
-                    {item.englishText || item.summary}
+                    {toCurlyQuotes(item.englishText || item.summary)}
                   </p>
                 </div>
               )}
@@ -528,10 +529,10 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
               {/* Footer */}
               <div className="pt-2 border-t border-current/20 flex items-center justify-between text-[10px] opacity-80">
                 <span className="font-semibold truncate max-w-[50%]">
-                  {item.author || item.speaker || 'Classical Statement'}
+                  {toCurlyQuotes(item.author || item.speaker || 'Classical Statement')}
                 </span>
                 <span className="italic truncate max-w-[45%]">
-                  {item.citation || 'Dār al-Waḥī'}
+                  {toCurlyQuotes(item.citation || 'Dār al-Waḥī')}
                 </span>
               </div>
             </div>

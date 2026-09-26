@@ -13,11 +13,11 @@
   --font-arabic: "Amiri", "Scheherazade New", serif;
   --font-naskh: "Noto Naskh Arabic", "Amiri", serif;
   --font-arabic-block: "Noto Kufi Arabic", "Almarai", sans-serif;
-  --font-heading: "Fraunces", "Cormorant Garamond", Georgia, serif;
-  --font-serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
-  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "EB Garamond", "Newsreader", Georgia, serif;
+  --font-serif: "EB Garamond", "Newsreader", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
-  --font-body: "DM Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", "DM Sans", sans-serif;
   --font-merriweather: "Merriweather", serif;
   --font-system-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 }
