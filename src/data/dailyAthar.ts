@@ -33,7 +33,7 @@ export const DAILY_ATHAR_LIST: DailyAthar[] = [
     speakerTitle: 'Imām of the Abode of Migration (d. 179H)',
     arabicText: 'السُّنَّةُ سَفِينَةُ نُوحٍ، مَنْ رَكِبَهَا نَجَا، وَمَنْ تَخَلَّفَ عَنْهَا غَرِقَ.',
     englishText: '“The Sunnah is like the Ark of Nūḥ: whoever boards it is saved, and whoever abandons it is drowned.”',
-    source: 'Dhamm al-Kalām wa-Ahlih by al-Harawī (Vol. 4, p. 124, no. 894)',
+    source: 'Dhamm al-Kalām wa-Ahlih by al-Harawī (Vol. 5, p. 81, no. 873)',
     category: 'Safety in the Sunnah'
   },
   {
