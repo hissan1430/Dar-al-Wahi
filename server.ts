@@ -208,7 +208,16 @@ CRITICAL: Be extremely robust to different English transliterations of Arabic wo
 
   // Serve static files directly from public directory
   const rootDir = process.cwd();
-  app.use(express.static(path.join(rootDir, 'public')));
+  app.use(express.static(path.join(rootDir, 'public'), {
+    setHeaders: (res, filePath) => {
+      // Do not cache service workers, manifests, or HTML files in the browser
+      if (filePath.endsWith('.html') || filePath.endsWith('sw.js') || filePath.endsWith('manifest.webmanifest')) {
+        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+        res.setHeader('Pragma', 'no-cache');
+        res.setHeader('Expires', '0');
+      }
+    }
+  }));
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
@@ -219,8 +228,22 @@ CRITICAL: Be extremely robust to different English transliterations of Arabic wo
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(rootDir, 'dist');
-    app.use(express.static(distPath));
+    // For hashed assets in /assets, cache for 1 year. For other files, no-cache.
+    app.use(express.static(distPath, {
+      setHeaders: (res, filePath) => {
+        if (filePath.includes('/assets/') || filePath.includes('\\assets\\')) {
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        } else if (filePath.endsWith('.html') || filePath.endsWith('sw.js') || filePath.endsWith('manifest.webmanifest')) {
+          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+          res.setHeader('Pragma', 'no-cache');
+          res.setHeader('Expires', '0');
+        }
+      }
+    }));
     app.get('*', (req, res) => {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
