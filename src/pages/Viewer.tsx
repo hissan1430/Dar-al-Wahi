@@ -101,8 +101,9 @@ export function Viewer() {
     const english = cleanEnglish ? `"${cleanEnglish}"\n\n` : '';
     const authorOrSpeaker = item.speaker || item.author ? `— ${item.speaker || item.author}\n` : '';
     const source = item.citation ? `Reference: ${item.citation}\n` : '';
+    const translatorName = item.translatorName || (item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī');
     const translator = item.translator && item.translator !== 'None' 
-      ? `Translator: ${item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}\n` 
+      ? `Translator: ${translatorName}\n` 
       : '';
     const formatted = `${arabic}${english}${authorOrSpeaker}${source}${translator}[Dār al-Waḥī]`;
     navigator.clipboard.writeText(formatted);
@@ -481,7 +482,7 @@ export function Viewer() {
               <p className="text-slate-500 text-xs sm:text-sm">
                 {item.type === 'video' ? 'Curated by: ' : 'Translated by: '}
                 <span className="text-slate-700 font-medium">
-                  {item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}
+                  {item.translatorName || (item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī')}
                 </span>
               </p>
             )}
@@ -1286,6 +1287,27 @@ export function Viewer() {
                     )}
                   </div>
 
+                  {/* Secondary Visual Explanations / Diagrams */}
+                  {item.secondaryImages && item.secondaryImages.length > 0 && (
+                    <div className="space-y-4 pt-4 border-t border-[#E7DFC9]/60">
+                      {item.secondaryImages.map((secImg, sIdx) => (
+                        <figure key={sIdx} className="flex flex-col items-center justify-center p-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
+                          <img 
+                            src={secImg.url} 
+                            alt={secImg.caption || item.title} 
+                            className="max-h-[460px] w-auto max-w-full rounded-lg object-contain shadow-xs"
+                            referrerPolicy="no-referrer"
+                          />
+                          {secImg.caption && (
+                            <figcaption className="mt-2.5 text-center text-xs font-serif italic opacity-75 max-w-xl">
+                              {toCurlyQuotes(secImg.caption)}
+                            </figcaption>
+                          )}
+                        </figure>
+                      ))}
+                    </div>
+                  )}
+
                   {/* Scholarly Source & Reference at the Bottom */}
                   {(item.citation || item.author || (item.translator && item.translator !== 'None')) && (
                     <div className={`mt-8 pt-5 border-t flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm font-medium ${
@@ -1322,7 +1344,7 @@ export function Viewer() {
                         {item.translator && item.translator !== 'None' && (
                           <span className={theme === 'dark' ? 'text-slate-200' : theme === 'cream' ? 'text-[#2D2319]' : 'text-slate-800'}>
                             <span className="opacity-70 mr-1">Translated by:</span>
-                            <strong className="font-bold">{item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}</strong>
+                            <strong className="font-bold">{item.translatorName || (item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī')}</strong>
                           </span>
                         )}
                       </div>

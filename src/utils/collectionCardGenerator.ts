@@ -318,17 +318,21 @@ export async function generateCollectionCardCanvas(
 
   ctx.textBaseline = 'alphabetic';
 
-  const translatorLabel = item.translator === 'Abu_Mundhir'
+  const hasTranslator = item.translator && item.translator !== 'None';
+  const translatorTag = item.translatorName
+    ? item.translatorName.toUpperCase()
+    : item.translator === 'Abu_Mundhir'
     ? 'ABŪ MUNDHIR AR-RUWĀNDĪ'
-    : item.translator === 'Abu_Talhah'
-    ? 'ABŪ ṬALḤAH AL-ʾAFĠHĀNĪ'
+    : 'ABŪ ṬALḤAH AL-ʾAFĠHĀNĪ';
+  const headerBrand = hasTranslator
+    ? `DĀR AL-WAḤĪ  •  ${translatorTag}`
     : 'DĀR AL-WAḤĪ';
 
   ctx.font = 'bold 18px "Playfair Display", "Times New Roman", serif';
   ctx.fillStyle = palette.headerTag;
   ctx.textAlign = 'left';
   ctx.letterSpacing = '3px';
-  ctx.fillText(`DĀR AL-WAḤĪ  •  ${translatorLabel}`, contentLeft, headerY);
+  ctx.fillText(headerBrand, contentLeft, headerY);
 
   ctx.font = '500 18px "Lora", Georgia, serif';
   ctx.fillStyle = palette.headerCategory;
@@ -372,7 +376,12 @@ export async function generateCollectionCardCanvas(
   } else if (item.translator && item.translator !== 'None') {
     ctx.font = 'italic 18px "Lora", Georgia, serif';
     ctx.fillStyle = palette.translatorColor;
-    ctx.fillText(`Curated & Translated by ${item.translator === 'Abu_Mundhir' ? 'Abū Mundhir' : 'Abū Ṭalḥah'}`, contentLeft, footerLine2Y);
+    const translatorShort = item.translatorName
+      ? item.translatorName
+      : item.translator === 'Abu_Mundhir'
+      ? 'Abū Mundhir'
+      : 'Abū Ṭalḥah';
+    ctx.fillText(`Curated & Translated by ${translatorShort}`, contentLeft, footerLine2Y);
   }
 
   // Citation (Right)

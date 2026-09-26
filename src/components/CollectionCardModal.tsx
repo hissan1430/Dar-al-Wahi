@@ -160,7 +160,7 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
       '',
       item.author || item.speaker ? `Author/Speaker: ${item.author || item.speaker}` : '',
       item.translator && item.translator !== 'None' 
-        ? `Translator: ${item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī'}`
+        ? `Translator: ${item.translatorName || (item.translator === 'Abu_Mundhir' ? 'Abū Mundhir ar-Ruwāndī' : 'Abū Ṭalḥah al-ʾAfġhānī')}`
         : '',
       item.citation ? `Source: ${item.citation}` : '',
       '— Dār al-Waḥī'
@@ -171,7 +171,9 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
     setTimeout(() => setCopiedText(false), 2500);
   };
 
-  const translatorLabel = item.translator === 'Abu_Mundhir'
+  const translatorLabel = item.translatorName
+    ? item.translatorName
+    : item.translator === 'Abu_Mundhir'
     ? 'Abū Mundhir ar-Ruwāndī'
     : item.translator === 'Abu_Talhah'
     ? 'Abū Ṭalḥah al-ʾAfġhānī'
@@ -455,7 +457,9 @@ export function CollectionCardModal({ item, isOpen, onClose }: CollectionCardMod
                 <span className={`text-[10px] uppercase font-bold tracking-widest ${
                   selectedTheme === 'emerald' ? 'text-[#f3ce72]' : selectedTheme === 'parchment' ? 'text-[#7c4819]' : selectedTheme === 'midnight' ? 'text-[#e0b85c]' : 'text-[#f3ce72]'
                 }`}>
-                  DĀR AL-WAḤĪ • {translatorLabel}
+                  {item.translator && item.translator !== 'None' 
+                    ? `DĀR AL-WAḤĪ • ${translatorLabel}` 
+                    : 'DĀR AL-WAḤĪ'}
                 </span>
                 <span className="text-[10px] font-semibold opacity-75">
                   {item.category}

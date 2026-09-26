@@ -25,6 +25,7 @@ export interface VideoEpisode {
 export interface ContentItem {
   id: string;
   translator: Translator;
+  translatorName?: string;
   category: Category;
   type: ContentType;
   title: string;
@@ -44,6 +45,7 @@ export interface ContentItem {
   soundcloudUrl?: string;
   pages?: string[];
   imageUrl?: string;
+  secondaryImages?: { url: string; caption?: string }[];
 }
 
 export const MOCK_DATA: ContentItem[] = [
@@ -834,6 +836,138 @@ and it was said to him,
     citation: "Al-Muwaṭṭa 2/985",
     imageUrl: "/pig_athar.png",
     dateAdded: "2026-09-25"
+  },
+  {
+    id: "28",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Ḥadīth",
+    type: "quote",
+    title: "Wiping Over the Two Khuffs",
+    author: "Imām Muḥammad ibn Ismāʿīl al-Bukhārī (d. 256H)",
+    summary: "Saʿd b. ʾAbī Waqqāṣ narrates from the Prophet ﷺ that he wiped over the two khuffs; ʿUmar affirmed Saʿd’s transmission with decisive certainty.",
+    arabicText: `حَدَثَنَا أَصبَغ بن الفَرَجِ المِصرِي، عَنِ ابنِ وَهبٍ قَالَ: حَدَثَنِي عَمرٌو: حَدَثَنِي أَبو النَضرِ، عَن أَبِي سَلَمَةَ بنِ عَبدِ الرَحمَنِ، عَن عَبدِ اللهِ بنِ عمَرَ، عَن سَعدِ بنِ أَبِي وَقَاصٍ، عَنِ النَبِيِ ﷺ: 
+
+«أَنَه مَسَحَ عَلَى الخفَينِ» وَأَنَ عَبدَ اللهِ بنَ عمَرَ سَأَلَ عمَرَ، عَن ذَلِكَ فَقَالَ: نَعَم، إِذَا حَدَثَكَ شَيئًا سَعدٌ عَنِ النَبِيِ ﷺ فَلَا تَسأَل عَنه غَيرَه.`,
+    englishText: `“ʾAṣbagh b. al-Faraj al-Miṣrī narrated to us, from Ibn Wahb, who said: ʿAmrū narrated to me; ʾAbū al-Naḍr narrated to me, from ʾAbū Salamah b. ʿAbd al-Raḥmān, from ʿAbduḷḷāh b. ʿUmar, from Saʿd b. ʾAbī Waqqāṣ, from the Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam,
+
+that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar about that, so he said: ‘Yes. If Saʿd narrates something to you from the Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam, then do not ask anyone else about it.’”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <em class="italic opacity-80 font-medium">ʾAṣbagh b. al-Faraj al-Miṣrī</em> narrated to us, from <em class="italic opacity-80 font-medium">Ibn Wahb</em>, who said: <em class="italic opacity-80 font-medium">ʿAmrū</em> narrated to me; <em class="italic opacity-80 font-medium">ʾAbū al-Naḍr</em> narrated to me, from <em class="italic opacity-80 font-medium">ʾAbū Salamah b. ʿAbd al-Raḥmān</em>, from <em class="italic opacity-80 font-medium">ʿAbduḷḷāh b. ʿUmar</em>, from <strong class="font-semibold text-primary">Saʿd b. ʾAbī Waqqāṣ</strong>, from the Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        <strong class="font-semibold text-[#0B465E]">“That he wiped over the two khuffs.”</strong>
+      </p>
+      <p>
+        And ʿAbduḷḷāh b. ʿUmar asked ʿUmar about that, so he said:
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E]">‘Yes. If Saʿd narrates something to you from the Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam, then do not ask anyone else about it.’</strong>
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Jāmiʿ al-Musnad al-Ṣaḥīḥ — Muḥammad b. ʾIsmāʿīl al-Bukhārī — n° 202",
+    imageUrl: "/bukhari.png",
+    dateAdded: "2026-09-26"
+  },
+  {
+    id: "29",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Ḥadīth",
+    type: "quote",
+    title: "The Sunnah of al-Iqʿāʾ Upon the Two Feet",
+    author: "Imām ʿAbd al-Razzāq al-Ṣanʿānī (d. 211H)",
+    summary: "Ṭāwūs questioned Ibn ʿAbbās concerning the practice of al-iqʿāʾ upon the two feet in prayer, to which Ibn ʿAbbās clarified: “Rather, it is the Sunnah of your Prophet ﷺ.”",
+    arabicText: `عَنِ ابنِ جرَيجٍ قَالَ: أَخبَرَنِي أَبو الزبَيرِ، أَنَه سَمِعَ طَاوسًا يَقول:
+
+قلنَا لِابنِ عَبَاسٍ فِي الإِقعَاءِ عَلَى القَدَمَينِ؟ قَالَ: «هِيَ السنَة»، فَقلنَا: إِنَا لَنَرَاه جَفَاءً بِالرَجلِ، قَالَ ابن عَبَاسٍ: «بَل هِيَ سنَة نَبِيِكَ ﷺ»`,
+    englishText: `From Ibn Jurayj, who said: ʾAbū al-Zubayr informed me that he heard Ṭāwūs saying:
+
+‘We said to Ibn ʿAbbās regarding al-iqʿāʾ upon the two feet: He said, “It is the Sunnah.” So we said, “Indeed, we regard it as harshness upon the foot.” Ibn ʿAbbās said: “Rather, it is the Sunnah of your Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam.”’`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      From <em class="italic opacity-80 font-medium">Ibn Jurayj</em>, who said: <em class="italic opacity-80 font-medium">ʾAbū al-Zubayr</em> informed me that he heard <em class="italic opacity-80 font-medium">Ṭāwūs</em> saying:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        ‘We said to <strong class="font-semibold text-primary">Ibn ʿAbbās</strong> regarding <em>al-iqʿāʾ</em> upon the two feet:
+      </p>
+      <p>
+        He said: <strong class="font-semibold text-[#0B465E]">“It is the Sunnah.”</strong>
+      </p>
+      <p>
+        So we said: “Indeed, we regard it as harshness upon the foot.”
+      </p>
+      <p>
+        Ibn ʿAbbās said: <strong class="font-semibold text-[#0B465E]">“Rather, it is the Sunnah of your Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam.”</strong>’
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Muṣannaf — ʿAbd al-Razzāq al-Ṣanʿānī — n° 3035",
+    imageUrl: "/abd_al_razzaq.png",
+    secondaryImages: [
+      {
+        url: "/iqa_demonstration.jpg",
+        caption: "Visual Clarification: Demonstration of Al-Iftirāsh (top), Al-Iqʿāʾ upon the two heels between the two prostrations (middle - the Sunnah mentioned by Ibn ʿAbbās), and At-Tawarruk (bottom)."
+      }
+    ],
+    dateAdded: "2026-09-26"
+  },
+  {
+    id: "30",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Ḥadīth",
+    type: "quote",
+    title: "Prioritizing the Sunnah Over the Statement of Ibn ʿAbbās",
+    author: "Imām Muslim ibn al-Ḥajjāj an-Naysābūrī (d. 261H)",
+    summary: "When a man cited the opinion of Ibn ʿAbbās forbidding ṭawāf before the Mawqif, Ibn ʿUmar rebuked him and upheld the Sunnah of the Prophet ﷺ: “Whose statement are you more entitled to follow—the statement of the Messenger of Allāh ﷺ, or the statement of Ibn ʿAbbās, if you are truthful?”",
+    arabicText: `حَدَّثَنَا يَحْيَى بْنُ يَحْيَى. أَخْبَرَنَا عَبْثَرٌ عَنْ إِسْمَاعِيل بْنِ أَبِي خَالِدٍ، عَنْ وَبَرَةَ. قَالَ:
+
+كُنْتُ جَالِسًا عِنْدَ ابْنِ عُمَرَ. فَجَاءَهُ رَجُلٌ فَقَالَ: أَيَصْلُحُ لِي أَنْ أَطُوفَ بِالْبَيْتِ قَبْلَ أَنْ آتِيَ الْمَوْقِفَ. فَقَالَ: نَعَمْ. فَقَالَ: فَإِنَّ ابْنَ عَبَّاسٍ يَقُولُ: لَا تَطُفْ بِالْبَيْتِ حَتَّى تَأْتِيَ الْمَوْقِفَ. فَقَالَ ابْنُ عُمَرَ: فَقَدْ حَجَّ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ فَطَافَ بِالْبَيْتِ قَبْلَ أَنْ يَأْتِيَ الْمَوْقِفَ. فَبِقَوْلِ رَسُولِ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَحَقُّ أَنْ تَأْخُذَ، أَوْ بِقَوْلِ ابْنِ عَبَّاسٍ، إِنْ كُنْتَ صَادِقًا؟`,
+    englishText: `Yaḥyā b. Yaḥyā narrated to us; ʿAbthar informed us, from ʾIsmāʿīl b. ʾAbī Khālid, from Wabarah, who said:
+
+“I was sitting with Ibn ʿUmar when a man came to him, so he said: ‘Is it permissible for me to perform ṭawāf around the House before I come to the Mawqif?’ so he said: ‘Yes.’ so he said: ‘But Ibn ʿAbbās says: “Do not perform ṭawāf around the House until you come to the Mawqif.”’ Ibn ʿUmar said: ‘The Messenger of Allāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam performed ḥajj and performed ṭawāf around the House before he came to the Mawqif. So, whose statement are you more entitled to follow—the statement of the Messenger of Allāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam, or the statement of Ibn ʿAbbās, if you are truthful?’”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <em class="italic opacity-80 font-medium">Yaḥyā b. Yaḥyā</em> narrated to us; <em class="italic opacity-80 font-medium">ʿAbthar</em> informed us, from <em class="italic opacity-80 font-medium">ʾIsmāʿīl b. ʾAbī Khālid</em>, from <strong class="font-semibold text-primary">Wabarah</strong>, who said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        “I was sitting with <strong class="font-semibold text-primary">Ibn ʿUmar</strong> when a man came to him, so he said:
+      </p>
+      <p class="pl-3 border-l-2 border-slate-300 dark:border-slate-700 italic">
+        ‘Is it permissible for me to perform ṭawāf around the House before I come to the Mawqif?’
+      </p>
+      <p>
+        So he said: <strong class="font-semibold text-[#0B465E]">‘Yes.’</strong>
+      </p>
+      <p>
+        So he said: ‘But Ibn ʿAbbās says: <em class="italic opacity-90">“Do not perform ṭawāf around the House until you come to the Mawqif.”</em>’
+      </p>
+      <p>
+        Ibn ʿUmar said:
+      </p>
+      <p class="font-semibold text-[#0B465E]">
+        ‘The Messenger of Allāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam performed ḥajj and performed ṭawāf around the House before he came to the Mawqif. So, whose statement are you more entitled to follow—the statement of the Messenger of Allāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam, or the statement of Ibn ʿAbbās, if you are truthful?’
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Musnad al-Ṣaḥīḥ al-Mukhtaṣar — Imām Muslim — n° 1233",
+    imageUrl: "/muslim_1233.png",
+    dateAdded: "2026-09-26"
   }
 ];
 
