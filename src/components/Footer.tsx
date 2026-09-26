@@ -17,6 +17,29 @@ export function Footer() {
             <p className="text-[11px] text-background/50 mt-2">
               All treatises, athār, and audio lessons translated with authentic classical references.
             </p>
+            <div className="mt-3 flex items-center gap-3">
+              <button
+                onClick={async () => {
+                  try {
+                    if ('caches' in window) {
+                      const keys = await caches.keys();
+                      await Promise.all(keys.map(k => caches.delete(k)));
+                    }
+                    if ('serviceWorker' in navigator) {
+                      const registrations = await navigator.serviceWorker.getRegistrations();
+                      await Promise.all(registrations.map(r => r.unregister()));
+                    }
+                  } catch (e) {
+                    console.error(e);
+                  }
+                  window.location.reload();
+                }}
+                className="inline-flex items-center gap-1.5 text-[11px] text-accent/80 hover:text-white transition-colors underline decoration-dotted underline-offset-2 cursor-pointer"
+                title="Force refresh content and update cache"
+              >
+                <span>Check for updates</span>
+              </button>
+            </div>
           </div>
           
           {/* Translators Socials Cards - Fully Responsive on Mobile & Desktop */}

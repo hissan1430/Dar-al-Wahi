@@ -4,11 +4,18 @@ import App from './App.tsx';
 import './index.css';
 import { registerSW } from 'virtual:pwa-register';
 
+// Clear any stale cached service workers from older builds and auto-update
+if ('serviceWorker' in navigator) {
+  // If an update is detected, skip waiting and reload instantly
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    window.location.reload();
+  });
+}
+
 // Automatically check and activate updates immediately
 const updateSW = registerSW({
   immediate: true,
   onNeedRefresh() {
-    // Reload when a new version is detected so users always get the latest layout
     updateSW(true);
   },
   onOfflineReady() {
@@ -16,10 +23,11 @@ const updateSW = registerSW({
   },
   onRegisteredSW(_swUrl, r) {
     if (r) {
-      // Check for updates when user returns to the tab or periodically every 15 minutes
+      // Force an immediate check for a newer version
+      r.update();
       setInterval(() => {
         r.update();
-      }, 15 * 60 * 1000);
+      }, 5 * 60 * 1000);
 
       window.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
