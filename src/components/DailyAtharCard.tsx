@@ -14,9 +14,9 @@ export function DailyAtharCard() {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(() => {
     try {
       const stored = localStorage.getItem('dar_daily_athar_collapsed');
-      return stored !== null ? stored === 'true' : true; // Default to collapsed for a clean, non-overwhelming initial view
+      return stored !== null ? stored === 'true' : false; // Default to open/expanded as requested
     } catch {
-      return true;
+      return false;
     }
   });
 

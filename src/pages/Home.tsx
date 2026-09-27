@@ -65,7 +65,7 @@ export function Home() {
       
       {/* Refined Minimalist Header & Search Area */}
       <section className="text-center pt-1 sm:pt-4">
-        {/* Subtle classical flourish */}
+        {/* Subtle, unpretentious title with classical manuscript flourish */}
         <div className="flex items-center justify-center gap-2.5 mb-1.5 opacity-70">
           <span className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#C19B53]" />
           <span className="text-[#C19B53] text-[11px] font-serif">۞</span>
@@ -85,12 +85,12 @@ export function Home() {
           <ContinueReadingBanner />
         </div>
 
-        {/* Featured Daily Athar Benefit */}
+        {/* Featured Daily Athar Benefit - begins in a clean collapsed bar */}
         <div className="max-w-2xl mx-auto mb-5 sm:mb-6 px-1 sm:px-0">
           <DailyAtharCard />
         </div>
         
-        {/* Content Type Pills in warm cream style */}
+        {/* Content Type Pills in clean sans-serif typography */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-3xl mx-auto mb-3.5 px-1">
           {[
             { id: 'all', label: 'All' },
@@ -106,7 +106,7 @@ export function Home() {
               key={tab.id}
               id={`home-type-${tab.id.replace(/\s+/g, '-')}`}
               onClick={() => setActiveType(tab.id as ActiveType)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-serif font-medium transition-all cursor-pointer touch-manipulation active:scale-95 ${
+              className={`px-3.5 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer touch-manipulation active:scale-95 tracking-normal ${
                 activeType === tab.id
                   ? 'bg-[#B88E3E] text-white shadow-2xs font-semibold'
                   : 'bg-[#EFE7D8] text-[#5A493B] hover:bg-[#E5DCC9] hover:text-[#231C16]'
@@ -117,9 +117,9 @@ export function Home() {
           ))}
         </div>
 
-        {/* Translator Sub-Toggles with rounded capsule */}
+        {/* Translator Sub-Toggles */}
         {activeType !== 'overview' && (
-          <div className="flex flex-wrap items-center justify-center gap-2 max-w-xl mx-auto mb-6 sm:mb-8 animate-in fade-in duration-200 px-2 text-xs font-serif">
+          <div className="flex flex-wrap items-center justify-center gap-2 max-w-xl mx-auto mb-6 sm:mb-8 animate-in fade-in duration-200 px-2 text-xs font-sans">
             <button
               id="home-translator-all"
               onClick={() => setActiveTranslator('all')}
@@ -216,56 +216,61 @@ export function Home() {
         </FadeInScroll>
       ) : (
         <div className="space-y-12">
-          {filteredData.length === 0 ? (
-            <div className="text-center py-12 bg-[#FAF6EE] rounded-xl border border-[#E7DFC9] p-6">
-              <p className="text-[#5A493B] font-serif text-sm">
-                No items found matching your filters.
-              </p>
-              <div className="mt-2.5 flex items-center justify-center gap-3">
-                {activeType !== 'all' && (
-                  <button 
-                    onClick={() => setActiveType('all')}
-                    className="text-xs text-primary hover:underline font-semibold cursor-pointer"
-                  >
-                    View all types
-                  </button>
-                )}
-                {activeTranslator !== 'all' && (
-                  <button 
-                    onClick={() => setActiveTranslator('all')}
-                    className="text-xs text-primary hover:underline font-semibold cursor-pointer"
-                  >
-                    View all translators
-                  </button>
-                )}
+          {/* Content Categories Display */}
+          <div className="space-y-12">
+            {filteredData.length === 0 ? (
+              <div className="text-center py-12 bg-slate-50/50 rounded-xl border border-dashed border-slate-200">
+                <p className="text-slate-500 text-sm">
+                  No {activeType !== 'all' ? (activeType === 'article' ? 'articles' : activeType === 'video' ? 'videos' : activeType === 'audio' ? 'audios' : activeType === 'pdf' ? 'PDFs' : activeType === 'quote' ? 'quotes' : 'short treatises') : 'documents'} found
+                  {activeTranslator !== 'all' ? ` for ${activeTranslator === 'Abu_Talhah' ? 'Abū Ṭalḥah' : 'Abū Mundhir'}` : ''}.
+                </p>
+                <div className="mt-2.5 flex items-center justify-center gap-3">
+                  {activeType !== 'all' && (
+                    <button 
+                      onClick={() => setActiveType('all')}
+                      className="text-xs text-primary hover:text-red-700 hover:underline font-semibold cursor-pointer"
+                    >
+                      View all types
+                    </button>
+                  )}
+                  {activeTranslator !== 'all' && (
+                    <button 
+                      onClick={() => setActiveTranslator('all')}
+                      className="text-xs text-primary hover:text-red-700 hover:underline font-semibold cursor-pointer"
+                    >
+                      View all translators
+                    </button>
+                  )}
+                </div>
               </div>
-            </div>
-          ) : (
-            CATEGORIES.map(category => {
-              const itemsInCategory = filteredData.filter(item => item.category === category);
-              if (itemsInCategory.length === 0) return null;
+            ) : (
+              CATEGORIES.map(category => {
+                const itemsInCategory = filteredData.filter(item => item.category === category);
+                
+                if (itemsInCategory.length === 0) return null;
 
-              return (
-                <FadeInScroll key={category} className="border-t border-[#E7DFC9] pt-6">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <h2 className="font-heading text-xl sm:text-2xl text-primary font-medium">{category}</h2>
-                    <div className="flex-1 h-px bg-[#E7DFC9]"></div>
-                    <span className="text-xs font-serif text-[#8C7A6B]">
-                      {itemsInCategory.length} {itemsInCategory.length === 1 ? 'item' : 'items'}
-                    </span>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {itemsInCategory.map((item, idx) => (
-                      <FadeInScroll key={item.id} delay={idx * 60} className="h-full flex flex-col">
-                        <ItemCard item={item} />
-                      </FadeInScroll>
-                    ))}
-                  </div>
-                </FadeInScroll>
-              );
-            })
-          )}
+                return (
+                  <FadeInScroll key={category} className="border-t border-[#E7DFC9] pt-6">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <h2 className="font-heading text-xl sm:text-2xl text-primary font-medium">{category}</h2>
+                      <div className="flex-1 h-px bg-[#E7DFC9]"></div>
+                      <span className="text-xs font-serif text-[#8C7A6B]">
+                        {itemsInCategory.length} {itemsInCategory.length === 1 ? 'item' : 'items'}
+                      </span>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {itemsInCategory.map((item, idx) => (
+                        <FadeInScroll key={item.id} delay={idx * 60} className="h-full flex flex-col">
+                          <ItemCard item={item} />
+                        </FadeInScroll>
+                      ))}
+                    </div>
+                  </FadeInScroll>
+                );
+              })
+            )}
+          </div>
         </div>
       )}
     </div>

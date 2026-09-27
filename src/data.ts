@@ -968,6 +968,123 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
     citation: "al-Musnad al-Ṣaḥīḥ al-Mukhtaṣar — Imām Muslim — n° 1233",
     imageUrl: "/muslim_1233.png",
     dateAdded: "2026-09-26"
+  },
+  {
+    id: "31",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Heart-Softeners",
+    type: "quote",
+    title: "Silence is Wisdom, and Few Are Those Who Practice It",
+    speaker: "ʾAnas b. Mālik (d. 93H)",
+    author: "Wakīʿ b. al-Jarrāḥ (d. 197H)",
+    summary: "Wakīʿ b. al-Jarrāḥ transmits from ʾAnas b. Mālik that he said: “Silence is wisdom, and few are those who practice it.”",
+    arabicText: `حَدَّثَنَا عُمَرُ بْنُ سَعْدٍ، قَالَ: سَمِعْتُ أَنَسَ بْنَ مَالِكٍ يَقُولُ:
+
+«الصَّمْتُ حُكْمٌ، وَقَلِيلٌ فَاعِلُهُ»`,
+    englishText: `Wakīʿ b. al-Jarrāḥ narrated:
+
+ʿUmar b. Saʿd [ b. ʿUbayd ] narrated to us; he said: I heard ʾAnas b. Mālik say:
+
+“Silence is wisdom, and few are those who practice it.”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Wakīʿ b. al-Jarrāḥ</strong> narrated:
+    </p>
+
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">ʿUmar b. Saʿd [ b. ʿUbayd ]</em> narrated to us; he said: I heard <strong class="font-semibold text-primary">ʾAnas b. Mālik</strong> say:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+        “Silence is wisdom, and few are those who practice it.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Zuhd — Wakīʿ b. al-Jarrāḥ — pg. 308, n° 81",
+    imageUrl: "/wakee_81.png",
+    dateAdded: "2026-09-27"
+  },
+  {
+    id: "32",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Heart-Softeners",
+    type: "quote",
+    title: "Accustom Yourselves to Good, for Good Comes Through Habit",
+    speaker: "ʿAbdullāh b. Masʿūd (d. 32H)",
+    author: "Wakīʿ b. al-Jarrāḥ (d. 197H)",
+    summary: "Wakīʿ b. al-Jarrāḥ transmits from ʿAbdullāh b. Masʿūd that he said: “Accustom yourselves to good, for good comes through habit.”",
+    arabicText: `حَدَّثَنَا الأَعْمَشُ، عَنْ عِمَارَةَ بْنِ عُمَيْرٍ، عَنْ أَبِي الأَحْوَصِ قَالَ: قَالَ عَبْدُ اللَّهِ:
+
+«تَعَوَّدُوا الخَيْرَ، فَإِنَّ الخَيْرَ بِالعَادَةِ»`,
+    englishText: `Wakīʿ b. al-Jarrāḥ narrated:
+
+al-ʾAʿmash narrated to us, from ʿUmārah b. ʿUmayr, from ʾAbū al-ʾAḥwaṣ, who said: ʿAbdullāh said:
+
+“Accustom yourselves to good, for good comes through habit.”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Wakīʿ b. al-Jarrāḥ</strong> narrated:
+    </p>
+
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">al-ʾAʿmash</em> narrated to us, from <em class="italic opacity-80 font-medium">ʿUmārah b. ʿUmayr</em>, from <em class="italic opacity-80 font-medium">ʾAbū al-ʾAḥwaṣ</em>, who said: <strong class="font-semibold text-primary">ʿAbdullāh [b. Masʿūd]</strong> said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+        “Accustom yourselves to good, for good comes through habit.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Zuhd — Wakīʿ b. al-Jarrāḥ — pp. 264-265, n° 34",
+    imageUrl: "/wakee_34.png",
+    dateAdded: "2026-09-27"
+  },
+  {
+    id: "33",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Heart-Softeners",
+    type: "quote",
+    title: "Nothing is More Deserving of Prolonged Imprisonment Than the Tongue",
+    speaker: "ʿAbdullāh b. Masʿūd (d. 32H)",
+    author: "Wakīʿ b. al-Jarrāḥ (d. 197H)",
+    summary: "ʿAbdullāh b. Masʿūd said: “By Allāh, besides Whom there is no deity, nothing upon the face of the earth is more deserving of prolonged imprisonment than the tongue.”",
+    arabicText: `حَدَّثَنَا الأَعْمَشُ، وَسُفْيَانُ، عَنْ يَزِيدَ بْنِ حَيَّانَ التَّيْمِيِّ، عَنْ عَنْبَسِ بْنِ عُقْبَةَ قَالَ: قَالَ عَبْدُ اللَّهِ:
+
+«وَاللَّهِ الَّذِي لَا إِلَهَ غَيْرُهُ، مَا عَلَى ظَهْرِ الأَرْضِ شَيْءٌ أَحَقُّ بِطُولِ السِّجْنِ مِنَ اللِّسَانِ»`,
+    englishText: `Wakīʿ b. al-Jarrāḥ narrated:
+
+al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, from ʿAnbas b. ʿUqbah, who said: ʿAbduḷḷāh [ b. Masʿūd ] said:
+
+“By Aḷḷāh, besides Whom there is no deity, nothing upon the face of the earth is more deserving of prolonged imprisonment than the tongue.”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Wakīʿ b. al-Jarrāḥ</strong> narrated:
+    </p>
+
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">al-ʾAʿmash</em> and <em class="italic opacity-80 font-medium">Sufyān</em> narrated to us, from <em class="italic opacity-80 font-medium">Yazīd b. Ḥayyān al-Taymī</em>, from <em class="italic opacity-80 font-medium">ʿAnbas b. ʿUqbah</em>, who said: <strong class="font-semibold text-primary">ʿAbduḷḷāh [ b. Masʿūd ]</strong> said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+        “By Aḷḷāh, besides Whom there is no deity, nothing upon the face of the earth is more deserving of prolonged imprisonment than the tongue.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Zuhd — Wakīʿ b. al-Jarrāḥ — pp. 548-550, n° 285",
+    imageUrl: "/wakee_285.png",
+    dateAdded: "2026-09-27"
   }
 ];
 
