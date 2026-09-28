@@ -347,21 +347,8 @@ export function PdfCanvasViewer({
   return (
     <div ref={containerRef} className={wrapperClass}>
       
-      {/* Floating Exit Button for Fullscreen Mode */}
-      {isImmersive && (
-        <div className="fixed top-4 right-4 z-50 flex items-center space-x-2">
-          <button
-            onClick={() => setIsImmersive(false)}
-            className="flex items-center space-x-2 bg-slate-900/90 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-md hover:bg-slate-900 transition-all font-medium text-xs border border-white/10 cursor-pointer"
-          >
-            <X className="w-4 h-4" />
-            <span>Exit Fullscreen</span>
-          </button>
-        </div>
-      )}
-
       {/* Sticky Reader Toolbar */}
-      <div className={`relative overflow-hidden w-full ${canShowTwoPages ? 'max-w-7xl' : 'max-w-5xl'} flex flex-wrap justify-between items-center px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl mb-6 shadow-xs sticky top-3 z-30 gap-2 sm:gap-3 border ${toolbarClass}`}>
+      <div className={`relative overflow-hidden w-full ${canShowTwoPages ? 'max-w-7xl' : 'max-w-5xl'} flex flex-wrap justify-between items-center px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl mb-6 shadow-xs ${isImmersive ? 'relative' : 'sticky top-3 z-30'} gap-2 sm:gap-3 border ${toolbarClass}`}>
         
         {/* Progress Bar */}
         <div className={`absolute bottom-0 left-0 w-full h-1 ${progressBg}`}>
@@ -466,15 +453,16 @@ export function PdfCanvasViewer({
         <div className="flex items-center space-x-1.5 sm:space-x-2">
           <button
             onClick={() => setIsImmersive(!isImmersive)}
-            className={`p-1.5 rounded-md transition-colors cursor-pointer ${
+            className={`p-1.5 rounded-md transition-colors cursor-pointer flex items-center gap-1.5 ${
               isImmersive 
-                ? 'bg-primary text-white' 
+                ? 'bg-primary text-white px-2.5 py-1.5 font-medium text-xs shadow-xs' 
                 : iconBtnClass
             }`}
-            title={isImmersive ? "Exit Fullscreen" : "Fullscreen Reader"}
-            aria-label="Toggle Fullscreen"
+            title={isImmersive ? "Exit Fullscreen (Esc)" : "Fullscreen Reader"}
+            aria-label={isImmersive ? "Exit Fullscreen" : "Fullscreen Reader"}
           >
             {isImmersive ? <Minimize className="w-4 h-4" /> : <Maximize className="w-4 h-4" />}
+            {isImmersive && <span className="hidden xs:inline">Exit</span>}
           </button>
 
           <div className={`hidden md:flex items-center rounded-lg p-0.5 space-x-1 border ${secondaryBg}`}>

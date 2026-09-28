@@ -15,18 +15,19 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-background selection:bg-accent selection:text-white pb-14 md:pb-0">
-      {/* Floating Exit Reading Mode pill when reading mode is active */}
+      {/* In-flow Exit Reading Mode bar when reading mode is active (does not travel over text on scroll) */}
       {isReadingMode && (
-        <div className="fixed top-3 right-4 z-50 flex items-center gap-2.5 bg-primary/90 hover:bg-primary text-white backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg border border-accent/40 text-xs transition-all animate-in fade-in slide-in-from-top-2">
-          <BookOpen className="w-3.5 h-3.5 text-accent" />
-          <span className="font-medium tracking-wide hidden xs:inline">Reading Mode</span>
-          <span className="text-white/40 hidden xs:inline">•</span>
+        <div className="w-full bg-primary text-white px-4 py-2 flex items-center justify-between text-xs border-b border-accent/40 shadow-xs print:hidden">
+          <div className="flex items-center gap-2">
+            <BookOpen className="w-3.5 h-3.5 text-accent" />
+            <span className="font-medium tracking-wide">Reading Mode</span>
+          </div>
           <button
             onClick={toggleReadingMode}
-            className="hover:text-accent font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+            className="hover:text-accent font-semibold transition-colors flex items-center gap-1.5 cursor-pointer bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md"
             title="Exit Reading Mode (or press Esc)"
           >
-            <span>Exit</span>
+            <span>Exit Reading Mode</span>
             <X className="w-3.5 h-3.5" />
           </button>
         </div>

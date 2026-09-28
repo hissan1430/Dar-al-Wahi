@@ -1124,6 +1124,57 @@ al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, fro
     citation: "al-Zuhd — ʾAḥmad — pg. 187, n° 932",
     imageUrl: "/ahmad_zuhd_932.png",
     dateAdded: "2026-09-28"
+  },
+  {
+    id: "35",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Uṣool",
+    type: "quote",
+    title: "The Messenger of Allāh ﷺ is the Greatest Standard",
+    speaker: "Sufyān b. ʿUyaynah (d. 198H)",
+    author: "al-Khaṭīb al-Baghdādī (d. 463H)",
+    summary: "Sufyān b. ʿUyaynah said: “Indeed, the Messenger of Allāh ﷺ is the greatest standard by which things are measured. Things are presented against him—against his character, his way of life, and his guidance. Whatever agrees with them is the truth, and whatever contradicts them is falsehood.”",
+    arabicText: `أَخْبَرَنِي أَبُو مُحَمَّدٍ عَبْدُ اللَّهِ بْنُ يَحْيَى بْنِ عَبْدِ الجَبَّارِ السُّكَّرِيُّ، أنا أَبُو بَكْرٍ مُحَمَّدُ بْنُ عَبْدِ اللَّهِ بْنِ إِبْرَاهِيمَ الشَّافِعِيُّ، نا جَعْفَرُ بْنُ مُحَمَّدِ بْنِ الأَزْهَرِ، نا المُفَضَّلُ بْنُ غَسَّانَ الغَلَابِيُّ، حَدَّثَنِي أَبِي أَوِ ابْنُ مِسْعَرٍ، عَنْ سُفْيَانَ بْنِ عُيَيْنَةَ، أَنَّهُ كَانَ يَقُولُ:
+
+«إِنَّ رَسُولَ اللَّهِ ﷺ هُوَ المِيزَانُ الأَكْبَرُ، فَعَلَيْهِ تُعْرَضُ الأَشْيَاءُ، عَلَى خُلُقِهِ وَسِيرَتِهِ وَهَدْيِهِ، فَمَا وَافَقَهَا فَهُوَ الحَقُّ، وَمَا خَالَفَهَا فَهُوَ البَاطِلُ»`,
+    englishText: `al-Khaṭīb al-Baghdādī narrated:
+
+ʾAbū Muḥaṃṃad ʿAbduḷḷāh b. Yaḥyā b. ʿAbd al-Jabbār al-Sukkarī informed me; he said: ʾAbū Bakr Muḥaṃṃad b. ʿAbduḷḷāh b. ʾIbrāhīm al-Shāfiʿī narrated to us; he said: Jaʿfar b. Muḥaṃṃad b. al-ʾAzhar narrated to us; he said: al-Mufaḍḍal b. Ghassān al-Ghaḷḷābī narrated to me; he said: My father [ Ghassān b. al-Mufaḍḍal al-Ghaḷḷābī ] —or Ibn Misʿar—narrated to me, from Sufyān b. ʿUyaynah, that he used to say:
+
+“Indeed, the Messenger of Aḷḷāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa'l-saḷḷam is the greatest standard by which things are measured. Things are presented against him—against his character, his way of life, and his guidance. Whatever agrees with them is the truth, and whatever contradicts them is falsehood.”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">al-Khaṭīb al-Baghdādī</strong> narrated:
+    </p>
+
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">ʾAbū Muḥaṃṃad ʿAbduḷḷāh b. Yaḥyā b. ʿAbd al-Jabbār al-Sukkarī</em> informed me; he said: <em class="italic opacity-80 font-medium">ʾAbū Bakr Muḥaṃṃad b. ʿAbduḷḷāh b. ʾIbrāhīm al-Shāfiʿī</em> narrated to us; he said: <em class="italic opacity-80 font-medium">Jaʿfar b. Muḥaṃṃad b. al-ʾAzhar</em> narrated to us; he said: <em class="italic opacity-80 font-medium">al-Mufaḍḍal b. Ghassān al-Ghaḷḷābī</em> narrated to me; he said: <em class="italic opacity-80 font-medium">My father [ Ghassān b. al-Mufaḍḍal al-Ghaḷḷābī ] —or Ibn Misʿar—</em>narrated to me, from <strong class="font-semibold text-primary">Sufyān b. ʿUyaynah</strong>, that he used to say:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+        “Indeed, the Messenger of Aḷḷāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa'l-saḷḷam is the greatest standard by which things are measured. Things are presented against him—against his character, his way of life, and his guidance. Whatever agrees with them is the truth, and whatever contradicts them is falsehood.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Jāmiʿ li-ʾAkhlāq al-Rāwī wa ʾĀdāb al-Sāmiʾ — al-Khaṭīb al-Baghdādī — pg. 120, n° 8",
+    imageUrl: "/khatib_real.png",
+    dateAdded: "2026-09-28"
+  },
+  {
+    id: "36",
+    translator: "Abu_Mundhir",
+    category: "Heart-Softeners",
+    type: "pdf",
+    title: "The Book of Abstinence (Kitāb az-Zuhd)",
+    author: "al-Imām al-Ḥāfiẓ Abū Ḥātim Muḥammad ibn Idrīs ar-Rāzī (d. 277H)",
+    summary: "A short juzʾ of one hundred and five narrations related with authentic and historical chains by the great ḥadīth master Abū Ḥātim ar-Rāzī on zuhd, death, repentance, the heart, and knowledge and action, featuring timeless words from al-Ḥasan al-Baṣrī, Mālik ibn Dīnār, Wahb ibn Munabbih, and the Companions.",
+    pdfUrl: "/az-Zuhd.pdf",
+    imageUrl: "/az_zuhd_cover.png",
+    dateAdded: "2026-09-28"
   }
 ];
 
