@@ -1085,6 +1085,45 @@ al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, fro
     citation: "al-Zuhd — Wakīʿ b. al-Jarrāḥ — pp. 548-550, n° 285",
     imageUrl: "/wakee_285.png",
     dateAdded: "2026-09-27"
+  },
+  {
+    id: "34",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Heart-Softeners",
+    type: "quote",
+    title: "Worry and Sorrow Increase Good Deeds",
+    speaker: "Manṣūr b. Zādhān (d. 131H)",
+    author: "Imām ʾAḥmad ibn Ḥanbal (d. 241H)",
+    summary: "Manṣūr b. Zādhān said: “Worry and sorrow increase good deeds, while sin and exultation increase evil deeds.”",
+    arabicText: `حَدَّثَنَا عَبْدُ اللَّهِ، حَدَّثَنَا سُرَيْجٌ، حَدَّثَنَا خَلَفٌ، عَنْ مَنْصُورِ بْنِ زَاذَانَ قَالَ:
+
+«الهَمُّ وَالحَزَنُ يَزِيدُ فِي الحَسَنَاتِ، وَالإِثْمُ وَالبَطَرُ يَزِيدُ فِي السَّيِّئَاتِ»`,
+    englishText: `ʾAḥmad narrated:
+
+ʿAbduḷḷāh narrated to us; Surayj narrated to us; Khalaf narrated to us, from Manṣūr b. Zādhān, who said:
+
+“Worry and sorrow increase good deeds, while sin and exultation increase evil deeds.”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">ʾAḥmad</strong> narrated:
+    </p>
+
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">ʿAbduḷḷāh</em> narrated to us; <em class="italic opacity-80 font-medium">Surayj</em> narrated to us; <em class="italic opacity-80 font-medium">Khalaf</em> narrated to us, from <strong class="font-semibold text-primary">Manṣūr b. Zādhān</strong>, who said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+        “Worry and sorrow increase good deeds, while sin and exultation increase evil deeds.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Zuhd — ʾAḥmad — pg. 187, n° 932",
+    imageUrl: "/ahmad_zuhd_932.png",
+    dateAdded: "2026-09-28"
   }
 ];
 

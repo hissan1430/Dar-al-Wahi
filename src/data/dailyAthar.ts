@@ -49,9 +49,9 @@ export const DAILY_ATHAR_LIST: DailyAthar[] = [
     id: 'athar-5',
     speaker: 'Al-Awzāʿī',
     speakerTitle: 'Imām of the People of Shām (d. 157H)',
-    arabicText: 'عَلَيْكَ بِآثَارِ مَنْ سَلَفَ وَإِنْ رَفَضَكَ النَّاسُ، وَإِيَّاكَ وَآرَاءَ الرِّجَالِ وَإِنْ زَخْرَفُوهُ لَكَ بِالقَوْلِ.',
-    englishText: '“Hold fast to the narrations (āthār) of those who came before, even if the people reject you; and beware of the personal opinions of men, even if they beautify them for you with speech.”',
-    source: 'al-Madkhal ilā as-Sunan al-Kubrā by al-Bayhaqī (Vol. 1, p. 233, no. 248)',
+    arabicText: 'عَلَيْكَ بِآثَارِ مَنْ سَلَفَ وَإِنْ رَفَضَكَ النَّاسُ، وَإِيَّاكَ وَرَأْيَ الرِّجَالِ وَإِنْ زَخْرَفُوهُ بِالقَوْلِ، فَإِنَّ الأَمْرَ يَنْجَلِي وَأَنْتَ مِنْهُ عَلَى طَرِيقٍ مُسْتَقِيمٍ.',
+    englishText: '“Hold fast to the narrations (āthār) of those who came before, even if the people reject you; and beware of the opinions of men, even if they beautify them with speech. For indeed the matter will become clear while you are upon a straight path regarding it.”',
+    source: 'al-Madkhal ilā as-Sunan al-Kubrā by al-Bayhaqī (Vol. 2, p. 627, no. 1365)',
     category: 'Adhering to the Athār'
   },
   {
