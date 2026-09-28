@@ -883,7 +883,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
     type: "quote",
     title: "The Sunnah of al-Iqʿāʾ Upon the Two Feet",
     author: "Imām ʿAbd al-Razzāq al-Ṣanʿānī (d. 211H)",
-    summary: "Ṭāwūs questioned Ibn ʿAbbās concerning the practice of al-iqʿāʾ upon the two feet in prayer, to which Ibn ʿAbbās clarified: “Rather, it is the Sunnah of your Prophet ﷺ.”",
+    summary: "A narration wherein Ṭāwūs questions Ibn ʿAbbās regarding sitting upon the heels (al-iqʿāʾ) between the two prostrations, clarifying its status in the prophetic Sunnah.",
     arabicText: `عَنِ ابنِ جرَيجٍ قَالَ: أَخبَرَنِي أَبو الزبَيرِ، أَنَه سَمِعَ طَاوسًا يَقول:
 
 قلنَا لِابنِ عَبَاسٍ فِي الإِقعَاءِ عَلَى القَدَمَينِ؟ قَالَ: «هِيَ السنَة»، فَقلنَا: إِنَا لَنَرَاه جَفَاءً بِالرَجلِ، قَالَ ابن عَبَاسٍ: «بَل هِيَ سنَة نَبِيِكَ ﷺ»`,
@@ -930,7 +930,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
     type: "quote",
     title: "Prioritizing the Sunnah Over the Statement of Ibn ʿAbbās",
     author: "Imām Muslim ibn al-Ḥajjāj an-Naysābūrī (d. 261H)",
-    summary: "When a man cited the opinion of Ibn ʿAbbās forbidding ṭawāf before the Mawqif, Ibn ʿUmar rebuked him and upheld the Sunnah of the Prophet ﷺ: “Whose statement are you more entitled to follow—the statement of the Messenger of Allāh ﷺ, or the statement of Ibn ʿAbbās, if you are truthful?”",
+    summary: "A narration wherein ʿAbdullāh ibn ʿUmar establishes the obligation of placing the Sunnah and practice of the Messenger of Allāh ﷺ ahead of the personal fatwā of any companion.",
     arabicText: `حَدَّثَنَا يَحْيَى بْنُ يَحْيَى. أَخْبَرَنَا عَبْثَرٌ عَنْ إِسْمَاعِيل بْنِ أَبِي خَالِدٍ، عَنْ وَبَرَةَ. قَالَ:
 
 كُنْتُ جَالِسًا عِنْدَ ابْنِ عُمَرَ. فَجَاءَهُ رَجُلٌ فَقَالَ: أَيَصْلُحُ لِي أَنْ أَطُوفَ بِالْبَيْتِ قَبْلَ أَنْ آتِيَ الْمَوْقِفَ. فَقَالَ: نَعَمْ. فَقَالَ: فَإِنَّ ابْنَ عَبَّاسٍ يَقُولُ: لَا تَطُفْ بِالْبَيْتِ حَتَّى تَأْتِيَ الْمَوْقِفَ. فَقَالَ ابْنُ عُمَرَ: فَقَدْ حَجَّ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ فَطَافَ بِالْبَيْتِ قَبْلَ أَنْ يَأْتِيَ الْمَوْقِفَ. فَبِقَوْلِ رَسُولِ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَحَقُّ أَنْ تَأْخُذَ، أَوْ بِقَوْلِ ابْنِ عَبَّاسٍ، إِنْ كُنْتَ صَادِقًا؟`,
@@ -978,7 +978,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
     title: "Silence is Wisdom, and Few Are Those Who Practice It",
     speaker: "ʾAnas b. Mālik (d. 93H)",
     author: "Wakīʿ b. al-Jarrāḥ (d. 197H)",
-    summary: "Wakīʿ b. al-Jarrāḥ transmits from ʾAnas b. Mālik that he said: “Silence is wisdom, and few are those who practice it.”",
+    summary: "A timeless athar related by ʾAnas ibn Mālik on the virtue and rarity of practicing restraint of speech and embracing silence.",
     arabicText: `حَدَّثَنَا عُمَرُ بْنُ سَعْدٍ، قَالَ: سَمِعْتُ أَنَسَ بْنَ مَالِكٍ يَقُولُ:
 
 «الصَّمْتُ حُكْمٌ، وَقَلِيلٌ فَاعِلُهُ»`,
@@ -1017,7 +1017,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
     title: "Accustom Yourselves to Good, for Good Comes Through Habit",
     speaker: "ʿAbdullāh b. Masʿūd (d. 32H)",
     author: "Wakīʿ b. al-Jarrāḥ (d. 197H)",
-    summary: "Wakīʿ b. al-Jarrāḥ transmits from ʿAbdullāh b. Masʿūd that he said: “Accustom yourselves to good, for good comes through habit.”",
+    summary: "An athar from ʿAbdullāh ibn Masʿūd emphasizing the importance of habituating the soul to righteous deeds and steadfastness in goodness.",
     arabicText: `حَدَّثَنَا الأَعْمَشُ، عَنْ عِمَارَةَ بْنِ عُمَيْرٍ، عَنْ أَبِي الأَحْوَصِ قَالَ: قَالَ عَبْدُ اللَّهِ:
 
 «تَعَوَّدُوا الخَيْرَ، فَإِنَّ الخَيْرَ بِالعَادَةِ»`,
@@ -1056,7 +1056,7 @@ al-ʾAʿmash narrated to us, from ʿUmārah b. ʿUmayr, from ʾAbū al-ʾAḥwa�
     title: "Nothing is More Deserving of Prolonged Imprisonment Than the Tongue",
     speaker: "ʿAbdullāh b. Masʿūd (d. 32H)",
     author: "Wakīʿ b. al-Jarrāḥ (d. 197H)",
-    summary: "ʿAbdullāh b. Masʿūd said: “By Allāh, besides Whom there is no deity, nothing upon the face of the earth is more deserving of prolonged imprisonment than the tongue.”",
+    summary: "A solemn oath from ʿAbdullāh ibn Masʿūd warning against the dangers of unchecked speech and urging vigilance over one’s tongue.",
     arabicText: `حَدَّثَنَا الأَعْمَشُ، وَسُفْيَانُ، عَنْ يَزِيدَ بْنِ حَيَّانَ التَّيْمِيِّ، عَنْ عَنْبَسِ بْنِ عُقْبَةَ قَالَ: قَالَ عَبْدُ اللَّهِ:
 
 «وَاللَّهِ الَّذِي لَا إِلَهَ غَيْرُهُ، مَا عَلَى ظَهْرِ الأَرْضِ شَيْءٌ أَحَقُّ بِطُولِ السِّجْنِ مِنَ اللِّسَانِ»`,
@@ -1095,7 +1095,7 @@ al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, fro
     title: "Worry and Sorrow Increase Good Deeds",
     speaker: "Manṣūr b. Zādhān (d. 131H)",
     author: "Imām ʾAḥmad ibn Ḥanbal (d. 241H)",
-    summary: "Manṣūr b. Zādhān said: “Worry and sorrow increase good deeds, while sin and exultation increase evil deeds.”",
+    summary: "A reflection from the ascetic Manṣūr ibn Zādhān on how grief over one's shortcomings purifies the heart and increases good deeds.",
     arabicText: `حَدَّثَنَا عَبْدُ اللَّهِ، حَدَّثَنَا سُرَيْجٌ، حَدَّثَنَا خَلَفٌ، عَنْ مَنْصُورِ بْنِ زَاذَانَ قَالَ:
 
 «الهَمُّ وَالحَزَنُ يَزِيدُ فِي الحَسَنَاتِ، وَالإِثْمُ وَالبَطَرُ يَزِيدُ فِي السَّيِّئَاتِ»`,
@@ -1134,7 +1134,7 @@ al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, fro
     title: "The Messenger of Allāh ﷺ is the Greatest Standard",
     speaker: "Sufyān b. ʿUyaynah (d. 198H)",
     author: "al-Khaṭīb al-Baghdādī (d. 463H)",
-    summary: "Sufyān b. ʿUyaynah said: “Indeed, the Messenger of Allāh ﷺ is the greatest standard by which things are measured. Things are presented against him—against his character, his way of life, and his guidance. Whatever agrees with them is the truth, and whatever contradicts them is falsehood.”",
+    summary: "A foundational statement from Sufyān ibn ʿUyaynah establishing the character, guidance, and Sunnah of the Prophet ﷺ as the ultimate criterion for all matters.",
     arabicText: `أَخْبَرَنِي أَبُو مُحَمَّدٍ عَبْدُ اللَّهِ بْنُ يَحْيَى بْنِ عَبْدِ الجَبَّارِ السُّكَّرِيُّ، أنا أَبُو بَكْرٍ مُحَمَّدُ بْنُ عَبْدِ اللَّهِ بْنِ إِبْرَاهِيمَ الشَّافِعِيُّ، نا جَعْفَرُ بْنُ مُحَمَّدِ بْنِ الأَزْهَرِ، نا المُفَضَّلُ بْنُ غَسَّانَ الغَلَابِيُّ، حَدَّثَنِي أَبِي أَوِ ابْنُ مِسْعَرٍ، عَنْ سُفْيَانَ بْنِ عُيَيْنَةَ، أَنَّهُ كَانَ يَقُولُ:
 
 «إِنَّ رَسُولَ اللَّهِ ﷺ هُوَ المِيزَانُ الأَكْبَرُ، فَعَلَيْهِ تُعْرَضُ الأَشْيَاءُ، عَلَى خُلُقِهِ وَسِيرَتِهِ وَهَدْيِهِ، فَمَا وَافَقَهَا فَهُوَ الحَقُّ، وَمَا خَالَفَهَا فَهُوَ البَاطِلُ»`,
@@ -1174,6 +1174,45 @@ al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, fro
     summary: "A short juzʾ of one hundred and five narrations related with authentic and historical chains by the great ḥadīth master Abū Ḥātim ar-Rāzī on zuhd, death, repentance, the heart, and knowledge and action, featuring timeless words from al-Ḥasan al-Baṣrī, Mālik ibn Dīnār, Wahb ibn Munabbih, and the Companions.",
     pdfUrl: "/az-Zuhd.pdf",
     imageUrl: "/az_zuhd_cover.png",
+    dateAdded: "2026-09-28"
+  },
+  {
+    id: "37",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "Uṣool",
+    type: "quote",
+    title: "I Would Never Abandon a Sunnah of the Messenger of Allāh ﷺ for Anyone",
+    speaker: "ʿAlī b. Abī Ṭālib (d. 40H)",
+    author: "ʾAbū Dāwūd al-Ṭayālisī (d. 204H)",
+    summary: "A narration documenting the exchange between ʿUthmān and ʿAlī during ḥajj regarding tamattuʿ, illustrating the principle of holding firmly to prophetic guidance above all opinions.",
+    arabicText: `حَدَّثَنَا شُعْبَةُ، عَنِ الحَكَمِ، عَنْ عَلِيِّ بْنِ حُسَيْنٍ، عَنْ مَرْوَانَ بْنِ الحَكَمِ، قَالَ:
+
+«شَهِدْتُ عُثْمَانَ وَعَلِيًّا رَضِيَ اللَّهُ عَنْهُمَا بَيْنَ مَكَّةَ وَالمَدِينَةِ، وَعُثْمَانُ يَنْهَى عَنِ التَّمَتُّعِ، أَوْ أَنْ يُجْمَعَ بَيْنَهُمَا، فَلَمَّا رَأَى ذَلِكَ عَلِيٌّ أَهَلَّ بِهِمَا جَمِيعًا، فَقَالَ: لَبَّيْكَ بِعُمْرَةٍ وَحَجَّةٍ مَعًا، فَقَالَ عُثْمَانُ: تَرَانِي أَنْهَى النَّاسَ عَنْ شَيْءٍ وَأَنْتَ تَفْعَلُهُ؟! قَالَ: مَا كُنْتُ لِأَدَعَ سُنَّةَ رَسُولِ اللَّهِ ﷺ لِقَوْلِ أَحَدٍ مِنَ النَّاسِ»`,
+    englishText: `ʾAbū Dāwūd al-Ṭayālisī narrated:
+
+Shuʿbah narrated to us, from al-Ḥakam, from ʿAlī b. al-Ḥusayn, from Marwān b. al-Ḥakam, who said:
+
+“I witnessed ʿUthmān and ʿAlī, may Aḷḷāh be pleased with them both, between Makkah and Madīnah, while ʿUthmān was forbidding tamattuʿ, or combining the two. When ʿAlī saw this, he entered iḥrām for both of them together and said: ‘Labbayka with ʿumrah and ḥajj together.’ ʿUthmān said: ‘Do you see me forbidding the people from something while you do it?!’ He replied: ‘I would never abandon a Sunnah of the Messenger of Aḷḷāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa'l-saḷḷam for the statement of anyone among the people.’”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">ʾAbū Dāwūd al-Ṭayālisī</strong> narrated:
+    </p>
+
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">Shuʿbah</em> narrated to us, from <em class="italic opacity-80 font-medium">al-Ḥakam</em>, from <em class="italic opacity-80 font-medium">ʿAlī b. al-Ḥusayn</em>, from <strong class="font-semibold text-primary">Marwān b. al-Ḥakam</strong>, who said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+        “I witnessed ʿUthmān and ʿAlī, may Aḷḷāh be pleased with them both, between Makkah and Madīnah, while ʿUthmān was forbidding tamattuʿ, or combining the two. When ʿAlī saw this, he entered iḥrām for both of them together and said: ‘Labbayka with ʿumrah and ḥajj together.’ ʿUthmān said: ‘Do you see me forbidding the people from something while you do it?!’ He replied: ‘I would never abandon a Sunnah of the Messenger of Aḷḷāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa'l-saḷḷam for the statement of anyone among the people.’”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Musnad — ʾAbū Dāwūd al-Ṭayālisī — pg. 94, n° 96",
+    imageUrl: "/tayalisi_96.png",
     dateAdded: "2026-09-28"
   }
 ];
