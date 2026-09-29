@@ -1248,7 +1248,7 @@ export function Viewer() {
                   {/* Arabic Matn */}
                   {item.arabicText && (
                     <div 
-                      className={`text-right rounded-xl p-5 sm:p-7 transition-all font-arabic ${
+                      className={`text-right rounded-xl p-5 sm:p-7 transition-all font-arabic whitespace-pre-wrap ${
                         theme === 'dark' ? 'bg-slate-900/60 border border-slate-800/80 text-amber-300/95' :
                         theme === 'cream' ? 'bg-[#FBF8F1] border border-[#DDD2B8] text-[#1E1710] shadow-[inset_0_1px_3px_rgba(40,30,20,0.02)]' :
                         'bg-amber-50/50 border border-amber-100 text-slate-900'

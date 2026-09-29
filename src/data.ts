@@ -1214,6 +1214,262 @@ Shuʿbah narrated to us, from al-Ḥakam, from ʿAlī b. al-Ḥusayn, from Marw�
     citation: "al-Musnad — ʾAbū Dāwūd al-Ṭayālisī — pg. 94, n° 96",
     imageUrl: "/tayalisi_96.png",
     dateAdded: "2026-09-28"
+  },
+  {
+    id: "38",
+    translator: "Abu_Talhah",
+    translatorName: "Abū Ṭalḥah al-ʾAfġhānī (Verified by Abū Mundhir ar-Ruwāndī)",
+    category: "ʿAqīdah",
+    type: "quote",
+    title: "Confirmation of Looking Towards Allāh, Mighty and Majestic",
+    speaker: "al-Imām al-ʾĀjurrī (d. 360H)",
+    author: "al-Imām al-Muḥaddith Abū Bakr Muḥammad ibn al-Ḥusayn al-ʾĀjurrī (d. 360H)",
+    summary: "Imām al-Ājurrī opens the chapter on the believers beholding their Lord in the Hereafter, contrasting the eternal bliss of the believers with the veiling and punishment of the deniers, and refuting the deviations of the Jahmiyyah with decisive Quranic and prophetic proofs.",
+    arabicText: `كِتَابُ التَّصْدِيقِ بِالنَّظَرِ إِلَى اللَّهِ عَزَّ وَجَلَّ
+
+قَالَ مُحَمَّدُ بْنُ الْحُسَيْنِ رَحِمَهُ اللَّهُ: الْحَمْدُ لِلَّهِ عَلَى جَمِيلِ إِحْسَانِهِ , وَدَوَامِ نِعَمِهِ حَمْدَ مَنْ يَعْلَمُ أَنَّ مَوْلَاهُ الْكَرِيمَ يُحِبُّ الْحَمْدَ , فَلَهُ الْحَمْدُ عَلَى كُلِّ حَالٍ , وَصَلِّ اللَّهُ عَلَى مُحَمَّدٍ النَّبِيِّ وَأَصْحَابِهِ , وَحَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ
+
+أَمَّا بَعْدُ: فَإِنَّ اللَّهَ تَعَالَى جَلَّ ذِكْرُهُ وَتَقَدَّسَتْ أَسْمَاؤُهُ , خَلَقَ خَلْقَهُ كَمَا أَرَادَ لِمَا أَرَادَ , فَجَعَلَهُمْ شَقِيًّا وَسَعِيدًا
+
+فَأَمَّا أَهْلُ الشِّقْوَةِ فَكَفَرُوا بِاللَّهِ الْعَظِيمِ وَعَبَدُوا غَيْرَهُ , وَعَصَوْا رُسُلَهُ , وَجَحَدُوا كُتُبَهُ , فَأَمَاتَهُمْ عَلَى ذَلِكَ , فَهُمْ فِي قُبُورِهِمْ يُعَذَّبُونَ وَفِي الْقِيَامَةِ عَنِ النَّظَرِ إِلَى اللَّهِ تَعَالَى مَحْجُوبُونَ , وَإِلَى جَهَنَّمَ وَارِدُونَ , وَفِي أَنْوَاعِ الْعَذَابِ يَتَقَلَّبُونَ , وَلِلشَّيَاطِينِ مُقَارِبُونَ , وَهُمْ فِيهَا أَبَدًا خَالِدُونَ
+
+وَأَمَّا أَهْلُ السَّعَادَةِ: فَهُمُ الَّذِينَ سَبَقَتْ لَهُمْ مِنَ اللَّهِ الْحُسْنَى , فَآمَنُوا بِاللَّهِ وَحْدَهُ , وَلَمْ يُشْرِكُوا بِهِ شَيْئًا , وَصَدَّقُوا الْقَوْلَ بِالْفِعْلِ , فَأَمَاتَهُمْ عَلَى ذَلِكَ , فَهُمْ فِي قُبُورِهِمْ يُنَعَّمُونَ , وَعِنْدَ الْمَحْشَرِ يُبَشَّرُونَ , وَفِي الْمَوْقِفِ إِلَى اللَّهِ تَعَالَى بِأَعْيُنِهِمْ يَنْظُرُونَ , وَإِلَى الْجَنَّةِ بَعْدَ ذَلِكَ وَافِدُونَ , وَفِي نَعِيمِهَا يَتَفَكَّهُونَ , وَلِلْحُورِ الْعِينِ مُعَانِقُونَ , وَالْوِلْدَانُ لَهُمْ يَخْدُمُونَ , وَفِي جِوَارِ مَوْلَاهُمُ الْكَرِيمِ أَبَدًا خَالِدُونَ؛ وَلِرَبِّهِمْ تَعَالَى فِي دَارِهِ زَائِرُونَ , وَبِالنَّظَرِ إِلَى وَجْهِهِ الْكَرِيمِ يَتَلَذَّذُونَ , وَلَهُ مُكَلِّمُونَ , وَبِالتَّحِيَّةِ لَهُمْ مِنَ اللَّهِ تَعَالَى؛ وَالسَّلَامِ مِنْهُ عَلَيْهِمْ يُكَرَّمُونَ
+
+{ذَلِكَ فَضْلُ اللَّهِ يُؤْتِيهِ مَنْ يَشَاءُ وَاللَّهُ ذُو الْفَضْلِ الْعَظِيمِ} [الحديد: ٢١]
+
+فَإِنِ اعْتَرَضَ جَاهِلٌ مِمَّنْ لَا عِلْمَ مَعَهُ , أَوْ بَعْضُ هَؤُلَاءِ الْجَهْمِيَّةِ الَّذِينَ لَمْ يُوَفَّقُوا لِلرَّشَادِ , وَلَعِبَ بِهِمُ الشَّيْطَانُ وَحُرِمُوا التَّوْفِيقَ فَقَالَ: الْمُؤْمِنُونَ يَرَوْنَ اللَّهَ يَوْمَ الْقِيَامَةِ؟ , قِيلَ لَهُ: نَعَمْ؛ وَالْحَمْدُ لِلَّهِ تَعَالَى عَلَى ذَلِكَ
+
+فَإِنْ قَالَ الْجَهْمِيُّ: أَنَا لَا أُؤْمِنُ بِهَذَا. قِيلَ لَهُ: كَفَرْتَ بِاللَّهِ الْعَظِيمِ. فَإِنْ قَالَ: وَمَا الْحُجَّةُ. قِيلَ: لِأَنَّكَ رَدَدْتَ الْقُرْآنَ وَالسُّنَّةَ وَقَوْلَ الصَّحَابَةِ رَضِيَ اللَّهُ عَنْهُمْ , وَقَوْلَ عُلَمَاءِ الْمُسْلِمِينَ , وَاتَّبَعْتَ غَيْرَ سَبِيلِ الْمُؤْمِنِينَ
+
+{وَمَنْ يُشَاقِقِ الرَّسُولَ مِنْ بَعْدِ مَا تَبَيَّنَ لَهُ الْهُدَى , وَيَتَّبِعْ غَيْرَ سَبِيلِ الْمُؤْمِنِينَ نُوَلِّهِ مَا تَوَلَّى وَنُصْلِهِ جَهَنَّمَ وَسَاءَتْ مَصِيرًا} [النساء: ١١٥]
+
+فَأَمَّا نَصُّ الْقُرْآنِ فَقُولُ اللَّهِ تَعَالَى {وُجُوهٌ يَوْمَئِذٍ نَاضِرَةٌ إِلَى رَبِّهَا نَاظِرَةٌ} [القيامة: ٢٣]
+
+وَقَالَ تَعَالَى وَقَدْ أَخْبَرَنَا عَنِ الْكُفَّارِ أَنَّهُمْ مَحْجُوبُونَ عَنْ رُؤْيَتِهِ فَقَالَ تَعَالَى ذِكْرُهُ {كَلَّا إِنَّهُمْ عَنْ رَبِّهِمْ يَوْمَئِذٍ لَمَحْجُوبُونَ ثُمَّ إِنَّهُمْ لَصَالُو الْجَحِيمِ ثُمَّ يُقَالُ هَذَا الَّذِي كُنْتُمْ بِهِ تُكَذِّبُونَ} [المطففين: ١٥]
+
+فَدُلَّ بِهَذِهِ الْآيَةِ: أَنَّ الْمُؤْمِنِينَ يَنْظُرُونَ إِلَى اللَّهِ , وَأَنَّهُمْ غَيْرُ مَحْجُوبِينَ عَنْ رُؤْيَتِهِ , كَرَامَةً مِنْهُ لَهُمْ
+
+وَقَالَ تَعَالَى: {لِلَّذِينَ أَحْسَنُوا الْحُسْنَى وَزِيَادَةٌ} [يونس: ٢٦] فَرُوِيَ أَنَّ الزِّيَادَةَ هِيَ النَّظَرُ إِلَى اللَّهِ تَعَالَى
+
+وَقَالَ تَعَالَى: {وَكَانَ بِالْمُؤْمِنِينَ رَحِيمًا تَحِيَّتُهُمْ يَوْمَ يَلْقَوْنَهُ سَلَامٌ وَأَعَدَّ لَهُمْ أَجْرًا كَرِيمًا} [الأحزاب: ٤٣]
+
+وَاعْلَمْ رَحِمَكَ اللَّهُ أَنَّ عِنْدَ أَهْلِ الْعِلْمِ بِاللُّغَةِ أَنَّ اللُّقَى هَاهُنَا لَا يَكُونُ إِلَا مُعَايَنَةً يَرَاهُمُ اللَّهُ تَعَالَى وَيَرَوْنَهُ , وَيُسَلِّمُ عَلَيْهِمْ , وَيُكَلِّمُهُمْ وَيُكَلِّمُونَهُ
+
+قَالَ مُحَمَّدُ بْنُ الْحُسَيْنِ: وَقَدْ قَالَ اللَّهُ تَعَالَى لِنَبِيِّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: {وَأَنْزَلْنَا إِلَيْكَ الذِّكْرَ لِتُبَيِّنَ لِلنَّاسِ مَا نُزِّلَ إِلَيْهِمْ وَلَعَلَّهُمْ يَتَفَكَّرُونَ} [النحل: ٤٤]
+
+وَكَانَ مِمَّا بَيَّنَهُ لِأُمَّتِهِ فِي هَذِهِ الْآيَاتِ: أَنَّهُ أَعْلَمَهُمْ فِي غَيْرِ حَدِيثٍ: «إِنَّكُمْ تَرَوْنَ رَبَّكُمْ تَعَالَى»
+
+رَوَى عَنْهُ جَمَاعَةٌ مِنْ صَحَابَتِهِ رَضِيَ اللَّهُ عَنْهُمْ , وَقَبِلَهَا الْعُلَمَاءُ عَنْهُمْ أَحْسَنَ الْقَبُولِ , كَمَا قَبِلُوا عَنْهُمْ عِلْمَ الطَّهَارَةِ وَالصَّلَاةِ وَالزَّكَاةِ وَالصِّيَامِ وَالْحَجِّ وَالْجِهَادِ , وَعِلْمَ الْحَلَالِ وَالْحَرَامِ
+
+كَذَا قَبِلُوا مِنْهُمُ الْأَخْبَارَ: أَنَّ الْمُؤْمِنِينَ يَرَوْنَ اللَّهَ تَعَالَى لَا يَشُكُّونَ فِي ذَلِكَ , ثُمَّ قَالُوا: مَنْ رَدَّ هَذِهِ الْأَخْبَارَ فَقَدْ كَفَرَ`,
+    englishText: `Book: Confirmation of the Looking Towards Allāh, Mighty and Majestic.
+
+Muḥammad ibn al-Ḥusayn (al-ʾĀjurrī), may Allāh have mercy on him, said: All praise is to Allāh upon the beauty of His Goodness and the perpetuity of His bounties - the praise of who knows that his Patron-Master, the Generous loves praise. So praise is for Him upon every state, and may Allāh send Ṣalāh upon Muḥammad (mentioning him with praise among the highest company of Angels and also spreading beautiful praise and mention of His Prophet among His servants), the Prophet, and his companions, and Allāh is sufficient for us and (what) an excellent Guardian (He is).
+
+As for what follows: then indeed Allāh, High be He - Exalted be His mention and sanctified be His Names - created His creation as He desired for what He desired, so He made them wretched and felicitous.
+
+So, as for the people of wretchedness, then they disbelieved in Allāh, the Most Great, and they worshipped other than Him, and they disobeyed His Messengers, and they denied His Scriptures, so He caused them to die upon that, so they are in their graves being punished and on al-Qiyāmah (they will be) veiled from the Beholding towards Allāh, High be He, and to Jahannam entering (it), and in the (various) types of the punishment turning over, and to the devils (they will be) close companions, and they are in it forever eternal.
+
+And as for the people of felicity: then they are the ones the best (reward) preceded for them from Allāh, so they believed in Allāh alone, and they did not associate partners with Him a thing, and they confirmed the speech with the action, so He caused them to die upon that. So they are in their graves favoured, and given glad tidings at the Gathering, and at the Station they are looking with their eyes towards Allāh, High be He, and towards al-Jannah after that arriving in delegations, and in its bliss they are delighting, and to the Ḥūr al-ʿĪn embracing, and the boys of eternal youth serve for them, and in the company of their Patron-Master, the Generous, forever eternal, and visitors to their Lord, High be He, in His house, and in Beholding towards His Face they take pleasure, and to Him speakers, and with the greeting to them from Allāh, High be He, and the Salam from Him upon them they are honoured.
+
+"That is the bounty of Allāh, He gives it to whomever He wills, and Allāh is the possessor of great bounty." - [al-Ḥadīd: 21]
+
+Then, if an ignoramus from whom does not have knowledge with him objects, or some of these Jahmiyyah, those whom were not granted success (in being lead) to right conduct and (whom) al-Sẖayṭān has played with them and who were deprived of Tawfīq, so he says: 'The believers see Allāh on the day of Judgement?', it is said to him: 'Yes; and all praise is due to Allāh, High be He, upon that.'
+
+Then if the Jahmī says: 'I do not believe in this.', it is said to him: 'You have disbelieved in Allāh, the Most Great.' Then if he says: 'And what is the proof?', it is said: 'Because you have rejected the Qurʾān and the Sunnah and the statements of the Companions, may Allāh be pleased with them, and the statements of the scholars of the Muslims, and you have followed other than the path of the believers.'
+
+"And whoever contradicts and opposes the Messenger (Muḥammad ﷺ) after the right path has been shown clearly to him, and follows other than the believers' way. We shall keep him in the path he has chosen, and burn him in Hell - what an evil destination." - [an-Nisāʾ: 115]
+
+So, as for the text of the Qurʾān, then (it is the) statement of Allāh, High be He:
+
+"(Some) faces that day will be radiant (from the bliss of their hearts and joy of their souls). Looking at their Lord." - [al-Qiyāmah: 22-23]
+
+And He, High be He, said - and He had informed us about the disbelievers that they are veiled from His Beholding.
+
+So He said, High be His Mention:
+
+"No (the affair is not as they presume)! Indeed, they, from (seeing) their Lord, that Day, will be veiled. Then indeed, they will surely (enter) and taste (the heat and flames of) Hellfire. Then it will be said (to them): “This (punishment) is what you used to deny (when you would mock Allāh’s Messengers)!”" - [al-Muṭaffifīn: 15-17]
+
+So it is indicated by this verse: that the believers look towards Allāh, and that they are other than veiled from His Beholding, an honour from Him for them.
+
+And He, High be He, said:
+
+"For those who have done good is the best (reward, i.e. Paradise) and even more (i.e. having the honour of glancing at the Countenance of Allāh)." - [Yūnus: 26]
+
+So, it is narrated that al-Ziyādah: it is the look towards Allāh, the Most High.
+
+And He, High be He, said:
+
+"And ever is He, to the believers, Merciful. Their greeting on the Day they shall meet Him will be "Salām: Peace (i.e. the angels will say to them: Salāmu ʿAlaykum)!" And He has prepared for them a generous reward (i.e. Paradise)." - [al-ʾAḥzāb: 43-44]
+
+And know, may Allāh have mercy upon you, that according to the people of knowledge of the language that meeting here cannot be except visually with the eyes, Allāh, High be He, sees them and they see Him, and He sends Salām upon them, and He speaks to them and they speak to Him.
+
+Muḥammad ibn al-Ḥusayn (al-ʾĀjurrī) said: And Allāh, High be He, said to His Prophet صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ:
+
+"And We have also sent down unto you (O Muḥammad ﷺ) the reminder and the advice (the Qurʾān), that you may explain clearly to men what is sent down to them, and that they may give thought." - [al-Naḥl: 44]
+
+And from what he used to clarify to his nation in this verses: that he taught them in other than other than a (single) hadith: "Indeed you will see your Lord, High be He."
+
+A group of the Companions narrated it from him, may Allāh be pleased with them, and the scholars accepted it from them (with the) most excellent of acceptance, just as they accepted from the knowledge of al-Ṭahārah (purification) and al-Ṣalāh (prayer), and al-Zakāh (obligatory charity) and al-Ṣiyām (fasting) and al-Ḥajj (pilgrimage) and al-Jihād, and the knowledge of the Ḥalāl and the Ḥarām.
+
+Likewise, they accepted from them the reports: that the believers see Allāh, High be He - they do not doubt in that. Then they said: Whoever rejects these reports then he has disbelieved.`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Muḥammad ibn al-Ḥusayn (al-ʾĀjurrī)</strong>, may Allāh have mercy on him, said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p>
+        “All praise is to Allāh upon the beauty of His Goodness and the perpetuity of His bounties — the praise of who knows that his Patron-Master, the Generous loves praise. So praise is for Him upon every state, and may Allāh send Ṣalāh upon Muḥammad (mentioning him with praise among the highest company of Angels and also spreading beautiful praise and mention of His Prophet among His servants), the Prophet, and his companions, and Allāh is sufficient for us and (what) an excellent Guardian (He is).”
+      </p>
+    </blockquote>
+  </div>
+
+  <hr class="border-current opacity-15 my-6" />
+
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">As for what follows:</strong> Then indeed Allāh, High be He — Exalted be His mention and sanctified be His Names — created His creation as He desired for what He desired, so He made them wretched and felicitous.
+    </p>
+
+    <p class="leading-relaxed">
+      So, as for the people of wretchedness, then they disbelieved in Allāh, the Most Great, and they worshipped other than Him, and they disobeyed His Messengers, and they denied His Scriptures, so He caused them to die upon that, so they are in their graves being punished and on al-Qiyāmah (they will be) veiled from the Beholding towards Allāh, High be He, and to Jahannam entering (it), and in the (various) types of the punishment turning over, and to the devils (they will be) close companions, and they are in it forever eternal.
+    </p>
+
+    <p class="leading-relaxed">
+      And as for the people of felicity: then they are the ones the best (reward) preceded for them from Allāh, so they believed in Allāh alone, and they did not associate partners with Him a thing, and they confirmed the speech with the action, so He caused them to die upon that. So they are in their graves favoured, and given glad tidings at the Gathering, and at the Station they are looking with their eyes towards Allāh, High be He, and towards al-Jannah after that arriving in delegations, and in its bliss they are delighting, and to the Ḥūr al-ʿĪn embracing, and the boys of eternal youth serve for them, and in the company of their Patron-Master, the Generous, forever eternal, and visitors to their Lord, High be He, in His house, and in Beholding towards His Face they take pleasure, and to Him speakers, and with the greeting to them from Allāh, High be He, and the Salam from Him upon them they are honoured.
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="font-semibold text-[#0B465E]">
+        “That is the bounty of Allāh, He gives it to whomever He wills, and Allāh is the possessor of great bounty.” <span class="text-xs opacity-75 font-sans font-normal">[al-Ḥadīd: 21]</span>
+      </p>
+    </blockquote>
+  </div>
+
+  <hr class="border-current opacity-15 my-6" />
+
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      Then, if an ignoramus from whom does not have knowledge with him objects, or some of these Jahmiyyah, those whom were not granted success (in being lead) to right conduct and (whom) al-Sẖayṭān has played with them and who were deprived of Tawfīq, so he says: <em>‘The believers see Allāh on the day of Judgement?’</em>
+    </p>
+
+    <p class="leading-relaxed">
+      It is said to him: <strong class="font-semibold text-[#0B465E]">‘Yes; and all praise is due to Allāh, High be He, upon that.’</strong>
+    </p>
+
+    <p class="leading-relaxed">
+      Then if the Jahmī says: <em>‘I do not believe in this.’</em> It is said to him: <strong class="font-semibold text-[#0B465E]">‘You have disbelieved in Allāh, the Most Great.’</strong>
+    </p>
+
+    <p class="leading-relaxed">
+      Then if he says: <em>‘And what is the proof?’</em> It is said: <strong class="font-semibold text-primary">‘Because you have rejected the Qurʾān and the Sunnah and the statements of the Companions, may Allāh be pleased with them, and the statements of the scholars of the Muslims, and you have followed other than the path of the believers.’</strong>
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="font-semibold text-[#0B465E]">
+        “And whoever contradicts and opposes the Messenger (Muḥammad ﷺ) after the right path has been shown clearly to him, and follows other than the believers' way. We shall keep him in the path he has chosen, and burn him in Hell — what an evil destination.” <span class="text-xs opacity-75 font-sans font-normal">[an-Nisāʾ: 115]</span>
+      </p>
+    </blockquote>
+  </div>
+
+  <hr class="border-current opacity-15 my-6" />
+
+  <div class="space-y-3">
+    <p class="leading-relaxed font-semibold">
+      So, as for the text of the Qurʾān, then (it is the) statement of Allāh, High be He:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="font-semibold text-[#0B465E]">
+        “(Some) faces that day will be radiant (from the bliss of their hearts and joy of their souls). Looking at their Lord.” <span class="text-xs opacity-75 font-sans font-normal">[al-Qiyāmah: 22–23]</span>
+      </p>
+    </blockquote>
+
+    <p class="mt-4 leading-relaxed">
+      And He, High be He, said — and He had informed us about the disbelievers that they are veiled from His Beholding. So He said, High be His Mention:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="font-semibold text-[#0B465E]">
+        “No (the affair is not as they presume)! Indeed, they, from (seeing) their Lord, that Day, will be veiled. Then indeed, they will surely (enter) and taste (the heat and flames of) Hellfire. Then it will be said (to them): ‘This (punishment) is what you used to deny (when you would mock Allāh’s Messengers)!’” <span class="text-xs opacity-75 font-sans font-normal">[al-Muṭaffifīn: 15–17]</span>
+      </p>
+    </blockquote>
+
+    <p class="leading-relaxed">
+      So it is indicated by this verse: that the believers look towards Allāh, and that they are other than veiled from His Beholding, an honour from Him for them.
+    </p>
+
+    <p class="mt-4 leading-relaxed">
+      And He, High be He, said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="font-semibold text-[#0B465E]">
+        “For those who have done good is the best (reward, i.e. Paradise) and even more (i.e. having the honour of glancing at the Countenance of Allāh).” <span class="text-xs opacity-75 font-sans font-normal">[Yūnus: 26]</span>
+      </p>
+    </blockquote>
+
+    <p class="leading-relaxed opacity-90 italic">
+      So, it is narrated that al-Ziyādah: it is the look towards Allāh, the Most High.
+    </p>
+
+    <p class="mt-4 leading-relaxed">
+      And He, High be He, said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="font-semibold text-[#0B465E]">
+        “And ever is He, to the believers, Merciful. Their greeting on the Day they shall meet Him will be ‘Salām: Peace (i.e. the angels will say to them: Salāmu ʿAlaykum)!’ And He has prepared for them a generous reward (i.e. Paradise).” <span class="text-xs opacity-75 font-sans font-normal">[al-ʾAḥzāb: 43–44]</span>
+      </p>
+    </blockquote>
+
+    <p class="leading-relaxed">
+      And know, may Allāh have mercy upon you, that according to the people of knowledge of the language that meeting here cannot be except visually with the eyes, Allāh, High be He, sees them and they see Him, and He sends Salām upon them, and He speaks to them and they speak to Him.
+    </p>
+  </div>
+
+  <hr class="border-current opacity-15 my-6" />
+
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Muḥammad ibn al-Ḥusayn [al-ʾĀjurrī]</strong> said:
+    </p>
+
+    <p class="leading-relaxed">
+      And Allāh, High be He, said to His Prophet صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="font-semibold text-[#0B465E]">
+        “And We have also sent down unto you (O Muḥammad ﷺ) the reminder and the advice (the Qurʾān), that you may explain clearly to men what is sent down to them, and that they may give thought.” <span class="text-xs opacity-75 font-sans font-normal">[al-Naḥl: 44]</span>
+      </p>
+    </blockquote>
+
+    <p class="leading-relaxed">
+      And from what he used to clarify to his nation in this verses: that he taught them in other than other than a (single) hadith:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+        “Indeed you will see your Lord, High be He.”
+      </p>
+    </blockquote>
+
+    <p class="leading-relaxed">
+      A group of the Companions narrated it from him, may Allāh be pleased with them, and the scholars accepted it from them (with the) most excellent of acceptance, just as they accepted from the knowledge of al-Ṭahārah (purification) and al-Ṣalāh (prayer), and al-Zakāh (obligatory charity) and al-Ṣiyām (fasting) and al-Ḥajj (pilgrimage) and al-Jihād, and the knowledge of the Ḥalāl and the Ḥarām.
+    </p>
+
+    <p class="leading-relaxed">
+      Likewise, they accepted from them the reports: that the believers see Allāh, High be He — they do not doubt in that. Then they said: <strong class="font-semibold text-[#0B465E]">“Whoever rejects these reports then he has disbelieved.”</strong>
+    </p>
+  </div>
+</div>`,
+    citation: "Kitāb ash-Sharīʿah — Muḥammad ibn al-Ḥusayn al-ʾĀjurrī — 2/978-982",
+    imageUrl: "/ajurri_scan.png",
+    dateAdded: "2026-09-29"
   }
 ];
+
 
