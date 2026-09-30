@@ -1858,6 +1858,46 @@ And it has been narrated from the ḥadīth of Jābir, similar to it, with Ibn M
     imageUrl: "/haiyyah scan 1.png",
     scanImages: ["/haiyyah scan 1.png", "/haiyyah scan 2.png"],
     dateAdded: "2026-09-29"
+  },
+  {
+    id: "41",
+    translator: "Abu_Talhah",
+    translatorName: "Abū ʿUbaydillāh al-Qarārī",
+    category: "ʿAqīdah",
+    type: "quote",
+    title: "Sit With Us; Let Us Believe for an Hour",
+    speaker: "Muʿādh ibn Jabal (d. 18H)",
+    author: "Imām ʿAbdullāh ibn Aḥmad ibn Ḥanbal (d. 290H)",
+    summary: "Muʿādh ibn Jabal invites his companion to sit and remember Allāh together so that their faith may increase, establishing that Īmān increases through obedience and remembrance.",
+    arabicText: `حَدَثَنِي أَبِي، نا وَكِيعٌ، نا الأَعمَش، وَمِسعَرٌ، عَن جَامِعِ بنِ شَدَادٍ، عَنِ الأَسوَدِ بنِ هِلَالٍ، قَالَ: قَالَ معَاذٌ:
+
+«اجلِس بِنَا نؤمِن سَاعَةً»`,
+    englishText: `ʿAbduḷḷāh b. ʾAḥmad narrated:
+
+My father narrated to me; Wakīʿ narrated to us; al-ʾAʿmash and Misʿar narrated to us, from Jāmiʿ b. Shaddād, from al-ʾAswad b. Hilāl, who said: Muʿādh said:
+
+“Sit with us; let us believe for an hour.”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">ʿAbduḷḷāh b. ʾAḥmad</strong> narrated:
+    </p>
+
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">My father [ʾAḥmad ibn Ḥanbal]</em> narrated to me; <em class="italic opacity-80 font-medium">Wakīʿ</em> narrated to us; <em class="italic opacity-80 font-medium">al-ʾAʿmash</em> and <em class="italic opacity-80 font-medium">Misʿar</em> narrated to us, from <em class="italic opacity-80 font-medium">Jāmiʿ b. Shaddād</em>, from <em class="italic opacity-80 font-medium">al-ʾAswad b. Hilāl</em>, who said: <strong class="font-semibold text-primary">Muʿādh</strong> said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E] dark:text-[#38bdf8]">
+        “Sit with us; let us believe for an hour.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Sunnah — ʿAbduḷḷāh b. ʾAḥmad — n° 796",
+    imageUrl: "/mu'adh scan.png",
+    scanImages: ["/mu'adh scan.png"],
+    dateAdded: "2026-09-30"
   }
 ];
 
