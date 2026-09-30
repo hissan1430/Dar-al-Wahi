@@ -174,7 +174,7 @@ export function Search() {
         <div className="space-y-4 pt-4 border-t border-[#E7DFC9]/80">
           {/* Primary Content Type Toggles */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
-            {(['all', 'article', 'video', 'audio', 'pdf', 'quote', 'short treatise'] as Tag[]).map(tag => (
+            {(['all', 'article', 'video', 'audio', 'pdf', 'quote', 'poem', 'short treatise'] as Tag[]).map(tag => (
               <button
                 key={tag}
                 id={`search-filter-tag-${tag.replace(/\s+/g, '-')}`}
@@ -185,7 +185,7 @@ export function Search() {
                     : 'bg-[#F5EFE3] text-[#5A493B] hover:bg-[#EAE1D0] hover:text-[#231C16] border border-[#DDD2B8]'
                 }`}
               >
-                {tag === 'all' ? 'All' : tag === 'article' ? 'Articles' : tag === 'video' ? 'Videos' : tag === 'audio' ? 'Audios' : tag === 'pdf' ? 'PDFs' : tag === 'quote' ? 'Quotes' : 'Short Treatises'}
+                {tag === 'all' ? 'All' : tag === 'article' ? 'Articles' : tag === 'video' ? 'Videos' : tag === 'audio' ? 'Audios' : tag === 'pdf' ? 'PDFs' : tag === 'quote' ? 'Quotes' : tag === 'poem' ? 'Poems' : 'Short Treatises'}
               </button>
             ))}
             

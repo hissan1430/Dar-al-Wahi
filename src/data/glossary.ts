@@ -411,5 +411,16 @@ export const DEFAULT_GLOSSARY_TERMS: GlossaryTerm[] = [
     context: 'The Prophet ﷺ said: "Leave that which makes you doubt for that which does not make you doubt." [at-Tirmidhī & an-Nasāʾī].',
     aliases: ['wara', 'warah', 'waraʿ', 'scrupulousness'],
     source: 'al-Waraʿ (al-Marwadhī / Imām Aḥmad)'
+  },
+  {
+    id: 'abir',
+    term: 'ʿAbīr',
+    arabic: 'عَبِير',
+    transliteration: 'al-ʿAbīr',
+    category: 'Heart-Softeners',
+    definition: 'A certain mixture of perfumes compounded with saffron.',
+    context: 'Ibn al-Mubārak wrote in his poem: "The scent of ʿabīr is for you, and us our ʿabīr is the dust of the hoof-tips and the most pleasant dust."',
+    aliases: ['abir', 'ʿabīr', 'abeer', 'al-ʿabīr'],
+    source: 'Lisān al-ʿArab'
   }
 ];

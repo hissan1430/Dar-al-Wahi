@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { MOCK_DATA } from '../data';
 import { ArrowLeft, Bookmark, FileText, Download, Sun, Moon, CheckCircle, Circle, PenSquare, X, RotateCcw, ArrowUpRight, BookOpen, Image as ImageIcon, Play, Headphones, Newspaper, Quote, ListVideo, ChevronLeft, ChevronRight, ChevronDown, ExternalLink, Columns2, Type, Copy, Check, Share2, Sparkles, Split } from 'lucide-react';
@@ -152,6 +152,11 @@ export function Viewer() {
   const item = MOCK_DATA.find(d => d.id === id);
   const bookmarked = item ? isBookmarked(item.id) : false;
   const isRead = item ? stats.readBooks.includes(item.id) : false;
+
+  const renderedHtml = useMemo(() => {
+    if (!item?.htmlText) return '';
+    return toCurlyHtml(item.htmlText);
+  }, [item?.htmlText]);
   
   const { noteContent, saveNote } = useNotes(id || '');
   const savedProgress = id ? getProgress(id) : undefined;
@@ -463,7 +468,7 @@ export function Viewer() {
                 <Headphones className="w-4 h-4" />
               ) : item.type === 'article' ? (
                 <Newspaper className="w-4 h-4" />
-              ) : item.type === 'quote' ? (
+              ) : item.type === 'quote' || item.type === 'poem' ? (
                 <Quote className="w-4 h-4" />
               ) : (
                 <FileText className="w-4 h-4" />
@@ -1144,7 +1149,7 @@ export function Viewer() {
             /* Alfanus-inspired Manuscript Quote & Athār Reader */
             <div className="w-full max-w-4xl space-y-6 relative flex flex-col items-center">
               <div className={`w-full shadow-md border px-4 py-6 sm:px-10 sm:py-10 flex flex-col rounded-2xl transition-colors relative overflow-hidden ${
-                theme === 'dark' ? 'bg-[#181a1f] border-[#2c323f] text-slate-100' :
+                theme === 'dark' ? 'dark bg-[#181a1f] border-[#2c323f] text-slate-100' :
                 theme === 'cream' ? 'bg-[#FFFDF9] border-[#E7DFC9] text-[#231C16] shadow-[0_12px_36px_rgba(40,30,20,0.06)]' :
                 'bg-white border-slate-200/90 text-slate-800'
               }`}>
@@ -1234,7 +1239,20 @@ export function Viewer() {
                   </div>
 
                   {/* Manuscript / Artifact Scan Preview */}
-                  {item.imageUrl && (
+                  {item.scanImages && item.scanImages.length > 0 ? (
+                    <div className="w-full flex flex-col items-center gap-4 py-2">
+                      {item.scanImages.map((scanUrl, sIdx) => (
+                        <div key={sIdx} className="w-full flex justify-center">
+                          <img 
+                            src={scanUrl} 
+                            alt={`${item.title} - Scan ${sIdx + 1}`} 
+                            className="max-h-[650px] w-auto max-w-full rounded-lg object-contain mx-auto shadow-sm"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ) : item.imageUrl && (
                     <div className="w-full flex justify-center py-2">
                       <img 
                         src={item.imageUrl} 
@@ -1248,7 +1266,7 @@ export function Viewer() {
                   {/* Arabic Matn */}
                   {item.arabicText && (
                     <div 
-                      className={`text-right rounded-xl p-5 sm:p-7 transition-all font-arabic whitespace-pre-wrap ${
+                      className={`rounded-xl p-5 sm:p-7 transition-all font-arabic ${
                         theme === 'dark' ? 'bg-slate-900/60 border border-slate-800/80 text-amber-300/95' :
                         theme === 'cream' ? 'bg-[#FBF8F1] border border-[#DDD2B8] text-[#1E1710] shadow-[inset_0_1px_3px_rgba(40,30,20,0.02)]' :
                         'bg-amber-50/50 border border-amber-100 text-slate-900'
@@ -1260,7 +1278,17 @@ export function Viewer() {
                       }}
                       dir="rtl"
                     >
-                      {item.arabicText}
+                      {item.arabicText.split(/\n\n+/).map((para, pIdx) => {
+                        const isPoemVerse = para.includes('...') || para.includes('…');
+                        return (
+                          <div 
+                            key={pIdx} 
+                            className={`${pIdx > 0 ? 'mt-4 sm:mt-5' : ''} ${isPoemVerse ? 'text-center' : 'text-right'} whitespace-pre-wrap`}
+                          >
+                            {para}
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
 
@@ -1274,9 +1302,34 @@ export function Viewer() {
                   >
                     {item.htmlText ? (
                       <div 
-                        className="font-serif tracking-normal leading-relaxed [&_*]:!text-[1em] [&_blockquote]:!text-[1.05em] [&_.text-xs]:!text-[0.8em] [&_.text-sm]:!text-[0.9em]"
+                        className="font-serif tracking-normal leading-relaxed [&_*]:!text-[1em] [&_blockquote]:!text-[1.05em] [&_.text-xs]:!text-[0.8em] [&_.text-sm]:!text-[0.9em] [&_sup]:!text-[0.72em]"
                         style={{ fontSize: 'inherit', lineHeight: 'inherit' }}
-                        dangerouslySetInnerHTML={{ __html: toCurlyHtml(item.htmlText) }}
+                        onClick={(e) => {
+                          const target = e.target as HTMLElement;
+                          const closeBtn = target.closest('[data-fn-action="close"]');
+                          if (closeBtn) {
+                            const details = document.getElementById('footnotes-dropdown') as HTMLDetailsElement | null;
+                            if (details) details.open = false;
+                            return;
+                          }
+                          const fnTrigger = target.closest('[data-fn-target]');
+                          if (fnTrigger) {
+                            const fnId = fnTrigger.getAttribute('data-fn-target');
+                            if (fnId) {
+                              const details = document.getElementById('footnotes-dropdown') as HTMLDetailsElement | null;
+                              if (details) {
+                                details.open = true;
+                              }
+                              setTimeout(() => {
+                                const el = document.getElementById(fnId);
+                                if (el) {
+                                  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                }
+                              }, 60);
+                            }
+                          }
+                        }}
+                        dangerouslySetInnerHTML={{ __html: renderedHtml }}
                       />
                     ) : item.englishText && (
                       <AnnotatedText 

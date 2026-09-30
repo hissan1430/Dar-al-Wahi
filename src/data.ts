@@ -12,7 +12,7 @@ export const CATEGORIES = [
 ] as const;
 
 export type Category = typeof CATEGORIES[number];
-export type ContentType = 'quote' | 'pdf' | 'short treatise' | 'article' | 'video' | 'audio';
+export type ContentType = 'quote' | 'pdf' | 'short treatise' | 'article' | 'video' | 'audio' | 'poem';
 
 export interface VideoEpisode {
   id: string;
@@ -45,6 +45,7 @@ export interface ContentItem {
   soundcloudUrl?: string;
   pages?: string[];
   imageUrl?: string;
+  scanImages?: string[];
   secondaryImages?: { url: string; caption?: string }[];
 }
 
@@ -1468,6 +1469,394 @@ Likewise, they accepted from them the reports: that the believers see Allāh, Hi
 </div>`,
     citation: "Kitāb ash-Sharīʿah — Muḥammad ibn al-Ḥusayn al-ʾĀjurrī — 2/978-982",
     imageUrl: "/ajurri_scan.png",
+    dateAdded: "2026-09-29"
+  },
+  {
+    id: "39",
+    translator: "Abu_Talhah",
+    translatorName: "Abū Ṭalḥah al-ʾAfġhānī",
+    category: "Heart-Softeners",
+    type: "poem",
+    title: "O Worshipper of the Two Sanctuaries (Yā ʿĀbida al-Ḥaramayn)",
+    speaker: "ʿAbdullāh ibn al-Mubārak (d. 181H)",
+    author: "al-Imām al-Ḥāfiẓ Shams al-Dīn al-Dhahabī (d. 748H)",
+    summary: "The celebrated lines of poetry sent by the scholar and mujāhid ʿAbdullāh ibn al-Mubārak from the frontiers of Ṭarsūs to the devout ascetic al-Fuḍayl ibn ʿIyāḍ in the Ḥaram of Makkah, contrasting devotional seclusion with sacrifice in the path of Allāh.",
+    arabicText: `وَرَوَى: عَبْدُ اللهِ بنُ مُحَمَّدٍ قَاضِي نَصِيْبِيْنَ، حَدَّثَنَا مُحَمَّدُ بنُ إِبْرَاهِيْمَ بنِ أَبِي سُكَيْنَةَ، قَالَ: أَمْلَى عَلَيَّ ابْنُ المُبَارَكِ سَنَةَ سَبْعٍ وَسَبْعِيْنَ وَمائَةٍ، وَأَنفَذَهَا مَعِي إِلَى الفُضَيْلِ بنِ عِيَاضٍ مِنْ طَرَسُوْسَ:
+
+يَا عَابِدَ الحَرَمِيْنِ لَوْ أَبْصَرْتَنَا ... لَعَلِمْتَ أَنَّكَ فِي العِبَادَةِ تَلْعَبُ
+مَنْ كَانَ يَخْضِبُ جِيْدَهُ بِدُمُوْعِهِ ... فَنُحُوْرُنَا بِدِمَائِنَا تَتَخَضَّبُ
+أَوْ كَانَ يُتْعِبُ خَيْلَهُ فِي بَاطِلٍ ... فَخُيُوْلُنَا يَوْمَ الصَّبِيْحَةِ تَتْعَبُ
+رِيْحُ العَبِيْرِ لَكُمْ وَنَحْنُ عَبِيْرُنَا ... رَهَجُ السَّنَابِكِ وَالغُبَارُ الأَطْيَبُ
+وَلَقَدْ أَتَانَا مِنْ مَقَالِ نَبِيِّنَا ... قَوْلٌ صَحِيْحٌ صَادِقٌ لاَ يُكْذَبُ:
+لاَ يَسْتَوِي وَغُبَارُ خَيْلِ اللهِ فِي ... أَنْفِ امْرِئٍ وَدُخَانُ نَارٍ تَلهبُ
+هَذَا كِتَابُ اللهِ يَنْطِقُ بَيْنَنَا ... لَيْسَ الشَّهِيْدُ بِمَيِّتٍ لاَ يُكْذَبُ
+
+فَلَقِيْتُ الفُضَيْلَ بِكِتَابِهِ فِي الحَرَمِ، فَقَرَأَهُ وَبَكَى، ثُمَّ قَالَ: صَدَقَ أَبُو عَبْدِ الرَّحْمَنِ وَنَصَحَ.`,
+    englishText: `And ʿAbd Allāh ibn Muḥammad, the Qāḍī (judge) of Naṣībīn (Nusaybin) reported: Muḥammad ibn Ibrāhīm ibn Abī Sukaynah narrated to us, he said: Ibn al-Mubārak dictated upon me in the year 177(AH), and he dispatched it with me to al-Fuḍayl ibn ʿIyāḍ from Ṭarsūs:
+
+“O worshipper of the Two Sacred Sanctuaries, if only you saw us... you would have known that you play in worship
+Who used to dye his neck with his tears... then [know that] our throats are dyed with our blood
+Or who used to exhaust his horse in vanity... then our horses on the day of the morning raid exhaust
+The scent of ʿabīr* is for you, and us our ʿabīr... is the dust of the hoof-tips and the most pleasant dust
+And from the speech of our Prophet has come... a sound, truthful statement, not belied:
+They do not become equal: the dust of the horses of Allāh in... the nose of a man, and the smoke of blazing fire
+This is the Book of Allāh speaking among us:... the martyr is not dead, [a truth] not denied.”
+
+So, I met al-Fuḍayl with his letter in the Ḥaram, so he read it and cried, then he said: ‘Abū ʿAbd al-Raḥmān spoke truthfully, and he gave sound advice.’
+
+* ʿabīr — a certain mixture of perfumes compounded with saffron`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      And <em class="italic opacity-80 font-medium">ʿAbd Allāh ibn Muḥammad</em>, the Qāḍī (judge) of Naṣībīn (Nusaybin) reported: <em class="italic opacity-80 font-medium">Muḥammad ibn Ibrāhīm ibn Abī Sukaynah</em> narrated to us, he said: <strong class="font-semibold text-primary">Ibn al-Mubārak</strong> dictated upon me in the year 177(AH), and he dispatched it with me to <strong class="font-semibold text-primary">al-Fuḍayl ibn ʿIyāḍ</strong> from Ṭarsūs:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 pr-4 py-4 my-4 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed text-center italic">
+      <p class="italic text-center">
+        “<strong class="font-bold text-[#0B465E]">O worshipper of the Two Sacred Sanctuaries</strong>, if only you saw us... you would have known that you <strong class="font-bold text-primary">play in worship</strong>
+      </p>
+      <p class="italic text-center">
+        Who used to dye his neck with his <strong class="font-semibold text-[#0B465E]">tears</strong>... then [know that] our throats are dyed with our <strong class="font-bold text-[#0B465E]">blood</strong>
+      </p>
+      <p class="italic text-center">
+        Or who used to exhaust his horse in <strong class="font-semibold text-primary">vanity</strong>... then our horses on the day of the morning raid <strong class="font-bold text-[#0B465E]">exhaust</strong>
+      </p>
+      <p class="italic text-center">
+        The scent of <strong class="font-bold text-[#0B465E]">ʿabīr</strong><sup class="text-primary font-bold">*</sup> is for you, and us our <strong class="font-bold text-[#0B465E]">ʿabīr</strong>... is the <strong class="font-semibold text-primary">dust of the hoof-tips</strong> and the <strong class="font-bold text-[#0B465E]">most pleasant dust</strong>
+      </p>
+      <p class="italic text-center">
+        And from the speech of our Prophet has come... a <strong class="font-bold text-[#0B465E]">sound, truthful statement, not belied</strong>:
+      </p>
+      <p class="italic text-center">
+        <strong class="font-bold text-primary">They do not become equal:</strong> the <strong class="font-bold text-[#0B465E]">dust of the horses of Allāh</strong> in... the nose of a man, and the <strong class="font-bold text-[#0B465E]">smoke of blazing fire</strong>
+      </p>
+      <p class="italic text-center">
+        This is the <strong class="font-bold text-primary">Book of Allāh</strong> speaking among us:... <strong class="font-bold text-[#0B465E]">the martyr is not dead</strong>, [a truth] not denied.”
+      </p>
+    </blockquote>
+
+    <p class="mt-4 leading-relaxed">
+      So, I met <strong class="font-semibold text-primary">al-Fuḍayl</strong> with his letter in the Ḥaram, so he read it and cried, then he said: <strong class="font-bold text-[#0B465E]">‘Abū ʿAbd al-Raḥmān spoke truthfully, and he gave sound advice.’</strong>
+    </p>
+
+    <div class="mt-6 pt-3 border-t border-black/10 dark:border-white/10 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans">
+      <p><strong class="font-semibold text-primary">* ʿabīr:</strong> a certain mixture of perfumes compounded with saffron</p>
+    </div>
+  </div>
+</div>`,
+    citation: "Siyar ʾAʿlām al-Nubalāʾ — al-Dẖahabī — 8/412–413",
+    imageUrl: "/ibn_al_mubarak_poem_scan.png",
+    dateAdded: "2026-09-29"
+  },
+  {
+    id: "40",
+    translator: "Abu_Talhah",
+    translatorName: "Abū Ṭalḥah al-ʾAfġhānī",
+    category: "ʿAqīdah",
+    type: "poem",
+    title: "al-Ḥāʾiyyah fī al-Sunnah (The Creed of Ibn Abī Dāwūd)",
+    speaker: "Abū Bakr ibn Abī Dāwūd (d. 316H)",
+    author: "al-Imām al-Muḥaddiṯh Muḥammad ibn al-Ḥusayn al-ʾĀjurrī (d. 360H)",
+    summary: "The celebrated thirty-three verse Ḥāʾiyyah poem in affirmation of the Creed of the Salaf dictated by Abū Bakr ibn Abī Dāwūd in the Mosque of al-Raṣāfah, narrated by Imām al-Ājurrī at the culmination of Kitāb al-Sharīʿah.",
+    arabicText: `حَدَّثَنَا أَبُو الْفَضْلِ الْعَبَّاسُ بْنُ يُوسُفَ الشِّكْلِيُّ قَالَ: حَدَّثَنَا إِبْرَاهِيمُ بْنُ الْمُهَلَّبِ الزُّهْرِيُّ قَالَ: حَدَّثَنَا عَبْدُ اللَّهِ بْنُ الْحَسَنِ السَّاحِلِيُّ قَالَ: حَدَّثَنَا بَقِيَّةُ بْنُ الْوَلِيدِ , وَالْوَلِيدُ بْنُ مُسْلِمٍ قَالَا: حَدَّثَنَا ثَوْرُ بْنُ يَزِيدَ , عَنْ خَالِدِ بْنِ مَعْدَانَ , عَنْ مُعَاذِ بْنِ جَبَلٍ قَالَ: قَالَ رَسُولُ اللَّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: «إِذَا حَدَثَ فِي أُمَّتِي الْبِدَعُ وَشُتِمَ أَصْحَابِي فَلْيُظْهِرِ الْعَالِمُ عِلْمَهُ فَمَنْ لَمْ يَفْعَلْ ذَلِكَ مِنْهُمْ فَعَلَيْهِ لَعْنَةُ اللَّهِ وَالْمَلَائِكَةِ وَالنَّاسِ أَجْمَعِينَ» . فَقَالَ عَبْدُ اللَّهِ بْنُ الْحُسَيْنِ: فَقُلْتُ لِلْوَلِيدِ بْنِ مُسْلِمٍ: مَا إِظْهَارُ الْعِلْمِ؟ . قَالَ: إِظْهَارُ السُّنَّةِ , إِظْهَارُ السُّنَّةِ قَالَ مُحَمَّدُ بْنُ الْحُسَيْنِ رَحِمَهُ اللَّهُ: قَدْ رَسَمْتُ فِي هَذَا الْكِتَابِ وَهُوَ كِتَابُ الشَّرِيعَةِ مِنْ أَوَّلِهِ لِآخِرِهِ مَا أَعْلَمُ أَنَّ جَمِيعَ مَنْ شَمِلَهُ الْإِسْلَامُ مُحْتَاجٌ إِلَى عِلْمِهِ لِفَسَادِ مَذَاهِبِ كَثِيرٍ مِنَ النَّاسِ , وَلَمَّا قَدْ ظَهَرَ كَثِيرٌ مِنَ الْأَهْوَاءِ الضَّالَّةِ وَالْبِدَعِ الْمُتَوَاتِرَةِ مَا أَعْلَمَ أَنَّ أَهْلَ الْحَقِّ تَقْوَى بِهِ نُفُوسُهُمْ , وَمَقْمَعَةٌ لِأَهْلِ الْبِدَعِ وَالضَّلَالَةِ عَلَى حَسَبِ مَا عَلَّمَنِيَ اللَّهُ عَزَّ وَجَلَّ , فَالْحَمْدُ لِلَّهِ عَلَى ذَلِكَ. وَقَدْ كَانَ أَبُو بَكْرِ بْنُ أَبِي دَاوُدَ رَحِمَهُ اللَّهُ أَنْشَدَنَا قَصِيدَةً قَالَهَا فِي السُّنَّةِ وَهَذَا مَوْضِعُهَا , وَأَنَا أَذْكُرُهَا لِيَزْدَادَ بِهَا أَهْلُ الْحَقِّ بَصِيرَةً وَقُوَّةً إِنْ شَاءَ اللَّهُ: أَمْلَى عَلَيْنَا أَبُو بَكْرِ بْنُ أَبِي دَاوُدَ فِي مَسْجِدِ الرَّصَافَةِ فِي يَوْمِ الْجُمُعَةِ لِخَمْسٍ بَقِينَ مِنْ شَعْبَانَ سَنَةَ تِسْعٍ وَثَلَاثِمِائَةٍ فَقَالَ تَجَاوَزُ اللَّهُ عَنْهُ:
+
+تَمَسَّكْ بِحَبْلِ اللَّهِ وَاتَّبِعِ الْهُدَى ... وَلَا تَكُ بِدْعِيًا لَعَلَّكَ تُفْلِحُ
+وَدِنْ بِكِتَابِ اللَّهِ وَالسُّنَنِ الَّتِي ... أَتَتْ عَنْ رَسُولِ اللَّهِ تَنْجُو وَتَرْبَحُ
+وَقُلْ: غَيْرُ مَخْلُوقٍ كَلَامُ مَلِيكِنَا ... بِذَلِكَ دَانَ الْأَتْقِيَاءُ وَأَفْصَحُوا
+وَلَا تَغْلُ فِي الْقُرْآنِ بِالْوَقْفِ قَائِلًا ... كَمَا قَالَ أَتْبَاعٌ لِجَهْمٍ وَأَسْجَحُوا
+وَلَا تَقُلِ: الْقُرْآنُ خَلْقٌ قَرَأْتُهُ ... فَإِنَّ كَلَامَ اللَّهِ بِاللَّفْظِ يُوضَحُ
+وَقُلْ يَتَجَلَّى اللَّهُ لِلْخَلْقِ جَهْرَةً ... كَمَا الْبَدْرُ لَا يَخْفَى وَرَبُّكَ أَوْضَحُ
+وَلَيْسَ بِمَوْلُودٍ وَلَيْسَ بِوَالِدٍ ... وَلَيْسَ لَهُ شِبْهٌ تَعَالَى الْمُسَبَّحُ
+وَقَدْ يُنْكِرُ الْجَهْمِيُّ هَذَا وَعِنْدَنَا ... بِمِصْدَاقِ مَا قُلْنَا حَدِيثٌ مُصَرِّحُ
+رَوَاهُ جَرِيرٌ عَنْ مَقَالِ مُحَمَّدٍ ... فَقُلْ مِثْلَ مَا قَدْ قَالَ فِي ذَاكَ تَنْجَحُ
+وَقَدْ يُنْكِرُ الْجَهْمِيُّ أَيْضًا يَمِينَهُ ... وَكِلْتَا يَدَيْهِ بِالْفَوَاضِلِ تَنْضَحُ
+وَقُلْ: يَنْزِلُ الْجَبَّارُ فِي كُلِّ لَيْلَةٍ ... بِلَا كَيْفٍ جَلَّ الْوَاحِدُ الْمُتَمَدَّحُ
+إِلَى طَبَقِ الدُّنْيَا يَمُنُّ بِفَضْلِهِ ... فَتُفْرَجُ أَبْوَابُ السَّمَاءِ وَتُفْتَحُ
+يَقُولُ: أَلَا مُسْتَغْفِرٍ يَلْقَى غَافِرًا ... وَمُسْتَمْنِحٌ خَيْرًا وَرِزْقًا فَيُمْنَحُ
+رَوَى ذَاكَ قَوْمٌ لَا يُرَدُّ حَدِيثُهُمْ ... أَلَا خَابَ قَوْمٌ كَذَّبُوهُمْ وَقُبِّحُوا
+وَقُلْ: إِنَّ خَيْرَ النَّاسِ بَعْدَ مُحَمَّدٍ ... وَزِيرَاهُ قِدْمًا ثُمَّ عُثْمَانُ الْأَرْجَحُ
+وَرَابِعُهُمْ خَيْرُ الْبَرِيَّةِ بَعْدَهُمُ ... عَلِيٌّ حَلِيفُ الْخَيْرِ بِالْخَيْرِ مُنْجِحُ
+وَإِنَّهُمْ وَالرَّهْطُ لَا رَيْبَ فِيهِمُ ... عَلَى نُجِبِ الْفِرْدَوْسِ فِي الْخُلْدِ تَسْرَحُ
+سَعِيدٌ وَسَعْدٌ وَابْنُ عَوْفٍ وَطَلْحَةُ ... وَعَامِرُ فِهْرٍ وَالزُّبَيْرُ الْمُمَدَّحُ
+وَقُلْ: خَيْرُ قَوْلٍ فِي الصَّحَابَةِ كُلِّهِمُ ... وَلَا تَكُ طَعَّانًا تَعِيبُ وَتَجْرَحُ
+فَقَدْ نَطَقَ الْوَحْي الْمُبِينُ بِفَضْلِهِمُ ... وَفِي الْفَتْحِ آيٌ فِي الصَّحَابَةِ تَمْدَحُ
+وَبِالْقَدَرِ الْمَقْدُورِ أَيْقِنْ فَإِنَّهُ ... دِعَامَةُ عِقْدِ الدِّينِ وَالدَّيْنُ أَفْيَحُ
+وَلَا تُنْكِرَنَّ جَهْلًا نَكِيرًا وَمُنْكَرًا ... وَلَا الْحَوْضَ وَالْمِيزَانَ إِنَّكَ تُنْصَحُ
+وَقُلْ: يُخْرِجُ اللَّهُ الْعَظِيمُ بِفَضْلِهِ ... مِنَ النَّارِ أَجْسَادًا مِنَ الْفَحْمِ تُطْرَحُ
+عَلَى النَّهَرِ فِي الْفِرْدَوْسِ تَحْيَا بِمَائِهِ ... كَحَبَّةِ حَمْلِ السَّيْلِ إِذْ جَاءَ يَطْفَحُ
+وَإِنَّ رَسُولَ اللَّهِ لِلْخَلْقِ شَافِعٌ ... وَقُلْ فِي عَذَابِ الْقَبْرِ: حَقٌّ مُوَضَّحُ
+وَلَا تُكَفِّرَنَّ أَهْلَ الصَّلَاةِ وَإِنْ عَصَوْا ... فَكُلُّهُمْ يَعْصِي وَذُو الْعَرْشِ يَصْفَحُ
+وَلَا تَعْتَقِدْ رَأْيَ الْخَوَارِجِ إِنَّهُ ... مَقَالٌ لِمَنْ يَهْوَاهُ يُرْدِي وَيَفْضَحُ
+وَلَا تَكُ مُرْجِئًا لَعُوبًا بِدِينِهِ ... أَلَا إِنَّمَا الْمُرْجِيُّ بِالدَّيْنِ يَمْزَحُ
+وَقُلْ: إِنَّمَا الْإِيمَانُ قَوْلٌ وَنِيَّةٌ ... وَفِعْلٌ عَلَى قَوْلِ النَّبِيِّ مُصَرَّحُ
+وَيَنْقُصُ طَوْرًا بِالْمَعَاصِي وَتَارَةً ... بِطَاعَتِهِ يُنَمَّى وَفِي الْوَزْنِ يَرْجَحُ
+وَدَعْ عَنْكَ آرَاءَ الرِّجَالِ وَقَوْلَهُمْ ... فَقَوْلُ رَسُولِ اللَّهِ أَزْكَى وَأَشْرَحُ
+وَلَا تَكُ مِنْ قَوْمٍ تَلَهَّوْا بِدِينِهِمْ ... فَتَطْعَنُ فِي أَهْلِ الْحَدِيثِ وَتَقْدَحُ
+إِذَا مَا اعْتَقَدْتَ الدَّهْرَ يَا صَاحِ هَذِهِ ... فَأَنْتَ عَلَى خَيْرٍ تَبِيتُ وَتُصْبِحُ
+
+ثُمَّ قَالَ لَنَا أَبُو بَكْرِ بْنُ أَبِي دَاوُدَ: هَذَا قَوْلِي وَقَوْلُ أَبِي وَقَوْلُ أَحْمَدَ بْنِ حَنْبَلٍ وَقَوْلُ مَنْ أَدْرَكْنَا مِنْ أَهْلِ الْعِلْمِ وَمَنْ لَمْ نُدْرِكْ مِمَّنْ بَلَغَنَا عَنْهُ , فَمَنْ قَالَ عَلَيَّ غَيْرِ هَذَا فَقَدْ كَذَبَ قَالَ مُحَمَّدُ بْنُ الْحُسَيْنِ رَحِمَهُ اللَّهُ: وَبِهَذَا وَبِجَمِيعِ مَا رَسَمْتُهُ فِي كِتَابِنَا هَذَا وَهُوَ كِتَابُ الشَّرِيعَةَ ثَلَاثَةٌ وَعِشْرُونَ جُزْءًا نَدِينُ اللَّهَ عَزَّ وَجَلَّ , وَنَنْصَحُ إِخْوَانِنَا مِنْ أَهْلِ السُّنَّةِ وَالْجَمَاعَةِ , مِنْ أَهْلِ الْقُرْآنِ وَأَهْلِ الْحَدِيثِ وَأَهْلِ الْفِقْهِ وَجَمِيعِ الْمَسْتُورِينَ فِي ذَلِكَ؛ فَمَنْ قَبِلَ فَحَظُّهُ مِنَ الْخَيْرِ إِنْ شَاءَ اللَّهُ , وَمَنْ رَغِبَ عَنْهُ أَوْ عَنْ شَيْءٍ مِنْهُ فَنَعُوذُ بِاللَّهِ مِنْهُ , وَأَقُولُ لَهُ كَمَا قَالَ نَبِيُّ مِنْ أَنْبِيَاءِ اللَّهِ عَزَّ وَجَلَّ لِقَوْمِهِ لَمَّا نَصَحَهُمْ فَقَالَ {فَسَتَذْكُرُونَ مَا أَقُولُ لَكُمْ وَأُفَوِّضُ أَمْرِي إِلَى اللَّهِ إِنَّ اللَّهَ بَصِيرٌ بِالْعِبَادِ} [غافر: ٤٤]`,
+    englishText: `al-Imām al-Muḥaddiṯh Muḥammad ibn al-Ḥusayn al-ʾĀjurrī, may Allāh be pleased with him, narrated at the end of his book al-Sẖarīʿah:
+
+Abū al-Faḍl al-ʿAbbās ibn Yūsuf al-Sẖaklī narrated to us, he said: Ibrāhīm ibn al-Muhallab al-Zuhrī narrated to us, he said: ʿAbd Allāh ibn al-Ḥasan al-Sāḥilī narrated to us, he said: Baqiyyah ibn al-Walīd and al-Walīd ibn Muslim narrated to us, they both said: Ṯhawr ibn Yazīd narrated to us, from Kẖālid ibn Maʿdān, from Muʿādẖ ibn Jabal, may Allāh be pleased with him, he said: The Messenger of Allāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa-saḷḷam said: “When innovations take place in my nation, and my Companions are reviled, then let the scholar make his knowledge manifest; so, whoever does not do that from them, then upon him be the curse of Allāh, and the Angels, and the people altogether.” So, ʿAbd Allāh ibn al-Ḥusayn said: So, I said to al-Walīd ibn Muslim: ‘What is the manifestation of knowledge?’ He said: ‘The manifestation of the Sunnah, the manifestation of the Sunnah.’¹
+
+Muḥammad ibn al-Ḥusayn (al-ʾĀjurrī), may Allāh have mercy on him, said: I have recorded in this book, and it is the book al-Sẖarīʿah, from its beginning to its end what I know that all those al-ʾIslām has encompassed is in need to his knowledge, due to the corruption of the doctrines of many from the people. And since much from the astray desires and successive innovations have appeared [I recorded that] which I know, that the people of the truth, their souls are strengthened by it, and is a subduing rod for the People of Innovations and Misguidance according to what Allāh, Mighty and Majestic, taught me, so all praises are due to Allāh upon that.
+
+And Abū Bakr ibn Abī Dāwūd, may Allāh have mercy on him, had recited to us a poem [which] he said concerning the Sunnah, and this is its place, and I mention it to increase the insight and strength of the people of the truth by it, ʾin sẖāʾ Allāh.
+
+Abū Bakr ibn Abī Dāwūd dictated upon us in the Mosque of al-Raṣāfah on the Day of Friday with five [days] remaining from Sẖaʿbān, the year 309 (AH), so he said, may Allāh pardon him:²
+
+“Hold fast to the Rope of Allāh and follow the guidance... and do not be a heretical innovator, that perhaps you succeed
+And take as a religion by the Book of Allāh and the Sunan which... came forth from the Messenger of Allāh; you will be saved and profit
+And say: ‘The Speech of our King is uncreated’... with that the God-fearing took as a religion and clearly articulated
+And do not go to extremes regarding the Qurʾān, by suspension [of judgement] a sayer... as the followers of Jahm said and acted leniently
+And do not say: ‘The Qurʾān is a creation, I recited it.’... for indeed the Speech of Allāh is made clear with utterance
+And say: Allāh manifests [Himself in the Hereafter] to the creation openly... just as the full moon does not remain hidden, and your Lord is more clearer
+And He is not a begotten being and He is not a begetter... and there is no likeness to Him; Exalted is the Glorified.
+And the Jahmī has denied this, and with us... by confirmation of what we have said is an explicit ḥadīṯh
+Jarīr³ narrated it from the saying of Muḥammad... so say the like of what he had said regarding that, you will succeed
+And the Jahmī has denied, also, His right Hand... and both of His Hands flow with bounties⁴
+And say: The Compellor descends during every night... without a ‘how’, Majestic is the One, the Praised
+To the layer of the world bestowing favours by His grace... so the gates of the heavens are parted and opened
+He says: Is there not one seeking forgiveness, [that] he meets a Forgiver... and a seeker of goodness and provision, so [that] it is bestowed?⁵
+A people whose ḥadīṯh are not rejected narrated that;... Truly a people who have belied them have failed and have been reviled
+And say: Indeed the best of people after Muḥammad are... his two ministers of old, then ʿUṯhmān, [and that is] the most preponderant [view]
+And the fourth of them is the best of creatures after them... ʿAlī, the ally of good, successful by goodness
+And indeed them, and the group [of ten], there is no doubt concerning them... upon the noble-bred she-camels of al-Firdaws in immortality roaming freely
+Saʿīd and Saʿd and Ibn ʿAwf and Ṭalḥah... and ʿĀmir of Fihr and al-Zubayr the praised
+And say the best speech regarding the Companions, all of them... and do not be a maligner, blaming and wounding
+For the clear revelation has spoken of their virtue... and in [Surah] al-Fatḥ are verses regarding the Companions, praising [them].
+And be certain of the pre-ordained decree, for it is... the pillar of the knot of the religion, and the religion is vast
+And do not deny, out of ignorance, Nakīr and Munkar... nor the Prophetic Basin and the Scales; indeed you are being advised
+And say: Allāh, the Magnificently Great, takes out, by His grace... from the Fire bodies of charcoal casted
+Upon the river from al-Firdaws, brought to life by its water... like the seed carried [by] the flood when it comes overflowing⁶
+And indeed the Messenger of Allāh is an intercessor for the creation... and say regarding the punishment of the grave: ‘[It is] the truth, explained
+And do not declare the people of the prayer as disbelievers even if they transgress... for all of them transgress, and the Possessor of the Throne pardons
+And do not believe in the view of the Kẖawārij, indeed it is... speech that causes the one who desires it to fall and disgraces [him]
+And do not be a Murjiʾī, playing with his religion... Verily the Murjī jests with the religion
+And say: Indeed belief is statement and intention... and action, upon the statement of the Prophet ﷺ, explicitly stated
+And it diminishes at times through transgressions, and at times... through His obedience it grows, and in the weighing it outweighs
+And forsake the opinions of men and their speech from yourself... for the statement of the Messenger of Allāh ﷺ is purer and more expansive
+And do not be a people amused [themselves] with their religion... such that you revile in the People of the Ḥadīṯh and vilify
+When you have believed in this [throughout] time, O my companion... then you are upon goodness [when] you spend the night and enter the morning.”
+
+Then Abū Bakr ibn Abī Dāwūd said to us: ‘This is my saying, and the saying of my father, and the saying of ʾAḥmad ibn Ḥanbal, and the saying of who we met from the People of Knowledge and who we have not met, from those we have been informed from. So, whoever says other than this upon me, then he has lied.’
+
+Muḥammad ibn al-Ḥusayn (al-ʾĀjurrī), may Allāh have mercy on him, said: And with this and the entirety of what I have recorded in this book of ours, and it is the book al-Sẖarīʿah, twenty-three parts, we take Allāh, Mighty and Majestic, as our religion, and we sincerely advise our brothers from the People of the Sunnah and the Congregation, from the People of the Qurʾān and the People of the Ḥadīṯh and the People of al-Fiqh and all those concealed in that. So, whoever accepts, then his share is good, ʾin sẖāʾ Allāh, and whoever turns away from it, or from a thing from it, then we seek refuge in Allāh from him, and I say to him just as a Prophet from the Prophets of Allāh, Mighty and Majestic, said to his people when he sincerely advised them, saying: “And you will remember what I am telling you, and my affair I leave it to Allāh. Verily, Allah is the All-Seer of (His) slaves.” [Ġẖāfir:44]
+
+---
+Footnotes:
+1. 2075 – Its isnād: in it is weakness.
+
+In it is ʿAbd Allāh b. al-Ḥasan al-Sāḥilī: the editor did not come across a biography for him.
+And in it is Ibrāhīm b. al-Muhallab al-Zuhrī: the editor did not come across a biography for him. He has preceded in ḥadīth no. 2041.
+And in it is the author's teacher. The editor did not come across his authentication (tawthīq). He has preceded in ḥadīth no. 2040.
+
+Its takhrīj:
+Ibn ʿAsākir, Ibn Razqawayh and al-Daylamī narrated it, as in al-Silsilah al-Ḍaʿīfah.
+And Shaykh al-Albānī ruled it with nakārah [i.e. that it is munkar], ḥadīth no. 1506 (4/14).
+And it has been narrated from the ḥadīth of Jābir, similar to it, with Ibn Mājah and others, and Shaykh al-Albānī said about it: very weak (ḍaʿīf jiddan). Al-Silsilah al-Ḍaʿīfah, ḥadīth no. 1507 (4/15).
+
+2. The qaṣīdah is in Ṭabaqāt al-Ḥanābilah (2/53) and Siyar Aʿlām al-Nubalāʾ (13/233), and it has been printed in an independent treatise.
+
+3. Jarīr: he is Ibn ʿAbd Allāh al-Bajalī, the eminent Companion. And his ḥadīth on the believers' seeing their Lord on the Day of Resurrection was narrated by al-Bukhārī: 2/27, in Mawāqīt al-Ṣalāh: chapter of the virtue of the ʿAṣr prayer; and 8/458, in the tafsīr of Sūrat Qāf; and 13/356, in al-Tawḥīd: chapter of the saying of Allāh, the Exalted: {Faces on that Day [will be] radiant}; and by Muslim: (633), in al-Masājid: chapter of the virtue of the two prayers of Ṣubḥ and ʿAṣr; and Abū Dāwūd: (4729), and al-Tirmidhī: (2754).
+
+4. Aḥmad narrated: 2/160, and Muslim in al-Ṣaḥīḥ: (7127), in al-Imārah: chapter of the virtue of the just Imām, and al-Nasāʾī: 8/221, from the ḥadīth of ʿAbd Allāh b. ʿAmr, he said: The Messenger of Allāh (ﷺ) said: "Indeed the just (al-muqsiṭūn) are with Allāh upon pulpits of light, on the right of al-Raḥmān, Mighty and Majestic, and both His hands are right, those who are just in their ruling and their families and what they were given authority over."
+
+5. And the ḥadīth of the descent of the Lord, Glorified and Exalted, to the heaven of the world when the last third of the night remains, was narrated from the ḥadīth of Abū Hurayrah by Mālik, 1/214; and al-Bukhārī: 13/389–390, in al-Tawḥīd: chapter of the saying of Allāh, the Exalted: {They wish to change the speech of Allāh}; and Muslim: (758), in Ṣalāt al-Musāfirīn: chapter of encouragement to supplication and remembrance at the end of the night; Abū Dāwūd: (1315), and al-Tirmidhī: (3498).
+
+6. Al-Bukhārī narrated: 1/68, in al-Īmān: chapter of the superiority of the people of faith over one another, and Muslim: (184), in al-Īmān: chapter of the affirmation of intercession and the bringing out of the monotheists from the Fire, from the ḥadīth of Abū Saʿīd al-Khudrī, he said: The Messenger of Allāh (ﷺ) said: "The people of Paradise enter Paradise, and the people of the Fire [enter] the Fire, then Allāh, the Exalted, says: Bring out whoever has in his heart the weight of a mustard seed of faith. So they come out of it, having blackened, and are cast into the river of life, so they sprout as the ḥibbah sprouts at the side of the torrent. Have you not seen that it comes out yellow, twisted?" And al-ḥibbah, with kasrah on its first [letter], Abū Ḥanīfah al-Dīnawarī said: it is the plural of the seeds of plants, its singular being ḥabbah, with fatḥah. As for al-ḥabb, it is wheat and barley, its singular being ḥabbah, also with fatḥah, and they differ only in the plural.`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">al-Imām al-Muḥaddiṯh Muḥammad ibn al-Ḥusayn al-ʾĀjurrī</strong>, may Allāh be pleased with him, narrated at the end of his book <em class="italic font-medium">al-Sẖarīʿah</em>:
+    </p>
+
+    <p class="leading-relaxed">
+      <em class="italic opacity-80 font-medium">Abū al-Faḍl al-ʿAbbās ibn Yūsuf al-Sẖaklī</em> narrated to us, he said: <em class="italic opacity-80 font-medium">Ibrāhīm ibn al-Muhallab al-Zuhrī</em> narrated to us, he said: <em class="italic opacity-80 font-medium">ʿAbd Allāh ibn al-Ḥasan al-Sāḥilī</em> narrated to us, he said: <em class="italic opacity-80 font-medium">Baqiyyah ibn al-Walīd</em> and <em class="italic opacity-80 font-medium">al-Walīd ibn Muslim</em> narrated to us, they both said: <em class="italic opacity-80 font-medium">Ṯhawr ibn Yazīd</em> narrated to us, from <em class="italic opacity-80 font-medium">Kẖālid ibn Maʿdān</em>, from <strong class="font-semibold text-primary">Muʿādẖ ibn Jabal</strong>, may Allāh be pleased with him, he said: The Messenger of Allāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa-saḷḷam said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-2 font-serif leading-relaxed">
+      <p class="font-bold text-[#0B465E]">
+        “When innovations take place in my nation, and my Companions are reviled, then let the scholar make his knowledge manifest; so, whoever does not do that from them, then upon him be the curse of Allāh, and the Angels, and the people altogether.”
+      </p>
+    </blockquote>
+
+    <p class="leading-relaxed">
+      So, <em class="italic opacity-80 font-medium">ʿAbd Allāh ibn al-Ḥusayn</em> said: So, I said to <strong class="font-semibold text-primary">al-Walīd ibn Muslim</strong>: ‘What is the manifestation of knowledge?’ He said: <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">‘The manifestation of the Sunnah, the manifestation of the Sunnah.’</strong><sup data-fn-target="fn-1" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">¹</sup>
+    </p>
+
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Muḥammad ibn al-Ḥusayn (al-ʾĀjurrī)</strong>, may Allāh have mercy on him, said: I have recorded in this book, and it is the book <em class="italic font-medium">al-Sẖarīʿah</em>, from its beginning to its end what I know that all those al-ʾIslām has encompassed is in need to his knowledge, due to the corruption of the doctrines of many from the people. And since much from the astray desires and successive innovations have appeared [I recorded that] which I know, that the people of the truth, their souls are strengthened by it, and is a subduing rod for the People of Innovations and Misguidance according to what Allāh, Mighty and Majestic, taught me, so all praises are due to Allāh upon that.
+    </p>
+
+    <p class="leading-relaxed">
+      And <strong class="font-semibold text-primary">Abū Bakr ibn Abī Dāwūd</strong>, may Allāh have mercy on him, had recited to us a poem [which] he said concerning the <em class="italic font-semibold text-primary">Sunnah</em>, and this is its place, and I mention it to increase the insight and strength of the people of the truth by it, ʾin sẖāʾ Allāh.
+    </p>
+
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Abū Bakr ibn Abī Dāwūd</strong> dictated upon us in the Mosque of al-Raṣāfah on the Day of Friday with five [days] remaining from Sẖaʿbān, the year 309 (AH), so he said, may Allāh pardon him:<sup data-fn-target="fn-2" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">²</sup>
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 pr-4 py-4 my-4 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed text-center italic">
+      <p class="italic text-center">
+        “<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Hold fast to the Rope of Allāh</strong> and follow the guidance... and do not be a <strong class="font-bold text-primary">heretical innovator</strong>, that perhaps you succeed
+      </p>
+      <p class="italic text-center">
+        And take as a religion by the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Book of Allāh</strong> and the <strong class="font-bold text-primary">Sunan</strong> which... came forth from the Messenger of Allāh; you will be saved and profit
+      </p>
+      <p class="italic text-center">
+        And say: <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">‘The Speech of our King is uncreated’</strong>... with that the <strong class="font-semibold text-primary">God-fearing</strong> took as a religion and clearly articulated
+      </p>
+      <p class="italic text-center">
+        And do not go to extremes regarding the Qurʾān, by suspension [of judgement] a sayer... as the <strong class="font-semibold text-primary">followers of Jahm</strong> said and acted leniently
+      </p>
+      <p class="italic text-center">
+        And do not say: <strong class="font-semibold text-primary">‘The Qurʾān is a creation, I recited it.’</strong>... for indeed the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Speech of Allāh</strong> is made clear with utterance
+      </p>
+      <p class="italic text-center">
+        And say: <strong class="font-bold text-primary">Allāh manifests [Himself in the Hereafter] to the creation openly</strong>... just as the full moon does not remain hidden, and your Lord is more clearer
+      </p>
+      <p class="italic text-center">
+        And He is not a begotten being and He is not a begetter... and there is <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">no likeness to Him</strong>; Exalted is the Glorified.
+      </p>
+      <p class="italic text-center">
+        And the Jahmī has denied this, and with us... by confirmation of what we have said is an <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">explicit ḥadīṯh</strong>
+      </p>
+      <p class="italic text-center">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Jarīr</strong><sup data-fn-target="fn-3" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">³</sup> narrated it from the saying of Muḥammad... so say the like of what he had said regarding that, you will succeed
+      </p>
+      <p class="italic text-center">
+        And the Jahmī has denied, also, <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">His right Hand</strong>... and <strong class="font-bold text-primary">both of His Hands</strong> flow with bounties<sup data-fn-target="fn-4" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁴</sup>
+      </p>
+      <p class="italic text-center">
+        And say: <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">The Compellor descends during every night</strong>... <strong class="font-semibold text-primary">without a ‘how’</strong>, Majestic is the One, the Praised
+      </p>
+      <p class="italic text-center">
+        To the layer of the world bestowing favours by His grace... so the gates of the heavens are parted and opened
+      </p>
+      <p class="italic text-center">
+        He says: <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Is there not one seeking forgiveness</strong>, [that] he meets a Forgiver... and a seeker of goodness and provision, so [that] it is bestowed?<sup data-fn-target="fn-5" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁵</sup>
+      </p>
+      <p class="italic text-center">
+        A people whose ḥadīṯh are not rejected narrated that;... Truly a people who have belied them have failed and have been reviled
+      </p>
+      <p class="italic text-center">
+        And say: Indeed the <strong class="font-bold text-primary">best of people after Muḥammad</strong> are... his two ministers of old, then <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʿUṯhmān</strong>, [and that is] the most preponderant [view]
+      </p>
+      <p class="italic text-center">
+        And the fourth of them is the best of creatures after them... <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʿAlī</strong>, the ally of good, successful by goodness
+      </p>
+      <p class="italic text-center">
+        And indeed them, and the group [of ten], there is no doubt concerning them... upon the noble-bred she-camels of <strong class="font-bold text-primary">al-Firdaws</strong> in immortality roaming freely
+      </p>
+      <p class="italic text-center">
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Saʿīd</strong> and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Saʿd</strong> and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn ʿAwf</strong> and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ṭalḥah</strong>... and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">ʿĀmir of Fihr</strong> and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">al-Zubayr</strong> the praised
+      </p>
+      <p class="italic text-center">
+        And say the <strong class="font-bold text-primary">best speech regarding the Companions</strong>, all of them... and do not be a maligner, blaming and wounding
+      </p>
+      <p class="italic text-center">
+        For the clear revelation has spoken of their virtue... and in [Surah] al-Fatḥ are verses regarding the Companions, praising [them].
+      </p>
+      <p class="italic text-center">
+        And be certain of the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">pre-ordained decree</strong>, for it is... the pillar of the knot of the religion, and the religion is vast
+      </p>
+      <p class="italic text-center">
+        And do not deny, out of ignorance, <strong class="font-bold text-primary">Nakīr and Munkar</strong>... nor the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Prophetic Basin</strong> and the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Scales</strong>; indeed you are being advised
+      </p>
+      <p class="italic text-center">
+        And say: Allāh, the Magnificently Great, takes out, by His grace... from the Fire bodies of charcoal casted
+      </p>
+      <p class="italic text-center">
+        Upon the river from <strong class="font-bold text-primary">al-Firdaws</strong>, brought to life by its water... like the seed carried [by] the flood when it comes overflowing<sup data-fn-target="fn-6" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁶</sup>
+      </p>
+      <p class="italic text-center">
+        And indeed the Messenger of Allāh is an <strong class="font-bold text-[#0B465E]">intercessor for the creation</strong>... and say regarding the punishment of the grave: <strong class="font-bold text-primary">‘[It is] the truth, explained’</strong>
+      </p>
+      <p class="italic text-center">
+        And do not declare the people of the prayer as disbelievers even if they transgress... for all of them transgress, and the Possessor of the Throne pardons
+      </p>
+      <p class="italic text-center">
+        And do not believe in the <strong class="font-semibold text-primary">view of the Kẖawārij</strong>, indeed it is... speech that causes the one who desires it to fall and disgraces [him]
+      </p>
+      <p class="italic text-center">
+        And do not be a <strong class="font-semibold text-primary">Murjiʾī</strong>, playing with his religion... Verily the Murjī jests with the religion
+      </p>
+      <p class="italic text-center">
+        And say: Indeed <strong class="font-bold text-[#0B465E]">belief is statement and intention... and action</strong>, upon the statement of the Prophet ﷺ, explicitly stated
+      </p>
+      <p class="italic text-center">
+        And it <strong class="font-semibold text-primary">diminishes at times</strong> through transgressions, and at times... through His obedience it <strong class="font-bold text-[#0B465E]">grows</strong>, and in the weighing it outweighs
+      </p>
+      <p class="italic text-center">
+        And <strong class="font-bold text-primary">forsake the opinions of men</strong> and their speech from yourself... for the statement of the Messenger of Allāh ﷺ is purer and more expansive
+      </p>
+      <p class="italic text-center">
+        And do not be from a people amused [themselves] with their religion... such that you revile in the <strong class="font-bold text-[#0B465E]">People of the Ḥadīṯh</strong> and vilify
+      </p>
+      <p class="italic text-center">
+        When you have believed in this [throughout] time, O my companion... then <strong class="font-bold text-[#0B465E]">you are upon goodness</strong> [when] you spend the night and enter the morning.”
+      </p>
+    </blockquote>
+
+    <p class="mt-4 leading-relaxed">
+      Then <strong class="font-semibold text-primary">Abū Bakr ibn Abī Dāwūd</strong> said to us: <strong class="font-bold text-[#0B465E]">‘This is my saying, and the saying of my father, and the saying of ʾAḥmad ibn Ḥanbal, and the saying of who we met from the People of Knowledge and who we have not met, from those we have been informed from. So, whoever says other than this upon me, then he has lied.’</strong>
+    </p>
+
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">Muḥammad ibn al-Ḥusayn (al-ʾĀjurrī)</strong>, may Allāh have mercy on him, said: And with this and the entirety of what I have recorded in this book of ours, and it is the book <em class="italic font-medium">al-Sẖarīʿah</em>, twenty-three parts, we take Allāh, Mighty and Majestic, as our religion, and we sincerely advise our brothers from the People of the Sunnah and the Congregation, from the People of the Qurʾān and the People of the Ḥadīṯh and the People of al-Fiqh and all those concealed in that. So, whoever accepts, then his share is good, ʾin sẖāʾ Allāh, and whoever turns away from it, or from a thing from it, then we seek refuge in Allāh from him, and I say to him just as a Prophet from the Prophets of Allāh, Mighty and Majestic, said to his people when he sincerely advised them, saying:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-2 font-serif leading-relaxed">
+      <p class="font-bold text-[#0B465E]">
+        “And you will remember what I am telling you, and my affair I leave it to Allāh. Verily, Allah is the All-Seer of (His) slaves.” <span class="text-xs opacity-75 font-sans font-normal">[Ġẖāfir: 44]</span>
+      </p>
+    </blockquote>
+
+    <!-- Footnotes Dropdown -->
+    <details id="footnotes-dropdown" class="mt-8 pt-4 border-t border-[#E7DFC9] dark:border-white/10 text-slate-900 dark:text-slate-100 text-sm sm:text-base">
+      <summary class="cursor-pointer font-semibold select-none text-slate-900 dark:text-slate-100 hover:text-primary dark:hover:text-[#38bdf8] py-2 text-base">
+        Footnotes
+      </summary>
+
+      <div class="mt-3 space-y-4 leading-relaxed text-slate-900 dark:text-slate-100 font-sans">
+        <div id="fn-1" class="space-y-1">
+          <p><strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">1. 2075 – Its isnād: in it is weakness.</strong></p>
+          <p>In it is ʿAbd Allāh b. al-Ḥasan al-Sāḥilī: the editor did not come across a biography for him.</p>
+          <p>And in it is Ibrāhīm b. al-Muhallab al-Zuhrī: the editor did not come across a biography for him. He has preceded in ḥadīth no. 2041.</p>
+          <p>And in it is the author's teacher. The editor did not come across his authentication (tawthīq). He has preceded in ḥadīth no. 2040.</p>
+          <p class="pt-1"><strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Its takhrīj:</strong></p>
+          <p>Ibn ʿAsākir, Ibn Razqawayh and al-Daylamī narrated it, as in al-Silsilah al-Ḍaʿīfah.</p>
+          <p>And Shaykh al-Albānī ruled it with nakārah [i.e. that it is munkar], ḥadīth no. 1506 (4/14).</p>
+          <p>And it has been narrated from the ḥadīth of Jābir, similar to it, with Ibn Mājah and others, and Shaykh al-Albānī said about it: very weak (ḍaʿīf jiddan). Al-Silsilah al-Ḍaʿīfah, ḥadīth no. 1507 (4/15).</p>
+        </div>
+
+        <p id="fn-2">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">2.</strong> The qaṣīdah is in Ṭabaqāt al-Ḥanābilah (2/53) and Siyar Aʿlām al-Nubalāʾ (13/233), and it has been printed in an independent treatise.
+        </p>
+
+        <p id="fn-3">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">3.</strong> Jarīr: he is Ibn ʿAbd Allāh al-Bajalī, the eminent Companion. And his ḥadīth on the believers' seeing their Lord on the Day of Resurrection was narrated by al-Bukhārī: 2/27, in Mawāqīt al-Ṣalāh: chapter of the virtue of the ʿAṣr prayer; and 8/458, in the tafsīr of Sūrat Qāf; and 13/356, in al-Tawḥīd: chapter of the saying of Allāh, the Exalted: {Faces on that Day [will be] radiant}; and by Muslim: (633), in al-Masājid: chapter of the virtue of the two prayers of Ṣubḥ and ʿAṣr; and Abū Dāwūd: (4729), and al-Tirmidhī: (2754).
+        </p>
+
+        <p id="fn-4">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">4.</strong> Aḥmad narrated: 2/160, and Muslim in al-Ṣaḥīḥ: (7127), in al-Imārah: chapter of the virtue of the just Imām, and al-Nasāʾī: 8/221, from the ḥadīth of ʿAbd Allāh b. ʿAmr, he said: The Messenger of Allāh (ﷺ) said: “Indeed the just (al-muqsiṭūn) are with Allāh upon pulpits of light, on the right of al-Raḥmān, Mighty and Majestic, and both His hands are right, those who are just in their ruling and their families and what they were given authority over.”
+        </p>
+
+        <p id="fn-5">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">5.</strong> And the ḥadīth of the descent of the Lord, Glorified and Exalted, to the heaven of the world when the last third of the night remains, was narrated from the ḥadīth of Abū Hurayrah by Mālik, 1/214; and al-Bukhārī: 13/389–390, in al-Tawḥīd: chapter of the saying of Allāh, the Exalted: {They wish to change the speech of Allāh}; and Muslim: (758), in Ṣalāt al-Musāfirīn: chapter of encouragement to supplication and remembrance at the end of the night; Abū Dāwūd: (1315), and al-Tirmidhī: (3498).
+        </p>
+
+        <p id="fn-6">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">6.</strong> Al-Bukhārī narrated: 1/68, in al-Īmān: chapter of the superiority of the people of faith over one another, and Muslim: (184), in al-Īmān: chapter of the affirmation of intercession and the bringing out of the monotheists from the Fire, from the ḥadīth of Abū Saʿīd al-Khudrī, he said: The Messenger of Allāh (ﷺ) said: “The people of Paradise enter Paradise, and the people of the Fire [enter] the Fire, then Allāh, the Exalted, says: Bring out whoever has in his heart the weight of a mustard seed of faith. So they come out of it, having blackened, and are cast into the river of life, so they sprout as the ḥibbah sprouts at the side of the torrent. Have you not seen that it comes out yellow, twisted?” And al-ḥibbah, with kasrah on its first [letter], Abū Ḥanīfah al-Dīnawarī said: it is the plural of the seeds of plants, its singular being ḥabbah, with fatḥah. As for al-ḥabb, it is wheat and barley, its singular being ḥabbah, also with fatḥah, and they differ only in the plural.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>`,
+    citation: "al-Sẖarīʿah — Muḥammad ibn al-Ḥusayn al-ʾĀjurrī — 5/2562–2566",
+    imageUrl: "/haiyyah scan 1.png",
+    scanImages: ["/haiyyah scan 1.png", "/haiyyah scan 2.png"],
     dateAdded: "2026-09-29"
   }
 ];

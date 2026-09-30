@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { ContentItem } from '../data';
-import { Bookmark, FileText, Quote, Play, Headphones, Newspaper, ArrowRight, Download, ListVideo } from 'lucide-react';
+import { Bookmark, FileText, Quote, Play, Headphones, Newspaper, ArrowRight, Download, ListVideo, Scroll } from 'lucide-react';
 import { useBookmarks } from '../hooks/useBookmarks';
 import { useReadingProgress } from '../hooks/useReadingProgress';
 import { CollectionCardModal } from './CollectionCardModal';
@@ -48,6 +48,7 @@ export function ItemCard({ item }: ItemCardProps) {
       case 'article': return <Newspaper className="w-3.5 h-3.5" />;
       case 'pdf':
       case 'short treatise': return <FileText className="w-3.5 h-3.5" />;
+      case 'poem': return <Scroll className="w-3.5 h-3.5" />;
       default: return <Quote className="w-3.5 h-3.5" />;
     }
   };
@@ -60,6 +61,7 @@ export function ItemCard({ item }: ItemCardProps) {
       case 'article': return 'Read Article';
       case 'pdf':
       case 'short treatise': return 'Read Document';
+      case 'poem': return 'Read Poem';
       default: return 'View Quote';
     }
   };

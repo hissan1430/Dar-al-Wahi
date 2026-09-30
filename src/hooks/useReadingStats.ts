@@ -41,10 +41,15 @@ export function useReadingStats() {
   };
 
   const addTime = (seconds: number) => {
-    setStats(prev => ({
-      ...prev,
-      timeSpentSeconds: prev.timeSpentSeconds + seconds
-    }));
+    // Persist immediately to localStorage so reading time is never lost
+    try {
+      const saved = localStorage.getItem('reading_stats');
+      const current = saved ? JSON.parse(saved) : defaultStats;
+      current.timeSpentSeconds = (current.timeSpentSeconds || 0) + seconds;
+      localStorage.setItem('reading_stats', JSON.stringify(current));
+    } catch {
+      // fallback
+    }
   };
 
   const recordCategoryView = (category: string) => {
