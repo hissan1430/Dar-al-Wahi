@@ -255,6 +255,9 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                   <button onClick={() => handleCategoryNav('ʿAqīdah')} className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer">ʿAqīdah</button>
                 </li>
                 <li>
+                  <button onClick={() => handleCategoryNav('al-Sunnah')} className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer">al-Sunnah</button>
+                </li>
+                <li>
                   <button onClick={() => handleCategoryNav('Uṣool')} className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer">Uṣool</button>
                 </li>
                 <li>

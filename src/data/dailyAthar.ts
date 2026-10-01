@@ -24,7 +24,7 @@ export const DAILY_ATHAR_LIST: DailyAthar[] = [
     speakerTitle: 'Imām of the Tābiʿīn (d. 110H)',
     arabicText: 'لَا يَسْتَقِيمُ قَوْلٌ إِلَّا بِعَمَلٍ، وَلَا يَسْتَقِيمُ قَوْلٌ وَعَمَلٌ إِلَّا بِنِيَّةٍ، وَلَا يَسْتَقِيمُ قَوْلٌ وَعَمَلٌ وَنِيَّةٌ إِلَّا بِمُوَافَقَةِ السُّنَّةِ.',
     englishText: '“A statement does not stand upright except with action; and a statement and action do not stand upright except with a sincere intention; and a statement, action, and intention do not stand upright except by agreeing with the Sunnah.”',
-    source: 'al-Ibānah al-Kubrā by Ibn Baṭṭah (Vol. 1, p. 333, no. 200) & al-Lālakāʾī (no. 19)',
+    source: 'al-Lālakāʾī 1/64, no. 23',
     category: 'Sincerity & the Sunnah'
   },
   {
@@ -78,7 +78,7 @@ export const DAILY_ATHAR_LIST: DailyAthar[] = [
     speakerTitle: 'Among the Great Tābiʿīn (d. 139H)',
     arabicText: 'لَيْسَ شَيْءٌ أَغْرَبَ مِنَ السُّنَّةِ، وَأَغْرَبُ مِنْهَا مَنْ يَعْرِفُهَا.',
     englishText: '“There is nothing stranger today than the Sunnah; and even stranger than it is the one who truly knows it.”',
-    source: 'al-Ibānah al-Kubrā by Ibn Baṭṭah (Vol. 1, p. 188, no. 20) & al-Lālakāʾī (no. 71)',
+    source: 'al-Lālakāʾī 1/64, no. 23',
     category: 'Strangeness of the Sunnah'
   },
   {

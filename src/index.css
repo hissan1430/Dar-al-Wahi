@@ -181,3 +181,24 @@
   animation: pageCurlShadow 0.52s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
 }
 
+/* Ensure vibrant contrast in dark mode for all classical navy accents */
+.dark .text-\[\#0B465E\],
+.dark strong.text-\[\#0B465E\],
+.dark p.text-\[\#0B465E\],
+.dark span.text-\[\#0B465E\],
+.dark em.text-\[\#0B465E\] {
+  color: #38bdf8 !important;
+}
+
+.dark .border-\[\#0B465E\],
+.dark blockquote.border-\[\#0B465E\] {
+  border-color: #38bdf8 !important;
+}
+
+/* Footnote superscripts hover clarity */
+sup[data-fn-target]:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+

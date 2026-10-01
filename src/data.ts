@@ -5,6 +5,7 @@ export type Translator = 'Abu_Mundhir' | 'Abu_Talhah' | 'None';
 
 export const CATEGORIES = [
   "ʿAqīdah",
+  "al-Sunnah",
   "Uṣool",
   "Ḥadīth",
   "Heart-Softeners",
@@ -842,7 +843,7 @@ and it was said to him,
     id: "28",
     translator: "Abu_Talhah",
     translatorName: "Abū ʿUbaydillāh al-Qarārī",
-    category: "Ḥadīth",
+    category: "al-Sunnah",
     type: "quote",
     title: "Wiping Over the Two Khuffs",
     author: "Imām Muḥammad ibn Ismāʿīl al-Bukhārī (d. 256H)",
@@ -859,15 +860,15 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
       <em class="italic opacity-80 font-medium">ʾAṣbagh b. al-Faraj al-Miṣrī</em> narrated to us, from <em class="italic opacity-80 font-medium">Ibn Wahb</em>, who said: <em class="italic opacity-80 font-medium">ʿAmrū</em> narrated to me; <em class="italic opacity-80 font-medium">ʾAbū al-Naḍr</em> narrated to me, from <em class="italic opacity-80 font-medium">ʾAbū Salamah b. ʿAbd al-Raḥmān</em>, from <em class="italic opacity-80 font-medium">ʿAbduḷḷāh b. ʿUmar</em>, from <strong class="font-semibold text-primary">Saʿd b. ʾAbī Waqqāṣ</strong>, from the Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam:
     </p>
 
-    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
       <p>
-        <strong class="font-semibold text-[#0B465E]">“That he wiped over the two khuffs.”</strong>
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">“That he wiped over the two khuffs.”</strong>
       </p>
       <p>
         And ʿAbduḷḷāh b. ʿUmar asked ʿUmar about that, so he said:
       </p>
       <p>
-        <strong class="font-semibold text-[#0B465E]">‘Yes. If Saʿd narrates something to you from the Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam, then do not ask anyone else about it.’</strong>
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">‘Yes. If Saʿd narrates something to you from the Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam, then do not ask anyone else about it.’</strong>
       </p>
     </blockquote>
   </div>
@@ -880,7 +881,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
     id: "29",
     translator: "Abu_Talhah",
     translatorName: "Abū ʿUbaydillāh al-Qarārī",
-    category: "Ḥadīth",
+    category: "al-Sunnah",
     type: "quote",
     title: "The Sunnah of al-Iqʿāʾ Upon the Two Feet",
     author: "Imām ʿAbd al-Razzāq al-Ṣanʿānī (d. 211H)",
@@ -897,18 +898,18 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
       From <em class="italic opacity-80 font-medium">Ibn Jurayj</em>, who said: <em class="italic opacity-80 font-medium">ʾAbū al-Zubayr</em> informed me that he heard <em class="italic opacity-80 font-medium">Ṭāwūs</em> saying:
     </p>
 
-    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
       <p>
         ‘We said to <strong class="font-semibold text-primary">Ibn ʿAbbās</strong> regarding <em>al-iqʿāʾ</em> upon the two feet:
       </p>
       <p>
-        He said: <strong class="font-semibold text-[#0B465E]">“It is the Sunnah.”</strong>
+        He said: <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">“It is the Sunnah.”</strong>
       </p>
       <p>
         So we said: “Indeed, we regard it as harshness upon the foot.”
       </p>
       <p>
-        Ibn ʿAbbās said: <strong class="font-semibold text-[#0B465E]">“Rather, it is the Sunnah of your Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam.”</strong>’
+        Ibn ʿAbbās said: <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">“Rather, it is the Sunnah of your Prophet Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam.”</strong>’
       </p>
     </blockquote>
   </div>
@@ -927,7 +928,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
     id: "30",
     translator: "Abu_Talhah",
     translatorName: "Abū ʿUbaydillāh al-Qarārī",
-    category: "Ḥadīth",
+    category: "al-Sunnah",
     type: "quote",
     title: "Prioritizing the Sunnah Over the Statement of Ibn ʿAbbās",
     author: "Imām Muslim ibn al-Ḥajjāj an-Naysābūrī (d. 261H)",
@@ -944,7 +945,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
       <em class="italic opacity-80 font-medium">Yaḥyā b. Yaḥyā</em> narrated to us; <em class="italic opacity-80 font-medium">ʿAbthar</em> informed us, from <em class="italic opacity-80 font-medium">ʾIsmāʿīl b. ʾAbī Khālid</em>, from <strong class="font-semibold text-primary">Wabarah</strong>, who said:
     </p>
 
-    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
       <p>
         “I was sitting with <strong class="font-semibold text-primary">Ibn ʿUmar</strong> when a man came to him, so he said:
       </p>
@@ -952,7 +953,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
         ‘Is it permissible for me to perform ṭawāf around the House before I come to the Mawqif?’
       </p>
       <p>
-        So he said: <strong class="font-semibold text-[#0B465E]">‘Yes.’</strong>
+        So he said: <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">‘Yes.’</strong>
       </p>
       <p>
         So he said: ‘But Ibn ʿAbbās says: <em class="italic opacity-90">“Do not perform ṭawāf around the House until you come to the Mawqif.”</em>’
@@ -960,7 +961,7 @@ that he wiped over the two khuffs. And ʿAbduḷḷāh b. ʿUmar asked ʿUmar ab
       <p>
         Ibn ʿUmar said:
       </p>
-      <p class="font-semibold text-[#0B465E]">
+      <p class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">
         ‘The Messenger of Allāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam performed ḥajj and performed ṭawāf around the House before he came to the Mawqif. So, whose statement are you more entitled to follow—the statement of the Messenger of Allāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa’l-saḷḷam, or the statement of Ibn ʿAbbās, if you are truthful?’
       </p>
     </blockquote>
@@ -1130,7 +1131,7 @@ al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, fro
     id: "35",
     translator: "Abu_Talhah",
     translatorName: "Abū ʿUbaydillāh al-Qarārī",
-    category: "Uṣool",
+    category: "al-Sunnah",
     type: "quote",
     title: "The Messenger of Allāh ﷺ is the Greatest Standard",
     speaker: "Sufyān b. ʿUyaynah (d. 198H)",
@@ -1154,8 +1155,8 @@ al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, fro
       <em class="italic opacity-80 font-medium">ʾAbū Muḥaṃṃad ʿAbduḷḷāh b. Yaḥyā b. ʿAbd al-Jabbār al-Sukkarī</em> informed me; he said: <em class="italic opacity-80 font-medium">ʾAbū Bakr Muḥaṃṃad b. ʿAbduḷḷāh b. ʾIbrāhīm al-Shāfiʿī</em> narrated to us; he said: <em class="italic opacity-80 font-medium">Jaʿfar b. Muḥaṃṃad b. al-ʾAzhar</em> narrated to us; he said: <em class="italic opacity-80 font-medium">al-Mufaḍḍal b. Ghassān al-Ghaḷḷābī</em> narrated to me; he said: <em class="italic opacity-80 font-medium">My father [ Ghassān b. al-Mufaḍḍal al-Ghaḷḷābī ] —or Ibn Misʿar—</em>narrated to me, from <strong class="font-semibold text-primary">Sufyān b. ʿUyaynah</strong>, that he used to say:
     </p>
 
-    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
-      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E] dark:text-[#38bdf8]">
         “Indeed, the Messenger of Aḷḷāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa'l-saḷḷam is the greatest standard by which things are measured. Things are presented against him—against his character, his way of life, and his guidance. Whatever agrees with them is the truth, and whatever contradicts them is falsehood.”
       </p>
     </blockquote>
@@ -1181,7 +1182,7 @@ al-ʾAʿmash and Sufyān narrated to us, from Yazīd b. Ḥayyān al-Taymī, fro
     id: "37",
     translator: "Abu_Talhah",
     translatorName: "Abū ʿUbaydillāh al-Qarārī",
-    category: "Uṣool",
+    category: "al-Sunnah",
     type: "quote",
     title: "I Would Never Abandon a Sunnah of the Messenger of Allāh ﷺ for Anyone",
     speaker: "ʿAlī b. Abī Ṭālib (d. 40H)",
@@ -1205,8 +1206,8 @@ Shuʿbah narrated to us, from al-Ḥakam, from ʿAlī b. al-Ḥusayn, from Marw�
       <em class="italic opacity-80 font-medium">Shuʿbah</em> narrated to us, from <em class="italic opacity-80 font-medium">al-Ḥakam</em>, from <em class="italic opacity-80 font-medium">ʿAlī b. al-Ḥusayn</em>, from <strong class="font-semibold text-primary">Marwān b. al-Ḥakam</strong>, who said:
     </p>
 
-    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
-      <p class="text-lg sm:text-xl font-bold text-[#0B465E]">
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E] dark:text-[#38bdf8]">
         “I witnessed ʿUthmān and ʿAlī, may Aḷḷāh be pleased with them both, between Makkah and Madīnah, while ʿUthmān was forbidding tamattuʿ, or combining the two. When ʿAlī saw this, he entered iḥrām for both of them together and said: ‘Labbayka with ʿumrah and ḥajj together.’ ʿUthmān said: ‘Do you see me forbidding the people from something while you do it?!’ He replied: ‘I would never abandon a Sunnah of the Messenger of Aḷḷāh Ṣaḷḷaḷḷāhu—ʿalayhi—wa'l-saḷḷam for the statement of anyone among the people.’”
       </p>
     </blockquote>
@@ -1771,7 +1772,7 @@ And it has been narrated from the ḥadīth of Jābir, similar to it, with Ibn M
         Upon the river from <strong class="font-bold text-primary">al-Firdaws</strong>, brought to life by its water... like the seed carried [by] the flood when it comes overflowing<sup data-fn-target="fn-6" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁶</sup>
       </p>
       <p class="italic text-center">
-        And indeed the Messenger of Allāh is an <strong class="font-bold text-[#0B465E]">intercessor for the creation</strong>... and say regarding the punishment of the grave: <strong class="font-bold text-primary">‘[It is] the truth, explained’</strong>
+        And indeed the Messenger of Allāh is an <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">intercessor for the creation</strong>... and say regarding the punishment of the grave: <strong class="font-bold text-primary">‘[It is] the truth, explained’</strong>
       </p>
       <p class="italic text-center">
         And do not declare the people of the prayer as disbelievers even if they transgress... for all of them transgress, and the Possessor of the Throne pardons
@@ -1783,32 +1784,32 @@ And it has been narrated from the ḥadīth of Jābir, similar to it, with Ibn M
         And do not be a <strong class="font-semibold text-primary">Murjiʾī</strong>, playing with his religion... Verily the Murjī jests with the religion
       </p>
       <p class="italic text-center">
-        And say: Indeed <strong class="font-bold text-[#0B465E]">belief is statement and intention... and action</strong>, upon the statement of the Prophet ﷺ, explicitly stated
+        And say: Indeed <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">belief is statement and intention... and action</strong>, upon the statement of the Prophet ﷺ, explicitly stated
       </p>
       <p class="italic text-center">
-        And it <strong class="font-semibold text-primary">diminishes at times</strong> through transgressions, and at times... through His obedience it <strong class="font-bold text-[#0B465E]">grows</strong>, and in the weighing it outweighs
+        And it <strong class="font-semibold text-primary">diminishes at times</strong> through transgressions, and at times... through His obedience it <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">grows</strong>, and in the weighing it outweighs
       </p>
       <p class="italic text-center">
         And <strong class="font-bold text-primary">forsake the opinions of men</strong> and their speech from yourself... for the statement of the Messenger of Allāh ﷺ is purer and more expansive
       </p>
       <p class="italic text-center">
-        And do not be from a people amused [themselves] with their religion... such that you revile in the <strong class="font-bold text-[#0B465E]">People of the Ḥadīṯh</strong> and vilify
+        And do not be from a people amused [themselves] with their religion... such that you revile in the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">People of the Ḥadīṯh</strong> and vilify
       </p>
       <p class="italic text-center">
-        When you have believed in this [throughout] time, O my companion... then <strong class="font-bold text-[#0B465E]">you are upon goodness</strong> [when] you spend the night and enter the morning.”
+        When you have believed in this [throughout] time, O my companion... then <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">you are upon goodness</strong> [when] you spend the night and enter the morning.”
       </p>
     </blockquote>
 
     <p class="mt-4 leading-relaxed">
-      Then <strong class="font-semibold text-primary">Abū Bakr ibn Abī Dāwūd</strong> said to us: <strong class="font-bold text-[#0B465E]">‘This is my saying, and the saying of my father, and the saying of ʾAḥmad ibn Ḥanbal, and the saying of who we met from the People of Knowledge and who we have not met, from those we have been informed from. So, whoever says other than this upon me, then he has lied.’</strong>
+      Then <strong class="font-semibold text-primary">Abū Bakr ibn Abī Dāwūd</strong> said to us: <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">‘This is my saying, and the saying of my father, and the saying of ʾAḥmad ibn Ḥanbal, and the saying of who we met from the People of Knowledge and who we have not met, from those we have been informed from. So, whoever says other than this upon me, then he has lied.’</strong>
     </p>
 
     <p class="leading-relaxed">
       <strong class="font-semibold text-primary">Muḥammad ibn al-Ḥusayn (al-ʾĀjurrī)</strong>, may Allāh have mercy on him, said: And with this and the entirety of what I have recorded in this book of ours, and it is the book <em class="italic font-medium">al-Sẖarīʿah</em>, twenty-three parts, we take Allāh, Mighty and Majestic, as our religion, and we sincerely advise our brothers from the People of the Sunnah and the Congregation, from the People of the Qurʾān and the People of the Ḥadīṯh and the People of al-Fiqh and all those concealed in that. So, whoever accepts, then his share is good, ʾin sẖāʾ Allāh, and whoever turns away from it, or from a thing from it, then we seek refuge in Allāh from him, and I say to him just as a Prophet from the Prophets of Allāh, Mighty and Majestic, said to his people when he sincerely advised them, saying:
     </p>
 
-    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-2 font-serif leading-relaxed">
-      <p class="font-bold text-[#0B465E]">
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-2 font-serif leading-relaxed">
+      <p class="font-bold text-[#0B465E] dark:text-[#38bdf8]">
         “And you will remember what I am telling you, and my affair I leave it to Allāh. Verily, Allah is the All-Seer of (His) slaves.” <span class="text-xs opacity-75 font-sans font-normal">[Ġẖāfir: 44]</span>
       </p>
     </blockquote>
