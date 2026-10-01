@@ -1899,6 +1899,96 @@ My father narrated to me; Wakīʿ narrated to us; al-ʾAʿmash and Misʿar narra
     imageUrl: "/mu'adh scan.png",
     scanImages: ["/mu'adh scan.png"],
     dateAdded: "2026-09-30"
+  },
+  {
+    id: "42",
+    translator: "Abu_Talhah",
+    translatorName: "Abū Ṭalḥah al-ʾAfġhānī",
+    category: "al-Sunnah",
+    type: "quote",
+    title: "The Effacement of Knowledge and the Writing of the Sunnah",
+    speaker: "The Messenger of Allāh ﷺ & ʿUmar ibn ʿAbd al-ʿAzīz",
+    author: "Imām Muḥammad ibn Ismāʿīl al-Bukhārī (d. 256H)",
+    summary: "ʿUmar ibn ʿAbd al-ʿAzīz commands the recording of the prophetic Sunnah fearing the loss of knowledge, accompanied by the hadīth warning that knowledge is removed with the death of the scholars.",
+    arabicText: `وَكَتَبَ عُمَرُ بْنُ عَبْدِ الْعَزِيزِ إِلَى أَبِي بَكْرِ بْنِ حَزْمٍ: انْظُرْ مَا كَانَ مِنْ حَدِيثِ رَسُولِ اللَّهِ ﷺ فَاكْتُبْهُ فَإِنِّي خِفْتُ دُرُوسَ الْعِلْمِ وَذَهَابَ الْعُلَمَاءِ وَلَا تَقْبَلْ إِلَّا حَدِيثَ النَّبِيِّ ﷺ وَلْتُفْشُوا الْعِلْمَ وَلْتَجْلِسُوا حَتَّى يُعَلَّمَ مَنْ لَا يَعْلَمُ فَإِنَّ الْعِلْمَ لَا يَهْلِكُ حَتَّى يَكُونَ سِرًّا.
+
+حَدَّثَنَا إِسْمَاعِيلُ بْنُ أَبِي أُوَيْسٍ قَالَ: حَدَّثَنِي مَالِكٌ عَنْ هِشَامِ بْنِ عُرْوَةَ عَنْ أَبِيهِ عَنْ عَبْدِ اللَّهِ بْنِ عَمْرِو بْنِ الْعَاصِ قَالَ:
+سَمِعْتُ رَسُولَ اللَّهِ ﷺ يَقُولُ: (إِنَّ اللَّهَ لَا يَقْبِضُ الْعِلْمَ انْتِزَاعًا يَنْتَزِعُهُ مِنَ الْعِبَادِ وَلَكِنْ يَقْبِضُ الْعِلْمَ بِقَبْضِ الْعُلَمَاءِ حَتَّى إِذَا لَمْ يُبْقِ عَالِمًا اتَّخَذَ النَّاسُ رؤوسا جُهَّالًا فَسُئِلُوا فَأَفْتَوْا بِغَيْرِ عِلْمٍ فَضَلُّوا وَأَضَلُّوا).
+
+قَالَ الْفِرَبْرِيُّ: حَدَّثَنَا عَبَّاسٌ قَالَ: حَدَّثَنَا قُتَيْبَةُ: حَدَّثَنَا جَرِيرٌ عَنْ هِشَامٍ نَحْوَهُ`,
+    englishText: `And ʿUmar ibn ʿAbd al-ʿAzīz wrote to Abī Bakr ibn Ḥazm: “Look [to] what is from the ḥadīṯh of the Messenger of Allāh ﷺ, so write it, for indeed I [have] feared the effacement of knowledge¹ and the passing away of the scholars, and do not accept [a thing] except the ḥadīṯh of the Messenger of Allāh ﷺ, and spread knowledge², and hold sittings until the one who does not know is taught, for indeed knowledge does not perish³ until it becomes a secret⁴.”
+
+ʾIsmāʾīl ibn Abī ʾUways narrated to us, he said: Mālik narrated to me, from Hisẖām ibn ʿUrwah, from his father, from ʿAbd Allāh ibn ʿAmr ibn al-ʿĀṣ, he said: I heard the Messenger of Allāh ﷺ saying: “Indeed, Allāh does not seize knowledge [by] snatching⁵, snatching it from the servants, however knowledge is seized by the seizing of the scholars⁶, until when a scholar does not remain, the people took the heads⁷ of the ignorant [as scholars], so they asked, so they gave legal verdicts without knowledge, so they went astray and led [people] astray.”
+
+al-Firabrī⁸ said: ʿAbbās narrated to us, he said: Qutaybah narrated to us, [he said]: Jarīr narrated to us, from Hisẖām with its like.⁹`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-4">
+    <p class="leading-relaxed">
+      And <strong class="font-semibold text-primary">ʿUmar ibn ʿAbd al-ʿAzīz</strong> wrote to <strong class="font-semibold text-primary">Abī Bakr ibn Ḥazm</strong>:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3.5 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-base sm:text-lg">
+        “Look [to] what is from the ḥadīṯh of the Messenger of Allāh ﷺ, so write it, for indeed I [have] feared the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">effacement of knowledge</strong><sup data-fn-target="fn-1" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">¹</sup> and the passing away of the scholars, and do not accept [a thing] except the ḥadīṯh of the Messenger of Allāh ﷺ, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">spread knowledge</strong><sup data-fn-target="fn-2" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">²</sup>, and hold sittings until the one who does not know is taught, for indeed <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">knowledge does not perish</strong><sup data-fn-target="fn-3" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">³</sup> until it becomes a <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">secret</strong><sup data-fn-target="fn-4" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁴</sup>.”
+      </p>
+    </blockquote>
+
+    <p class="leading-relaxed opacity-90 pt-2">
+      <em class="italic opacity-80 font-medium">ʾIsmāʾīl ibn Abī ʾUways</em> narrated to us, he said: <em class="italic opacity-80 font-medium">Mālik</em> narrated to me, from <em class="italic opacity-80 font-medium">Hisẖām ibn ʿUrwah</em>, from <em class="italic opacity-80 font-medium">his father</em>, from <strong class="font-semibold text-primary">ʿAbd Allāh ibn ʿAmr ibn al-ʿĀṣ</strong>, he said: I heard the Messenger of Allāh ﷺ saying:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3.5 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-base sm:text-lg">
+        “Indeed, Allāh does not seize knowledge [by] <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">snatching</strong><sup data-fn-target="fn-5" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁵</sup>, snatching it from the servants, however knowledge is seized by the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">seizing of the scholars</strong><sup data-fn-target="fn-6" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁶</sup>, until when a scholar does not remain, the people took <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">the heads</strong><sup data-fn-target="fn-7" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁷</sup> of the ignorant [as scholars], so they asked, so they gave legal verdicts without knowledge, so they went astray and led [people] astray.”
+      </p>
+    </blockquote>
+
+    <p class="leading-relaxed opacity-90 pt-1">
+      <strong class="font-semibold text-primary">al-Firabrī</strong><sup data-fn-target="fn-8" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁸</sup> said: <em class="italic opacity-80 font-medium">ʿAbbās</em> narrated to us, he said: <em class="italic opacity-80 font-medium">Qutaybah</em> narrated to us, [he said]: <em class="italic opacity-80 font-medium">Jarīr</em> narrated to us, from <em class="italic opacity-80 font-medium">Hisẖām</em> with its like.<sup data-fn-target="fn-9" class="cursor-pointer font-bold text-[#0B465E] dark:text-[#38bdf8] hover:text-[#C19B53] dark:hover:text-amber-300 hover:underline px-0.5 align-super select-none">⁹</sup>
+    </p>
+
+    <!-- Footnotes Dropdown -->
+    <details id="footnotes-dropdown" class="mt-8 pt-4 border-t border-[#E7DFC9] dark:border-white/10 text-slate-900 dark:text-slate-100 text-sm sm:text-base">
+      <summary class="cursor-pointer font-semibold select-none text-slate-900 dark:text-slate-100 hover:text-primary dark:hover:text-[#38bdf8] py-2 text-base">
+        Footnotes
+      </summary>
+
+      <div class="mt-3 space-y-3 leading-relaxed text-slate-900 dark:text-slate-100 font-sans">
+        <p id="fn-1">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">1.</strong> <em class="font-medium">durūs al-ʿilm</em> — its effacement and loss.
+        </p>
+        <p id="fn-2">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">2.</strong> <em class="font-medium">wa-l-tufsẖū</em> — from al-ʾifsẖāʾ, which is the spreading/making-widely-known.
+        </p>
+        <p id="fn-3">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">3.</strong> <em class="font-medium">lā yahliku</em> — it does not perish/get lost.
+        </p>
+        <p id="fn-4">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">4.</strong> <em class="font-medium">sirran</em> — concealed/hidden.
+        </p>
+        <p id="fn-5">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">5.</strong> <em class="font-medium">ʾintizāʿan</em> — erasure from the breasts of the scholars (maḥwan min ṣudūri l-ʿulamāʾ).
+        </p>
+        <p id="fn-6">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">6.</strong> <em class="font-medium">bi-qabḍi l-ʿulamāʾ</em> — by their death.
+        </p>
+        <p id="fn-7">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">7.</strong> <em class="font-medium">ruʾūsan</em> — plural of raʾs (head); and in [another] narration: ruʾasāʾ, plural of raʾīs (chief/leader) — and the meaning is one and the same.
+        </p>
+        <p id="fn-8">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">8.</strong> <em class="font-medium">al-Firabrī</em> — he is one of those who heard aṣ-Ṣaḥīḥ from al-Bukẖārī and narrated it from him.
+        </p>
+        <p id="fn-9">
+          <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">9.</strong> Ṣaḥīḥ al-Bukẖārī 100. Also see no. 6877. Muslim related it in <em class="font-medium">al-ʿIlm</em>, chapter: The Raising of Knowledge and Its Seizure, no. 2673.
+        </p>
+      </div>
+    </details>
+  </div>
+</div>`,
+    citation: "Ṣaḥīḥ al-Bukẖārī — pg. 27, Kitāb al-ʿIlm, Ch. 34 (no. 100)",
+    imageUrl: "/bukhari effacement scan.png",
+    scanImages: ["/bukhari effacement scan.png"],
+    dateAdded: "2026-10-01"
   }
 ];
 
