@@ -1989,6 +1989,40 @@ al-Firabrī⁸ said: ʿAbbās narrated to us, he said: Qutaybah narrated to us, 
     imageUrl: "/bukhari effacement scan.png",
     scanImages: ["/bukhari effacement scan.png"],
     dateAdded: "2026-10-01"
+  },
+  {
+    id: "43",
+    translator: "Abu_Talhah",
+    translatorName: "Abū Ṭalḥah al-ʾAfġhānī",
+    category: "al-Sunnah",
+    type: "quote",
+    title: "These Are the Lamps of al-ʾIslām",
+    speaker: "Imām ʾAḥmad ibn Ḥanbal (d. 241H)",
+    author: "al-Khaṭīb al-Baghdādī (d. 463H)",
+    summary: "Imām ʾAḥmad ibn Ḥanbal observes the People of Ḥadīth approaching with inkwells in their hands, gesturing towards them and proclaiming them to be the lamps of al-ʾIslām.",
+    arabicText: `أنا أَحْمَدُ بْنُ أَبِي جَعْفَرٍ الْقَطِيعِيُّ، قَالَ: سَمِعْتُ مُحَمَّدَ بْنَ عَبْدِ اللَّهِ بْنِ الْمُطَّلِبِ، يَقُولُ: سَمِعْتُ الْفَضْلَ بْنَ أَحْمَدَ الزُّبَيْدِيَّ الْمُقْرِئَ، يَقُولُ: سَمِعْتُ أَحْمَدَ بْنَ حَنْبَلٍ، يَقُولُ، وَقَدْ أَقْبَلَ أَصْحَابُ الْحَدِيثِ بِأَيْدِيهِمُ الْمَحَابِرُ، فَأَوْمَأَ إِلَيْهَا وَقَالَ: «هَذِهِ سَرْجُ الْإِسْلَامِ»`,
+    englishText: `ʾAḥmad b. Jaʿfar al-Qaṭīʿī informed us saying: I heard Muḥammad b. ʿAbd Allāh b. al-Muṭṭalib saying: I heard al-Faḍl b. ʾAḥmad al-Zubaydī al-Muqriʾ saying: I heard ʾAḥmad b. Ḥanbal saying, and ʾAṣḥāb al-Ḥadīṯh had approached with the inkwells in their hands, so he made a gesture toward them (i.e. the inkwells) and said: “These are the lamp of al-ʾIslām.”`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed">
+      <strong class="font-semibold text-primary">al-Khaṭīb al-Baghdādī</strong> narrated:
+    </p>
+
+    <p class="leading-relaxed opacity-90">
+      <em class="italic opacity-80 font-medium">ʾAḥmad b. Jaʿfar al-Qaṭīʿī</em> informed us saying: I heard <em class="italic opacity-80 font-medium">Muḥammad b. ʿAbd Allāh b. al-Muṭṭalib</em> saying: I heard <em class="italic opacity-80 font-medium">al-Faḍl b. ʾAḥmad al-Zubaydī al-Muqriʾ</em> saying: I heard <strong class="font-semibold text-primary">ʾAḥmad b. Ḥanbal</strong> saying, and ʾAṣḥāb al-Ḥadīṯh had approached with the inkwells in their hands, so he made a gesture toward them (i.e. the inkwells) and said:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E] dark:text-[#38bdf8]">
+        “These are the lamp of al-ʾIslām.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "al-Jāmiʿ li-ʾAkẖlāq al-Rāwī wa-ʾĀdāb al-Sāmiʿ — 1/252, n° 512",
+    imageUrl: "/khatib inkwell.png",
+    scanImages: ["/khatib inkwell.png"],
+    dateAdded: "2026-10-04"
   }
 ];
 
