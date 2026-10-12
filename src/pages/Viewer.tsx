@@ -461,7 +461,7 @@ export function Viewer() {
           <div className="space-y-1 w-full sm:w-auto">
             <div className="flex items-center space-x-2 text-accent">
               {item.videos && item.videos.length > 0 ? (
-                <ListVideo className="w-4 h-4 text-red-600" />
+                <ListVideo className="w-4 h-4 text-primary" />
               ) : item.type === 'video' ? (
                 <Play className="w-4 h-4 fill-current" />
               ) : item.type === 'audio' ? (
@@ -673,7 +673,7 @@ export function Viewer() {
                   {/* Top Series Navigation Bar */}
                   <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 rounded-xl bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#333] shadow-xs">
                     <div className="flex items-center gap-3">
-                      <span className="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-red-600 text-white flex items-center gap-1.5 shadow-xs flex-shrink-0">
+                      <span className="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-primary text-white flex items-center gap-1.5 shadow-xs flex-shrink-0">
                         <ListVideo className="w-3.5 h-3.5" />
                         Lesson {item.videos[activeVideoIndex]?.lessonNumber || (activeVideoIndex + 1)} of {item.videos.length}
                       </span>
@@ -725,7 +725,7 @@ export function Viewer() {
                   <div className="w-full bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-[#333] rounded-xl shadow-xs overflow-hidden">
                     <div className="p-4 border-b border-slate-100 dark:border-[#2b2b2b] flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
-                        <ListVideo className="w-4 h-4 text-red-600" />
+                        <ListVideo className="w-4 h-4 text-primary" />
                         <h4 className="font-semibold text-sm text-slate-900 dark:text-slate-100">
                           Course Playlist ({item.videos.length} Lessons)
                         </h4>
@@ -735,7 +735,7 @@ export function Viewer() {
                           href={item.playlistUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs text-red-600 hover:text-red-700 font-medium flex items-center gap-1 hover:underline"
+                          className="text-xs text-primary hover:text-primary/80 font-medium flex items-center gap-1 hover:underline"
                         >
                           <span>Open on YouTube</span>
                           <ExternalLink className="w-3 h-3" />
@@ -754,21 +754,21 @@ export function Viewer() {
                             }}
                             className={`w-full text-left p-3.5 sm:p-4 flex items-center justify-between gap-3 transition-colors cursor-pointer ${
                               isActive
-                                ? 'bg-red-50/70 dark:bg-red-950/30 text-red-900 dark:text-red-200'
+                                ? 'bg-[#0B465E]/10 dark:bg-sky-950/30 text-primary dark:text-sky-200'
                                 : 'hover:bg-slate-50 dark:hover:bg-[#222] text-slate-700 dark:text-slate-300'
                             }`}
                           >
                             <div className="flex items-center gap-3 min-w-0">
                               <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs flex-shrink-0 transition-colors ${
                                 isActive
-                                  ? 'bg-red-600 text-white shadow-xs'
+                                  ? 'bg-primary text-white shadow-xs'
                                   : 'bg-slate-100 dark:bg-[#292929] text-slate-600 dark:text-slate-400'
                               }`}>
                                 {isActive ? <Play className="w-3.5 h-3.5 fill-current" /> : String(vid.lessonNumber).padStart(2, '0')}
                               </div>
                               <div className="min-w-0">
                                 <p className={`text-sm leading-snug line-clamp-1 ${
-                                  isActive ? 'text-red-700 dark:text-red-400 font-semibold' : 'text-slate-900 dark:text-slate-200 font-medium'
+                                  isActive ? 'text-primary dark:text-sky-300 font-semibold' : 'text-slate-900 dark:text-slate-200 font-medium'
                                 }`}>
                                   {vid.title}
                                 </p>
@@ -777,7 +777,7 @@ export function Viewer() {
 
                             <div className="flex items-center gap-2 flex-shrink-0">
                               {isActive ? (
-                                <span className="text-[11px] font-bold uppercase tracking-wider text-red-600 bg-red-100 dark:bg-red-900/40 px-2 py-0.5 rounded-md flex items-center gap-1">
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-primary dark:text-sky-300 bg-[#0B465E]/15 dark:bg-sky-900/40 px-2 py-0.5 rounded-md flex items-center gap-1">
                                   Playing
                                 </span>
                               ) : (
@@ -1263,8 +1263,8 @@ export function Viewer() {
                     </div>
                   )}
 
-                  {/* Arabic Matn */}
-                  {item.arabicText && (
+                  {/* Arabic Matn (suppressed when poem is interleaved line-by-line) */}
+                  {item.arabicText && !item.interleaved && (
                     <div 
                       className={`rounded-xl p-5 sm:p-7 transition-all font-arabic ${
                         theme === 'dark' ? 'bg-slate-900/60 border border-slate-800/80 text-amber-300/95' :
@@ -1427,7 +1427,7 @@ export function Viewer() {
               <div className="flex items-center gap-2">
                 <Link 
                   to="/notes" 
-                  className="text-xs text-primary hover:text-red-700 font-medium transition-colors mr-2 cursor-pointer hover:underline"
+                  className="text-xs text-primary hover:text-[#9A7536] font-medium transition-colors mr-2 cursor-pointer hover:underline"
                 >
                   View All Notes
                 </Link>

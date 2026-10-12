@@ -230,7 +230,7 @@ export function Home() {
                   {activeType !== 'all' && (
                     <button 
                       onClick={() => setActiveType('all')}
-                      className="text-xs text-primary hover:text-red-700 hover:underline font-semibold cursor-pointer"
+                      className="text-xs text-primary hover:text-[#9A7536] hover:underline font-semibold cursor-pointer"
                     >
                       View all types
                     </button>
@@ -238,7 +238,7 @@ export function Home() {
                   {activeTranslator !== 'all' && (
                     <button 
                       onClick={() => setActiveTranslator('all')}
-                      className="text-xs text-primary hover:text-red-700 hover:underline font-semibold cursor-pointer"
+                      className="text-xs text-primary hover:text-[#9A7536] hover:underline font-semibold cursor-pointer"
                     >
                       View all translators
                     </button>

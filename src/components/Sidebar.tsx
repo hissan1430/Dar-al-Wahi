@@ -67,13 +67,13 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         className={`fixed inset-y-0 left-0 w-72 bg-white text-slate-800 shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex justify-between items-center p-6 border-b border-slate-100">
-          <Link to="/" onClick={onClose} className="flex items-center gap-3 text-primary font-semibold text-lg hover:text-red-700 transition-colors">
+          <Link to="/" onClick={onClose} className="flex items-center gap-3 text-primary font-semibold text-lg hover:text-primary/80 transition-colors">
             <Home className="w-5 h-5" />
             <span>Home</span>
           </Link>
           <button 
             onClick={onClose}
-            className="text-slate-400 hover:text-red-600 transition-colors p-2 cursor-pointer"
+            className="text-slate-400 hover:text-slate-600 transition-colors p-2 cursor-pointer"
             aria-label="Close sidebar"
           >
             <X className="w-6 h-6 stroke-[1.5]" />
@@ -89,7 +89,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             </div>
             <ul className="space-y-3 pl-6 text-sm text-slate-600">
               <li>
-                <Link to="/bookmarks" onClick={onClose} className="hover:text-red-700 transition-colors flex items-center justify-between py-1 cursor-pointer">
+                <Link to="/bookmarks" onClick={onClose} className="hover:text-primary transition-colors flex items-center justify-between py-1 cursor-pointer">
                   <span>My Bookmarks</span>
                   {bookmarks.length > 0 && (
                     <span className="text-[11px] font-semibold bg-accent/20 text-accent-dark px-2 py-0.5 rounded-full">
@@ -99,10 +99,10 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 </Link>
               </li>
               <li>
-                <Link to="/notes" onClick={onClose} className="hover:text-red-700 transition-colors block py-1 cursor-pointer">My Notes</Link>
+                <Link to="/notes" onClick={onClose} className="hover:text-primary transition-colors block py-1 cursor-pointer">My Notes</Link>
               </li>
               <li>
-                <Link to="/glossary" onClick={onClose} className="hover:text-red-700 transition-colors flex items-center gap-2 py-1 cursor-pointer">
+                <Link to="/glossary" onClick={onClose} className="hover:text-primary transition-colors flex items-center gap-2 py-1 cursor-pointer">
                   <span>Glossary of Terms</span>
                 </Link>
               </li>
@@ -113,13 +113,13 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <div>
             <button 
               onClick={() => setIsFormatsOpen(!isFormatsOpen)}
-              className="flex items-center justify-between w-full text-xs font-bold text-slate-900 tracking-widest uppercase mb-4 group cursor-pointer hover:text-red-700 transition-colors"
+              className="flex items-center justify-between w-full text-xs font-bold text-slate-900 tracking-widest uppercase mb-4 group cursor-pointer hover:text-primary transition-colors"
             >
               <div className="flex items-center gap-2">
-                <Layers className="w-4 h-4 text-primary group-hover:text-red-700 transition-colors" />
+                <Layers className="w-4 h-4 text-primary group-hover:text-primary transition-colors" />
                 <span>Content Formats</span>
               </div>
-              <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-red-700 transition-transform duration-200 ${isFormatsOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-primary transition-transform duration-200 ${isFormatsOpen ? 'rotate-180' : ''}`} />
             </button>
             
             <div className={`grid transition-all duration-200 ease-in-out ${isFormatsOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
@@ -127,7 +127,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <li>
                   <button 
                     onClick={() => handleFormatNav('all')} 
-                    className="hover:text-red-700 transition-colors text-left block w-full py-1 font-medium text-slate-700 cursor-pointer text-sm"
+                    className="hover:text-primary transition-colors text-left block w-full py-1 font-medium text-slate-700 cursor-pointer text-sm"
                   >
                     All Content
                   </button>
@@ -142,9 +142,9 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                       <div className="flex items-center justify-between group">
                         <button 
                           onClick={() => handleFormatNav(fmt.id, 'all')} 
-                          className="flex items-center gap-2.5 hover:text-red-700 transition-colors text-left flex-1 py-1 font-medium text-slate-700 cursor-pointer text-sm"
+                          className="flex items-center gap-2.5 hover:text-primary transition-colors text-left flex-1 py-1 font-medium text-slate-700 cursor-pointer text-sm"
                         >
-                          <IconComponent className="w-3.5 h-3.5 text-slate-400 group-hover:text-red-700 transition-colors shrink-0" />
+                          <IconComponent className="w-3.5 h-3.5 text-slate-400 group-hover:text-primary transition-colors shrink-0" />
                           <span>{fmt.label}</span>
                         </button>
                         <button
@@ -152,11 +152,11 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                             e.stopPropagation();
                             setOpenFormatDropdown(isExpanded ? null : fmt.id);
                           }}
-                          className="p-1 text-slate-400 hover:text-red-700 transition-colors cursor-pointer rounded-sm hover:bg-slate-100"
+                          className="p-1 text-slate-400 hover:text-primary transition-colors cursor-pointer rounded-sm hover:bg-slate-100"
                           title={`Toggle translators for ${fmt.label}`}
                           aria-label={`Toggle translators for ${fmt.label}`}
                         >
-                          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isExpanded ? 'rotate-180 text-red-700' : ''}`} />
+                          <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isExpanded ? 'rotate-180 text-primary' : ''}`} />
                         </button>
                       </div>
 
@@ -165,7 +165,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                           <li>
                             <button
                               onClick={() => handleFormatNav(fmt.id, 'all')}
-                              className="hover:text-red-700 transition-colors text-left block w-full py-0.5 cursor-pointer"
+                              className="hover:text-primary transition-colors text-left block w-full py-0.5 cursor-pointer"
                             >
                               All Translators
                             </button>
@@ -173,7 +173,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                           <li>
                             <button
                               onClick={() => handleFormatNav(fmt.id, 'Abu_Talhah')}
-                              className="hover:text-red-700 transition-colors text-left block w-full py-0.5 cursor-pointer"
+                              className="hover:text-primary transition-colors text-left block w-full py-0.5 cursor-pointer"
                             >
                               Abū Ṭalḥah al-ʾAfġhānī
                             </button>
@@ -181,7 +181,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                           <li>
                             <button
                               onClick={() => handleFormatNav(fmt.id, 'Abu_Mundhir')}
-                              className="hover:text-red-700 transition-colors text-left block w-full py-0.5 cursor-pointer"
+                              className="hover:text-primary transition-colors text-left block w-full py-0.5 cursor-pointer"
                             >
                               Abū Mundhir ar-Ruwāndī
                             </button>
@@ -199,20 +199,20 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <div>
             <button 
               onClick={() => setIsTranslatorsOpen(!isTranslatorsOpen)}
-              className="flex items-center justify-between w-full text-xs font-bold text-slate-900 tracking-widest uppercase mb-4 group cursor-pointer hover:text-red-700 transition-colors"
+              className="flex items-center justify-between w-full text-xs font-bold text-slate-900 tracking-widest uppercase mb-4 group cursor-pointer hover:text-primary transition-colors"
             >
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-primary group-hover:text-red-700 transition-colors" />
+                <Users className="w-4 h-4 text-primary group-hover:text-primary transition-colors" />
                 <span>Translators</span>
               </div>
-              <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-red-700 transition-transform duration-200 ${isTranslatorsOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-primary transition-transform duration-200 ${isTranslatorsOpen ? 'rotate-180 text-primary' : ''}`} />
             </button>
             <div className={`grid transition-all duration-200 ease-in-out ${isTranslatorsOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
               <ul className="space-y-2.5 pl-6 text-sm text-slate-600 overflow-hidden">
                 <li>
                   <button 
                     onClick={() => handleTranslatorNav('all')} 
-                    className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer"
+                    className="hover:text-primary transition-colors text-left block w-full py-1 cursor-pointer"
                   >
                     All Translators
                   </button>
@@ -220,7 +220,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <li>
                   <button 
                     onClick={() => handleTranslatorNav('Abu_Talhah')} 
-                    className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer font-medium text-slate-700"
+                    className="hover:text-primary transition-colors text-left block w-full py-1 cursor-pointer font-medium text-slate-700"
                   >
                     Abū Ṭalḥah al-ʾAfġhānī
                   </button>
@@ -228,7 +228,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 <li>
                   <button 
                     onClick={() => handleTranslatorNav('Abu_Mundhir')} 
-                    className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer font-medium text-slate-700"
+                    className="hover:text-primary transition-colors text-left block w-full py-1 cursor-pointer font-medium text-slate-700"
                   >
                     Abū Mundhir ar-Ruwāndī
                   </button>
@@ -241,30 +241,30 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           <div>
             <button 
               onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-              className="flex items-center justify-between w-full text-xs font-bold text-slate-900 tracking-widest uppercase mb-4 group cursor-pointer hover:text-red-700 transition-colors"
+              className="flex items-center justify-between w-full text-xs font-bold text-slate-900 tracking-widest uppercase mb-4 group cursor-pointer hover:text-primary transition-colors"
             >
               <div className="flex items-center gap-2">
-                <Library className="w-4 h-4 text-primary group-hover:text-red-700 transition-colors" />
+                <Library className="w-4 h-4 text-primary group-hover:text-primary transition-colors" />
                 <span>Categories</span>
               </div>
-              <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-red-700 transition-transform duration-200 ${isCategoriesOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-primary transition-transform duration-200 ${isCategoriesOpen ? 'rotate-180 text-primary' : ''}`} />
             </button>
             <div className={`grid transition-all duration-200 ease-in-out ${isCategoriesOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
               <ul className="space-y-2 pl-6 text-sm text-slate-600 overflow-hidden">
                 <li>
-                  <button onClick={() => handleCategoryNav('ʿAqīdah')} className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer">ʿAqīdah</button>
+                  <button onClick={() => handleCategoryNav('ʿAqīdah')} className="hover:text-primary transition-colors text-left block w-full py-1 cursor-pointer">ʿAqīdah</button>
                 </li>
                 <li>
-                  <button onClick={() => handleCategoryNav('al-Sunnah')} className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer">al-Sunnah</button>
+                  <button onClick={() => handleCategoryNav('al-Sunnah')} className="hover:text-primary transition-colors text-left block w-full py-1 cursor-pointer">al-Sunnah</button>
                 </li>
                 <li>
-                  <button onClick={() => handleCategoryNav('Uṣool')} className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer">Uṣool</button>
+                  <button onClick={() => handleCategoryNav('Uṣool')} className="hover:text-primary transition-colors text-left block w-full py-1 cursor-pointer">Uṣool</button>
                 </li>
                 <li>
-                  <button onClick={() => handleCategoryNav('Ḥadīth')} className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer">Ḥadīth</button>
+                  <button onClick={() => handleCategoryNav('Ḥadīth')} className="hover:text-primary transition-colors text-left block w-full py-1 cursor-pointer">Ḥadīth</button>
                 </li>
                 <li>
-                  <button onClick={() => handleCategoryNav('Heart-Softeners')} className="hover:text-red-700 transition-colors text-left block w-full py-1 cursor-pointer">Heart-Softeners</button>
+                  <button onClick={() => handleCategoryNav('Heart-Softeners')} className="hover:text-primary transition-colors text-left block w-full py-1 cursor-pointer">Heart-Softeners</button>
                 </li>
               </ul>
             </div>

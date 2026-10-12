@@ -1,7 +1,48 @@
-import { sunnahPages } from './data/sunnah';
-import { deathPages } from './data/death';
+import { sunnahPages } from "./data/sunnah";
+import { deathPages } from "./data/death";
 
-export type Translator = 'Abu_Mundhir' | 'Abu_Talhah' | 'None';
+export type Translator = 'Abu_Talhah' | 'Abu_Mundhir' | 'Abul_Layth' | string;
+export type ContentType = 'quote' | 'poem' | 'article' | 'video' | 'audio' | 'pdf' | string;
+
+export interface ContentItem {
+  id: string;
+  sourceId?: string;
+  bookSlug?: string;
+  bookName?: string;
+  date?: string;
+  timestamp?: number;
+  translator: Translator;
+  translatorName?: string;
+  category: string;
+  type: ContentType;
+  title: string;
+  speaker?: string;
+  author?: string;
+  summary: string;
+  interleaved?: boolean;
+  arabicText?: string;
+  englishText?: string;
+  htmlText?: string;
+  citation?: string;
+  imageUrl?: string;
+  dateAdded?: string;
+  pages?: any[];
+  pdfUrl?: string;
+  youtubeId?: string;
+  playlistUrl?: string;
+  videos?: Array<{
+    id: string;
+    title: string;
+    lessonNumber: number;
+    duration?: string;
+  }>;
+  soundcloudUrl?: string;
+  surah?: string;
+  ayah?: string;
+  narrator?: string;
+  source?: string;
+  [key: string]: any;
+}
 
 export const CATEGORIES = [
   "ʿAqīdah",
@@ -10,45 +51,7 @@ export const CATEGORIES = [
   "Ḥadīth",
   "Heart-Softeners",
   "Miscellaneous"
-] as const;
-
-export type Category = typeof CATEGORIES[number];
-export type ContentType = 'quote' | 'pdf' | 'short treatise' | 'article' | 'video' | 'audio' | 'poem';
-
-export interface VideoEpisode {
-  id: string;
-  lessonNumber: number;
-  title: string;
-  duration?: string;
-  summary?: string;
-}
-
-export interface ContentItem {
-  id: string;
-  translator: Translator;
-  translatorName?: string;
-  category: Category;
-  type: ContentType;
-  title: string;
-  speaker?: string;
-  author?: string;
-  arabicText?: string;
-  englishText?: string;
-  htmlText?: string;
-  citation?: string;
-  summary?: string;
-  dateAdded: string;
-  pdfUrl?: string;
-  youtubeId?: string;
-  playlistId?: string;
-  playlistUrl?: string;
-  videos?: VideoEpisode[];
-  soundcloudUrl?: string;
-  pages?: string[];
-  imageUrl?: string;
-  scanImages?: string[];
-  secondaryImages?: { url: string; caption?: string }[];
-}
+];
 
 export const MOCK_DATA: ContentItem[] = [
   {
@@ -95,7 +98,7 @@ export const MOCK_DATA: ContentItem[] = [
 </div>`,
     citation: "Kẖalq ʾAfʿāl al-ʿIbād - pg.38",
     imageUrl: "/jahmi_scan.png",
-    dateAdded: "2026-09-12",
+    dateAdded: "2026-09-12"
   },
   {
     id: "10",
@@ -120,7 +123,7 @@ export const MOCK_DATA: ContentItem[] = [
 </div>`,
     citation: "al-ʾIbānah al-Kubrā no.9",
     imageUrl: "/arrow_hudhayfah.jpeg",
-    dateAdded: "2026-09-13",
+    dateAdded: "2026-09-13"
   },
   {
     id: "6",
@@ -161,7 +164,7 @@ export const MOCK_DATA: ContentItem[] = [
     type: "quote",
     title: "Al-Bukẖārī on the Uncreated Qurʾān",
     summary: "Imām al-Bukẖārī affirms that the Qurʾān is the Speech of Allāh and uncreated, distinguishing between the Creator’s Command and His creation.",
-    englishText: "And Abū ʿAbd Allāh [al-Bukẖārī] said: \"And the Qurʾān is the Speech of Allāh, uncreated, due to the statement of Allāh, Mighty and Majestic: \"Indeed your Lord is Allāh who created the Heavens and Earth in six days and then ascended above the Throne. He covers the (light of) day with the (darkness) of night (which) pursues it swiftly and (He created) the sun, the moon, the stars (all being) subjected to His command.\" [al-ʾAʿrāf:54] So, He made it clear that the created beings, and the pursuing, and the rapidity, and the subjected beings are by His command. Then He explained: \"His is the creation and the command. Blessed be Allāh, the Lord of the worlds.\" [al-ʾAʿrāf:54] Ibn ʿUyaynah said: ‘Allāh distinguished the [act of] creation from the command with His statement: \"His is the creation and the command.\" [al-ʾAʿrāf:54] — so, the creation is by His command like His statement: \"The decision of the matter, before and after (these events) is only with Allāh...\" [al-Rūm:4], and like His statement: \"Verily, His Command, when He intends a thing, is only that He says to it, \"Be!\" and it is!\" [Yā-Sīn:82], and like His statement: \"And among His Signs is that the heaven and the earth stand by His Command\"[al-Rūm:25], and He did not say ‘by His Creation.’’’\"",
+    englishText: 'And Abū ʿAbd Allāh [al-Bukẖārī] said: "And the Qurʾān is the Speech of Allāh, uncreated, due to the statement of Allāh, Mighty and Majestic: "Indeed your Lord is Allāh who created the Heavens and Earth in six days and then ascended above the Throne. He covers the (light of) day with the (darkness) of night (which) pursues it swiftly and (He created) the sun, the moon, the stars (all being) subjected to His command." [al-ʾAʿrāf:54] So, He made it clear that the created beings, and the pursuing, and the rapidity, and the subjected beings are by His command. Then He explained: "His is the creation and the command. Blessed be Allāh, the Lord of the worlds." [al-ʾAʿrāf:54] Ibn ʿUyaynah said: ‘Allāh distinguished the [act of] creation from the command with His statement: "His is the creation and the command." [al-ʾAʿrāf:54] — so, the creation is by His command like His statement: "The decision of the matter, before and after (these events) is only with Allāh..." [al-Rūm:4], and like His statement: "Verily, His Command, when He intends a thing, is only that He says to it, "Be!" and it is!" [Yā-Sīn:82], and like His statement: "And among His Signs is that the heaven and the earth stand by His Command"[al-Rūm:25], and He did not say ‘by His Creation.’’’"',
     htmlText: `<div class="space-y-6 leading-relaxed">
   <div class="space-y-3">
     <p class="leading-relaxed">
@@ -183,7 +186,7 @@ export const MOCK_DATA: ContentItem[] = [
 </div>`,
     citation: "Kẖalq ʾAfʿāl al-ʿIbād - pg.45",
     imageUrl: "/bukhari_scan.png",
-    dateAdded: "2026-09-13",
+    dateAdded: "2026-09-13"
   },
   {
     id: "16",
@@ -224,7 +227,7 @@ export const MOCK_DATA: ContentItem[] = [
 </div>`,
     youtubeId: "NviuJEfYpDg",
     imageUrl: "https://i.ytimg.com/vi/NviuJEfYpDg/maxresdefault.jpg",
-    dateAdded: "2026-09-20",
+    dateAdded: "2026-09-20"
   },
   {
     id: "17",
@@ -587,7 +590,7 @@ Abū ʿAbd Allāh [al-Bukẖārī] said: ‘And everyone who does not recognise 
     translator: "Abu_Mundhir",
     category: "Miscellaneous",
     type: "video",
-    title: "Who Are \"The Image Makers\"?",
+    title: 'Who Are "The Image Makers"?',
     speaker: "Abū Ṭalḥah Dāwūd Burbank",
     author: "Shaykh ʿAbdullāh al-Ghudayyān",
     summary: "An essential translation and explanation of the verdict of Shaykh ʿAbdullāh al-Ghudayyān clarifying the prophetic warnings regarding picture-makers (al-Muṣawwirūn).",
@@ -2023,7 +2026,1250 @@ al-Firabrī⁸ said: ʿAbbās narrated to us, he said: Qutaybah narrated to us, 
     imageUrl: "/khatib inkwell.png",
     scanImages: ["/khatib inkwell.png"],
     dateAdded: "2026-10-04"
+  },
+  {
+    id: "44",
+    sourceId: "10",
+    bookSlug: "sharh-usool-itiqad-ahl-as-sunnah",
+    bookName: "al-Ḥujjah ʿalā Tārik al-Maḥajjah",
+    date: "2026-03-31",
+    timestamp: 1743436800000,
+    translator: "Abu_Talhah",
+    translatorName: "Abū Ṭalḥah al-ʾAfġhānī",
+    category: "ʿAqīdah",
+    type: "poem",
+    title: "al-Ḥujjah ʿalā Tārik al-Maḥajjah (The Creed of Ibn Ṭāhir al-Maqdisī)",
+    speaker: "Abū al-Faḍl Muḥammad ibn Ṭāhir al-Maqdisī (d. 507H)",
+    author: "Abū al-Faḍl Muḥammad ibn Ṭāhir al-Maqdisī al-Qaysarānī (d. 507H)",
+    summary: "The celebrated ninety-three verse creed poem al-Ḥujjah ʿalā Tārik al-Maḥajjah (The Proof Against the Abandoner of the Clear Highway) in affirmation of the Creed of the Salaf by the Ḥāfiẓ Abū al-Faḍl Muḥammad ibn Ṭāhir al-Maqdisī al-Qaysarānī (d. 507H).",
+    interleaved: true,
+    arabicText: `أَقُولُ مَقَالًا يَرْتَضِيهِ ذَوُو البَصَرْ ...وَانْصُرْهُ بِالآيِ حَسْبُ وَبِالأَثَرْ
+لِأَنَّهُمَا نُورُ الهُدَى وَسِوَاهُمَا ...ظَلَامٌ بِلَا شَكٍّ لِمَنْ مَازَ وَادَّكَرْ
+تَحَقَّقْتُ أَنَّ اللهَ لَا رَبَّ غَيْرُهُ ...بِصَنْعَتِهِ الأَفْلَاكَ سَبْعًا وَبِالفِكَرْ
+سَمِيعٌ بَصِيرٌ قَادِرٌ مُتَكَلِّمٌ ...مُرِيدٌ لِمَا يَأْتِي عَلِيمٌ بِمَا يَذَرْ
+هُوَ الحَيُّ وَالبَاقِي بِأَسْمَائِهِ الَّتِي ...تَزِيدُ عَلَى التِّسْعِينَ تِسْعًا لِمَنْ خَبَرْ
+رَوَاهُ البُخَارِيُّ فِي الصَّحِيحِ وَمُسْلِمٌ ...وَكُلُّ إِمَامٍ فِي الأَحَادِيثِ قَدْ نَظَرْ
+وَأَوْرَدَهُ أَهْلُ الشَّامِ بِشَرْحِهِ ...وَفَضْلُهُمُ فِي القَلْبِ يَا صَاحِ قَدْ وَفَرْ
+وَأُثْبِتُ إِرْسَالَ النَّبِيِّ لِمَا أَتَى ...بِهِ مِنْ دَلِيلٍ صَادِقٍ مُعْجِزٍ بَهَرْ
+وَأَعْلَمُ أَنَّ اللهَ مِنْ فَوْقِ عَرْشِهِ ...بِلَا كَيْفَ بَلْ قَوْلًا كَمَا جَاءَ فِي السُّوَرْ
+وَأَشْهَدُ أَنَّ اللهَ أَسْرَى بِعَبْدِهِ ...مُحَمَّدٍ المَبْعُوثِ مِنْهُ إِلَى البَشَرْ
+وَأُثْبِتُ أَنَّ اللهَ جَلَّ جَلَالُهُ ...تَكَلَّمَ بِالقُرْآنِ لَا قَوْلَ مَنْ كَفَرْ
+كَلَامٌ بِصَوْتٍ لَا كَأَصْوَاتِ خَلْقِهِ ...رَوَاهُ أَبُو يَحْيَى وَحَسْبُكَ مُفْتَخَرْ
+وَحَرْفٍ كَمَا قَدْ جَاءَ فِي الخَبَرِ الَّذِي ...رَوَاهُ ابْنُ مَسْعُودٍ فَأَنْصِفْ وَاعْتَبَرْ
+وَمَتْلُوٌّ [و]مَسْمُوعٌ بِلَفْظٍ بِكُلِّ ذَا ...نَدينُ وَمَكْتُوبٌ خِلَافَ الَّذِي نَفَرْ
+قَدِيمٌ بِلَا شَكٍّ وَلَيْسَ بِمُحْدَثٍ ...رُوَاةٌ لَنَا عَنْ أَصْدَقِ الخَلْقِ وَالبَشَرْ
+فَمَنْ قَالَ مَخْلُوقٌ فَقَدْ فَارَقَ الهُدَى ...بِفِرْيَتِهِ وَاللهُ يُدْخِلُهُ سَقَرْ
+وَأَشْهَدُ أَنَّ الخَيْرَ وَالشَّرَّ كُلَّهُ ...يَجِيءُ مِنَ اللهِ العَظِيمِ عَلَى قَدَرْ
+وَأَعْلَمُ أَنَّ الجِسْرَ بَيْنَ جَهَنَّمٍ ...وَجَنَّةِ عَدْنٍ كَالطَّرِيقِ لِمَنْ عَبَرْ
+وَلَا أُنْكِرُ المِيزَانَ وَالحَوْضَ عَامِدًا ...وَلَا أُنْكِرُ التَّسَآلَ فِي القَبْرِ وَالنَّظَرْ
+وَأَشْهَدُ أَنَّ اللهَ مِنْ بَعْدِ حَشْرِنَا ...نَرَاهُ بِلَا شَكٍّ كَمَا نَنْظُرُ القَمَرْ
+وَأُثْبِتُ حَقًّا لِلرَّسُولِ شَفَاعَةً ...وَلِلْمُؤْمِنِينَ المُخْلِصِينَ ذَوِي الخَطَرْ
+وَيُخْرَجُ أَقْوَامٌ مِنَ النَّارِ بَعْدَمَا ...أَصَابَهُمْ سَفْعٌ مِنَ النَّارِ وَالشَّرَرْ
+وَأُثْبِتُ أَخْبَارَ الصِّفَاتِ وَلَا أَرَى ...تَأَوُّلَهَا وَهُوَ الصَّحِيحُ لِمَنْ سَبَرْ
+وَأَشْهَدُ أَنَّ اللهَ لَيْسَ كَخَلْقِهِ ...وَمَنْ قَالَ بِالتَّشْبِيهِ يَوْمًا فَقَدْ خَسِرْ
+وَأُثْبِتُ أَخْبَارَ النُّزُولِ لِمَا رَوَى ...جَمَاعَةُ مِنْ صَحْبِ الرَّسُولِ ذَوُو البَصَرْ
+أَبُو بَكْرٍ وَالدَّوْسِيُّ وَابْنُ عَرَابَةٍ ...وَجَابِرٌ وَالخُدْرِيُّ مِنْهُمْ مُسْتَطَرْ
+وَعَمْرٌو سُلَيْمٌ وَابْنُ قَيْسٍ وَحَيْدَرٌ ...وَمِثْلُ أَبِي الدَّرْدَا وَذَلِكَ مُشْتَهرْ
+وَجُرْثُومُ وَالصِّدِّيقَةُ الطُّهْرِ عَائِشٌ ...وَهِنْدٌ وَمَا يَرْوِي جُبَيْرُ الَّذِي خَبَرْ
+وَعُثْمَانُ وَالعَبْسِيُّ ثُمَّ مُعَاذُنَا ...وَجَدُّ يَزِيدٍ قَدْ رَوَوْهُ فِي الأَثَرْ
+وَأَمَّا ابْنُ مَسْعُودٍ فَقَالَ كَمَا رَوَوْا ...وَأَسْنَدَهُ عَنْهُ كَمَا قَالَهُ نَفَرْ
+نُزُولُ إِلَهِ العَرْشِ فِي كُلِّ لَيْلَةٍ ...وَلَيْلَةَ شَعْبَانَ يَقُولُ إِلَى السَّحَرْ:
+أَلَا سَائِلٌ أُعْطِيه غَايَةَ سُؤْلِهِ ...وَمُسْتَغْفِرٍ يَدْعُو فَطُوبَى لِمَنْ غَفَرْ
+وَيَنْزِلُ يَوْمَ العَشْرِ جَلَّ ثَنَاؤُهُ ...إِلَى رُقْعَةِ الدُّنْيَا يُبَاهِي بِمَنْ حَضَرْ
+وَأَعْلَمُ حَقًّا أَنَّ جَنَّةَ رَبِّنَا ...وَنَارَ لَظًى مَخْلُوقَتَانِ لِمَنْ أَمَرْ
+وَأَعْرِفُ إِيمَانًا يَزِيدُ بِطَاعَةٍ ...وَيَنْقُصُ بِالعِصْيَانِ لَا قَوْلَ مَنْ فَجَرْ
+وَأُثْبِتُهُ بِالقَوْلِ وَالعَمَلِ الَّذِي ...هُمَا سَبَبَانِ لِلنَّجَاةِ مِنَ الغَرَرْ
+وَإِجْمَاعُ أَصْحَابِ الرَّسُولِ وَثِيقَةٌ ...لِأَنَّهُمُ أَهْلُ التِّلَاوَةِ وَالبَصَرْ
+فَمَنْ جَاءَ مِنْ بَعْدِ الرَّسُولِ وَصَحْبِهِ ...بِمَا لَمْ يَكُنْ فِي عَصْرِهِمْ كَانَ كَالهَدَرْ
+وَأَحْتَجُّ بِالمَنْصُوصِ فِي شَرْعِ أَحْمَدٍ ...وَمَنْ قَالَ فِيهِ بِالقِيَاسِ فَقَدْ خَسِرْ
+وَلَسْتُ أَرَى رَأْيَ الرِّجَالِ وَثِيقَةً ...لِأَنَّ رَسُولَ اللهِ عَنْ ذَاكَ قَدْ زَجَرْ
+وَلَا أَرْتَضِي فِي الدِّينِ قَوْلَ مُجَادِلٍ ...بِمَا زَخْرَفُوهُ مِنْ فُضُولٍ لَهَا كَدَرْ
+وَلَكِنْ بِالآيَاتِ وَالسُّنَنِ الَّتِي ...أَتَتْ عَنْ رَسُولِ اللهِ فِي ذَاكَ كَالغُرَرْ
+فَإِنْ لَمْ يَكُنْ فِي ذَاكَ نَصٌّ فَمَا أَتَى ...إِلَيْنَا بِإِجْمَاعٍ عَنِ السَّلَفِ الشُّهَرْ
+وَأَهْجُرُ أَرْبَابَ الكَلَامِ بِأَسْرِهِمْ ...فَكُنْ مِنْهُمُ يَا صَاحِ وَيْكَ عَلَى حَذَرْ
+لِأَنَّهُمْ قَدْ أَبْدَعُوا وَتَنَطَّعُوا ...وَكَانُوا بِلَا رَيْبٍ عَلَى مَنْهَجٍ خَطَرْ
+وَلَسْتُ أَرَى شَقَّ العَصَا وَلَا أَرَى ...خُرُوجًا عَلَى السُّلْطَانِ إِنْ جَارَ أَوْ غَدَرْ
+وَأَبْرَأُ مِنْ رَأْيِ الخَوَارِجِ إِنَّهُمْ ...أَرَاقُوا دِمَاءَ المُسْلِمِينَ كَمَا اشْتَهَرْ
+وَلَسْتُ بِرَاضٍ أَنْ يُكَفَّرَ مُسْلِمٌ ...بِذَنْبٍ جَنَاهُ عَلَّ رَبُّكَ قَدْ غَفَرْ
+وَقَالَ رَسُولُ اللهِ يَوْمًا مُحَذَّرًا ...مِنَ الخَبَرِ المَشْهُورِ عَنْهُ الَّذِي انْتَشَرْ
+سَتَفْتَرِقُوا مِثْلَ الَّذِي كَانَ قَبْلَكُمْ ...ثَلَاثًا وَسَبْعِينَ فَكَانَ كَمَا ذَكَرْ
+فَوَاحِدَةٌ تَنْجُو وَهُمْ أَهْلُ سُنَّتِي ...فَأَبْشِرْ بِذِي الحُسْنَى مِنَ اللهِ وَاصْطَبِرْ
+وَسَائِرُهُمْ هَلْكَى لِقُبْحِ انْتِحَالِهِمْ ...وَخُبْثِ اعْتِقَادٍ عَنْهُمُ اليَوْمَ قَدْ ظَهَرْ
+فَمَعْبَدٌ مِنْ قَبْلِ الَّذِي خَالَفَ الوَرَى ...بِسِحْرٍ سَيُجْزَى فِي المَعَادِ بِمَا سَحَرْ
+وَأَمَّا ابْنُ كُلَّابٍ فَجَاءَ بِبِدْعَةٍ ...وَجَعْدٌ وَجَهْمٌ وَالمَرِيسِيُّ ذَوُ الدَّبَرْ
+وَزَخْرَفَ ابْنُ الأَشْعَرِيِّ مَقَالَةً ...سَيُسْأَلُ عَمَّا قَالَ فِيهَا وَمَا سَطَرْ
+وَجَاءَ ابْنُ كَرَّامٍ بِمَيْنٍ وَفِرْيَةٍ ...عَلَى اللهِ وَالمَبْعُوثِ مِنْهُ وَمَا شَعَرْ
+فَهُمْ أَحْدَثُوا هَذَا الكَلَامَ بِعَقْلِهِمْ ...وَكُلُّهُمُ عَنْ مَنْهَجِ الحَقِّ قَدْ عَبَرْ
+أَرَادُوا بِهِ تَشْوِيشَ شَرْعِ مُحَمَّدٍ ...فَمَا بَلَغُوا مَا أَمَّلُوهُ مِنَ الغَدَرْ
+مُحَالٌ كَقِيعَانِ السَّرَابِ تَخَالُهُ ...دَلِيلًا وَلَكِنْ فِي الحِجَاجِ قَدِ انْكَسَرْ
+أَلَمْ تَرَ أَنَّ اللهَ سَلَّطَ بَعْضَهُمْ ...يُكَفِّرُ بَعْضًا بِالدَّلِيلِ وَبِالنَّظَرْ
+وَجَنَّبَ أَهْلَ الحَقِّ سُوءَ كَلَامِهِمْ ...وَأَيَّدَهُمْ بِالنَّصْرِ مِنْهُ وَبِالظَّفَرْ
+فَلَمْ تَرَ بِدْعِيًّا يُزَنُّ بِبِدْعَةٍ ...عَلَى الأَرْضِ إِلَّا أَخْرَجُوهُ مِنَ القَفْرِ
+فَقُلْ لِذَوِي التَّحْصِيلِ هَلْ يَبْلُغُ الَّذِي ...ذَكَرْتُهُمُ مِقْدَارَ قَوْمٍ عَلَى خَطَرْ
+كَمَالِكَ وَالثَّوْرِيِّ وَابْنِ عُيَيْنَةٍ ...وَلَيْثٍ وَحَمَّادِ بْنِ زَيْدٍ ذَوِي الغُرَرْ
+وَمَنْ فَخَرَتْ أَرْضُ الشَّامِ بِكَوْنِهِ ...بِبَيْرُوتَ فِي جَمْعٍ عِدَادُهُمُ المَطَرْ
+وَمِثْلِ ابْنِ طَهْمَانَ الإِمَامِ وَبَعْدَهُ ...يَزِيدُ بْنُ هَارُونَ الَّذِي خَصْمَهُ زَبَرْ
+وَمِثْلِ وَكِيعٍ وَابْنِ مَهْدِيْ وَبَعْدَهُ ...سَلِيلُ دُكَيْنٍ كُلُّهُمْ سَادَةٌ زُهَرْ
+وَمَنْ أَشْرَقَ الإِسْلَامُ مِنْ نُورِ عِلْمِهِ ...إِمَامِ قُرَيْشَ الشَّافِعِيِّ الَّذِي قَهَرْ
+وَمِنْ عُصْبَةِ ابْنُ المُبَارَكِ فِيهِمُ ...بِمَرْوَ وَنَيْسَابُورَ وَالرَّيِّ ذِي العِبَرْ
+وَيَحْيَى وَإِسْحَاقً وَأَحْمَدً الَّذِي ...بِهِ نُظِمَ التَّقْوَى كَمَا يُنْظَمُ الدُّرَرْ
+إِمَامٌ لِأَهْلِ النَّقْلِ وَالمُقْتَدَى بِهِ ...وَفِي السُّنَّةِ الغَرَّا إِمَامٌ وَقَدْ صَبَرْ
+وَمَنْ حَلَّ فِي مِصْرٍ وَدَانَ بِسُنَّةٍ ...وَحَجَّ إِلَى البَيْتِ المُحَرَّمِ وَاعْتَمَرْ
+وَمَنْ بِالعِرَاقِ المُسْتَنِيرِ كَشُعْبَةٍ ...وَابْنِ بَشِيرٍ وَابْنِ طَرْخَانَ مُعْتَمِرْ
+وَمِثْلِ ابْنِ سَلَّامٍ وَمَنْ سَارَ سَيرَهُ ...كَلَيْثٍ لَدَى الغَابَاتِ عَنْ عِرْسِهِ هَدَرْ
+وَمِثْلِ ابْنِ وَهْبٍ وَابْنِ يَحْيَى وَبَعْدَهُ ...إِمَامُ بُخَارَى وَالَّذِي فَضْلُهُ غَمَرْ
+وَمِثْلِ ابْنِ إِدْرِيسٍ وَمَنْ دَانَ دِينَهُ ...أَبُو زُرْعَةَ الرَّازِيُّ فِي حِفْظِهِ نَدَرْ
+وَمِثْلِ أَبِي دَاوُدَ وَابْنِ خُزَيْمَةٍ ...وَيَحْيَى بْنِ يَحْيَى وَالحُمَيْدِيِّ قَدْ وَزَرْ
+فَمَنْ فَارَقَ الإِجْمَاعَ ثُمَّ اقْتَدَى بِمَنْ ...تَقَدَّمَ ذِكْرَانَا لَهُمْ كَانَ قَدْ خَسِرْ
+فَأَسْأَلُ رَبِّي إِذْ هَدَانِي لِهَدْيِهِمْ ...رِفَاقَتَهُمْ فِي الخُلْدِ مَعَ صَالِحِ الزُّمَرْ
+وَأُثْبِتُ مِنْ بَعْدِ الرَّسُولِ خَلِيفَةً ...إِمَامًا بِهِ الإِسْلَامُ مِنْ بَعْدِهِ افْتَخَرْ
+أَبُو بَكْرٍ الصِّدِّيقُ أَوْلَاهُم بِهَا ...وَمِنْ بَعْدِهِ الفَارُوقُ أَعْنِي بِهِ عُمَرْ
+وَعُثْمَانُ ذُو النُّورَيْنِ تَالٍ وَبَعْدَهُ ...عَلِيٌّ أَبُو السِّبْطَيْنِ أَفْضَلُ مَنْ غَبَرْ
+فَهُمْ خُلَفَاءُ اللهِ بَعْدَ نَبِيِّهِ ...سَفِينَةُ يَرْوِيهِ عَنِ الصَّادِقِ الخَبَرْ
+وَأُثْبِتُ أَنَّ الفَضْلَ بَعْدَ الَّذِي مَضَتْ ...رِوَايَاتُنَا فِيهِمْ لَفِي سِتَّةٍ أُخَرْ
+سَعِيدٌ وَسَعْدٌ وَابْنُ عَوْفٍ وَطَلْحَةٌ ...وَعَامِرُ فِهْرٍ وَالزُّبَيْرُ الَّذِي نَصَرْ
+وَأُثْبِتُ مِنْ بَعْدِ الخِلَافَةِ بَيْعَةٌ ...لِخَالِ جَمِيعِ المُؤْمِنِينَ الَّذِي خَبَرْ
+مُعَاوِيَةَ المَنْعُوتِ بِالحِلْمِ وَالسَّخَا ...أَمِينِ رَسُولِ اللهِ لِلْوَحْيِ وَالزُّبُرْ
+بِإِجْمَاعِ أَهْلِ الحَلِّ وَالعَقْدِ مِنْهُمُ ...فَلَسْتُ بِقَوَّالٍ بِقَوْلِ الَّذِي نَفَرْ
+وَقَوْلِي فِي صَحْبِ الرَّسُولِ بِأَسْرِهِمْ ...جَمِيلٌ خِلَافَ المَارِقِينَ ذَوِي الأَشَرْ
+وَرَافِضُ أَعْدَاءُ الشَّرِيعَةِ وَصْفُهُمْ ...عَنِ الصَّادِقِ المَبْعُوثِ فِي النَّاسِ مِنْ مُضَرْ
+كَمَا كَانَ فِي كُتْبِ الشَّرِيعَةِ نَالَهُمْ ...مِنَ اللهِ خِزْيٌ بِالأَصَائِلِ وَالسَّحَرْ
+لَهُمْ نَبْزٌ لَا دَرَّ يَا صَاحِ دَرُّهُمْ ...وَلَا نَالَهُمْ خَيْرٌ وَلَا فَاتَهُمْ خَطَرْ
+فَهَذَا اعْتِقَادُ المَقْدِسِيِّ مُحَمَّدٍ ...رَوَاهُ عَنِ الأَثْبَاتِ مِنْ نَاقِلِي السِّيَرْ`,
+    englishText: `Abū al-Faḍl Muḥammad ibn Abī al-Ḥusayn Ṭāhir ibn ʿAlī ibn ʾAḥmad al-Maqdisī al-Qaysarānī said:
+
+أَقُولُ مَقَالًا يَرْتَضِيهِ ذَوُو البَصَرْ ...وَانْصُرْهُ بِالآيِ حَسْبُ وَبِالأَثَرْ
+
+1 - I say a saying the people of insight approve of...and I support it with the verses, sufficiently, and with the *ʾaṯhar*
+
+لِأَنَّهُمَا نُورُ الهُدَى وَسِوَاهُمَا ...ظَلَامٌ بِلَا شَكٍّ لِمَنْ مَازَ وَادَّكَرْ
+
+2 - For they are both the light of guidance and other than them both...is darkness, without doubt, for whoever distinguished and took into consideration
+
+تَحَقَّقْتُ أَنَّ اللهَ لَا رَبَّ غَيْرُهُ ...بِصَنْعَتِهِ الأَفْلَاكَ سَبْعًا وَبِالفِكَرْ
+
+3 - I have become certain that Allāh, there is no Lord other than Him...by His craftsmanship [of] the orbits, seven, and by thought
+
+سَمِيعٌ بَصِيرٌ قَادِرٌ مُتَكَلِّمٌ ...مُرِيدٌ لِمَا يَأْتِي عَلِيمٌ بِمَا يَذَرْ
+
+4 - Hearing, Seeing, Able, Speaking...Willing of what comes, Knowing of what He leaves
+
+هُوَ الحَيُّ وَالبَاقِي بِأَسْمَائِهِ الَّتِي ...تَزِيدُ عَلَى التِّسْعِينَ تِسْعًا لِمَنْ خَبَرْ
+
+5 - He is the Living and the Everlasting by His Names which...exceed upon the ninety [by] nine for whoever became acquainted
+
+رَوَاهُ البُخَارِيُّ فِي الصَّحِيحِ وَمُسْلِمٌ ...وَكُلُّ إِمَامٍ فِي الأَحَادِيثِ قَدْ نَظَرْ
+
+6 - al-Bukẖārī narrated it in *al-Ṣaḥīḥ* and Muslim...and every *ʾImām* in the [field of the] *ʾAḥādīṯh* has looked [into it]
+
+وَأَوْرَدَهُ أَهْلُ الشَّامِ بِشَرْحِهِ ...وَفَضْلُهُمُ فِي القَلْبِ يَا صَاحِ قَدْ وَفَرْ
+
+7 - And the People of al-Sẖām cited it with its explanation...and their excellence in the heart, O companion, has abounded
+
+وَأُثْبِتُ إِرْسَالَ النَّبِيِّ لِمَا أَتَى ...بِهِ مِنْ دَلِيلٍ صَادِقٍ مُعْجِزٍ بَهَرْ
+
+8 - And I affirm the sending of the Prophet due to what he came...with from truthful, marvelous proof [which] dazzled
+
+وَأَعْلَمُ أَنَّ اللهَ مِنْ فَوْقِ عَرْشِهِ ...بِلَا كَيْفَ بَلْ قَوْلًا كَمَا جَاءَ فِي السُّوَرْ
+
+9 - And I know that Allāh is above His Throne...without *kayf*, rather a saying just as it came in the *sūrahs*
+
+وَأَشْهَدُ أَنَّ اللهَ أَسْرَى بِعَبْدِهِ ...مُحَمَّدٍ المَبْعُوثِ مِنْهُ إِلَى البَشَرْ
+
+10 - And I bear witness that Allāh made His servant travel by night...Muḥammad, the one sent from Him to mankind
+
+وَأُثْبِتُ أَنَّ اللهَ جَلَّ جَلَالُهُ ...تَكَلَّمَ بِالقُرْآنِ لَا قَوْلَ مَنْ كَفَرْ
+
+11 - And I affirm that Allāh, majestic is His majesty...spoke with the Qurʾān, not the saying of whoever disbelieved
+
+كَلَامٌ بِصَوْتٍ لَا كَأَصْوَاتِ خَلْقِهِ ...رَوَاهُ أَبُو يَحْيَى وَحَسْبُكَ مُفْتَخَرْ
+
+12 - Speech with a Voice, not like the voices of His creation...*Abū Yaḥyā* narrated it, and [it is] your suffice [as] a source of pride
+
+وَحَرْفٍ كَمَا قَدْ جَاءَ فِي الخَبَرِ الَّذِي ...رَوَاهُ ابْنُ مَسْعُودٍ فَأَنْصِفْ وَاعْتَبَرْ
+
+13 - And a letter, just as it has come in the report which...Ibn Masʿūd reported, so be fair and take heed
+
+وَمَتْلُوٌّ [و]مَسْمُوعٌ بِلَفْظٍ بِكُلِّ ذَا ...نَدينُ وَمَكْتُوبٌ خِلَافَ الَّذِي نَفَرْ
+
+14 - And recited [and] heard with an utterance, with all of this...we take as a religion, and written, contrary to the one who fled
+
+قَدِيمٌ بِلَا شَكٍّ وَلَيْسَ بِمُحْدَثٍ ...رُوَاةٌ لَنَا عَنْ أَصْدَقِ الخَلْقِ وَالبَشَرْ
+
+15 - Eternal, without doubt, and He is not originated;...[one] narrated it for us from the most truthful of creation and mankind
+
+فَمَنْ قَالَ مَخْلُوقٌ فَقَدْ فَارَقَ الهُدَى ...بِفِرْيَتِهِ وَاللهُ يُدْخِلُهُ سَقَرْ
+
+16 - So, whoever says ‘created’, then he has forsaken guidance...with his fabrication, and Allāh will enter him [into] *Saqar*
+
+وَأَشْهَدُ أَنَّ الخَيْرَ وَالشَّرَّ كُلَّهُ ...يَجِيءُ مِنَ اللهِ العَظِيمِ عَلَى قَدَرْ
+
+17 - And I bear witness that goodness and evil, all of it...comes from Allāh, the Magnificent, upon decree
+
+وَأَعْلَمُ أَنَّ الجِسْرَ بَيْنَ جَهَنَّمٍ ...وَجَنَّةِ عَدْنٍ كَالطَّرِيقِ لِمَنْ عَبَرْ
+
+18 - And I know that the bridge is between *Jahannam*...and Garden of ʿAdn, like the path for whoever crosses
+
+وَلَا أُنْكِرُ المِيزَانَ وَالحَوْضَ عَامِدًا ...وَلَا أُنْكِرُ التَّسَآلَ فِي القَبْرِ وَالنَّظَرْ
+
+19 - And I do not reject the Scales and the Prophetic Basin intentionally...nor do I reject the questioning in the grave and the looking [towards Allāh]
+
+وَأَشْهَدُ أَنَّ اللهَ مِنْ بَعْدِ حَشْرِنَا ...نَرَاهُ بِلَا شَكٍّ كَمَا نَنْظُرُ القَمَرْ
+
+20 - And I bear witness that Allāh, after our gathering,...we [will] see Him, without doubt, just as we see the moon
+
+وَأُثْبِتُ حَقًّا لِلرَّسُولِ شَفَاعَةً ...وَلِلْمُؤْمِنِينَ المُخْلِصِينَ ذَوِي الخَطَرْ
+
+21 - And I affirm truly for the Messenger intercession...and for the sincere believers, the possessors of nobility
+
+وَيُخْرَجُ أَقْوَامٌ مِنَ النَّارِ بَعْدَمَا ...أَصَابَهُمْ سَفْعٌ مِنَ النَّارِ وَالشَّرَرْ
+
+22 - And a people will be brought out from the Fire after...a scorching from the Fire and sparks afflicted them
+
+وَأُثْبِتُ أَخْبَارَ الصِّفَاتِ وَلَا أَرَى ...تَأَوُّلَهَا وَهُوَ الصَّحِيحُ لِمَنْ سَبَرْ
+
+23 - And I affirm the reports of the Attributes and I do not see [as valid]...their speculative interpretation, and it is the correct [view] for whoever probed
+
+وَأَشْهَدُ أَنَّ اللهَ لَيْسَ كَخَلْقِهِ ...وَمَنْ قَالَ بِالتَّشْبِيهِ يَوْمًا فَقَدْ خَسِرْ
+
+24 - And I bear witness that Allāh is not like His creation...and whoever one day says with *tasẖbīh*, then he has gone astray
+
+وَأُثْبِتُ أَخْبَارَ النُّزُولِ لِمَا رَوَى ...جَمَاعَةُ مِنْ صَحْبِ الرَّسُولِ ذَوُو البَصَرْ
+
+25 - And I affirm the reports of the Descent due to what...a group from the Companions of the Messenger reported, the possessors of insight:
+
+أَبُو بَكْرٍ وَالدَّوْسِيُّ وَابْنُ عَرَابَةٍ ...وَجَابِرٌ وَالخُدْرِيُّ مِنْهُمْ مُسْتَطَرْ
+
+26 - Abū Bakr, and al-Dawsī, and Ibn ʿArābah...and Jābir, and al-Kẖudrī, from them it is written
+
+وَعَمْرٌو سُلَيْمٌ وَابْنُ قَيْسٍ وَحَيْدَرٌ ...وَمِثْلُ أَبِي الدَّرْدَا وَذَلِكَ مُشْتَهرْ
+
+27 - And ʿAmr, Sulaym, and Ibn Qays and Ḥaydar...and the like of Abī al-Dardāʾ, and that is well known
+
+وَجُرْثُومُ وَالصِّدِّيقَةُ الطُّهْرِ عَائِشٌ ...وَهِنْدٌ وَمَا يَرْوِي جُبَيْرُ الَّذِي خَبَرْ
+
+28 - And Jurṯhūm, and al-Ṣiddīqah, the pure, ʿĀʾisẖ...and Hind, and what Jubayr narrates, the one who reported
+
+وَعُثْمَانُ وَالعَبْسِيُّ ثُمَّ مُعَاذُنَا ...وَجَدُّ يَزِيدٍ قَدْ رَوَوْهُ فِي الأَثَرْ
+
+29 - And ʿUṯhmān, and al-ʿAbsī, then our Muʿādẖ...and the grandfather of Yazīd; they narrated it in the *ʾaṯhar*
+
+وَأَمَّا ابْنُ مَسْعُودٍ فَقَالَ كَمَا رَوَوْا ...وَأَسْنَدَهُ عَنْهُ كَمَا قَالَهُ نَفَرْ
+
+30 - And as for Ibn Masʿūd, then he said just as they narrated...and he transmitted it with a chain from him just as a group said it:
+
+نُزُولُ إِلَهِ العَرْشِ فِي كُلِّ لَيْلَةٍ ...وَلَيْلَةَ شَعْبَانَ يَقُولُ إِلَى السَّحَرْ:
+
+31 - The Descent of the ʾilāh of the Throne during every night...and the night of Sẖaʿbān, He says to the foredawn:
+
+أَلَا سَائِلٌ أُعْطِيه غَايَةَ سُؤْلِهِ ...وَمُسْتَغْفِرٍ يَدْعُو فَطُوبَى لِمَنْ غَفَرْ
+
+32 - *‘Is there no asker, [so that] I give him the purpose of his asking...and a seeker of forgiveness supplicating?’* So, glad tidings (*Ṭūbā*) for whoever is forgiven
+
+وَيَنْزِلُ يَوْمَ العَشْرِ جَلَّ ثَنَاؤُهُ ...إِلَى رُقْعَةِ الدُّنْيَا يُبَاهِي بِمَنْ حَضَرْ
+
+33 - And He descends on the tenth day, exalted is His extolling,...to the expanse of the world, boasting of whoever is present
+
+وَأَعْلَمُ حَقًّا أَنَّ جَنَّةَ رَبِّنَا ...وَنَارَ لَظًى مَخْلُوقَتَانِ لِمَنْ أَمَرْ
+
+34 - And I know truly that the Garden of our Lord...and the Fire of Laẓā are two created beings for whoever He commanded
+
+وَأَعْرِفُ إِيمَانًا يَزِيدُ بِطَاعَةٍ ...وَيَنْقُصُ بِالعِصْيَانِ لَا قَوْلَ مَنْ فَجَرْ
+
+35 - And I know [that] our ʾĪmān increased with obedience...and diminished with disobedience, not the saying of whoever acted wickedly
+
+وَأُثْبِتُهُ بِالقَوْلِ وَالعَمَلِ الَّذِي ...هُمَا سَبَبَانِ لِلنَّجَاةِ مِنَ الغَرَرْ
+
+36 - And I affirm it with speech and action which...are both two causes for salvation from peril
+
+وَإِجْمَاعُ أَصْحَابِ الرَّسُولِ وَثِيقَةٌ ...لِأَنَّهُمُ أَهْلُ التِّلَاوَةِ وَالبَصَرْ
+
+37 - And the consensus of the Companions of the Messenger is a firm proof...for they are the people of recitation and insight
+
+فَمَنْ جَاءَ مِنْ بَعْدِ الرَّسُولِ وَصَحْبِهِ ...بِمَا لَمْ يَكُنْ فِي عَصْرِهِمْ كَانَ كَالهَدَرْ
+
+38 - So, whoever came after the Messenger and his Companions...with what was not in their era, it is like something shed in vain
+
+وَأَحْتَجُّ بِالمَنْصُوصِ فِي شَرْعِ أَحْمَدٍ ...وَمَنْ قَالَ فِيهِ بِالقِيَاسِ فَقَدْ خَسِرْ
+
+39 - And I use as proof the explicit texts in the legislation of ʾAḥmad...and whoever speaks in it with *qiyās*, then he has gone astray
+
+وَلَسْتُ أَرَى رَأْيَ الرِّجَالِ وَثِيقَةً ...لِأَنَّ رَسُولَ اللهِ عَنْ ذَاكَ قَدْ زَجَرْ
+
+40 - And I do not see the view of the men as a firm proof...because the Messenger of Allāh has rebuked from that
+
+وَلَا أَرْتَضِي فِي الدِّينِ قَوْلَ مُجَادِلٍ ...بِمَا زَخْرَفُوهُ مِنْ فُضُولٍ لَهَا كَدَرْ
+
+41 - And I am not pleased with the speech of a disputer in the religion...with what they have embellished from superfluity which has turbidity
+
+وَلَكِنْ بِالآيَاتِ وَالسُّنَنِ الَّتِي ...أَتَتْ عَنْ رَسُولِ اللهِ فِي ذَاكَ كَالغُرَرْ
+
+42 - But [rather I am pleased] with the verses and the sunan which...came from the Messenger of Allāh concerning that, [which are] like shining blazes
+
+فَإِنْ لَمْ يَكُنْ فِي ذَاكَ نَصٌّ فَمَا أَتَى ...إِلَيْنَا بِإِجْمَاعٍ عَنِ السَّلَفِ الشُّهَرْ
+
+43 - And if there is not regarding that an explicit text, then [we take as a religion] whatever came...to us with the consensus of the renowned Salaf
+
+وَأَهْجُرُ أَرْبَابَ الكَلَامِ بِأَسْرِهِمْ ...فَكُنْ مِنْهُمُ يَا صَاحِ وَيْكَ عَلَى حَذَرْ
+
+44 - And I shun the masters of speculative theology, all of them...so be [aware] from them, O companion, woe upon you, [be] upon caution
+
+لِأَنَّهُمْ قَدْ أَبْدَعُوا وَتَنَطَّعُوا ...وَكَانُوا بِلَا رَيْبٍ عَلَى مَنْهَجٍ خَطَرْ
+
+45 - For they have innovated and exerted fussiness...and they were, without uncertainty, upon a perilous methodology
+
+وَلَسْتُ أَرَى شَقَّ العَصَا وَلَا أَرَى ...خُرُوجًا عَلَى السُّلْطَانِ إِنْ جَارَ أَوْ غَدَرْ
+
+46 - And I do not see the splitting the staff, nor do I see...rebelling against the ruler if he persecutes or betrays
+
+وَأَبْرَأُ مِنْ رَأْيِ الخَوَارِجِ إِنَّهُمْ ...أَرَاقُوا دِمَاءَ المُسْلِمِينَ كَمَا اشْتَهَرْ
+
+47 - And I declare myself innocent from the view of the Kẖawārij, indeed they...spill the blood of the Muslims, as is notorious
+
+وَلَسْتُ بِرَاضٍ أَنْ يُكَفَّرَ مُسْلِمٌ ...بِذَنْبٍ جَنَاهُ عَلَّ رَبُّكَ قَدْ غَفَرْ
+
+48 - And I am not pleased that a Muslim is declared a disbeliever...by a sin he committed; perhaps your Lord has forgiven
+
+وَقَالَ رَسُولُ اللهِ يَوْمًا مُحَذَّرًا ...مِنَ الخَبَرِ المَشْهُورِ عَنْهُ الَّذِي انْتَشَرْ
+
+49 - And the Messenger of Allāh said one day, warning,...from the well-known report from him which spread:
+
+سَتَفْتَرِقُوا مِثْلَ الَّذِي كَانَ قَبْلَكُمْ ...ثَلَاثًا وَسَبْعِينَ فَكَانَ كَمَا ذَكَرْ
+
+50 - *‘You will split apart like the ones who were before you, seventy-three [sects].’* — so it was as it was mentioned
+
+فَوَاحِدَةٌ تَنْجُو وَهُمْ أَهْلُ سُنَّتِي ...فَأَبْشِرْ بِذِي الحُسْنَى مِنَ اللهِ وَاصْطَبِرْ
+
+51 - *‘So, one attains salvation, and they are the people of my Sunnah;’*...so, receive glad tidings of this excellence from Allāh, and be patient
+
+وَسَائِرُهُمْ هَلْكَى لِقُبْحِ انْتِحَالِهِمْ ...وَخُبْثِ اعْتِقَادٍ عَنْهُمُ اليَوْمَ قَدْ ظَهَرْ
+
+52 - And the rest of them are perished due to the ugliness of their ascription...and the foulness of a belief from them today has become manifest
+
+فَمَعْبَدٌ مِنْ قَبْلِ الَّذِي خَالَفَ الوَرَى ...بِسِحْرٍ سَيُجْزَى فِي المَعَادِ بِمَا سَحَرْ
+
+53 - So, Maʿbad from before is the one who opposed mankind...with magic; he will be recompensed in the Hereafter for what he bewitched
+
+وَأَمَّا ابْنُ كُلَّابٍ فَجَاءَ بِبِدْعَةٍ ...وَجَعْدٌ وَجَهْمٌ وَالمَرِيسِيُّ ذَوُ الدَّبَرْ
+
+54 - And as for Ibn Kullāb, then he came with an innovation...and Jaʿd, and Jahm, and al-Marīsī, the one of ruin
+
+وَزَخْرَفَ ابْنُ الأَشْعَرِيِّ مَقَالَةً ...سَيُسْأَلُ عَمَّا قَالَ فِيهَا وَمَا سَطَرْ
+
+55 - And Ibn al-ʾAsẖʿarī embezzled a saying;...he will be asked about what he said in it and what he wrote
+
+وَجَاءَ ابْنُ كَرَّامٍ بِمَيْنٍ وَفِرْيَةٍ ...عَلَى اللهِ وَالمَبْعُوثِ مِنْهُ وَمَا شَعَرْ
+
+56 - And Ibn Karrām came with a lie and a fabrication...upon Allāh and the one sent from him, and he did not become cognizant
+
+فَهُمْ أَحْدَثُوا هَذَا الكَلَامَ بِعَقْلِهِمْ ...وَكُلُّهُمُ عَنْ مَنْهَجِ الحَقِّ قَدْ عَبَرْ
+
+57 - So, they originated this speech with their intellect...and all of them have deviated from the doctrine of truth
+
+أَرَادُوا بِهِ تَشْوِيشَ شَرْعِ مُحَمَّدٍ ...فَمَا بَلَغُوا مَا أَمَّلُوهُ مِنَ الغَدَرْ
+
+58 - They desired with it the obfuscation of the legislation of Muḥammad...so they did not reach what they hoped for from treachery
+
+مُحَالٌ كَقِيعَانِ السَّرَابِ تَخَالُهُ ...دَلِيلًا وَلَكِنْ فِي الحِجَاجِ قَدِ انْكَسَرْ
+
+59 - Impossible — like the plains of the mirage, you assume it is...a proof, however in argumentation it has broken
+
+أَلَمْ تَرَ أَنَّ اللهَ سَلَّطَ بَعْضَهُمْ ...يُكَفِّرُ بَعْضًا بِالدَّلِيلِ وَبِالنَّظَرْ
+
+60 - Do you not see that Allāh gave some of them power...[so] some of them make *takfīr* of others with evidence and with discernment?
+
+وَجَنَّبَ أَهْلَ الحَقِّ سُوءَ كَلَامِهِمْ ...وَأَيَّدَهُمْ بِالنَّصْرِ مِنْهُ وَبِالظَّفَرْ
+
+61 - And He shunned the people of the truth [from] the evil of their speech...and supported them with victory from Him and with triumph
+
+فَلَمْ تَرَ بِدْعِيًّا يُزَنُّ بِبِدْعَةٍ ...عَلَى الأَرْضِ إِلَّا أَخْرَجُوهُ مِنَ القَفْرِ
+
+62 - So, you will not see a heretical innovator accused with an innovation...upon the earth except they expelled him from [their land to] the wilderness
+
+فَقُلْ لِذَوِي التَّحْصِيلِ هَلْ يَبْلُغُ الَّذِي ...ذَكَرْتُهُمُ مِقْدَارَ قَوْمٍ عَلَى خَطَرْ
+
+63 - So, say to those of attainment: Do those who I have mentioned reach the measure of a people upon excellence?
+
+كَمَالِكَ وَالثَّوْرِيِّ وَابْنِ عُيَيْنَةٍ ...وَلَيْثٍ وَحَمَّادِ بْنِ زَيْدٍ ذَوِي الغُرَرْ
+
+64 - Like Mālik, and al-Ṯhawrī, and Ibn ʿUyaynah...and Layṯh, and Ḥammād ibn Zayd, the possessors of radiant distinction.
+
+وَمَنْ فَخَرَتْ أَرْضُ الشَّامِ بِكَوْنِهِ ...بِبَيْرُوتَ فِي جَمْعٍ عِدَادُهُمُ المَطَرْ
+
+65 - And the one whom the land of al-Sẖām took pride with his presence...in Beirūt, among a gathering, their number [like] the rain
+
+وَمِثْلِ ابْنِ طَهْمَانَ الإِمَامِ وَبَعْدَهُ ...يَزِيدُ بْنُ هَارُونَ الَّذِي خَصْمَهُ زَبَرْ
+
+66 - And like Ibn Ṭahmān, the ʾImām, and after him...Yazīd ibn Hārūn, the one who cut off his opponent
+
+وَمِثْلِ وَكِيعٍ وَابْنِ مَهْدِيْ وَبَعْدَهُ ...سَلِيلُ دُكَيْنٍ كُلُّهُمْ سَادَةٌ زُهَرْ
+
+67 - And like Wakīʿ, and Ibn Mahdī, and after him...the descendant of Dukayn, all of them radiant chiefs
+
+وَمَنْ أَشْرَقَ الإِسْلَامُ مِنْ نُورِ عِلْمِهِ ...إِمَامِ قُرَيْشَ الشَّافِعِيِّ الَّذِي قَهَرْ
+
+68 - And the one from the light of his knowledge al-ʾIslām shone...the ʾImām of Quraysẖ, al-Sẖāfiʿī, the one who vanquished [his opponents]
+
+وَمِنْ عُصْبَةِ ابْنُ المُبَارَكِ فِيهِمُ ...بِمَرْوَ وَنَيْسَابُورَ وَالرَّيِّ ذِي العِبَرْ
+
+69 - And from a group, Ibn al-Mubārak among them...at Marw, and Naysābūr, and al-Rayy, the possessor of lessons.
+
+وَيَحْيَى وَإِسْحَاقً وَأَحْمَدً الَّذِي ...بِهِ نُظِمَ التَّقْوَى كَمَا يُنْظَمُ الدُّرَرْ
+
+70 - And Yaḥyā, and Isḥāq, and ʾAḥmad, the one who...piety was strung together just as the pearls are strung
+
+إِمَامٌ لِأَهْلِ النَّقْلِ وَالمُقْتَدَى بِهِ ...وَفِي السُّنَّةِ الغَرَّا إِمَامٌ وَقَدْ صَبَرْ
+
+71 - An ʾImām for the people of transmission and the one who is emulated with...and an ʾImām in the radiant *Sunnah*, and he had exerted patience
+
+وَمَنْ حَلَّ فِي مِصْرٍ وَدَانَ بِسُنَّةٍ ...وَحَجَّ إِلَى البَيْتِ المُحَرَّمِ وَاعْتَمَرْ
+
+72 - And whoever settles in a city and took as a religion with a *Sunnah*...and makes pilgrimage to the Sacred House, and makes ʿUmrah
+
+وَمَنْ بِالعِرَاقِ المُسْتَنِيرِ كَشُعْبَةٍ ...وَابْنِ بَشِيرٍ وَابْنِ طَرْخَانَ مُعْتَمِرْ
+
+73 - And whoever is at the illuminated ʿIrāq like Sẖuʿbah...and Ibn Basẖīr, and Ibn Ṭarkẖān Muʿtamir
+
+وَمِثْلِ ابْنِ سَلَّامٍ وَمَنْ سَارَ سَيرَهُ ...كَلَيْثٍ لَدَى الغَابَاتِ عَنْ عِرْسِهِ هَدَرْ
+
+74 - And like Ibn Sallām, and whoever conducted [himself upon] his conduct...like a lion in the thickets, on behalf of its mate, he roared
+
+وَمِثْلِ ابْنِ وَهْبٍ وَابْنِ يَحْيَى وَبَعْدَهُ ...إِمَامُ بُخَارَى وَالَّذِي فَضْلُهُ غَمَرْ
+
+75 - And the like of Ibn Wahb, and Ibn Yaḥyā, and after him...the ʾImām of Bukẖārā, and [he is] the one who's virtue flooded [the world]
+
+وَمِثْلِ ابْنِ إِدْرِيسٍ وَمَنْ دَانَ دِينَهُ ...أَبُو زُرْعَةَ الرَّازِيُّ فِي حِفْظِهِ نَدَرْ
+
+76 - And the like of Ibn Idrīs [Abū Ḥātim al-Rāzī], and whoever professed his creed...Abū Zurʿah al-Rāzī, in his memorisation he was rare
+
+وَمِثْلِ أَبِي دَاوُدَ وَابْنِ خُزَيْمَةٍ ...وَيَحْيَى بْنِ يَحْيَى وَالحُمَيْدِيِّ قَدْ وَزَرْ
+
+77 - And the like of Abī Dāwūd, and Ibn Kẖuzaymah...and Yaḥyā ibn Yaḥyā, and al-Ḥumaydī indeed bore [a heavy burden]
+
+فَمَنْ فَارَقَ الإِجْمَاعَ ثُمَّ اقْتَدَى بِمَنْ ...تَقَدَّمَ ذِكْرَانَا لَهُمْ كَانَ قَدْ خَسِرْ
+
+78 - So, whoever departs [from] the consensus, then emulates by those whom...our mention for them has preceded, he has certainly gone astray
+
+فَأَسْأَلُ رَبِّي إِذْ هَدَانِي لِهَدْيِهِمْ ...رِفَاقَتَهُمْ فِي الخُلْدِ مَعَ صَالِحِ الزُّمَرْ
+
+79 - So, I ask my Lord, since He guided me to their guidance...[for] their company in eternity with the righteous groups
+
+وَأُثْبِتُ مِنْ بَعْدِ الرَّسُولِ خَلِيفَةً ...إِمَامًا بِهِ الإِسْلَامُ مِنْ بَعْدِهِ افْتَخَرْ
+
+80 - And I affirm, after the Messenger, a successor...a leader by whom al-ʾIslām took pride after him
+
+أَبُو بَكْرٍ الصِّدِّيقُ أَوْلَاهُم بِهَا ...وَمِنْ بَعْدِهِ الفَارُوقُ أَعْنِي بِهِ عُمَرْ
+
+81 - Abū Bakr al-Ṣiddīq, the most worthy of them with it...and after him al-Fārūq, I mean by it ʿUmar
+
+وَعُثْمَانُ ذُو النُّورَيْنِ تَالٍ وَبَعْدَهُ ...عَلِيٌّ أَبُو السِّبْطَيْنِ أَفْضَلُ مَنْ غَبَرْ
+
+82 - And ʿUṯhmān, Dẖū-l-Nūrayn, following, and after him...ʿAlī, the father of the two grandsons [of the Prophet], the best of those who remained
+
+فَهُمْ خُلَفَاءُ اللهِ بَعْدَ نَبِيِّهِ ...سَفِينَةُ يَرْوِيهِ عَنِ الصَّادِقِ الخَبَرْ
+
+83 - So, they are the successors of Allāh after His Prophet;...Safīnah narrates the report from the Truthful
+
+وَأُثْبِتُ أَنَّ الفَضْلَ بَعْدَ الَّذِي مَضَتْ ...رِوَايَاتُنَا فِيهِمْ لَفِي سِتَّةٍ أُخَرْ
+
+84 - And I affirm that the virtue after those who...our narrations regarding them have passed are certainly in six others
+
+سَعِيدٌ وَسَعْدٌ وَابْنُ عَوْفٍ وَطَلْحَةٌ ...وَعَامِرُ فِهْرٍ وَالزُّبَيْرُ الَّذِي نَصَرْ
+
+85 - Saʿīd, and Saʿd, and Ibn ʿAwf, and Ṭalḥah...and ʿĀmir of Fihr, and al-Zubayr who aided
+
+وَأُثْبِتُ مِنْ بَعْدِ الخِلَافَةِ بَيْعَةٌ ...لِخَالِ جَمِيعِ المُؤْمِنِينَ الَّذِي خَبَرْ
+
+86 - And I affirm after the Caliphate a pledge of allegiance...to the maternal uncle of all of the believers, the one who knew thoroughly:
+
+مُعَاوِيَةَ المَنْعُوتِ بِالحِلْمِ وَالسَّخَا ...أَمِينِ رَسُولِ اللهِ لِلْوَحْيِ وَالزُّبُرْ
+
+87 - Muʿāwiyah, the one described with forbearance and generosity...the trustee of the Messenger of Allāh for the revelation and the scriptures
+
+بِإِجْمَاعِ أَهْلِ الحَلِّ وَالعَقْدِ مِنْهُمُ ...فَلَسْتُ بِقَوَّالٍ بِقَوْلِ الَّذِي نَفَرْ
+
+88 - By the consensus of Ahl al-Ḥall wa-l-ʿAqd among them...so, I am not a loudmouth with the statement of the one who fled
+
+وَقَوْلِي فِي صَحْبِ الرَّسُولِ بِأَسْرِهِمْ ...جَمِيلٌ خِلَافَ المَارِقِينَ ذَوِي الأَشَرْ
+
+89 - And my saying regarding the Companions of the Messenger, all of them...is beautiful, contrary [to] the renegades, those of insolence
+
+وَرَافِضُ أَعْدَاءُ الشَّرِيعَةِ وَصْفُهُمْ ...عَنِ الصَّادِقِ المَبْعُوثِ فِي النَّاسِ مِنْ مُضَرْ
+
+90 - And the Rawāfiḍ are the enemies of the Sẖarīʿah; their description...from the Truthful, the one sent among the people, from Muḍar
+
+كَمَا كَانَ فِي كُتْبِ الشَّرِيعَةِ نَالَهُمْ ...مِنَ اللهِ خِزْيٌ بِالأَصَائِلِ وَالسَّحَرْ
+
+91 - As it was in the books of the *Sẖarīʿah*...disgrace from Allāh reached them in the evenings and the foredawn
+
+لَهُمْ نَبْزٌ لَا دَرَّ يَا صَاحِ دَرُّهُمْ ...وَلَا نَالَهُمْ خَيْرٌ وَلَا فَاتَهُمْ خَطَرْ
+
+92 - They have a derogatory nickname; may their milk not flow, O companion...and may good not reach them nor peril pass them
+
+فَهَذَا اعْتِقَادُ المَقْدِسِيِّ مُحَمَّدٍ ...رَوَاهُ عَنِ الأَثْبَاتِ مِنْ نَاقِلِي السِّيَرْ
+
+93 - So, this is the creed of al-Maqdisī, Muḥammad...he narrated it from the reliable authorities among the transmitters of the traditions.`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-2 pb-4 border-b border-[#E7DFC9] dark:border-white/10">
+    <p class="font-serif text-base sm:text-lg text-slate-700 dark:text-slate-300 italic leading-relaxed">
+      Abū al-Faḍl Muḥammad ibn Abī al-Ḥusayn Ṭāhir ibn ʿAlī ibn ʾAḥmad al-Maqdisī al-Qaysarānī said:
+    </p>
+  </div>
+
+  <div class="divide-y divide-[#E7DFC9]/60 dark:divide-white/10">
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        أَقُولُ مَقَالًا يَرْتَضِيهِ ذَوُو البَصَرْ ...وَانْصُرْهُ بِالآيِ حَسْبُ وَبِالأَثَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">1.</strong>I say a saying the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">people of insight</strong> approve of...and I support it with the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">verses</strong>, sufficiently, and with the <em class="italic font-medium">ʾaṯhar</em>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        لِأَنَّهُمَا نُورُ الهُدَى وَسِوَاهُمَا ...ظَلَامٌ بِلَا شَكٍّ لِمَنْ مَازَ وَادَّكَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">2.</strong>For they are both the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">light of guidance</strong> and other than them both...is <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">darkness</strong>, without doubt, for whoever distinguished and took into consideration
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        تَحَقَّقْتُ أَنَّ اللهَ لَا رَبَّ غَيْرُهُ ...بِصَنْعَتِهِ الأَفْلَاكَ سَبْعًا وَبِالفِكَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">3.</strong>I have become certain that Allāh, <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">there is no Lord other than Him</strong>...by His craftsmanship [of] the orbits, seven, and by thought
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        سَمِيعٌ بَصِيرٌ قَادِرٌ مُتَكَلِّمٌ ...مُرِيدٌ لِمَا يَأْتِي عَلِيمٌ بِمَا يَذَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">4.</strong><strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Hearing, Seeing, Able, Speaking</strong>...Willing of what comes, Knowing of what He leaves
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        هُوَ الحَيُّ وَالبَاقِي بِأَسْمَائِهِ الَّتِي ...تَزِيدُ عَلَى التِّسْعِينَ تِسْعًا لِمَنْ خَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">5.</strong>He is the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Living</strong> and the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Everlasting</strong> by His Names which...exceed upon the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">ninety [by] nine</strong> for whoever became acquainted
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        رَوَاهُ البُخَارِيُّ فِي الصَّحِيحِ وَمُسْلِمٌ ...وَكُلُّ إِمَامٍ فِي الأَحَادِيثِ قَدْ نَظَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">6.</strong><strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">al-Bukẖārī</strong> narrated it in <em class="italic font-medium">al-Ṣaḥīḥ</em> and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Muslim</strong>...and every <em class="italic">ʾImām</em> in the [field of the] <em class="italic">ʾAḥādīṯh</em> has looked [into it]
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَوْرَدَهُ أَهْلُ الشَّامِ بِشَرْحِهِ ...وَفَضْلُهُمُ فِي القَلْبِ يَا صَاحِ قَدْ وَفَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">7.</strong>And the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">People of al-Sẖām</strong> cited it with its explanation...and their excellence in the heart, O companion, has abounded
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُ إِرْسَالَ النَّبِيِّ لِمَا أَتَى ...بِهِ مِنْ دَلِيلٍ صَادِقٍ مُعْجِزٍ بَهَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">8.</strong>And I affirm the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">sending of the Prophet</strong> due to what he came...with from truthful, marvelous proof [which] dazzled
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَعْلَمُ أَنَّ اللهَ مِنْ فَوْقِ عَرْشِهِ ...بِلَا كَيْفَ بَلْ قَوْلًا كَمَا جَاءَ فِي السُّوَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">9.</strong>And I know that Allāh is <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">above His Throne</strong>...without <em class="italic font-bold">kayf</em>, rather a saying just as it came in the <em class="italic">sūrahs</em>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَشْهَدُ أَنَّ اللهَ أَسْرَى بِعَبْدِهِ ...مُحَمَّدٍ المَبْعُوثِ مِنْهُ إِلَى البَشَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">10.</strong>And I bear witness that Allāh made His servant travel by night...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Muḥammad</strong>, the one sent from Him to mankind
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُ أَنَّ اللهَ جَلَّ جَلَالُهُ ...تَكَلَّمَ بِالقُرْآنِ لَا قَوْلَ مَنْ كَفَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">11.</strong>And I affirm that Allāh, majestic is His majesty...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">spoke with the Qurʾān</strong>, not the saying of whoever disbelieved
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        كَلَامٌ بِصَوْتٍ لَا كَأَصْوَاتِ خَلْقِهِ ...رَوَاهُ أَبُو يَحْيَى وَحَسْبُكَ مُفْتَخَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">12.</strong><strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Speech with a Voice</strong>, not like the voices of His creation...<em class="italic font-medium">Abū Yaḥyā</em> narrated it, and [it is] your suffice [as] a source of pride
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَحَرْفٍ كَمَا قَدْ جَاءَ فِي الخَبَرِ الَّذِي ...رَوَاهُ ابْنُ مَسْعُودٍ فَأَنْصِفْ وَاعْتَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">13.</strong>And <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">a letter</strong>, just as it has come in the report which...<strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn Masʿūd</strong> reported, so be fair and take heed
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمَتْلُوٌّ [و]مَسْمُوعٌ بِلَفْظٍ بِكُلِّ ذَا ...نَدينُ وَمَكْتُوبٌ خِلَافَ الَّذِي نَفَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">14.</strong>And recited [and] <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">heard with an utterance</strong>, with all of this...we take as a religion, and written, contrary to the one who fled
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        قَدِيمٌ بِلَا شَكٍّ وَلَيْسَ بِمُحْدَثٍ ...رُوَاةٌ لَنَا عَنْ أَصْدَقِ الخَلْقِ وَالبَشَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">15.</strong><strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Eternal</strong>, without doubt, and He is not originated;...[one] narrated it for us from the most truthful of creation and mankind
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَمَنْ قَالَ مَخْلُوقٌ فَقَدْ فَارَقَ الهُدَى ...بِفِرْيَتِهِ وَاللهُ يُدْخِلُهُ سَقَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">16.</strong>So, whoever says <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">‘created’</strong>, then he has forsaken guidance...with his fabrication, and Allāh will enter him [into] <em class="italic font-bold">Saqar</em>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَشْهَدُ أَنَّ الخَيْرَ وَالشَّرَّ كُلَّهُ ...يَجِيءُ مِنَ اللهِ العَظِيمِ عَلَى قَدَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">17.</strong>And I bear witness that goodness and evil, all of it...comes from Allāh, the Magnificent, upon <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">decree</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَعْلَمُ أَنَّ الجِسْرَ بَيْنَ جَهَنَّمٍ ...وَجَنَّةِ عَدْنٍ كَالطَّرِيقِ لِمَنْ عَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">18.</strong>And I know that the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">bridge</strong> is between <em class="italic">Jahannam</em>...and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Garden of ʿAdn</strong>, like the path for whoever crosses
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَلَا أُنْكِرُ المِيزَانَ وَالحَوْضَ عَامِدًا ...وَلَا أُنْكِرُ التَّسَآلَ فِي القَبْرِ وَالنَّظَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">19.</strong>And I do not reject the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Scales</strong> and the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Prophetic Basin</strong> intentionally...nor do I reject the questioning in the grave and the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">looking [towards Allāh]</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَشْهَدُ أَنَّ اللهَ مِنْ بَعْدِ حَشْرِنَا ...نَرَاهُ بِلَا شَكٍّ كَمَا نَنْظُرُ القَمَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">20.</strong>And I bear witness that Allāh, after our gathering,...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">we [will] see Him</strong>, without doubt, <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">just as we see the moon</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُ حَقًّا لِلرَّسُولِ شَفَاعَةً ...وَلِلْمُؤْمِنِينَ المُخْلِصِينَ ذَوِي الخَطَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">21.</strong>And I affirm truly for the Messenger <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">intercession</strong>...and for the sincere believers, the possessors of nobility
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَيُخْرَجُ أَقْوَامٌ مِنَ النَّارِ بَعْدَمَا ...أَصَابَهُمْ سَفْعٌ مِنَ النَّارِ وَالشَّرَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">22.</strong>And a people will be <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">brought out from the Fire</strong> after...a scorching from the Fire and sparks afflicted them
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُ أَخْبَارَ الصِّفَاتِ وَلَا أَرَى ...تَأَوُّلَهَا وَهُوَ الصَّحِيحُ لِمَنْ سَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">23.</strong>And I affirm the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">reports of the Attributes</strong> and I do not see [as valid]...their speculative interpretation, and it is the correct [view] for whoever probed
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَشْهَدُ أَنَّ اللهَ لَيْسَ كَخَلْقِهِ ...وَمَنْ قَالَ بِالتَّشْبِيهِ يَوْمًا فَقَدْ خَسِرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">24.</strong>And I bear witness that <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Allāh is not like His creation</strong>...and whoever one day says with <em class="italic font-bold">tasẖbīh</em>, then he has gone astray
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُ أَخْبَارَ النُّزُولِ لِمَا رَوَى ...جَمَاعَةُ مِنْ صَحْبِ الرَّسُولِ ذَوُو البَصَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">25.</strong>And I affirm the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">reports of the Descent</strong> due to what...a group from the Companions of the Messenger reported, the possessors of insight:
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        أَبُو بَكْرٍ وَالدَّوْسِيُّ وَابْنُ عَرَابَةٍ ...وَجَابِرٌ وَالخُدْرِيُّ مِنْهُمْ مُسْتَطَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">26.</strong><strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Abū Bakr</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">al-Dawsī</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn ʿArābah</strong>...and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Jābir</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">al-Kẖudrī</strong>, from them it is written
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَعَمْرٌو سُلَيْمٌ وَابْنُ قَيْسٍ وَحَيْدَرٌ ...وَمِثْلُ أَبِي الدَّرْدَا وَذَلِكَ مُشْتَهرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">27.</strong>And <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">ʿAmr</strong>, <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Sulaym</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn Qays</strong> and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ḥaydar</strong>...and the like of <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Abī al-Dardāʾ</strong>, and that is well known
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَجُرْثُومُ وَالصِّدِّيقَةُ الطُّهْرِ عَائِشٌ ...وَهِنْدٌ وَمَا يَرْوِي جُبَيْرُ الَّذِي خَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">28.</strong>And <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Jurṯhūm</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">al-Ṣiddīqah</strong>, the pure, <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">ʿĀʾisẖ</strong>...and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Hind</strong>, and what <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Jubayr</strong> narrates, the one who reported
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَعُثْمَانُ وَالعَبْسِيُّ ثُمَّ مُعَاذُنَا ...وَجَدُّ يَزِيدٍ قَدْ رَوَوْهُ فِي الأَثَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">29.</strong>And <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">ʿUṯhmān</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">al-ʿAbsī</strong>, then our <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Muʿādẖ</strong>...and the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">grandfather of Yazīd</strong>; they narrated it in the <em class="italic">ʾaṯhar</em>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَمَّا ابْنُ مَسْعُودٍ فَقَالَ كَمَا رَوَوْا ...وَأَسْنَدَهُ عَنْهُ كَمَا قَالَهُ نَفَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">30.</strong>And as for <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn Masʿūd</strong>, then he said just as they narrated...and he transmitted it with a chain from him just as a group said it:
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        نُزُولُ إِلَهِ العَرْشِ فِي كُلِّ لَيْلَةٍ ...وَلَيْلَةَ شَعْبَانَ يَقُولُ إِلَى السَّحَرْ:
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">31.</strong>The <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Descent of the ʾilāh of the Throne</strong> during every night...and the night of Sẖaʿbān, He says to the foredawn:
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        أَلَا سَائِلٌ أُعْطِيه غَايَةَ سُؤْلِهِ ...وَمُسْتَغْفِرٍ يَدْعُو فَطُوبَى لِمَنْ غَفَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">32.</strong><em class="italic">‘Is there no asker, [so that] I give him the purpose of his asking...and a seeker of forgiveness supplicating?’</em> So, glad tidings (<em class="italic">Ṭūbā</em>) for whoever is forgiven
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَيَنْزِلُ يَوْمَ العَشْرِ جَلَّ ثَنَاؤُهُ ...إِلَى رُقْعَةِ الدُّنْيَا يُبَاهِي بِمَنْ حَضَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">33.</strong>And <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">He descends on the tenth day</strong>, exalted is His extolling,...to the expanse of the world, boasting of whoever is present
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَعْلَمُ حَقًّا أَنَّ جَنَّةَ رَبِّنَا ...وَنَارَ لَظًى مَخْلُوقَتَانِ لِمَنْ أَمَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">34.</strong>And I know truly that the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Garden of our Lord</strong>...and the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Fire of Laẓā</strong> are two created beings for whoever He commanded
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَعْرِفُ إِيمَانًا يَزِيدُ بِطَاعَةٍ ...وَيَنْقُصُ بِالعِصْيَانِ لَا قَوْلَ مَنْ فَجَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">35.</strong>And I know [that] our <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʾĪmān increased with obedience</strong>...and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">diminished with disobedience</strong>, not the saying of whoever acted wickedly
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُهُ بِالقَوْلِ وَالعَمَلِ الَّذِي ...هُمَا سَبَبَانِ لِلنَّجَاةِ مِنَ الغَرَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">36.</strong>And I affirm it with <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">speech and action</strong> which...are both two causes for salvation from peril
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَإِجْمَاعُ أَصْحَابِ الرَّسُولِ وَثِيقَةٌ ...لِأَنَّهُمُ أَهْلُ التِّلَاوَةِ وَالبَصَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">37.</strong>And the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">consensus of the Companions of the Messenger</strong> is a firm proof...for they are the people of recitation and insight
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَمَنْ جَاءَ مِنْ بَعْدِ الرَّسُولِ وَصَحْبِهِ ...بِمَا لَمْ يَكُنْ فِي عَصْرِهِمْ كَانَ كَالهَدَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">38.</strong>So, whoever came after the Messenger and his Companions...with what was not in their era, it is like something shed in vain
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَحْتَجُّ بِالمَنْصُوصِ فِي شَرْعِ أَحْمَدٍ ...وَمَنْ قَالَ فِيهِ بِالقِيَاسِ فَقَدْ خَسِرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">39.</strong>And I use as proof the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">explicit texts in the legislation of ʾAḥmad</strong>...and whoever speaks in it with <em class="italic font-bold">qiyās</em>, then he has gone astray
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَلَسْتُ أَرَى رَأْيَ الرِّجَالِ وَثِيقَةً ...لِأَنَّ رَسُولَ اللهِ عَنْ ذَاكَ قَدْ زَجَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">40.</strong>And I do not see the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">view of the men</strong> as a firm proof...because the Messenger of Allāh has rebuked from that
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَلَا أَرْتَضِي فِي الدِّينِ قَوْلَ مُجَادِلٍ ...بِمَا زَخْرَفُوهُ مِنْ فُضُولٍ لَهَا كَدَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">41.</strong>And I am not pleased with the speech of a <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">disputer in the religion</strong>...with what they have embellished from superfluity which has turbidity
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَلَكِنْ بِالآيَاتِ وَالسُّنَنِ الَّتِي ...أَتَتْ عَنْ رَسُولِ اللهِ فِي ذَاكَ كَالغُرَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">42.</strong>But [rather I am pleased] with the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">verses</strong> and the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">sunan</strong> which...came from the Messenger of Allāh concerning that, [which are] like shining blazes
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَإِنْ لَمْ يَكُنْ فِي ذَاكَ نَصٌّ فَمَا أَتَى ...إِلَيْنَا بِإِجْمَاعٍ عَنِ السَّلَفِ الشُّهَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">43.</strong>And if there is not regarding that an explicit text, then [we take as a religion] whatever came...to us with the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">consensus of the renowned Salaf</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَهْجُرُ أَرْبَابَ الكَلَامِ بِأَسْرِهِمْ ...فَكُنْ مِنْهُمُ يَا صَاحِ وَيْكَ عَلَى حَذَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">44.</strong>And I <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">shun the masters of speculative theology</strong>, all of them...so be [aware] from them, O companion, woe upon you, [be] upon caution
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        لِأَنَّهُمْ قَدْ أَبْدَعُوا وَتَنَطَّعُوا ...وَكَانُوا بِلَا رَيْبٍ عَلَى مَنْهَجٍ خَطَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">45.</strong>For they have <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">innovated and exerted fussiness</strong>...and they were, without uncertainty, upon a perilous methodology
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَلَسْتُ أَرَى شَقَّ العَصَا وَلَا أَرَى ...خُرُوجًا عَلَى السُّلْطَانِ إِنْ جَارَ أَوْ غَدَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">46.</strong>And I do not see the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">splitting the staff</strong>, nor do I see...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">rebelling against the ruler</strong> if he persecutes or betrays
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَبْرَأُ مِنْ رَأْيِ الخَوَارِجِ إِنَّهُمْ ...أَرَاقُوا دِمَاءَ المُسْلِمِينَ كَمَا اشْتَهَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">47.</strong>And I declare myself innocent from the view of the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Kẖawārij</strong>, indeed they...spill the blood of the Muslims, as is notorious
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَلَسْتُ بِرَاضٍ أَنْ يُكَفَّرَ مُسْلِمٌ ...بِذَنْبٍ جَنَاهُ عَلَّ رَبُّكَ قَدْ غَفَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">48.</strong>And I am not pleased that a <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Muslim is declared a disbeliever</strong>...by a sin he committed; perhaps your Lord has forgiven
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَقَالَ رَسُولُ اللهِ يَوْمًا مُحَذَّرًا ...مِنَ الخَبَرِ المَشْهُورِ عَنْهُ الَّذِي انْتَشَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">49.</strong>And the Messenger of Allāh said one day, warning,...from the well-known report from him which spread:
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        سَتَفْتَرِقُوا مِثْلَ الَّذِي كَانَ قَبْلَكُمْ ...ثَلَاثًا وَسَبْعِينَ فَكَانَ كَمَا ذَكَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">50.</strong><em class="italic">‘You will split apart like the ones who were before you, <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">seventy-three [sects]</strong>.’</em> — so it was as it was mentioned
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَوَاحِدَةٌ تَنْجُو وَهُمْ أَهْلُ سُنَّتِي ...فَأَبْشِرْ بِذِي الحُسْنَى مِنَ اللهِ وَاصْطَبِرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">51.</strong><em class="italic">‘So, <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">one attains salvation</strong>, and they are the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">people of my Sunnah</strong>;’</em>...so, receive glad tidings of this excellence from Allāh, and be patient
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَسَائِرُهُمْ هَلْكَى لِقُبْحِ انْتِحَالِهِمْ ...وَخُبْثِ اعْتِقَادٍ عَنْهُمُ اليَوْمَ قَدْ ظَهَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">52.</strong>And the rest of them are <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">perished</strong> due to the ugliness of their ascription...and the foulness of a belief from them today has become manifest
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَمَعْبَدٌ مِنْ قَبْلِ الَّذِي خَالَفَ الوَرَى ...بِسِحْرٍ سَيُجْزَى فِي المَعَادِ بِمَا سَحَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">53.</strong>So, <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Maʿbad</strong> from before is the one who opposed mankind...with magic; he will be recompensed in the Hereafter for what he bewitched
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأَمَّا ابْنُ كُلَّابٍ فَجَاءَ بِبِدْعَةٍ ...وَجَعْدٌ وَجَهْمٌ وَالمَرِيسِيُّ ذَوُ الدَّبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">54.</strong>And as for <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn Kullāb</strong>, then he came with an innovation...and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Jaʿd</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Jahm</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">al-Marīsī</strong>, the one of ruin
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَزَخْرَفَ ابْنُ الأَشْعَرِيِّ مَقَالَةً ...سَيُسْأَلُ عَمَّا قَالَ فِيهَا وَمَا سَطَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">55.</strong>And <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn al-ʾAsẖʿarī</strong> embezzled a saying;...he will be asked about what he said in it and what he wrote
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَجَاءَ ابْنُ كَرَّامٍ بِمَيْنٍ وَفِرْيَةٍ ...عَلَى اللهِ وَالمَبْعُوثِ مِنْهُ وَمَا شَعَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">56.</strong>And <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn Karrām</strong> came with a lie and a fabrication...upon Allāh and the one sent from him, and he did not become cognizant
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَهُمْ أَحْدَثُوا هَذَا الكَلَامَ بِعَقْلِهِمْ ...وَكُلُّهُمُ عَنْ مَنْهَجِ الحَقِّ قَدْ عَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">57.</strong>So, they originated this speech with their intellect...and all of them have deviated from the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">doctrine of truth</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        أَرَادُوا بِهِ تَشْوِيشَ شَرْعِ مُحَمَّدٍ ...فَمَا بَلَغُوا مَا أَمَّلُوهُ مِنَ الغَدَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">58.</strong>They desired with it the obfuscation of the legislation of Muḥammad...so they did not reach what they hoped for from treachery
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        مُحَالٌ كَقِيعَانِ السَّرَابِ تَخَالُهُ ...دَلِيلًا وَلَكِنْ فِي الحِجَاجِ قَدِ انْكَسَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">59.</strong>Impossible — like the plains of the mirage, you assume it is...a proof, however in argumentation it has broken
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        أَلَمْ تَرَ أَنَّ اللهَ سَلَّطَ بَعْضَهُمْ ...يُكَفِّرُ بَعْضًا بِالدَّلِيلِ وَبِالنَّظَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">60.</strong>Do you not see that Allāh gave some of them power...[so] some of them make <em class="italic font-bold">takfīr</em> of others with evidence and with discernment?
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَجَنَّبَ أَهْلَ الحَقِّ سُوءَ كَلَامِهِمْ ...وَأَيَّدَهُمْ بِالنَّصْرِ مِنْهُ وَبِالظَّفَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">61.</strong>And He shunned the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">people of the truth</strong> [from] the evil of their speech...and supported them with victory from Him and with triumph
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَلَمْ تَرَ بِدْعِيًّا يُزَنُّ بِبِدْعَةٍ ...عَلَى الأَرْضِ إِلَّا أَخْرَجُوهُ مِنَ القَفْرِ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">62.</strong>So, you will not see a heretical innovator accused with an innovation...upon the earth except they expelled him from [their land to] the wilderness
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَقُلْ لِذَوِي التَّحْصِيلِ هَلْ يَبْلُغُ الَّذِي ...ذَكَرْتُهُمُ مِقْدَارَ قَوْمٍ عَلَى خَطَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">63.</strong>So, say to those of attainment: Do those who I have mentioned reach the measure of a <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">people upon excellence</strong>?
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        كَمَالِكَ وَالثَّوْرِيِّ وَابْنِ عُيَيْنَةٍ ...وَلَيْثٍ وَحَمَّادِ بْنِ زَيْدٍ ذَوِي الغُرَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">64.</strong>Like <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Mālik</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">al-Ṯhawrī</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn ʿUyaynah</strong>...and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Layṯh</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ḥammād ibn Zayd</strong>, the possessors of radiant distinction.
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمَنْ فَخَرَتْ أَرْضُ الشَّامِ بِكَوْنِهِ ...بِبَيْرُوتَ فِي جَمْعٍ عِدَادُهُمُ المَطَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">65.</strong>And the one whom the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">land of al-Sẖām</strong> took pride with his presence...in Beirūt, among a gathering, their number [like] the rain
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمِثْلِ ابْنِ طَهْمَانَ الإِمَامِ وَبَعْدَهُ ...يَزِيدُ بْنُ هَارُونَ الَّذِي خَصْمَهُ زَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">66.</strong>And like <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Ṭahmān</strong>, the ʾImām, and after him...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Yazīd ibn Hārūn</strong>, the one who cut off his opponent
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمِثْلِ وَكِيعٍ وَابْنِ مَهْدِيْ وَبَعْدَهُ ...سَلِيلُ دُكَيْنٍ كُلُّهُمْ سَادَةٌ زُهَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">67.</strong>And like <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Wakīʿ</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Mahdī</strong>, and after him...the descendant of Dukayn, all of them radiant chiefs
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمَنْ أَشْرَقَ الإِسْلَامُ مِنْ نُورِ عِلْمِهِ ...إِمَامِ قُرَيْشَ الشَّافِعِيِّ الَّذِي قَهَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">68.</strong>And the one from the light of his knowledge al-ʾIslām shone...the ʾImām of Quraysẖ, <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">al-Sẖāfiʿī</strong>, the one who vanquished [his opponents]
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمِنْ عُصْبَةِ ابْنُ المُبَارَكِ فِيهِمُ ...بِمَرْوَ وَنَيْسَابُورَ وَالرَّيِّ ذِي العِبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">69.</strong>And from a group, <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn al-Mubārak</strong> among them...at Marw, and Naysābūr, and al-Rayy, the possessor of lessons.
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَيَحْيَى وَإِسْحَاقً وَأَحْمَدً الَّذِي ...بِهِ نُظِمَ التَّقْوَى كَمَا يُنْظَمُ الدُّرَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">70.</strong>And <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Yaḥyā</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Isḥāq</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʾAḥmad</strong>, the one who...piety was strung together just as the pearls are strung
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        إِمَامٌ لِأَهْلِ النَّقْلِ وَالمُقْتَدَى بِهِ ...وَفِي السُّنَّةِ الغَرَّا إِمَامٌ وَقَدْ صَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">71.</strong>An <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʾImām for the people of transmission</strong> and the one who is emulated with...and an ʾImām in the radiant <em class="italic font-medium">Sunnah</em>, and he had exerted patience
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمَنْ حَلَّ فِي مِصْرٍ وَدَانَ بِسُنَّةٍ ...وَحَجَّ إِلَى البَيْتِ المُحَرَّمِ وَاعْتَمَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">72.</strong>And whoever settles in a city and took as a religion with a <em class="italic font-medium">Sunnah</em>...and makes pilgrimage to the Sacred House, and makes ʿUmrah
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمَنْ بِالعِرَاقِ المُسْتَنِيرِ كَشُعْبَةٍ ...وَابْنِ بَشِيرٍ وَابْنِ طَرْخَانَ مُعْتَمِرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">73.</strong>And whoever is at the illuminated ʿIrāq like <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Sẖuʿbah</strong>...and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Basẖīr</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Ṭarkẖān Muʿtamir</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمِثْلِ ابْنِ سَلَّامٍ وَمَنْ سَارَ سَيرَهُ ...كَلَيْثٍ لَدَى الغَابَاتِ عَنْ عِرْسِهِ هَدَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">74.</strong>And like <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Sallām</strong>, and whoever conducted [himself upon] his conduct...like a lion in the thickets, on behalf of its mate, he roared
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمِثْلِ ابْنِ وَهْبٍ وَابْنِ يَحْيَى وَبَعْدَهُ ...إِمَامُ بُخَارَى وَالَّذِي فَضْلُهُ غَمَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">75.</strong>And the like of <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Wahb</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Yaḥyā</strong>, and after him...the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʾImām of Bukẖārā</strong>, and [he is] the one who's virtue flooded [the world]
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمِثْلِ ابْنِ إِدْرِيسٍ وَمَنْ دَانَ دِينَهُ ...أَبُو زُرْعَةَ الرَّازِيُّ فِي حِفْظِهِ نَدَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">76.</strong>And the like of <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Idrīs [Abū Ḥātim al-Rāzī]</strong>, and whoever professed his creed...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Abū Zurʿah al-Rāzī</strong>, in his memorisation he was rare
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَمِثْلِ أَبِي دَاوُدَ وَابْنِ خُزَيْمَةٍ ...وَيَحْيَى بْنِ يَحْيَى وَالحُمَيْدِيِّ قَدْ وَزَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">77.</strong>And the like of <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Abī Dāwūd</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Ibn Kẖuzaymah</strong>...and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Yaḥyā ibn Yaḥyā</strong>, and <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">al-Ḥumaydī</strong> indeed bore [a heavy burden]
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَمَنْ فَارَقَ الإِجْمَاعَ ثُمَّ اقْتَدَى بِمَنْ ...تَقَدَّمَ ذِكْرَانَا لَهُمْ كَانَ قَدْ خَسِرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">78.</strong>So, whoever departs [from] the consensus, then emulates by those whom...our mention for them has preceded, he has certainly gone astray
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَأَسْأَلُ رَبِّي إِذْ هَدَانِي لِهَدْيِهِمْ ...رِفَاقَتَهُمْ فِي الخُلْدِ مَعَ صَالِحِ الزُّمَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">79.</strong>So, I ask my Lord, since He guided me to their guidance...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">[for] their company in eternity</strong> with the righteous groups
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُ مِنْ بَعْدِ الرَّسُولِ خَلِيفَةً ...إِمَامًا بِهِ الإِسْلَامُ مِنْ بَعْدِهِ افْتَخَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">80.</strong>And I affirm, after the Messenger, a successor...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">a leader by whom al-ʾIslām took pride after him</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        أَبُو بَكْرٍ الصِّدِّيقُ أَوْلَاهُم بِهَا ...وَمِنْ بَعْدِهِ الفَارُوقُ أَعْنِي بِهِ عُمَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">81.</strong><strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Abū Bakr al-Ṣiddīq</strong>, the most worthy of them with it...and after him <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">al-Fārūq</strong>, I mean by it <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʿUmar</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَعُثْمَانُ ذُو النُّورَيْنِ تَالٍ وَبَعْدَهُ ...عَلِيٌّ أَبُو السِّبْطَيْنِ أَفْضَلُ مَنْ غَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">82.</strong>And <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʿUṯhmān, Dẖū-l-Nūrayn</strong>, following, and after him...<strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">ʿAlī, the father of the two grandsons [of the Prophet]</strong>, the best of those who remained
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَهُمْ خُلَفَاءُ اللهِ بَعْدَ نَبِيِّهِ ...سَفِينَةُ يَرْوِيهِ عَنِ الصَّادِقِ الخَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">83.</strong>So, they are the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">successors of Allāh after His Prophet</strong>;...Safīnah narrates the report from the Truthful
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُ أَنَّ الفَضْلَ بَعْدَ الَّذِي مَضَتْ ...رِوَايَاتُنَا فِيهِمْ لَفِي سِتَّةٍ أُخَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">84.</strong>And I affirm that the virtue after those who...our narrations regarding them have passed are certainly in <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">six others</strong>
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        سَعِيدٌ وَسَعْدٌ وَابْنُ عَوْفٍ وَطَلْحَةٌ ...وَعَامِرُ فِهْرٍ وَالزُّبَيْرُ الَّذِي نَصَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">85.</strong><strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Saʿīd</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Saʿd</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ibn ʿAwf</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Ṭalḥah</strong>...and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">ʿĀmir of Fihr</strong>, and <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">al-Zubayr</strong> who aided
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَأُثْبِتُ مِنْ بَعْدِ الخِلَافَةِ بَيْعَةٌ ...لِخَالِ جَمِيعِ المُؤْمِنِينَ الَّذِي خَبَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">86.</strong>And I affirm after the Caliphate a pledge of allegiance...to the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">maternal uncle of all of the believers</strong>, the one who knew thoroughly:
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        مُعَاوِيَةَ المَنْعُوتِ بِالحِلْمِ وَالسَّخَا ...أَمِينِ رَسُولِ اللهِ لِلْوَحْيِ وَالزُّبُرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">87.</strong><strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Muʿāwiyah</strong>, the one described with forbearance and generosity...the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">trustee of the Messenger of Allāh</strong> for the revelation and the scriptures
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        بِإِجْمَاعِ أَهْلِ الحَلِّ وَالعَقْدِ مِنْهُمُ ...فَلَسْتُ بِقَوَّالٍ بِقَوْلِ الَّذِي نَفَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">88.</strong>By the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">consensus of Ahl al-Ḥall wa-l-ʿAqd</strong> among them...so, I am not a loudmouth with the statement of the one who fled
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَقَوْلِي فِي صَحْبِ الرَّسُولِ بِأَسْرِهِمْ ...جَمِيلٌ خِلَافَ المَارِقِينَ ذَوِي الأَشَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">89.</strong>And my saying regarding the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Companions of the Messenger, all of them</strong>...is beautiful, contrary [to] the renegades, those of insolence
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        وَرَافِضُ أَعْدَاءُ الشَّرِيعَةِ وَصْفُهُمْ ...عَنِ الصَّادِقِ المَبْعُوثِ فِي النَّاسِ مِنْ مُضَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">90.</strong>And the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">Rawāfiḍ</strong> are the <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">enemies of the Sẖarīʿah</strong>; their description...from the Truthful, the one sent among the people, from Muḍar
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        كَمَا كَانَ فِي كُتْبِ الشَّرِيعَةِ نَالَهُمْ ...مِنَ اللهِ خِزْيٌ بِالأَصَائِلِ وَالسَّحَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">91.</strong>As it was in the books of the <em class="italic font-medium">Sẖarīʿah</em>...disgrace from Allāh reached them in the evenings and the foredawn
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        لَهُمْ نَبْزٌ لَا دَرَّ يَا صَاحِ دَرُّهُمْ ...وَلَا نَالَهُمْ خَيْرٌ وَلَا فَاتَهُمْ خَطَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">92.</strong>They have a derogatory nickname; may their milk not flow, O companion...and may good not reach them nor peril pass them
+      </p>
+    </div>
+    <div class="py-4 space-y-2">
+      <p class="font-arabic text-xl sm:text-2xl text-right leading-loose text-[#1E1710] dark:text-amber-100" dir="rtl">
+        فَهَذَا اعْتِقَادُ المَقْدِسِيِّ مُحَمَّدٍ ...رَوَاهُ عَنِ الأَثْبَاتِ مِنْ نَاقِلِي السِّيَرْ
+      </p>
+      <p class="font-serif text-base sm:text-lg text-left leading-relaxed text-[#231C16] dark:text-slate-200 pl-1 sm:pl-2">
+        <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8] mr-2 select-none">93.</strong>So, this is the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">creed of al-Maqdisī, Muḥammad</strong>...he narrated it from the <strong class="font-bold text-[#0B465E] dark:text-[#38bdf8]">reliable authorities among the transmitters of the traditions</strong>.
+      </p>
+    </div>
+  </div>
+</div>`,
+    citation: "ʾArbaʿ Qaṣāʾid fī al-Sunnah wa-l-ʾIʿtiqād — al-Ḥujjah ʿalā Tārik al-Maḥajjah — pp. 168–172",
+    source: "ʾArbaʿ Qaṣāʾid fī al-Sunnah wa-l-ʾIʿtiqād — al-Ḥujjah ʿalā Tārik al-Maḥajjah — pp. 168–172",
+    imageUrl: "/hujjah ala tarik al mahajjah.png",
+    scanImages: [
+      "/hujjah ala tarik al mahajjah.png",
+      "/hujjah ala tarik al mahajjah scan.png"
+    ],
+    dateAdded: "2026-10-11"
   }
 ];
-
-

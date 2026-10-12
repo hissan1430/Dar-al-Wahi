@@ -199,7 +199,7 @@ export function Notes() {
                   {/* Main Note Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2 mb-2">
-                      <span className="text-xs font-bold tracking-widest uppercase text-red-700 bg-red-50 px-2 py-0.5 rounded">
+                      <span className="text-xs font-bold tracking-widest uppercase text-primary bg-primary/10 px-2 py-0.5 rounded">
                         {note.category}
                       </span>
                       <span className="text-xs text-slate-400">

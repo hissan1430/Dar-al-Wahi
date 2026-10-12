@@ -136,7 +136,7 @@ export function DailyAtharCard() {
             <button
               id="daily-athar-minimize-btn"
               onClick={toggleCollapse}
-              className="inline-flex items-center gap-1 px-2 py-1 bg-[#F5EFE3] hover:bg-[#EAE1D1] text-[#4A3B2F] hover:text-red-700 text-xs font-medium rounded-lg transition-colors cursor-pointer border border-[#E7DFC9]"
+              className="inline-flex items-center gap-1 px-2 py-1 bg-[#F5EFE3] hover:bg-[#EAE1D1] text-[#4A3B2F] hover:text-primary text-xs font-medium rounded-lg transition-colors cursor-pointer border border-[#E7DFC9]"
               title="Minimize Athār of the Day"
             >
               <EyeOff className="w-3 h-3" />
