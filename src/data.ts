@@ -1,6 +1,5 @@
 import { sunnahPages } from "./data/sunnah";
 import { deathPages } from "./data/death";
-import { DAILY_ATHAR_LIST } from "./data/dailyAthar";
 
 export type Translator = 'Abu_Talhah' | 'Abu_Mundhir' | 'Abul_Layth' | string;
 export type ContentType = 'quote' | 'poem' | 'article' | 'video' | 'audio' | 'pdf' | string;
@@ -54,7 +53,7 @@ export const CATEGORIES = [
   "Miscellaneous"
 ];
 
-const BASE_MOCK_DATA: ContentItem[] = [
+export const MOCK_DATA: ContentItem[] = [
   {
     id: "9",
     translator: "Abu_Talhah",
@@ -3273,104 +3272,4 @@ al-Firabrī⁸ said: ʿAbbās narrated to us, he said: Qutaybah narrated to us, 
     ],
     dateAdded: "2026-10-11"
   }
-];
-
-// 120 Curated Niche Classical Āthār from the Salaf mapped into the main application library
-export const NICHE_ATHAR_ITEMS: ContentItem[] = DAILY_ATHAR_LIST.map((athar) => {
-  let cat = "al-Sunnah";
-  const c = athar.category.toLowerCase();
-  if (
-    c.includes("attribute") ||
-    c.includes("tashbīh") ||
-    c.includes("creed") ||
-    c.includes("definition of faith") ||
-    c.includes("zandaqah") ||
-    c.includes("jahmiyyah") ||
-    c.includes("qurʾān")
-  ) {
-    cat = "ʿAqīdah";
-  } else if (
-    c.includes("hadith") ||
-    c.includes("knowledge") ||
-    c.includes("fatwā") ||
-    c.includes("chains") ||
-    c.includes("juristic") ||
-    c.includes("concession") ||
-    c.includes("speculative") ||
-    c.includes("non-consensus")
-  ) {
-    cat = "Uṣool";
-  } else if (
-    c.includes("waraʿ") ||
-    c.includes("heart") ||
-    c.includes("zuhd") ||
-    c.includes("awe") ||
-    c.includes("fear") ||
-    c.includes("remorse") ||
-    c.includes("self-audit") ||
-    c.includes("accounting") ||
-    c.includes("devotion") ||
-    c.includes("humility") ||
-    c.includes("sin") ||
-    c.includes("grief") ||
-    c.includes("journey") ||
-    c.includes("death") ||
-    c.includes("tribulation") ||
-    c.includes("supplication") ||
-    c.includes("taqwā")
-  ) {
-    cat = "Heart-Softeners";
-  } else if (
-    c.includes("sunnah") ||
-    c.includes("athar") ||
-    c.includes("jamāʿah") ||
-    c.includes("bidʿah") ||
-    c.includes("innovation") ||
-    c.includes("companions") ||
-    c.includes("salaf") ||
-    c.includes("boycott")
-  ) {
-    cat = "al-Sunnah";
-  }
-
-  const cleanSummary = athar.englishText
-    .replace(/^[“"']|[”"']$/g, "")
-    .trim();
-
-  return {
-    id: athar.id,
-    translator: "Abu_Talhah",
-    translatorName: "Dār al-Waḥī",
-    category: cat,
-    type: "quote",
-    title: `${athar.speaker}: ${athar.category}`,
-    speaker: athar.speakerTitle ? `${athar.speaker} (${athar.speakerTitle})` : athar.speaker,
-    author: athar.speaker,
-    summary: cleanSummary.length > 140 ? cleanSummary.slice(0, 137) + "..." : cleanSummary,
-    arabicText: athar.arabicText,
-    englishText: athar.englishText,
-    citation: athar.source,
-    source: athar.source,
-    dateAdded: "2026-10-15",
-    htmlText: `<div class="space-y-6 leading-relaxed">
-  <div class="space-y-3">
-    <div dir="rtl" class="text-right font-arabic text-xl sm:text-2xl leading-[2.3] font-semibold text-[#1E1710] py-2">
-      ${athar.arabicText}
-    </div>
-    <blockquote class="border-l-[3.5px] border-[#0B465E] pl-4 sm:pl-5 py-3 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-3 font-serif leading-relaxed text-[#3E3125]">
-      <p class="text-base sm:text-lg">
-        ${athar.englishText}
-      </p>
-    </blockquote>
-    <div class="text-xs text-[#7A695C] italic pt-2">
-      — ${athar.speaker}${athar.speakerTitle ? ` (${athar.speakerTitle})` : ''}
-    </div>
-  </div>
-</div>`
-  };
-});
-
-export const MOCK_DATA: ContentItem[] = [
-  ...BASE_MOCK_DATA,
-  ...NICHE_ATHAR_ITEMS
 ];
