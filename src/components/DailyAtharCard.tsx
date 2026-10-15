@@ -5,7 +5,7 @@ import { Sparkles, Share2, Copy, Check, BookOpen, ChevronDown, ChevronUp, Eye, E
 import { toCurlyQuotes } from '../utils/typography';
 
 export function DailyAtharCard() {
-  // Always select the exact single Athār for today - changes automatically every day
+  // Scheduled unique non-repeating niche Athār for today
   const athar = getDailyAthar();
   const todayFormatted = formatAtharDate();
 
@@ -103,8 +103,9 @@ export function DailyAtharCard() {
             </div>
           </div>
 
-          {/* Share, Copy & Toggle Buttons */}
+          {/* Action buttons */}
           <div className="flex items-center gap-1.5">
+
             <button
               id="daily-athar-copy-btn"
               onClick={handleCopy}
