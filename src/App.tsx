@@ -4,6 +4,7 @@
  */
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Layout } from './components/Layout';
 import { ReadingModeProvider } from './context/ReadingModeContext';
 import { Home } from './pages/Home';
@@ -28,6 +29,7 @@ export default function App() {
           </Routes>
         </Layout>
       </ReadingModeProvider>
+      <SpeedInsights />
     </Router>
   );
 }
