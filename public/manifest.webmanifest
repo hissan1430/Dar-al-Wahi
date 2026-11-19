@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "Dār al-Waḥī",
+  "short_name": "Dār al-Waḥī",
+  "description": "Translations and Athār from Abū Mundhir ar-Ruwāndī and Abū Ṭalḥah al-ʾAfġhānī.",
+  "theme_color": "#144658",
+  "background_color": "#144658",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -3271,5 +3271,55 @@ al-Firabrī⁸ said: ʿAbbās narrated to us, he said: Qutaybah narrated to us, 
       "/hujjah ala tarik al mahajjah scan.png"
     ],
     dateAdded: "2026-10-11"
+  },
+  {
+    id: "45",
+    translator: "Abu_Talhah",
+    translatorName: "Abū Ṭalḥah al-ʾAfġhānī",
+    category: "Heart-Softeners",
+    type: "quote",
+    title: "Six Penalties to Reach the Rank of the Righteous",
+    speaker: "Ibrāhīm ibn ʾAdham (d. 162H)",
+    author: "al-Imām al-Ḥāfiẓ Ismāʿīl ibn Muḥammad al-Aṣbahānī (d. 535H)",
+    summary: "Ibrāhīm ibn ʾAdham advises a man during Ṭawāf that one does not attain the rank of the righteous until passing six trials—closing the doors of worldly ease, honour, rest, sleep, wealth, and distant hope.",
+    arabicText: `قَالَ: وَأَخْبَرَنَا أَبُو عَبْدِ الرَّحْمَنِ السَّلَمِيُّ , قَالَ: سَمِعْتُ مَنْصُورَ بْنَ عَبْدِ اللَّهِ , يَقُولُ: سَمِعْتُ مُحَمَّدَ بْنَ حَامِدٍ , يَقُولُ: سَمِعْتُ أَحْمَدَ بْنَ حَضْرَوِيهِ , يَقُولُ: قَالَ إِبْرَاهِيمُ بْنُ أَدْهَمَ لِرَجُلٍ فِي الطَّوَافِ:
+
+«اعْلَمْ أَنَّكَ لَا تَنَالُ دَرَجَةَ الصَّالِحِينَ حَتَّى تَجُوزَ سَتَّ عَقَبَاتٍ أَوَّلُهُ: تُغْلِقُ بَابَ النِّعْمَةِ، وَتَفْتَحُ بَابَ الشِّدَّةِ، وَالثَّانِي: تُغْلِقُ بَابَ الْعِزِّ , وَتَفْتَحُ بَابَ الذُّلِّ، وَالثَّالِثُ تُغْلِقُ بَابَ الرَّاحَةِ , وَتَفْتَحُ بَابَ الْجَهْدِ، وَالرَّابِعُ تُغْلِقُ بَابَ النَّوْمِ , وَتَفْتَحُ بَابَ السَّهَرِ، وَالْخَامِسُ: تُغْلِقُ بَابَ الْغِنَى , وَتَفْتَحُ بَابَ الْفَقْرِ، وَالسَّادِسُ: تُغْلِقُ بَابَ الْأَمَلِ , وَتَفْتَحُ بَابَ الِاسْتِعْدَادِ لِلْمَوْتِ».`,
+    englishText: `He said: And Abū ʿAbd ar-Raḥmān as-Salamī informed us, he said: I heard Manṣūr ibn ʿAbd Allāh saying: I heard Muḥammad ibn Ḥāmid saying: I heard Aḥmad ibn Ḥaḍrawīh saying: Ibrāhīm ibn ʾAdham said to a man during Ṭawāf: "Know you do not reach the rank of the righteous until you pass six penalties. Its first: The door of blessings is closed and the door of hardship is opened. And the second: The door of honour is closed and the door of humiliation is opened. And the third: The door of rest is closed and the door of struggle is opened. And the fourth: The door of sleep is closed and the door of sleeplessness is opened. And the fifth: The door of wealth is closed and the door of poverty is opened. And the sixth: The door of distant-hope is closed and the door of preparation for death is opened."`,
+    htmlText: `<div class="space-y-6 leading-relaxed">
+  <div class="space-y-3">
+    <p class="leading-relaxed opacity-90">
+      He said: And <em class="italic opacity-80 font-medium">Abū ʿAbd ar-Raḥmān as-Salamī</em> informed us, he said: I heard <em class="italic opacity-80 font-medium">Manṣūr ibn ʿAbd Allāh</em> saying: I heard <em class="italic opacity-80 font-medium">Muḥammad ibn Ḥāmid</em> saying: I heard <em class="italic opacity-80 font-medium">Aḥmad ibn Ḥaḍrawīh</em> saying: <strong class="font-semibold text-primary">Ibrāhīm ibn ʾAdham</strong> said to a man during <em>Ṭawāf</em>:
+    </p>
+
+    <blockquote class="border-l-[3.5px] border-[#0B465E] dark:border-[#38bdf8] pl-4 sm:pl-5 py-3.5 my-3 bg-slate-500/[0.04] rounded-r-lg space-y-2.5 font-serif leading-relaxed">
+      <p class="text-lg sm:text-xl font-bold text-[#0B465E] dark:text-[#38bdf8]">
+        “Know you do not reach the rank of the righteous until you pass six penalties.
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">Its first:</strong> The door of blessings is closed and the door of hardship is opened.
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">And the second:</strong> The door of honour is closed and the door of humiliation is opened.
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">And the third:</strong> The door of rest is closed and the door of struggle is opened.
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">And the fourth:</strong> The door of sleep is closed and the door of sleeplessness is opened.
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">And the fifth:</strong> The door of wealth is closed and the door of poverty is opened.
+      </p>
+      <p>
+        <strong class="font-semibold text-[#0B465E] dark:text-[#38bdf8]">And the sixth:</strong> The door of distant-hope is closed and the door of preparation for death is opened.”
+      </p>
+    </blockquote>
+  </div>
+</div>`,
+    citation: "Siyar al-Salaf al-Ṣālihīn — al-Aṣbahānī — 3/971",
+    imageUrl: "/ibrahim ibn adham.png",
+    scanImages: ["/ibrahim ibn adham.png"],
+    dateAdded: "2026-11-17"
   }
 ];

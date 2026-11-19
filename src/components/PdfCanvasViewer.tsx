@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import * as pdfjsLib from 'pdfjs-dist';
 import { 
   Download, 
   AlertCircle, 
@@ -16,9 +15,7 @@ import {
   Columns2
 } from 'lucide-react';
 import { useReadingMode } from '../context/ReadingModeContext';
-
-// Configure pdfjs worker to use the static worker in /public
-pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+import { getPdfJs } from '../utils/pdfjs';
 
 interface PdfCanvasViewerProps {
   pdfUrl: string;
@@ -134,6 +131,7 @@ export function PdfCanvasViewer({
 
     const loadDoc = async () => {
       try {
+        const pdfjsLib = await getPdfJs();
         const loadingTask = pdfjsLib.getDocument(pdfUrl);
         const doc = await loadingTask.promise;
         if (!isCancelled) {

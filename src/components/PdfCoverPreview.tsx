@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import * as pdfjsLib from 'pdfjs-dist';
 import { FileText, Loader2 } from 'lucide-react';
 import { toCurlyQuotes } from '../utils/typography';
+import { getPdfJs } from '../utils/pdfjs';
 
 interface PdfCoverPreviewProps {
   pdfUrl: string;
@@ -37,11 +37,7 @@ export function PdfCoverPreview({
         setLoading(true);
         setHasError(false);
 
-        // Ensure worker is configured
-        if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
-          pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-        }
-
+        const pdfjsLib = await getPdfJs();
         const loadingTask = pdfjsLib.getDocument(pdfUrl);
         const doc = await loadingTask.promise;
         if (isCancelled) return;

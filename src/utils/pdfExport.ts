@@ -1,6 +1,3 @@
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-
 export interface NoteToExport {
   documentId: string;
   title: string;
@@ -118,6 +115,13 @@ export async function exportNotesToPdf(notes: NoteToExport[], filename?: string)
   document.body.appendChild(container);
 
   try {
+    const html2canvasUrl = 'https://esm.sh/html2canvas@1.4.1';
+    const jspdfUrl = 'https://esm.sh/jspdf@2.5.2';
+    const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+      import(/* @vite-ignore */ html2canvasUrl),
+      import(/* @vite-ignore */ jspdfUrl),
+    ]);
+
     const canvas = await html2canvas(container, {
       scale: 2,
       useCORS: true,

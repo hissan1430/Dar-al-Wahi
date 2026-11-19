@@ -2,45 +2,40 @@ import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
-import { registerSW } from 'virtual:pwa-register';
 
-// Clear any stale cached service workers from older builds and auto-update
-if ('serviceWorker' in navigator) {
-  // If an update is detected, skip waiting and reload instantly
+// Register service worker and auto-update when a new version activates
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  let refreshing = false;
   navigator.serviceWorker.addEventListener('controllerchange', () => {
-    window.location.reload();
+    if (!refreshing) {
+      refreshing = true;
+      window.location.reload();
+    }
+  });
+
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then((r) => {
+        r.update();
+        setInterval(() => {
+          r.update();
+        }, 5 * 60 * 1000);
+
+        window.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') {
+            r.update();
+          }
+        });
+      })
+      .catch(() => {
+        // ignore service worker registration errors
+      });
   });
 }
-
-// Automatically check and activate updates immediately
-const updateSW = registerSW({
-  immediate: true,
-  onNeedRefresh() {
-    updateSW(true);
-  },
-  onOfflineReady() {
-    // app is cached for offline use
-  },
-  onRegisteredSW(_swUrl, r) {
-    if (r) {
-      // Force an immediate check for a newer version
-      r.update();
-      setInterval(() => {
-        r.update();
-      }, 5 * 60 * 1000);
-
-      window.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
-          r.update();
-        }
-      });
-    }
-  }
-});
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
   </StrictMode>,
 );
-

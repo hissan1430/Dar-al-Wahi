@@ -121,6 +121,14 @@ const MOCK_DATA = [
     speaker: "Abū Ṭalḥah Dāwūd Burbank",
     author: "Shaykh ʿAbdullāh al-Ghudayyān",
     summary: "An essential translation and explanation of the verdict of Shaykh ʿAbdullāh al-Ghudayyān clarifying the prophetic warnings regarding picture-makers (al-Muṣawwirūn). Curated by Abū Mundhir from @FawaidAbuTalhaBurbank."
+  },
+  {
+    id: "45",
+    title: "Six Penalties to Reach the Rank of the Righteous",
+    category: "Heart-Softeners",
+    speaker: "Ibrāhīm ibn ʾAdham",
+    author: "al-Aṣbahānī (Siyar al-Salaf al-Ṣālihīn)",
+    summary: "Ibrāhīm ibn ʾAdham advises a man during Ṭawāf that one does not reach the rank of the righteous until passing six penalties: closing the doors of blessings, honour, rest, sleep, wealth, and distant-hope, and opening hardship, humiliation, struggle, sleeplessness, poverty, and preparation for death."
   }
 ];
 
